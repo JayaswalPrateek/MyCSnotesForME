@@ -1,0 +1,21 @@
+{
+  "defaultViewMode": "source",
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": false,
+  "showLineNumber": false,
+  "showIndentGuide": true,
+  "spellcheck": false,
+  "spellcheckLanguages": [
+    "en-US",
+    "en"
+  ],
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "promptDelete": false,
+  "attachmentFolderPath": "/Attachments"
+}
