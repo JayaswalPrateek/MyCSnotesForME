@@ -1,5 +1,5 @@
 ***Input Buffer***
-- When the user input is `cin>>anInteger;` and the next input on the next line is `cin>>str;` then the enter key pressed after typing the number is saved as input buffer and later take in by the `cin>>str;` to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`.
+- When the user input is `cin>>anInteger;` and the next input on the next line is `cin>>str;` then the enter key pressed after typing the number is saved as input buffer and later take in by the `cin>>str;` to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
 ***Enum***
 - User defined data types such that we can link a commonly used term with a constant integer:
@@ -44,6 +44,7 @@
 - if `int A[] = {1, 2, 3, 4, 5};` and 
 - `for (int x : A)`
 	`cout << x;`
-- `for (auto x : A)` where the compiler takes care of the data type of x.
-- changing the value of x doesn't change the array element because x is a copy.
-	- To avoid this you can used `int &x : A` instead of `int x : A` 
+- `for (auto x : A)` where the compiler takes care of the data type of x
+- changing the value of x doesn't change the array element because x is a copy
+	- To avoid this you can used `int &x : A` instead of `int x : A`
+	- `auto &x : A` is also allowed
