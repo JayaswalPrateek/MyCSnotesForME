@@ -179,4 +179,19 @@ Pointer
 			}
 			```
 		- Pointer Arithmetic
-			- 
+			```cpp
+			#include <iostream>
+			using namespace std;
+			int main()
+			{
+			    int A[] = {1, 2, 3, 4, 5};
+			    int *p = A; // Same as int *p = &A[0]
+			
+			    for (int i = 0; i < sizeof(A) / 4; i++, p++)
+			        cout << *p;
+			
+			    return 0;
+			}
+			```
+			- subtracting 2 pointers pointing to different indices of an Array can be divided by 4 to get how many indices far are the 2 pointers. 
+			- dont need to de-reference 
