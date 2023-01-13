@@ -48,3 +48,35 @@
 - changing the value of x doesn't change the array element because x is a copy
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
+
+***Binary Search***
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    const int A[] = {4, 8, 24, 42, 101, 404, 1234};
+    int key, l = 0, h = (sizeof(A) / 4) - 1;
+
+    cout << "Enter Key: ";
+    cin >> key;
+
+    while (l <= h)
+    {
+        int mid = (l + h) / 2;
+
+        if (key == A[mid])
+        {
+            cout << "Found at " << mid;
+            return 0;
+        }
+        else if (key < A[mid])
+            h = mid - 1;
+        else
+            l = mid + 1;
+    }
+
+    cout << "Not Found";
+    return -1;
+}
+```
