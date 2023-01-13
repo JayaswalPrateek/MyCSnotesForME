@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-***Finding Min and Max of Array***
+***Finding Min and Max of an Array***
 ```cpp
 #include <iostream>
 #include <climits>
