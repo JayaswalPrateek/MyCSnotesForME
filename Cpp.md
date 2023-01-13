@@ -145,7 +145,12 @@ Pointer
 	```
 - Memory Layout
 	- | HEAP  |
-	- | STACK |
+	- | STACK | <- `int i = 0;` like declarations are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
 	- | CODE  | <- is the read-only section of the memory where the code is loaded after launching the program. No external programs can modify this section.
-		- This CODE section can access STACK and itself. Not the HEAP.
+		- The CODE section can access STACK and itself. Not the HEAP.
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
+			- Thus HEAP can only be accessed using pointers.
+			- Accessing Files and hardware devices is also done using pointers. 
+- Accessing HEAP using `new` 
+	- example: `int *p = new int[5]`
+	- If these are not freed, we get a Memory Leak.
