@@ -145,7 +145,7 @@ Pointer
 	```
 - Memory Layout
 	- | HEAP  |
-	- | STACK | <- `int i = 0;` like declarations are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
+	- | STACK | <- `int i = 0` like declarations are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
 	- | CODE  | <- is the read-only section of the memory where the code is loaded after launching the program. No external programs can modify this section.
 		- The CODE section can access STACK and itself. Not the HEAP.
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
@@ -153,4 +153,27 @@ Pointer
 			- Accessing Files and hardware devices is also done using pointers. 
 - Accessing HEAP using `new` 
 	- example: `int *p = new int[5]`
-	- If these are not freed, we get a Memory Leak.
+	- If these are not freed, we get a Memory Leak. Use `delete[] p` and then `p = NULL`
+		- if you do `p = nullptr` first then you won't be able to free HEAP.
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    int *p = new int[5];
+	
+	    for (int i = 0; i < 5; i++)
+	    {
+	        p[i] = i + 1;
+	        cout << p[i] << " ";
+	    }
+
+		p
+
+	    delete[] p;
+	    p = nullptr;
+	
+	    return 0;
+	}
+	```
+	- once an array is declared in STACK you cannot change its size but it is possible if it is in the HEAP.
