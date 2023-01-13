@@ -39,3 +39,11 @@
 	`typedef int roll;`
 	`marks m1, m2, m3;`
 	`roll r1, r2, r3;`
+
+***For Each Loop***
+- if `int A[] = {1, 2, 3, 4, 5};` and 
+- `for (int x : A)`
+	`cout << x;`
+- `for (auto x : A)` where the compiler takes care of the data type of x.
+- changing the value of x doesn't change the array element because x is a copy.
+	- To avoid this you can used `int &x : A` instead of `int x : A` 
