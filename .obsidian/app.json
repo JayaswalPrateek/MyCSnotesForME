@@ -5,11 +5,8 @@
   "showFrontmatter": false,
   "showLineNumber": false,
   "showIndentGuide": true,
-  "spellcheck": false,
-  "spellcheckLanguages": [
-    "en-US",
-    "en"
-  ],
+  "spellcheck": true,
+  "spellcheckLanguages": null,
   "pdfExportSettings": {
     "pageSize": "A4",
     "landscape": false,
