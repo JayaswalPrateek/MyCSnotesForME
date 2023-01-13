@@ -80,3 +80,26 @@ int main()
     return -1;
 }
 ```
+
+***Finding Min and Max of Array***
+```cpp
+#include <iostream>
+#include <climits>
+using namespace std;
+int main()
+{
+    const int A[] = {4, 8, 24, 42, 101, 404, 1234};
+    int min = INT_MAX, max = INT_MIN;
+
+    for (auto x : A)
+    {
+        min = x < min ? x : min;
+        max = x > max ? x : max;
+    }
+
+    cout << "Min = " << min << endl;
+    cout << "Max = " << max;
+
+    return 0;
+}
+```
