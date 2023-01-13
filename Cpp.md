@@ -117,7 +117,7 @@ int main()
 
 	    for (auto &i : A)
 	    {
-	        for (auto &j : i)
+	        for (auto j : i)
 	            cout << j << " ";
 	        cout << endl;
 	    }
