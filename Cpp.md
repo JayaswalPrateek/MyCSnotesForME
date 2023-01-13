@@ -103,3 +103,12 @@ int main()
     return 0;
 }
 ```
+
+***Note on Arrays***
+- When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
+- When a 2-D Array is created, all the elements are contiguous in the memory.
+- Have to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop. 
+
+
+
+
