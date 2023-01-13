@@ -109,22 +109,43 @@ int main()
 - When a 2-D Array is created, all the elements are contiguous in the memory.
 - Have to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop. 
 	```cpp
-	#include <iostream>
-	using namespace std;
-	int main()
-	{
-	    const int A[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
-
-	    for (auto &i : A)
-	    {
-	        for (auto j : i)
-	            cout << j << " ";
-	        cout << endl;
-	    }
-
-	    return 0;
-	}
+		#include <iostream>
+		using namespace std;
+		int main()
+		{
+		    const int A[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+	
+		    for (auto &i : A)
+		    {
+		        for (auto j : i)
+		            cout << j << " ";
+		        cout << endl;
+		    }
+	
+		    return 0;
+		}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
 
 
+Pointer
+- Chaining * and & is possible but is usually redundant
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    int k = 10;
+	    int *p = &k;
+	
+	    cout << **&p; // 10
+	
+	    return 0;
+	}
+	```
+- Memory Layout
+	- | HEAP  |
+	- | STACK |
+	- | CODE  | <- is the read-only section of the memory where the code is loaded after launching the program. No external programs can modify this section.
+		- This CODE section can access STACK and itself. Not the HEAP.
+		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
