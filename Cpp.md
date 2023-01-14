@@ -106,8 +106,8 @@ int main()
 
 ***Note on Arrays***
 - When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
-- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`.
-- When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`.
+- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
+- When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
 - Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop.
 	```cpp
@@ -131,7 +131,7 @@ int main()
 
 
 ***Pointer***
-- Size of a pointer is not dependent on the data type and always takes 8 bytes
+- Size of a pointer is independent of data type and always takes 8 bytes.
 - *Memory Layout*
 	- | HEAP  |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
@@ -139,7 +139,7 @@ int main()
 		- The CODE section can access STACK and itself. Not the HEAP.
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
 			- Thus HEAP can only be accessed using pointers.
-			- Accessing Files and hardware devices is also done using pointers. 
+			- Accessing Files and hardware devices is also done using pointers.
 		- Accessing HEAP using `new` 
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
@@ -200,21 +200,19 @@ int main()
 		    return 0;
 		}
 		```
-- Runtime gotchas w/ pointers
-	- Memory Leak if HEAP allocations are not freed
+- *Runtime gotchas w/ pointers*
+	- Memory Leak when HEAP allocations are not freed.
 	- uninitialized pointer
-		- `int *p = 25` where 25 is not stored in a variable
+		- `int *p = 25` where 25 is not stored in a variable.
 			- you can use `int *p = &n` or `int *p = new int`
 	- dangling pointer
 		- If a pointer is having an address of a memory location which is already deallocated.
 		- when a pointer is passed to another function and freed at the end of that function and if the pointer is accessed again after the control is returned to the calling function then we have a runtime error but not a memory leak.
-- References:
+- *References*
 	- `int x = 10` allocates a box in the memory named x which stores 10.
 	- `int &y = x` creates an alias of x which is y.
-		- So x and y will always have the same value and changes to one can be reflected from the other variable as well. 
+		- So x and y will always have the same value and changes to one can be reflected from the other variable as well.
 	- doesn't consume memory
 	- &x is always same as &y
 	- declaration without initialization is an error.
-	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.  
-
-
+	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.
