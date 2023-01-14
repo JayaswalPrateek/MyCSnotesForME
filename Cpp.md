@@ -33,15 +33,15 @@
 
 ***Type Definition***
 - Used to make variables more readable.
-- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rX is the roll number X
-- To make it more readable we use typedef to alias the data type of rX from int to roll and of mX from int to marks
+- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
+- To make it more readable we use typedef to alias the data type of mX from int to marks and rN from int to roll.
 	`typedef int marks;`
 	`typedef int roll;`
 	`marks m1, m2, m3;`
 	`roll r1, r2, r3;`
 
 ***For Each Loop***
-- if `int A[] = {1, 2, 3, 4, 5};` and 
+- let `int A[] = {1, 2, 3, 4, 5};` then 
 - `for (int x : A)`
 	`cout << x;`
 - `for (auto x : A)` where the compiler takes care of the data type of x
