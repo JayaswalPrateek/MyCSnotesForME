@@ -225,6 +225,13 @@ int main()
 			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string.
 		- with pointer: `char *s = "H"` 
 			- stored in HEAP
-- 2 ways to find length
+- 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
+- `strcat(destination, source)`
+	- needs `cstring`
+	- removes `\0` from source and merges them.
+	- `strcat(destination, source, length)`
+		- the length of the source to be concatenated.
+- `strcpy(destination, source)` or `strcpy(destination, source, length)`
+	- As string is a pointer, doing `newStr = oldStr` makes newStr a refernce
