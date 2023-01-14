@@ -106,6 +106,7 @@ int main()
 
 ***Note on Arrays***
 - When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
+- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`. 
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
 - Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop.
 	```cpp
@@ -167,6 +168,7 @@ int main()
 - Pointer Arithmetic
 	- dereferencing is not needed.
 	- subtracting 2 pointers pointing to different indices of an integer Array can be divided by 4 to get how many indices far are the 2 pointers.
+	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array.
 	- this is
 		```cpp
 		#include <iostream>
