@@ -206,6 +206,7 @@ int main()
 		- `int *p = 25` where 25 is not stored in a variable
 			- you can use `int *p = &n` or `int *p = new int`
 	- dangling pointer
+		- If a pointer is having an address of a memory location which is already deallocated.
 		- when a pointer is passed to another function and freed at the end of that function and if the pointer is accessed again after the control is returned to the calling function then we have a runtime error but not a memory leak.
 - References:
 	- `int x = 10` allocates a box in the memory named x which stores 10.
