@@ -131,6 +131,7 @@ int main()
 
 
 ***Pointer***
+- Size of a pointer is not dependent on the data type and always takes 8 bytes
 - *Memory Layout*
 	- | HEAP  |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
