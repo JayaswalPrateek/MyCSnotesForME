@@ -131,8 +131,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -152,7 +151,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "796426d34616cc48",
+  "active": "2e878fd1b39749a5",
   "lastOpenFiles": [
     "Cpp.md",
     "cpp/Basics.md",
