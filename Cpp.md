@@ -225,3 +225,6 @@ int main()
 			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string.
 		- with pointer: `char *s = "H"` 
 			- stored in HEAP
+- 2 ways to find length
+	- if using string class, use `str.length()`
+	- if using char array, use `strlen(str)` and `#include<cstring>`
