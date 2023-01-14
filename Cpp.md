@@ -106,8 +106,8 @@ int main()
 
 ***Note on Arrays***
 - When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
-- When a 2-D Array is created, all the elements are contiguous in the memory.
-- Have to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop. 
+- When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
+- Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop. 
 	```cpp
 		#include <iostream>
 		using namespace std;
@@ -129,20 +129,6 @@ int main()
 
 
 Pointer
-- Chaining * and & is possible but is usually redundant
-	```cpp
-	#include <iostream>
-	using namespace std;
-	int main()
-	{
-	    int k = 10;
-	    int *p = &k;
-	
-	    cout << **&p; // 10
-	
-	    return 0;
-	}
-	```
 - Memory Layout
 	- | HEAP  |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
@@ -178,7 +164,7 @@ Pointer
 			    return 0;
 			}
 			```
-		- Pointer Arithmetic
+- Pointer Arithmetic
 			```cpp
 			#include <iostream>
 			using namespace std;
