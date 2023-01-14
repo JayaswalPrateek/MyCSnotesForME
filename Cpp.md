@@ -106,7 +106,8 @@ int main()
 
 ***Note on Arrays***
 - When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
-- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`. 
+- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`.
+- When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`.
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
 - Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop.
 	```cpp
@@ -130,7 +131,7 @@ int main()
 
 
 ***Pointer***
-- Memory Layout
+- *Memory Layout*
 	- | HEAP  |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
 	- | CODE  | <- is the read-only section of the memory where the code is loaded after launching the program. No external programs can modify this section.
@@ -165,9 +166,9 @@ int main()
 			    return 0;
 			}
 			```
-- Pointer Arithmetic
+- *Pointer Arithmetic*
 	- dereferencing is not needed.
-	- subtracting 2 pointers pointing to different indices of an integer Array can be divided by 4 to get how many indices far are the 2 pointers.
+	- subtracting 2 pointers pointing to different indices of an integer Array gives how many indices far are the 2 pointers without dividing by 4.
 	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array.
 	- this is
 		```cpp
@@ -184,7 +185,7 @@ int main()
 		    return 0;
 		}
 		```
-	- same as
+	- same as this
 		```cpp
 		#include <iostream>
 		using namespace std;
@@ -198,3 +199,5 @@ int main()
 		    return 0;
 		}
 		```
+
+- 
