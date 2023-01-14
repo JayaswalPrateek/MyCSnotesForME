@@ -199,7 +199,6 @@ int main()
 		    return 0;
 		}
 		```
-
 - Runtime gotchas w/ pointers
 	- Memory Leak if HEAP allocations are not freed
 	- uninitialized pointer
@@ -207,3 +206,9 @@ int main()
 			- you can use `int *p = &n` or `int *p = new int`
 	- dangling pointer
 		- when a pointer is passed to another function and freed at the end of that function and if the pointer is accessed again after the control is returned to the calling function then we have a runtime error but not a memory leak.
+- References:
+	- `int x = 10` allocates a box in the memory named x which stores 10.
+	- `int &y = x` creates an alias of x which is y.
+		- So x and y will always have the same value and changes to one can be reflected from the other variable as well. 
+
+
