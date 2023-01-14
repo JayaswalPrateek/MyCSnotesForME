@@ -19,7 +19,7 @@
 				`const int fri = 4;`
 				`const int sat = 5;`
 				`const int sun = 6;`
-- day is a user defined data type which can only have names mon,tue,wed,thr,fri,sat,sun automatically it gets a value
+- day is a user defined data type which can only have names mon,tue,wed,thr,fri,sat,sun automatically it gets a value.
 		`day d;
 		*`d = jan; // error`*
 		`d = tue;
@@ -33,7 +33,7 @@
 
 ***Type Definition***
 - Used to make variables more readable.
-- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
+- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N.
 - To make it more readable we use typedef to alias the data type of mX from int to marks and rN from int to roll.
 	`typedef int marks;`
 	`typedef int roll;`
@@ -44,8 +44,8 @@
 - let `int A[] = {1, 2, 3, 4, 5};` then 
 - `for (int x : A)`
 	`cout << x;`
-- `for (auto x : A)` where the compiler takes care of the data type of x
-- changing the value of x doesn't change the array element because x is a copy
+- `for (auto x : A)` where the compiler takes care of the data type of x.
+- changing the value of x doesn't change the array element because x is a copy.
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
 
