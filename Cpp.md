@@ -218,4 +218,10 @@ int main()
 	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.
 
 ***Strings***
-	
+- 2 ways to create a string
+	- using class string
+	- using array of char
+		- without pointer: `char str[] = "Hello"`
+			- `char str[10]` can store 9 
+		- with pointer: `char *s = "H"` 
+			- stored in HEAP

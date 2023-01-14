@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "859f2844c351bc99",
+        "id": "bef6f63a8dee3e4c",
         "type": "tabs",
         "children": [
           {
-            "id": "9d47bc1c6d836488",
+            "id": "97ba27c2b04ef7f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -151,7 +151,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "9d47bc1c6d836488",
+  "active": "97ba27c2b04ef7f9",
   "lastOpenFiles": [
     "Cpp.md",
     "cpp/Basics.md",
