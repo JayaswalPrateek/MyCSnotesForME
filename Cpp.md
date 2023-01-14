@@ -216,3 +216,6 @@ int main()
 	- &x is always same as &y
 	- declaration without initialization is an error.
 	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.
+
+***Strings***
+	
