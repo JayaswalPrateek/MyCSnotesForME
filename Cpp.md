@@ -231,7 +231,13 @@ int main()
 - `strcat(destination, source)`
 	- needs `cstring`
 	- removes `\0` from source and merges them.
-	- `strcat(destination, source, length)`
+	- `strncat(destination, source, length)`
 		- the length of the source to be concatenated.
-- `strcpy(destination, source)` or `strcpy(destination, source, length)`
-	- As string is a pointer, doing `newStr = oldStr` makes newStr a refernce
+- `strcpy(destination, source)` or `strncpy(destination, source, length)`
+- `strstr(str,subStr)`
+	- used to check for sub string `subStr` in string `str`
+		- if found returns sub string from the first occurrence to the end of the string including the sub string.
+		- else it returns `NULL`
+			- `NULL` cannot be printed by `cout` so be careful.
+- `strchr(str, ch)`
+	- used to check occurrence of char ch in s 
