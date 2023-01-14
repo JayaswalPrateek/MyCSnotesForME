@@ -210,5 +210,9 @@ int main()
 	- `int x = 10` allocates a box in the memory named x which stores 10.
 	- `int &y = x` creates an alias of x which is y.
 		- So x and y will always have the same value and changes to one can be reflected from the other variable as well. 
+	- doesn't consume memory
+	- &x is always same as &y
+	- declaration without initialization is an error.
+	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.  
 
 
