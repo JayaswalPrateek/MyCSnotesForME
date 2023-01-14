@@ -140,8 +140,8 @@ Pointer
 		- Accessing HEAP using `new` 
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
-				- if you do `p = nullptr` first then you won't be able to free HEAP.
-			- once an array is declared in STACK you cannot change its size but it is possible if it is in the HEAP.
+				- if you do `p = nullptr` first then you won't be able to free HEAP later.
+			- once an array is declared in the STACK you cannot change its size but it is possible if it is in the HEAP.
 			```cpp
 			#include <iostream>
 			using namespace std;
@@ -155,8 +155,8 @@ Pointer
 			        cout << p[i] << " ";
 			    }
 		
-				delete[] p; // to avoid leaking of {1,2,3,4,5}
-				p = new int[10]; // new memory gets allocated pointing to {0,0,0,0,0,0,0,0,0,0}
+				delete[] p; // to avoid leaking of {1, 2, 3, 4, 5}
+				p = new int[10]; // new memory gets allocated pointing to {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 		
 			    delete[] p;
 			    p = nullptr;
@@ -165,33 +165,35 @@ Pointer
 			}
 			```
 - Pointer Arithmetic
-			```cpp
-			#include <iostream>
-			using namespace std;
-			int main()
-			{
-			    int A[] = {1, 2, 3, 4, 5};
-			    int *p = A; // Same as int *p = &A[0]
-			
-			    for (int i = 0; i < sizeof(A) / 4; i++, p++)
-			        cout << *p;
-			
-			    return 0;
-			}
-			```
-			- is same as:
-			```cpp
-			#include <iostream>
-			using namespace std;
-			int main()
-			{
-			    int A[] = {1, 2, 3, 4, 5};
-			
-			    for (int i = 0; i < sizeof(A) / 4; i++)
-			        cout << *(A + i);
-			
-			    return 0;
-			}
-			```
-			- subtracting 2 pointers pointing to different indices of an Array can be divided by 4 to get how many indices far are the 2 pointers. 
-			- don't need to dereference
+	- dereferencing is not needed.
+	- subtracting 2 pointers pointing to different indices of an integer Array can be divided by 4 to get how many indices far are the 2 pointers.
+	- this is
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int main()
+		{
+		    int A[] = {1, 2, 3, 4, 5};
+		    int *p = A; // Same as int *p = &A[0]
+		
+		    for (int i = 0; i < sizeof(A) / 4; i++, p++)
+		        cout << *p;
+		
+		    return 0;
+		}
+		```
+	- same as
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int main()
+		{
+		    int A[] = {1, 2, 3, 4, 5};
+		
+		    for (int i = 0; i < sizeof(A) / 4; i++)
+		        cout << *(A + i);
+		
+		    return 0;
+		}
+		```
+   
