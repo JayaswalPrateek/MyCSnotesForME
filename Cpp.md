@@ -196,4 +196,3 @@ Pointer
 		    return 0;
 		}
 		```
-   
