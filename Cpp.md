@@ -1,5 +1,5 @@
 ***Input Buffer***
-- When the user input is `cin>>anInteger;` and the next input on the next line is `cin>>str;` then the enter key pressed after typing the number is saved as input buffer and later take in by the `cin>>str;` to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
+- For the user input `cin>>anInteger;` followed by `cin>>str;` on the next line, then the enter key pressed after typing the number is saved as input buffer and later accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
 ***Enum***
 - User defined data types such that we can link a commonly used term with a constant integer:
