@@ -107,23 +107,23 @@ int main()
 ***Note on Arrays***
 - When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
-- Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop. 
+- Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop.
 	```cpp
-		#include <iostream>
-		using namespace std;
-		int main()
-		{
-		    const int A[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    const int A[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
 	
-		    for (auto &i : A)
-		    {
-		        for (auto j : i)
-		            cout << j << " ";
-		        cout << endl;
-		    }
+	    for (auto &i : A)
+	    {
+	        for (auto j : i)
+	            cout << j << " ";
+	        cout << endl;
+	    }
 	
-		    return 0;
-		}
+	    return 0;
+	}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
 
