@@ -234,10 +234,14 @@ int main()
 	- `strncat(destination, source, length)`
 		- the length of the source to be concatenated.
 - `strcpy(destination, source)` or `strncpy(destination, source, length)`
+	- needs `cstring`
 - `strstr(str,subStr)`
+	- needs `cstring`
 	- used to check for sub string `subStr` in string `str`
 		- if found returns sub string from the first occurrence to the end of the string including the sub string.
 		- else it returns `NULL`
 			- `NULL` cannot be printed by `cout` so be careful.
 - `strchr(str, ch)`
-	- used to check occurrence of char ch in s 
+	- needs `cstring`
+	- used to check occurrence of `char ch` in `string str` and return the string ahead of it including the ch itself.
+- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
