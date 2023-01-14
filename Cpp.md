@@ -222,6 +222,6 @@ int main()
 	- using class string
 	- using array of char
 		- without pointer: `char str[] = "Hello"`
-			- `char str[10]` can store 9 
+			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string.
 		- with pointer: `char *s = "H"` 
 			- stored in HEAP
