@@ -228,20 +228,24 @@ int main()
 - 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
-- `strcat(destination, source)`
-	- needs `cstring`
-	- removes `\0` from source and merges them.
-	- `strncat(destination, source, length)`
-		- the length of the source to be concatenated.
-- `strcpy(destination, source)` or `strncpy(destination, source, length)`
-	- needs `cstring`
-- `strstr(str,subStr)`
-	- needs `cstring`
-	- used to check for sub string `subStr` in string `str`
-		- if found returns sub string from the first occurrence to the end of the string including the sub string.
-		- else it returns `NULL`
-			- `NULL` cannot be printed by `cout` so be careful.
-- `strchr(str, ch)`
-	- needs `cstring`
-	- used to check occurrence of `char ch` in `string str` and return the string ahead of it including the ch itself.
-- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
+- cstring functions: 
+	- `strcat(destination, source)`
+		- needs `cstring`
+		- removes `\0` from source and merges them.
+		- `strncat(destination, source, length)`
+			- the length of the source to be concatenated.
+	- `strcpy(destination, source)` or `strncpy(destination, source, length)`
+		- needs `cstring`
+	- `strstr(str,subStr)`
+		- needs `cstring`
+		- used to check for sub string `subStr` in string `str`
+			- if found returns sub string from the first occurrence to the end of the string including the sub string.
+			- else it returns `NULL`
+				- `NULL` cannot be printed by `cout` so be careful.
+	- `strchr(str, ch)`
+		- needs `cstring`
+		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including the ch itself.
+	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
+	- `strcmp(s1,s2)` gives -ve, 0, +ve value; also needs `cstring`
+	- strtol converts string to long
+	- strtof convers string to float
