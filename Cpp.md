@@ -311,4 +311,12 @@ int main()
 - string class
 	- creates an array bigger than the number of characters to maintain buffer capacity.
 	- if a modification adds characters more than the available buffer capacity then it internally creates another copy of the array, makes the modification and still leaves some buffer capacity to the newly copied array.
-	- `str.length()` give length of string excluding  
+	- `str.length()` gives length of string excluding `\0`
+	- `str.size()` same as `str.length()`
+	- `str.capcity()` gives the actual capacity of the string including `str.length()`+ 1 due to `\0` + buffer capacity
+	- `str.resize(newCapacity)` changes the capacity of str from `str.Capacity()` to `newCapacity`
+	- `str.max_size()` gives the max size of a string the compiler supports
+		- depends on the CPU architecture and OS
+	- `str.clear()` to empty a string
+		- contains only `\0`
+	- `str.empty()` checks if the string is empty or not
