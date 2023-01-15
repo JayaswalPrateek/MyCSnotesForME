@@ -369,4 +369,5 @@ int main()
 	- = operator copies the content of r value to l value
 		- = is also overloaded
 	- String iterations
-		- 
+		- 2 ways: `iterator` and `reverse_iterator`
+			- to create an iterator: `string::iterator it` 
