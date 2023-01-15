@@ -70,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -153,6 +152,7 @@
   },
   "active": "97ba27c2b04ef7f9",
   "lastOpenFiles": [
+    "Cpp.pdf",
     "Cpp.md",
     "cpp/Basics.md",
     "Untitled 2.canvas",
@@ -161,7 +161,6 @@
     "Untitled 3.canvas",
     "Untitled 4.canvas",
     "2023-01-12.md",
-    "Recording 20230112232705.webm",
-    "Recording 20230112232644.webm"
+    "Recording 20230112232705.webm"
   ]
 }
