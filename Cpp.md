@@ -377,11 +377,14 @@ int main()
 			int main()
 			{
 			    string str = "Hello World";
-			    
+			
 			    for (string::iterator it = str.begin(); it != str.end(); it++)
 			        cout << *it;
-				
-				return 0;
+			    cout << endl;
+			    for (string::reverse_iterator it = str.rbegin(); it != str.rend(); it++)
+			        cout << *it;
+			
+			    return 0;
 			}
 			```
-			- `rbegin` and `rend` are same as `end` and `begin` respectively
+			- `rbegin` and `rend` are same as `begin` and `end` respectively but are used with `reverse_iterator` instead.
