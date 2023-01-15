@@ -391,4 +391,4 @@ int main()
 			- similar to `for(int i = 0; str[i] != '\0'; i++`
 
 ***Functions***
-- 
+- avoid user input in functions, that should happen in the main function
