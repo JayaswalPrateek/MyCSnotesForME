@@ -247,5 +247,8 @@ int main()
 		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including the ch itself.
 	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
 	- `strcmp(s1,s2)` gives -ve, 0, +ve value; also needs `cstring`
-	- strtol converts string to long
-	- strtof convers string to float
+	- `strtol(str,NULL,10)` converts string to long
+		- 10 means decimal system, 2 means binary system
+	- `strtof(str,NULL)` converts string to float
+	- `strtok(str,"=;")`
+		- where str="x=10;y=20;z=35"
