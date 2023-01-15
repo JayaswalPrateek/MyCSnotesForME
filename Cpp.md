@@ -322,3 +322,8 @@ int main()
 			- so `str.length()` is 0 
 	- `str.empty()` checks if the string is empty or not
 	- `str.append(anotherStr)` appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
+	- `str.insert(strIndex, snippetStr)`
+		- inserts `snippetStr` in `str` at `strIndex`
+		- 0th index of `snippetStr` becomes `strIndex`th index of `str`
+		- `str.insert(strIndex, snippetStr, n)`
+			- inserted till (n-1)th index of `snippetStr`
