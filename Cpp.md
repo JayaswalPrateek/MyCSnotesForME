@@ -362,4 +362,11 @@ int main()
 	- `str.at(ind)` returns char at index `ind` of string `str`
 		- same as writing `str[ind]`
 			- string is a class so `[]` operator is overloaded
-	- str.front() 
+	- `str.front()` gives first char of string `str`
+	- `str.back()` gives last char of string `str`
+	- + operator can be used to concatenate strings
+		- + is also overloaded
+	- = operator copies the content of r value to l value
+		- = is also overloaded
+	- String iterations
+		- 
