@@ -389,4 +389,6 @@ int main()
 			```
 			- `rbegin` and `rend` are same as `begin` and `end` respectively but are used with `reverse_iterator` instead.
 			- similar to `for(int i = 0; str[i] != '\0'; i++`
-			- 
+
+***Functions***
+- 
