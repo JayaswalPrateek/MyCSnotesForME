@@ -370,4 +370,17 @@ int main()
 		- = is also overloaded
 	- String iterations
 		- 2 ways: `iterator` and `reverse_iterator`
-			- to create an iterator: `string::iterator it` 
+			- the iterator is pointer for the array of chars in the string class and we use pointer arithmetic to iterate using the string class
+			```cpp
+			#include <iostream>
+			using namespace std;
+			int main()
+			{
+			    string str = "Hello World";
+			    
+			    for (string::iterator it = str.begin(); it != str.end(); it++)
+			        cout << *it;
+				
+				return 0;
+			}
+			```
