@@ -353,4 +353,13 @@ int main()
 		- gives the first occurrence of char `ch` in string `str`
 		-  `str.find_last_of(ch)` or `str.find_last_of(ch, startingIndex)`
 		- if a string is given its not a syntax error
-			- it traverses `str` char by char and as soon as a char at str also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence. 
+			- it traverses `str` char by char and as soon as a char at `str` also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence. 
+	- `str.substr(lowerLim, upperLim)`
+		- returns sub string of `str` from index `lowerLim` till index `upperLim`
+			- `upperLim` is not mandatory, when not provided, it is equal to `str.length()`
+		- returned string includes the char at index `lowerLim` of `str`
+	- `str.compare` same as `strcmp(s1,s2)` of `cstring`
+	- `str.at(ind)` returns char at index `ind` of string `str`
+		- same as writing `str[ind]`
+			- string is a class so `[]` operator is overloaded
+	- str.front() 
