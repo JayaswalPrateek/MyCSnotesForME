@@ -314,14 +314,14 @@ int main()
 	- `str.length()` gives length of string excluding `\0`
 		- `str.size()` is same as `str.length()`
 	- `str.capcity()` gives the actual capacity of the string including `str.length()`+ 1 due to `\0` + buffer capacity
-	- `str.resize(newCapacity)` changes the capacity of str from `str.Capacity()` to `newCapacity` + buffer capacity
+	- `str.resize(newCapacity)` changes the capacity of `str` from `str.Capacity()` to `newCapacity` + buffer capacity
 	- `str.max_size()` gives the max size of a string the compiler supports
 		- depends on the CPU architecture and OS
 	- `str.clear()` to empty a string
 		- contains only `\0`
 			- so `str.length()` is 0 
 	- `str.empty()` checks if the string is empty or not
-		- s
+		- `str.erase()` is same as `str.empty()`
 	- `str.append(anotherStr)` appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
 	- `str.insert(strIndex, snippetStr)`
 		- inserts `snippetStr` in `str` at `strIndex`
@@ -329,5 +329,10 @@ int main()
 		- `str.insert(strIndex, snippetStr, n)`
 			- inserted till (n-1)th index of `snippetStr`
 	- `str.replace(strIndex, howMany, snippetStr)`
-		- it replaces `howmany` letters from `strIndex`th index with `snippetStr`
-		- 
+		- it replaces `howMany` letters from `strIndex`th index with `snippetStr`
+	- `str1.swap(str2)` 
+	- Stack operations
+		- `str.push_back(ch)`
+			- adds char ch at the end of `str`
+		- `str.pop_back()`
+			- removes last char of `str` 
