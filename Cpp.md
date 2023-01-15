@@ -336,3 +336,4 @@ int main()
 			- adds char ch at the end of `str`
 		- `str.pop_back()`
 			- removes last char of `str` 
+	- `str.copy(chArray,str.length())` copies string `str` into char array `chArray`. 2nd arg is th 
