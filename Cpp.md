@@ -336,4 +336,13 @@ int main()
 			- adds char ch at the end of `str`
 		- `str.pop_back()`
 			- removes last char of `str` 
-	- `str.copy(chArray,str.length())` copies string `str` into char array `chArray`. 2nd arg is th 
+	- `str.copy(chArray,str.length())` 
+		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied.
+		- doesn't add `\0` so need to do it manually
+			- `string str = "Welcome"`
+			- `char chArray[10]`
+			- `str.copy(chArray, 3)` <- `Wel` is stored in `chArray`
+			- `chArray[3] = '\0'` <- now `chArray` can be printed by `cout` as it identifies as a string
+	- `str.find(subStr)` or `str.find(ch)`
+		- returns the index of first occurrence of `ch` in `str` if char is used as arg
+		- if string is used then if the string `subStr` exists in `str` then the 
