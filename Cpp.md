@@ -252,3 +252,55 @@ int main()
 	- `strtof(str,NULL)` converts string to float
 	- `strtok(str,"=;")`
 		- where str="x=10;y=20;z=35"
+		```cpp
+		#include <iostream>
+		#include <cstring>
+		using namespace std;
+		int main()
+		{
+		    char str[20] = "x=10;y=20;z=35";
+		    char *token = strtok(str, "=;");
+		
+		    while (token != NULL)
+		    {
+		        cout << token << endl;
+		        token = strtok(NULL, "=;");
+		    }
+		
+		    return 0;
+		}
+		/**
+		x
+		10
+		y
+		20
+		z
+		35
+		
+		*/
+		```
+		- `strtok(str,";")`
+```cpp
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char str[20] = "x=10;y=20;z=35";
+    char *token = strtok(str, ";");
+
+    while (token != NULL)
+    {
+        cout << token << endl;
+        token = strtok(NULL, ";");
+    }
+
+    return 0;
+}
+/**
+x=10
+y=20
+z=35
+
+*/
+```
