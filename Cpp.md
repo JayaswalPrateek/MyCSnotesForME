@@ -345,4 +345,12 @@ int main()
 			- `chArray[3] = '\0'` <- now `chArray` can be printed by `cout` as it identifies as a string
 	- `str.find(subStr)` or `str.find(ch)`
 		- returns the index of first occurrence of `ch` in `str` if char is used as arg
-		- if string is used then if the string `subStr` exists in `str` then the 
+		- if string is used then if the string `subStr` exists in `str` then the index of first occurrence of first letter of `subStr` in `str` is returned
+		- `str.rfind(subStr)` or `str.rfind(ch)` does the same thing but from Right to Left
+			- if not found then it returns an invalid index that doesn't lie between 0 and `str.length()`
+	- `str.find_first_of(ch)` or `str.find_first_of(ch, startingIndex)`
+		- `startingIndex` is the index from where searching starts
+		- gives the first occurrence of char `ch` in string `str`
+		-  `str.find_last_of(ch)` or `str.find_last_of(ch, startingIndex)`
+		- if a string is given its not a syntax error
+			- it traverses str char by char and as soon as a char at str also exists in the string arg then it returns the index for that char in str which will always be the first occurence. 
