@@ -353,4 +353,4 @@ int main()
 		- gives the first occurrence of char `ch` in string `str`
 		-  `str.find_last_of(ch)` or `str.find_last_of(ch, startingIndex)`
 		- if a string is given its not a syntax error
-			- it traverses str char by char and as soon as a char at str also exists in the string arg then it returns the index for that char in str which will always be the first occurence. 
+			- it traverses `str` char by char and as soon as a char at str also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence. 
