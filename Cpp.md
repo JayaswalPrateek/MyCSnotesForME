@@ -228,30 +228,26 @@ int main()
 - 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
-- cstring functions: 
+- `cstring` functions: 
 	- `strcat(destination, source)`
-		- needs `cstring`
 		- removes `\0` from source and merges them.
 		- `strncat(destination, source, length)`
 			- the length of the source to be concatenated.
 	- `strcpy(destination, source)` or `strncpy(destination, source, length)`
-		- needs `cstring`
 	- `strstr(str,subStr)`
-		- needs `cstring`
 		- used to check for sub string `subStr` in string `str`
 			- if found returns sub string from the first occurrence to the end of the string including the sub string.
 			- else it returns `NULL`
-				- `NULL` cannot be printed by `cout` so be careful.
+				- `NULL` cannot be printed by `cout` so write `cout` in if block that checks if `strstr(str,subStr)` doesn't return `NULL`.
 	- `strchr(str, ch)`
-		- needs `cstring`
-		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including the ch itself.
+		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including ch itself.
 	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
-	- `strcmp(s1,s2)` gives -ve, 0, +ve value; also needs `cstring`
+	- `strcmp(s1,s2)` gives -ve, 0, +ve value
 	- `strtol(str,NULL,10)` converts string to long
 		- 10 means decimal system, 2 means binary system
 	- `strtof(str,NULL)` converts string to float
 	- `strtok(str,"=;")`
-		- where str="x=10;y=20;z=35"
+		- Tokeniser function
 		```cpp
 		#include <iostream>
 		#include <cstring>
@@ -280,27 +276,29 @@ int main()
 		*/
 		```
 		- `strtok(str,";")`
-```cpp
-#include <iostream>
-#include <cstring>
-using namespace std;
-int main()
-{
-    char str[20] = "x=10;y=20;z=35";
-    char *token = strtok(str, ";");
-
-    while (token != NULL)
-    {
-        cout << token << endl;
-        token = strtok(NULL, ";");
-    }
-
-    return 0;
-}
-/**
-x=10
-y=20
-z=35
-
-*/
-```
+			```cpp
+			#include <iostream>
+			#include <cstring>
+			using namespace std;
+			int main()
+			{
+			    char str[20] = "x=10;y=20;z=35";
+			    char *token = strtok(str, ";");
+			
+			    while (token != NULL)
+			    {
+			        cout << token << endl;
+			        token = strtok(NULL, ";");
+			    }
+			
+			    return 0;
+			}
+			/**
+			x=10
+			y=20
+			z=35
+			
+			*/
+			```
+- string class
+	- sometimes needs 
