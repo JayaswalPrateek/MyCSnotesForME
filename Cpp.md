@@ -384,3 +384,4 @@ int main()
 				return 0;
 			}
 			```
+			- `rbegin` and `rend` are same as `end` and `begin` respectively
