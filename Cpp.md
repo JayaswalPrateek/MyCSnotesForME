@@ -469,4 +469,31 @@ int main()
 		- its machine code gets inserted in the machine code of the function calling another function by reference and pointers are not involved
 			- the function called by reference acts as if its content was in the calling function at the line where the function call happens
 			- all functions that are called by reference become inline functions because their machine code get copied to the function calling them 
-	- 
+			- avoid loops in functions that are called by reference as the loop or any other complex code can change the nature of the call and it may not be by reference 
+	- return by address
+		- functions perform operation on heap and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
+			```cpp
+			#include <iostream>
+			using namespace std;
+			
+			int *retByAdd(int size)
+			{
+			    int *p = new int[size];
+			    for (int i = 0; i < size; i++)
+			        p[i] = i + 1;
+			
+			    return p;
+			}
+			
+			int main()
+			{
+			    int *ptr = retByAdd(5);
+			    for (int i = 0; i < 5; i++)
+			        cout << ptr[i] << " ";
+			
+			    delete[] ptr;
+			    ptr = nullptr;
+			
+			    return 0;
+			}
+			```
