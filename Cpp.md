@@ -689,4 +689,9 @@ int main()
 	}
 	```
 - getters and setters / accessor and mutator
-	- getter functions of the class a public functions tha get the value in a function
+	- setter functions of the class a public functions that get the value in a function call and assign it to initialize private variables
+	- getters are functions that just return the value of the private variable.
+	- if a variable has getter and no setter it becomes read only
+	- if a variable has a setter and no getter then it becomes write only (example passwords)
+- we should use constructor to assign default value instead of expecting that setters will always be used before getters. 
+	- if getters are used before setters we might see garbage value and we thus assign default values
