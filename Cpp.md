@@ -392,7 +392,8 @@ int main()
 
 ***Functions***
 - avoid user input in functions, that should happen in the main function
-- When a function has a local variable and a global variable of the same name then local variable is preferred
+	- When a function has a local variable and a global variable of the same name then local variable is preferred
+		- use `::<nameOfVariable>` to access the global variable in a fuincti
 - return types are not a deciding factor in function overloading
 - Function Templates (Generics)
 	- overloaded functions may have entirely same logic but deal with different data type so we need to overload function for every data type
