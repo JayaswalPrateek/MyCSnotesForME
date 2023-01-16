@@ -471,43 +471,43 @@ int main()
 		- `int add(int x = 0, int y, int z = 0)` is an error
 		- `int add(int y, int x=0, int z = 0)` is correct.
 	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location. This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes.
-	- call by reference functions are handled differently by the compiler.
-		- its machine code gets inserted in the machine code of the function calling another function by reference and pointers are not involved
-			- the function called by reference acts as if its content was in the calling function at the line where the function call happens
-			- all functions that are called by reference become inline functions because their machine code get copied to the function calling them 
-			- avoid loops in functions that are called by reference as the loop or any other complex code can change the nature of the call and it may not be by reference 
-	- return by address
-		- functions perform operation on heap and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
-			```cpp
-			#include <iostream>
-			using namespace std;
+- call by reference functions are handled differently by the compiler.
+	- its machine code gets inserted in the machine code of the function calling another function by reference and pointers are not involved
+		- the function called by reference acts as if its content was in the calling function at the line where the function call happens
+		- all functions that are called by reference become inline functions because their machine code get copied to the function calling them 
+		- avoid loops in functions that are called by reference as the loop or any other complex code can change the nature of the call and it may not be by reference 
+- return by address
+	- functions perform operation on heap and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
+		```cpp
+		#include <iostream>
+		using namespace std;
+		
+		int *retByAdd(int size)
+		{
+			int *p = new int[size];
+			for (int i = 0; i < size; i++)
+			    p[i] = i + 1;
 			
-			int *retByAdd(int size)
-			{
-			    int *p = new int[size];
-			    for (int i = 0; i < size; i++)
-			        p[i] = i + 1;
+			return p;
+		}
 			
-			    return p;
-			}
+		int main()
+		{
+			int *ptr = retByAdd(5);
+			for (int i = 0; i < 5; i++)
+			    cout << ptr[i] << " ";
 			
-			int main()
-			{
-			    int *ptr = retByAdd(5);
-			    for (int i = 0; i < 5; i++)
-			        cout << ptr[i] << " ";
+			delete[] ptr;
+			ptr = nullptr;
 			
-			    delete[] ptr;
-			    ptr = nullptr;
-			
-			    return 0;
-			}
-			```
+			return 0;
+		}
+		```
 		- you cannot return the address of a local variable as it will be destroyed after the function ends. 
 			- only HEAP memory address can be returned. 
 		- can be used to return arrays
-	- return by reference 
-		- you cannot return the address of a local variable as it will be destroyed after the function ends. 
+- return by reference 
+	- you cannot return the address of a local variable as it will be destroyed after the function ends. 
 			- only HEAP memory address can be returned. 
 		```cpp
 		#include <iostream>
