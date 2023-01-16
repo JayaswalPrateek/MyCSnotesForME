@@ -135,7 +135,7 @@ int main()
 - *Memory Layout*
 	- | HEAP  |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
-	- | CODE  | <- is the read-only section of the memory where the code is loaded after launching the program. No external programs can modify this section.
+	- | CODE  | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here.
 		- The CODE section can access STACK and itself. Not the HEAP.
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
 			- Thus HEAP can only be accessed using pointers.
@@ -392,6 +392,7 @@ int main()
 
 ***Functions***
 - avoid user input in functions, that should happen in the main function
+- When a function has a local variable and a global variable of the same name then local variable is preferred
 - return types are not a deciding factor in function overloading
 - Function Templates (Generics)
 	- overloaded functions may have entirely same logic but deal with different data type so we need to overload function for every data type
