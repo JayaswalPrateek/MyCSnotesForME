@@ -528,3 +528,5 @@ int main()
 		return 0;
 	}
 	```
+- pointer to a function
+	- rule: the name of the pointer variable whenever used with asterisk sign should be enclos
