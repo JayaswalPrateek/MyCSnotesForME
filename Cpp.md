@@ -617,4 +617,6 @@ int main()
 	```
 
 ***OOPS***
+- size of a object = size of data types only as functions don't occupy memory
+- class doesn't occupy space, object does. Class is a blueprint
 - 
