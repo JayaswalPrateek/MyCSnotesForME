@@ -399,19 +399,19 @@ int main()
 		#include <iostream>
 		using namespace std;
 		
-		int max(int a, int b)
+		int getmax(int a, int b)
 		{
 		    return a > b ? a : b;
 		}
-		float max(float a, float b)
+		float getmax(float a, float b)
 		{
 		    return a > b ? a : b;
 		}
 		
 		int main()
 		{
-		    cout << max(4, 8) << endl;
-		    cout << max(4.8f, 8.4f);
+		    cout << getmax(4, 8) << endl;
+		    cout << getmax(4.8f, 8.4f); // without specifying f they are doubles by default
 		
 		    return 0;
 		}
@@ -422,18 +422,42 @@ int main()
 		using namespace std;
 		
 		template <class T>
-		T Max(T a, T b)
+		T getmax(T a, T b)
 		{
 		    return a > b ? a : b;
 		}
 		
 		int main()
 		{
-		    cout << Max(4, 8) << endl;
-		    cout << Max(4.8f, 8.4f);
+		    cout << getmax(4, 8) << endl;
+		    cout << getmax(4.8f, 8.4f);
 		
 		    return 0;
 		}
 		```
 		- Here the data type of T is decided dynamically.
 		- T can also be an object.
+		- data types of both a and b should be same.
+			- if we pass an int and double then we get an error
+- Default arguments of a function
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	int add(int x, int y, int z = 0)
+	{
+	    return x + y + z;
+	}
+	
+	int main()
+	{
+	    cout << add(1, 2) << endl;
+	    cout << add(1, 2, 3);
+	
+		return 0;
+	}
+	```
+	- here the default arguments of variable z is 0 so if the value of z is not provided in the function call then it fall backs to the default value
+	- this way using one function we can add 2 or 3 numbers.
+	- allows to combine otherwise overloaded functions.
+	- 
