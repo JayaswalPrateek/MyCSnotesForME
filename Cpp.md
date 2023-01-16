@@ -703,3 +703,5 @@ int main()
 		- inline function cannot have complex logic. so if you have complex logic use scope resolution operator for those functions.
 - so all functions defined in a class are inline and all functions outside it defined with scope resolution operator are not inline
 - to make a function inline explicitly write `inline` before the return type of the function
+- struct and class are same in c++ as both of them can store variables and functions unlike c where structs can only store variables.
+	- the difference is that in a struct everything is public
