@@ -446,6 +446,7 @@ int main()
 		- data types of both a and b should be same.
 			- if we pass an int and double then we get an error
 - Default arguments of a function
+	- a template func
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -579,3 +580,38 @@ int main()
 		    return 0;
 		}
 		```
+- passing array to function
+	- when an array is passed as a parameter to a function, it decays into a pointer to the first element of the array
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	int search(const int A[], int len, int key)
+	{
+	    for (int i = 0; i < len; i++)
+	        if (key == A[i])
+	            return i;
+	    return -1;
+	}
+	
+	int main()
+	{
+	    const int A[] = {2, 4, 5, 7, 10, 9, 13};
+	
+	    int k;
+	    cout << "Enter an Element to be Searched:";
+	    cin >> k;
+	
+	    int index = search(A, 7, k);
+	
+	    if (index == -1)
+	    {
+	        cout << k << "not found";
+	        return -1;
+	    }
+	
+	    cout << "Element found at index :" << index << endl;
+	
+	    return 0;
+	}
+	```
