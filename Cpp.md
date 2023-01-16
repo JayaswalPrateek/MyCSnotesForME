@@ -497,3 +497,4 @@ int main()
 			    return 0;
 			}
 			```
+		- you cannot return the address of a local variable as it will be destroyed after the function ends. 
