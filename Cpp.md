@@ -398,18 +398,16 @@ int main()
 		```cpp
 		#include <iostream>
 		using namespace std;
+		
 		int max(int a, int b)
 		{
-		    if (a > b)
-		        return a;
-		    return b;
+		    return a > b ? a : b;
 		}
 		float max(float a, float b)
 		{
-		    if (a > b)
-		        return a;
-		    return b;
+		    return a > b ? a : b;
 		}
+		
 		int main()
 		{
 		    cout << max(4, 8) << endl;
@@ -418,3 +416,24 @@ int main()
 		    return 0;
 		}
 		```
+	- to avoid this we can create a generic data type using function templates.
+		```cpp
+		#include <iostream>
+		using namespace std;
+		
+		template <class T>
+		T Max(T a, T b)
+		{
+		    return a > b ? a : b;
+		}
+		
+		int main()
+		{
+		    cout << Max(4, 8) << endl;
+		    cout << Max(4.8f, 8.4f);
+		
+		    return 0;
+		}
+		```
+		- Here the data type of T is decided dynamically.
+		- T can also be an object.
