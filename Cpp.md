@@ -688,3 +688,5 @@ int main()
 	    return 0;
 	}
 	```
+- getters and setters / accessor and mutator
+	- getter functions of the class a public functions tha get the value in a function
