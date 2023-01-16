@@ -529,4 +529,53 @@ int main()
 	}
 	```
 - pointer to a function
-	- rule: the name of the pointer variable whenever used with asterisk sign should be enclos
+	- rule: the name of the pointer variable whenever used with asterisk sign should be enclosed in round brackets.
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	void hello()
+	{
+	    cout << "hello world" << endl;
+	}
+	
+	int main()
+	{
+	    // 1st way
+	    void (*funptr)() = &hello;
+	    (*funptr)();
+
+		// 2nd way
+	    void (*anotherfunptr)();
+	    anotherfunptr = hello;
+	    (*anotherfunptr)();
+	
+	    return 0;
+	}
+	```
+	- using with arguments to a function
+		```cpp
+		#include <iostream>
+		using namespace std;
+		
+		int min(int x, int y)
+		{
+		    return x > y ? y : x;
+		}
+		
+		int max(int x, int y)
+		{
+		    return x < y ? y : x;
+		}
+		
+		int main()
+		{
+		    int (*funptr)(int, int) = &min;
+		    cout << (*funptr)(10, 20) << endl;
+		
+		    funptr = max;
+		    cout << (*funptr)(10, 20);
+		
+		    return 0;
+		}
+		```
