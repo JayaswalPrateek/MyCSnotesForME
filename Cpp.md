@@ -620,5 +620,71 @@ int main()
 - size of a object = size of data types only as functions don't occupy memory
 - class doesn't occupy space, object does. Class is a blueprint
 - multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section.
-- pointer to object
-	- 
+- pointer to object in STACK
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	class rect
+	{
+	public:
+	    float len, brd;
+	
+	    void area()
+	    {
+	        cout << "Area is " << len * brd << " sq. units" << endl;
+	    }
+	
+	    void peri()
+	    {
+	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;
+	    }
+	};
+	
+	int main()
+	{
+	    rect r1;
+	    rect *rectptr = &r1;
+	    rectptr->len = 123;
+	    rectptr->brd = 2;
+	    rectptr->area();
+	    rectptr->peri();
+	
+	    return 0;
+	}
+	```
+- pointer to object in HEAP
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	class rect
+	{
+	public:
+	    float len, brd;
+	
+	    void area()
+	    {
+	        cout << "Area is " << len * brd << " sq. units" << endl;
+	    }
+	
+	    void peri()
+	    {
+	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;
+	    }
+	};
+	
+	int main()
+	{
+	    rect *rectptr = new rect;
+	    rectptr->len = 123;
+	    rectptr->brd = 2;
+	    rectptr->area();
+	    rectptr->peri();
+	
+	    delete rectptr;
+	    rectptr = nullptr;
+	
+	    return 0;
+	}
+	```
