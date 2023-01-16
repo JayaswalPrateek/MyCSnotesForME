@@ -394,4 +394,27 @@ int main()
 - avoid user input in functions, that should happen in the main function
 - return types are not a deciding factor in function overloading
 - Function Templates (Generics)
-	- 
+	- overloaded functions may have entirely same logic but deal with different data type so we need to overload function for every data type
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int max(int a, int b)
+		{
+		    if (a > b)
+		        return a;
+		    return b;
+		}
+		float max(float a, float b)
+		{
+		    if (a > b)
+		        return a;
+		    return b;
+		}
+		int main()
+		{
+		    cout << max(4, 8) << endl;
+		    cout << max(4.8f, 8.4f);
+		
+		    return 0;
+		}
+		```
