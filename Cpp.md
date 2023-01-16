@@ -619,4 +619,6 @@ int main()
 ***OOPS***
 - size of a object = size of data types only as functions don't occupy memory
 - class doesn't occupy space, object does. Class is a blueprint
-- 
+- multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section.
+- pointer to object
+	- 
