@@ -392,3 +392,6 @@ int main()
 
 ***Functions***
 - avoid user input in functions, that should happen in the main function
+- return types are not a deciding factor in function overloading
+- Function Templates (Generics)
+	- 
