@@ -464,4 +464,4 @@ int main()
 	- all variables can have default arguments, but if one of them doesn't have one then it should be the leftmost variable and cannot lie between any 2 variables.
 		- `int add(int x = 0, int y, int z = 0)` is an error
 		- `int add(int y, int x=0, int z = 0)` is correct.
-	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location. This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes 
+	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location. This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes z
