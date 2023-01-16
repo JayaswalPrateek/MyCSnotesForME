@@ -490,7 +490,7 @@ int main()
 			
 			return p;
 		}
-			
+		
 		int main()
 		{
 			int *ptr = retByAdd(5);
@@ -508,23 +508,23 @@ int main()
 		- can be used to return arrays
 - return by reference 
 	- you cannot return the address of a local variable as it will be destroyed after the function ends. 
-			- only HEAP memory address can be returned. 
-		```cpp
-		#include <iostream>
-		using namespace std;
+		- only HEAP memory address can be returned. 
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	int &retByRef(int &x)
+	{
+		return x;
+	}
+	
+	int main()
+	{
+		int a = 10;
+		cout << a << endl;
+		retByRef(a) = 20;
+		cout << a; // 20
 		
-		int &retByRef(int &x)
-		{
-		    return x;
-		}
-		
-		int main()
-		{
-		    int a = 10;
-		    cout << a << endl;
-		    retByRef(a) = 20;
-		    cout << a; // 20
-		
-		    return 0;
-		}
-		```
+		return 0;
+	}
+	```
