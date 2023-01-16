@@ -695,3 +695,6 @@ int main()
 	- if a variable has a setter and no getter then it becomes write only (example passwords)
 - we should use constructor to assign default value instead of expecting that setters will always be used before getters. 
 	- if getters are used before setters we might see garbage value and we thus assign default values
+	- parameterized constructor can call setters as well
+- ideally a class should have a copy consttructor and a parameterized constructor with default values. 
+- prefer writing functions outside class
