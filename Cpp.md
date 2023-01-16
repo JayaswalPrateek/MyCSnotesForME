@@ -696,5 +696,10 @@ int main()
 - we should use constructor to assign default value instead of expecting that setters will always be used before getters. 
 	- if getters are used before setters we might see garbage value and we thus assign default values
 	- parameterized constructor can call setters as well
-- ideally a class should have a copy consttructor and a parameterized constructor with default values. 
+- ideally a class should have a copy constructor and a parameterized constructor with default values. 
 - prefer writing functions outside class
+	- functions declared outside the class have their machine code outside the main function's machine code.
+	- if they are declared in the class they become inline functions and their machine code is inside the machine code of main
+		- inline function cannot have complex logic. so if you have complex logic use scope resolution operator for those functions.
+- so all functions defined in a class are inline and all functions outside it defined with scope resolution operator are not inline
+- to make a function inline explicitly write `inline` before the return type of the function
