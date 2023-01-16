@@ -446,7 +446,7 @@ int main()
 		- data types of both a and b should be same.
 			- if we pass an int and double then we get an error
 - Default arguments of a function
-	- a template func
+	- a template function cannot have default arguments
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -615,3 +615,6 @@ int main()
 	    return 0;
 	}
 	```
+
+***OOPS***
+- 
