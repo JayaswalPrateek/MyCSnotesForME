@@ -942,4 +942,14 @@ int main()
 	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA).
 	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle.
 	- when a class table uses an object of rectangle then the table has a rectangle.
--  
+- virtual parent classes
+	- 2 parent classes inherit from a grandparent class and a child class inherits from both the parent classes
+		- then the functions of the grandparent class can be accessed by 2 paths. This is multi path inheritance.
+			- to remove this ambiguity we use virtual parent classes
+				- just add keyword `virtual` before inheritance mode for the 2 parents
+- inheritance mode:
+	- if a class is inherited in public mode
+		- access specifiers remain same
+	- protected mode:
+		- public and protected variables and functions of the parent class become protected in the child class
+	- 
