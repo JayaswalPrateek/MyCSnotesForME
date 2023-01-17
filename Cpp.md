@@ -814,7 +814,92 @@ int main()
 		- if we replace `ostream` return type with void then we cannot chain insertion operator.
 
 ***Inheritance***
+- well designed classes using inheritance
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	class rectangle
+	{
+	    int len, brd;
+	public:
+	    rectangle(int len = 0, int brd = 0);
+	    int getLen();
+	    int getBrd();
+	    int validator(int qty);
+	    void setLen(int len);
+	    void setBrd(int brd);
+	    int area();
+	    int peri();
+	};
+	rectangle::rectangle(int len, int brd) // default values are not repeated again
+	{
+	    this->len = len;
+	    this->brd = brd;
+	}
+	int rectangle::getLen()
+	{
+	    return len;
+	}
+	int rectangle::getBrd()
+	{
+	    return brd;
+	}
+	int rectangle::validator(int qty)
+	{
+	    if (qty < 0)
+	    {
+	        cout << qty << "is a non positive number, invalid input";
+	        exit(0);
+	    }
+	    return qty;
+	}
+	void rectangle::setLen(int len)
+	{
+	    this->len = validator(len);
+	}
+	void rectangle::setBrd(int brd)
+	{
+	    this->brd = validator(brd);
+	}
+	int rectangle::area()
+	{
+	    return len * brd;
+	}
+	int rectangle::peri()
+	{
+	    return 2 * (len + brd);
+	}
+	
+	class cuboid : public rectangle
+	{
+	    int hgt;
+	public:
+	    cuboid(int len = 0, int brd = 0, int hgt = 0);
+	    int getHgt();
+	    void setHgt(int brd);
+	    int volume();
+	};
+	cuboid::cuboid(int len, int brd, int hgt)
+	{
+	    this->hgt = hgt;
+	    setLen(validator(len));
+	    setBrd(validator(brd));
+	}
+	int cuboid::getHgt()
+	{
+	    return hgt;
+	}
+	void cuboid::setHgt(int hgt)
+	{
+	    this->hgt = validator(hgt);
+	}
+	int cuboid::volume()
+	{
+	    return getLen() * getBrd() * hgt;
+	}
+	```
 - if you are inheriting a class then you cannot rely on the constructor of that class
 	- so you need to make sure that the constructor of the child function can also initialize parent variables 
 - note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
-	- it is considered re declaration of the function
+	- it is considered re declaration of the function 
