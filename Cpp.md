@@ -951,8 +951,11 @@ int main()
 	- if a class is inherited in public mode
 		- private cannot be accessed but public remains public and protected remains protected.
 	- protected mode:
-		- public and protected variables and functions of the parent class become protected in the child class
-		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class. 
+		- public and protected variables and functions of the parent class become protected in the child class and private is not accessible.
+		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class. 0
 	- private mode:
 		- public and protected variables and functions of the parent class become private in the child class.
 		- further inheritance is not possible
+- 2 ways to use inheritance
+	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
+	- to specialize: you have parallelogram, you can create child classes square and rectangle 
