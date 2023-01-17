@@ -812,3 +812,9 @@ int main()
 	- we are returning `ostream` so that insertion operator can be chained
 		- `cout<<cnum<<endl;` is valid
 		- if we replace `ostream` return type with void then we cannot chain insertion operator.
+
+***Inheritance***
+- if you are inheriting a class then you cannot rely on the constructor of that class
+	- so you need to make sure that the constructor of the child function can also initialize parent variables 
+- note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
+	- it is considered re declaration of the function
