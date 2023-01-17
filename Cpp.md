@@ -906,4 +906,35 @@ int main()
 - constructors in inheritance
 	- if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the derived class is created then the default constructor of parent class is called first followed by a constructor of child class
 		- how to call the parameterized constructor of the parent class ?
-			- 
+			```cpp
+			#include <iostream>
+			using namespace std;
+			
+			class papa
+			{
+			public:
+			    papa(int x) { cout << "Papa has " << x << endl; }
+			};
+			
+			class son : public papa
+			{
+			public:
+			    son(int y, int z) : papa(z)
+			    {
+			        cout << "son has " << y << endl;
+			        cout << "papa has " << z;
+			    }
+			};
+			
+			int main()
+			{
+			    son betaji(10, 20);
+			
+			    return 0;
+			}
+			
+			// Papa has 20
+			// son has 10
+			// papa has 20
+			```
+			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parent 
