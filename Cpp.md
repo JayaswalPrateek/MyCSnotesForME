@@ -919,7 +919,7 @@ int main()
 			class son : public papa
 			{
 			public:
-			    son(int y, int z) : papa(z)
+			    son(int y, int z) : papa(z) // we write this becuase the constructor cannot be called like a setter function.
 			    {
 			        cout << "son has " << y << endl;
 			        cout << "papa has " << z;
@@ -937,4 +937,4 @@ int main()
 			// son has 10
 			// papa has 20
 			```
-			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parent 
+			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and it gets executed.
