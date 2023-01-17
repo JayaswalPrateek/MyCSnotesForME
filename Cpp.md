@@ -903,3 +903,7 @@ int main()
 	- so you need to make sure that the constructor of the child function can also initialize parent variables 
 - note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
 	- it is considered re declaration of the function 
+- constructors in inheritance
+	- if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the derived class is created then the default constructor of parent class is called first followed by a constructor of child class
+		- how to call the parameterized constructor of the parent class ?
+			- 
