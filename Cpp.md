@@ -740,3 +740,38 @@ int main()
 	}
 	```
 - friend operator overloading
+	```cpp
+	#include <iostream>
+	using namespace std;
+	class complex
+	{
+	public:
+	    int r, i;
+	
+	    complex(int r = 0, int i = 0)
+	    {
+	        this->r = r;
+	        this->i = i;
+	    }
+	
+	    friend complex operator+(complex c1, complex c2);
+	
+	} c1(1, 2), c2(3, 4), c3;
+	
+	complex operator+(complex c1, complex c2)
+	{
+	    complex temp;
+	    temp.r = c1.r + c2.r;
+	    temp.i = c1.i + c2.i;
+	    return temp;
+	}
+	
+	int main()
+	{
+	    c3 = c1 + c2;
+	    cout << c1.r << " + " << c2.r << " = " << c3.r << endl;
+	    cout << c1.i << "i + " << c2.i << "i = " << c3.i << "i ";
+	
+	    return 0;
+	}
+	```
