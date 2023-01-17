@@ -938,3 +938,7 @@ int main()
 			// papa has 20
 			```
 			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and it gets executed.
+- isA and hasA
+	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA).
+	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle.
+	- when a class table uses an object of rectangle then the table has a rectangle.
