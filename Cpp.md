@@ -942,3 +942,4 @@ int main()
 	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA).
 	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle.
 	- when a class table uses an object of rectangle then the table has a rectangle.
+-  
