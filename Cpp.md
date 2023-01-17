@@ -779,4 +779,36 @@ int main()
 		- objects c1 and c2 are not available in the scope of the class
 - insertion operator loading using `cout<<c`
 	- where c is a complex number and we will overload insertion operator `<<` to print both real and imaginary parts.
-	- 
+	- we will have to use a friend function and also pass `cout` to it
+	```cpp
+	#include <iostream>
+	using namespace std;
+	class complex
+	{
+	public:
+	    int r, i;
+	
+	    complex(int r = 0, int i = 0)
+	    {
+	        this->r = r;
+	        this->i = i;
+	    }
+	
+	    friend ostream &operator<<(ostream &out, complex &c);
+	} cnum(1, 2);
+	
+	ostream &operator<<(ostream &out, complex &c)
+	{
+	    out << c.r << " + " << c.i << "i";
+	    return out;
+	}
+	
+	int main()
+	{
+	    cout << cnum;
+	    return 0;
+	}
+	```
+	- we are returning `ostream` so that insertion operator can be chained
+		- `cout<<cnum<<endl;` is valid
+		- if we replace `ostream` return type with void then we cannot chain insertion operator.
