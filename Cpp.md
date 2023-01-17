@@ -949,7 +949,10 @@ int main()
 				- just add keyword `virtual` before inheritance mode for the 2 parents
 - inheritance mode:
 	- if a class is inherited in public mode
-		- access specifiers remain same
+		- private cannot be accessed but public remains public and protected remains protected.
 	- protected mode:
 		- public and protected variables and functions of the parent class become protected in the child class
-	- 
+		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class. 
+	- private mode:
+		- public and protected variables and functions of the parent class become private in the child class.
+		- further inheritance is not possible
