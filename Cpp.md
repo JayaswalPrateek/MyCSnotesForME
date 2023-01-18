@@ -1045,4 +1045,5 @@ int main()
 	- a nested class acts independently as if it were an outer class
 
 ***exception handling***
+- during runtime errors
 - 
