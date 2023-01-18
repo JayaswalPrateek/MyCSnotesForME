@@ -969,4 +969,5 @@ int main()
 		- example if a beta is a new car and papa is the old car which has manual windows and the new car has power windows then the function is same but there is variation
 	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope.
 	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions then it becomes function overloading instead of overriding
-	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) and we create a pointer to the child class and call that function the parent class wala function is called/
+	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called.
+		- if 2 functions have common name in separate classes having a inheritance relationship with parent class pointer and child class object then if we make on such function virtual by adding virtual keyword before return type then the non virtual function is called
