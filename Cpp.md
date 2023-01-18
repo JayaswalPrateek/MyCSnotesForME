@@ -1021,7 +1021,7 @@ int main()
 	    return 0;
 	}
 	```
-		- genrealization of swift and innova so we can get away by just decalering empty virtual functions as we will never start a generic car, it has to have a modelbut when u do this make virtual functions =0 then they are called pure virtual functions.
+		- genrealization of swift and innova so we can get away by just decalering empty virtual functions as we will never start a generic car, it has to have a modelbut when u do this make virtual functions = 0 then they are called pure virtual functions.
 		- a class with pure virtual function is called abstract class
 		- you cannot create objects of abstract classes but you can make pointer objects to them
 		- 3 possible use cases of inheritance 
