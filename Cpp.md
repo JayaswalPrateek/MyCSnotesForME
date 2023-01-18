@@ -1028,4 +1028,11 @@ int main()
 			- if all functions of the class are non virtual then the its use is reusability 
 			- if some functions are virtual then both uses reusability and polymorphism 
 			- and if all virtual functions then only use is to achieve polymorphism and such a class is called an interface
-
+- Friend functions
+	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access.
+	- we add `friend` before the return type of the function in the class. 
+- friend class  
+	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
+	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating. 
+	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
+	- 
