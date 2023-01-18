@@ -965,4 +965,4 @@ int main()
 	- the opposite: child class pointer and parent class object is not possible and is an error   
 	- the constructors are called from child to parent
 - function overriding 
-	- if the child class beta inherits from parent class papa s
+	- if the child class beta inherits from parent class papa such that there is a function which has the same name and parameters in both the classes and an object of beta is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
