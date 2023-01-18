@@ -963,4 +963,6 @@ int main()
 	- if you use have a child class publicly inheriting from the parent class such that the child class object is created first and the parent class pointer points to the object of the child class (usually both should be same data type) and then you cannot call functions of the child class
 	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta.
 	- the opposite: child class pointer and parent class object is not possible and is an error   
-	- the constructors are called from child to parent 
+	- the constructors are called from child to parent
+- function overriding 
+	- if the child class beta inherits from parent class papa s
