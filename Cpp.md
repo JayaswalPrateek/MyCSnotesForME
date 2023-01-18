@@ -1046,4 +1046,9 @@ int main()
 
 ***exception handling***
 - during runtime errors
-- 
+- if there is any error in the try block then the control moves to the catch block
+	- the remaining lines of try block are not executed
+	- catch block will not execute if no errors in try block
+- to move the control use throw in the try block.
+- `throw var` then var needs to be a parameter of the catch block
+	- `var` usually used to throw codes
