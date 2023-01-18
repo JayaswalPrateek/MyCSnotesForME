@@ -971,4 +971,61 @@ int main()
 	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions then it becomes function overloading instead of overriding
 	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called and not the one nearer to the scope which is in the beta class.
 		- if 2 functions have common name in separate classes having a inheritance relationship with parent class pointer and child class object then if we make on such function virtual by adding virtual keyword before return type then the non virtual function is called
-- so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object   
+- so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object  
+	```cpp
+	#include <iostream>
+	using namespace std;
+	class anyCar
+	{
+	public:
+	    virtual void start() = 0;
+	    // {cout << "started a generic car" << endl;}
+	    virtual void stop() = 0;
+	    // {cout << "stopped a generic car" << endl;}
+	};
+	
+	class swift : public anyCar
+	{
+	public:
+	    void start()
+	    {
+	        cout << "started swift" << endl;
+	    }
+	    void stop()
+	    {
+	        cout << "stopped swift" << endl;
+	    }
+	};
+	class innova : public anyCar
+	{
+	public:
+	    void start()
+	    {
+	        cout << "started innova" << endl;
+	    }
+	    void stop()
+	    {
+	        cout << "stopped innova" << endl;
+	    }
+	};
+	
+	int main()
+	{
+	    anyCar *ptr = new swift();
+	    ptr->start();
+	    ptr->stop();
+	    ptr = new innova();
+	    ptr->start();
+	    ptr->stop();
+	
+	    return 0;
+	}
+	```
+		- genrealization of swift and innova so we can get away by just decalering empty virtual functions as we will never start a generic car, it has to have a modelbut when u do this make virtual functions =0 then they are called pure virtual functions.
+		- a class with pure virtual function is called abstract class
+		- you cannot create objects of abstract classes but you can make pointer objects to them
+		- 3 possible use cases of inheritance 
+			- if all functions of the class are non virtual then the its use is reusability 
+			- if some functions are virtual then both uses reusability and polymorphism 
+			- and if all virtual functions then only use is to achieve polymorphism and such a class is called an interface
+
