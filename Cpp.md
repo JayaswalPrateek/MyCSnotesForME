@@ -1052,3 +1052,30 @@ int main()
 - to move the control use throw in the try block.
 - `throw var` then var needs to be a parameter of the catch block
 	- `var` usually used to throw codes
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Enter any number: ";
+    float num;
+    cin >> num;
+    cout << "Enter denomiator: ";
+    float d;
+    cin >> d;
+
+    try
+    {
+        if (d == 0)
+            throw 404;
+        cout << "Fraction in Decimal: " << num / d;
+    }
+    catch (int err)
+    {
+        cout << "Error: Please retry, Code=" << err << endl;
+        return -1; // if not specified then the code after the catch block is executed which might be undesirable
+    }
+
+    return 0;
+}
+``` 
