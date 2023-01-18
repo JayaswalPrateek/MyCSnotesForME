@@ -1035,4 +1035,6 @@ int main()
 	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
 	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating. 
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
+- a friend relationship cannot modify data and is read only
+- static members:
 	- 
