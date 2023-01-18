@@ -971,4 +971,4 @@ int main()
 	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions then it becomes function overloading instead of overriding
 	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called and not the one nearer to the scope which is in the beta class.
 		- if 2 functions have common name in separate classes having a inheritance relationship with parent class pointer and child class object then if we make on such function virtual by adding virtual keyword before return type then the non virtual function is called
-- so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object 
+- so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object   
