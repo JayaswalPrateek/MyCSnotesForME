@@ -1040,4 +1040,6 @@ int main()
 	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects 
 	- static members can be used outside the class using scope resolution operator without having to create an object of the class
 - static functions are similar but cannot access non static variable
-- 
+- nested class can access members of outer class if they are static
+	- but it can create an object of the outer class to access its members
+	- a nested class acts independently as if it were an outer class
