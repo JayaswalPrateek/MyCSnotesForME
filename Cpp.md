@@ -966,3 +966,6 @@ int main()
 	- the constructors are called from child to parent
 - function overriding 
 	- if the child class beta inherits from parent class papa such that there is a function which has the same name and parameters in both the classes and an object of beta is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
+		- example if a beta is a new car and papa is the old car which has manual windows and the new car has power windows then the function is same but there is variation
+	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope.
+	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions you need to use scope resolution operator so it become function overloading instead of overriding
