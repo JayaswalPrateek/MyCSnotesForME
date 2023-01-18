@@ -959,3 +959,5 @@ int main()
 - 2 ways to use inheritance
 	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
 	- to specialize: you have parallelogram, you can create child classes square and rectangle 
+- base class pointer and derived class object
+	- when you use 
