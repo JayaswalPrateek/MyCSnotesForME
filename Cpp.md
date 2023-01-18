@@ -1043,3 +1043,6 @@ int main()
 - nested class can access members of outer class if they are static
 	- but it can create an object of the outer class to access its members
 	- a nested class acts independently as if it were an outer class
+
+***exception handling***
+- 
