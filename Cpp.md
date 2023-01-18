@@ -959,7 +959,7 @@ int main()
 - 2 ways to use inheritance
 	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
 	- to specialize: you have parallelogram, you can create child classes square and rectangle 
-- parent class pointer and child class object `beta b; papa *papaptr = &b` or `papa *papaptr = new beta()`
+- parent class pointer and child class object `beta b; papa *papaptr = &b` or `papa *papaptr = new beta();`
 	- if you use have a child class publicly inheriting from the parent class such that the child class object is created first and the parent class pointer points to the object of the child class (usually both should be same data type) and then you cannot call functions of the child class
 	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta.
 	- the opposite: child class pointer and parent class object is not possible and is an error   
@@ -971,3 +971,4 @@ int main()
 	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions then it becomes function overloading instead of overriding
 	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called and not the one nearer to the scope which is in the beta class.
 		- if 2 functions have common name in separate classes having a inheritance relationship with parent class pointer and child class object then if we make on such function virtual by adding virtual keyword before return type then the non virtual function is called
+- so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object 
