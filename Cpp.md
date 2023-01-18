@@ -1038,3 +1038,5 @@ int main()
 - a friend relationship cannot modify data and is read only
 - static variables:
 	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects 
+	- static members can be used outside the class using scope resolution operator without having to create an object of the class
+- static functions are similar but cannot access non static variables 
