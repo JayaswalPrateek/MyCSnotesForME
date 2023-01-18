@@ -959,5 +959,7 @@ int main()
 - 2 ways to use inheritance
 	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
 	- to specialize: you have parallelogram, you can create child classes square and rectangle 
-- base class pointer and derived class object
-	- when you use 
+- parent class pointer and child class object
+	- if you use have a child class publicly inheriting from the parent class and in the main function you create a pointer to the parent class and allocate heap location to the pointer using new of the child class (usually both should be same data type) and then the pointer calls the functions listed in parent class then are they called through the child class or are they directly called without using inheritance? ans they are called directly without inheritance so you cannot call functions of the child class
+	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta.
+	- the opposite: child class pointer and parent class object is not possible and is an error   
