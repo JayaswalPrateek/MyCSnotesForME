@@ -1228,4 +1228,5 @@ int main()
 }
 ```
 
-***a const pointer to a variable makes sure that the variable content cannot be modified by derefer*
+***a const pointer to a variable makes sure that the variable content cannot be modified by dereferencing it and the pointer is read only*
+- but the pointer can point to something else and the pointer is mutable
