@@ -1264,4 +1264,30 @@ int main()
 }
 ```
 - we can also define functions:
-	- 
+```cpp
+#define sqr(x) (x * x)
+#define show(x) (cout << x);
+#include <iostream>
+using namespace std;
+int main()
+{
+    show(sqr(5));
+}
+```
+- we use ifndef to def only if not defined already
+```cpp
+#ifndef sqr
+#define sqr(x) (x * x)
+#endif
+
+#ifndef show
+#define show(x) (cout << x);
+#endif
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    show(sqr(5));
+}
+```
