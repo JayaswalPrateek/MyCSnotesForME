@@ -1349,4 +1349,5 @@ int main()
 		```
 
 ***STL***
-- 
+- classes that bundle common data structures and all the functions related to it.
+- it has 3 things: algorithms, containers and iterators
