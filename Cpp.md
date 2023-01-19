@@ -1301,4 +1301,8 @@ int main()
 	- first the parent constructor is called
 	- the the child constructor is called
 	- at the end the child destructor is called
-	- then the parent destruct
+	- then the parent destructor is called
+	- if we have a parent pointer and child object and used delete ptr then
+		- only parent class destructor will be called
+		- to fix this make the parent class destructor virtual
+			- then parent class destructor is called the child class
