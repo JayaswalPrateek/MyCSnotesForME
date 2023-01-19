@@ -1291,3 +1291,7 @@ int main()
     show(sqr(5));
 }
 ```
+
+***Destructors***
+- called when the object goes out of the scope
+- if the object is created in HEAP and deleted then the destructor gets called
