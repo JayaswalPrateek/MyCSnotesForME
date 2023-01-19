@@ -1215,3 +1215,17 @@ int main()
 	    s.push(33);
 	}
 	```
+
+***pre-processor directives***
+- if a constant is needed across all files
+```cpp
+#define x 10
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << x;
+}
+```
+
+***a const pointer to a variable makes sure that the variable content cannot be modified by derefer*
