@@ -1297,3 +1297,8 @@ int main()
 - if the object is created in HEAP and deleted then the destructor gets called
 - if a file is opened in  a class then it should be closed in the destructor
 - or any HEAP allocations made in the class should be deleted in the destructor
+- during inheritance
+	- first the parent constructor is called
+	- the the child constructor is called
+	- at the end the child destructor is called
+	- then the parent destruct
