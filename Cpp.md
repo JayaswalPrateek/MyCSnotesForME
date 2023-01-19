@@ -1082,3 +1082,7 @@ int main()
 }
 // Oops, Pakad liya
 ```
+	- the main use of try catch is when a function is expected to return a value but is not able to then what should it return? ans throw exception.
+		- if we know that the function can throw exception call it in try block
+	- you can throw any data type including object of a class
+		- when throwing 
