@@ -1351,3 +1351,6 @@ int main()
 ***STL***
 - classes that bundle common data structures and all the functions related to it.
 - it has 3 things: algorithms, containers and iterators
+	- the functions to be performed on the data structures are called algorithms like pop and push, reverse, union, intersection
+	- the classes for data structures are called containers
+	- iterators are used to access container data
