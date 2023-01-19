@@ -1313,3 +1313,36 @@ int main()
 - cin is an object of istream and cout is an object os ostream
 - insertions and extraction operator are used and sometimes overloaded
 - File handling:
+	- writing
+		```cpp
+		#include <fstream>
+		using namespace std;
+		int main()
+		{
+		    ofstream outfile("hello.txt");
+		    // if the file doesn't exist, it is created anf if it does then it becomes empty
+		    // if you dont want to lose the pre existing data and want to append instead specify append mode app or truncate mode trunc(default)
+		    // ofstream outfile("hello.txt",ios::app);
+		    outfile << "HI" << endl;
+		    outfile << 123 << endl;
+		    outfile.close();
+		}
+		```
+	- reading
+		```cpp
+		#include <iostream>
+		#include <fstream>
+		using namespace std;
+		int main()
+		{
+		    ifstream infile;
+		    infile.open("hello.txt");
+		    if (!infile.is_open())
+		        cout << "Cannot open file, maybe invalid name";
+		    string str;
+		    int n;
+		    infile >> str;
+		    infile >> n;
+		    infile.close();
+		}
+		```
