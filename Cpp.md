@@ -1436,3 +1436,6 @@ lambda functions are unnamed functions
 	    [&](){ cout << a << " " << b << " " << c; }();
 	}
 	```
+
+smart pointer:
+- deallocates itself when ptr not in scope
