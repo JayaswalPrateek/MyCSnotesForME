@@ -1343,6 +1343,7 @@ int main()
 		    int n;
 		    infile >> str;
 		    infile >> n;
+		    cout << str << endl << n;
 		    infile.close();
 		}
 		```
