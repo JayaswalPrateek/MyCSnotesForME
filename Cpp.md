@@ -1082,12 +1082,12 @@ int main()
 }
 // Oops, Pakad liya
 ```
-	- the main use of try catch is when a function is expected to return a value but is not able to then what should it return? ans throw exception.
-		- if we know that the function can throw exception call it in try block
-	- you can throw any data type including object of a class
-		- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
-	- you cann declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this step is optional 
-		- if you keep this round bracket empty means that the function throws no exception.
+- the main use of try catch is when a function is expected to return a value but is not able to then what should it return? ans throw exception.
+	- if we know that the function can throw exception call it in try block
+- you can throw any data type including object of a class
+	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
+- you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this step is optional 
+	- if you keep this round bracket empty means that the function throws no exception.
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1119,3 +1119,8 @@ int main()
 // Oops, Error:DivZer0
 // Program Ended
 ```
+- you can write multiple catch blocks for single try block that handle different data types of thrown variables
+	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their type 
+	- write this as the last catch block and not the first one if you are using multiple catch blocks
+		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will always be unused
+	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class 
