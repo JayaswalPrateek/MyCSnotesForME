@@ -1228,5 +1228,37 @@ int main()
 }
 ```
 
-***a const pointer to a variable makes sure that the variable content cannot be modified by dereferencing it and the pointer is read only*
-- but the pointer can point to something else and the pointer is mutable
+***pointers and constants***
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 10;
+
+    int *ptr = &x;
+    (*ptr)++;
+
+    int const *ptr2 = &x;
+    // (*ptr2)++; error
+    int y = 20;
+    ptr2 = &y;
+    // (*ptr2)++; error
+
+    int *const ptr3 = &y;
+    (*ptr3)++;
+    // ptr3 = &x; error
+
+    const int *const ptr4 = &y;
+    // (*ptr4)++; error
+    // ptr4 = &x; error
+
+    cout << x << " " << y << " " << *ptr2 << " " << *ptr4;
+}
+// 11 21 21 21
+```
+
+
+***if we write `const` at the end of a function signature in a class then the compiler will  not allow that functions to modify values of the class***
+	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables.
+ 
