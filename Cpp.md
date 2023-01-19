@@ -1359,6 +1359,13 @@ int main()
 			- list: are doubly linked list and have two nodes fwd and backward in the struct
 				- functions same as vectors+ push front, pop front, front, back
 			- forward list: singly linked list with functions same as doubly
-			- dequeue: double ended queue, similar to vector but with functions like lists 
+			- dequeue: double ended queue, similar to vector but with functions like lists
+			- priority queue: means max heap: so the largest element is deleted first
+				- push, pop, empty, size
+			- stack: lifo with same funcs as priority queue
+			- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
+			- multiset: same as set but allows duplicate
+			- map is used to store key value pairs with all keys unique
+			- multi map allows duplicate keys but key value pair should be unique
 	- iterators are used to access container data
 	  
