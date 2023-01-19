@@ -1413,3 +1413,6 @@ int main()
     cout << "value found: " << itr1->first << " " << itr1->second << endl;
 }
 ```
+
+`decltype(x) y` is used to create a variable y of data type x;
+if a class is marked final by adding keyword final after the class name then the class cannot be inherited further
