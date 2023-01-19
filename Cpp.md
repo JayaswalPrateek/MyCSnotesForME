@@ -1422,5 +1422,17 @@ In C++, the `final` keyword can be used to prevent a virtual function from being
 lambda functions are unnamed functions
 - `[](){cout<<"Hello World";}();`
 - `[](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
-- `int x = [](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
-- 
+- `int x = [](int a , int b){return a+b;}(10,5);`
+- `auto f = [](){cout<<"Hello World";};` and f() can be used later
+- we can specify return type but not compulsory `int x = [](int a , int b)->int{return a+b;}(10,5);` 
+- accessing variables outside the lambda expression
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    int a = 10, b = 20, c = 30;
+	    [&a, &b](){ cout << a << " " << b<< endl; }();
+	    [&](){ cout << a << " " << b << " " << c; }();
+	}
+	```
