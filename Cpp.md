@@ -1415,4 +1415,12 @@ int main()
 ```
 
 `decltype(x) y` is used to create a variable y of data type x;
+
 if a class is marked final by adding keyword final after the class name then the class cannot be inherited further
+In C++, the `final` keyword can be used to prevent a virtual function from being overridden in child classes
+
+lambda functions are unnamed functions
+- `[](){cout<<"Hello World";}();`
+- `[](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
+- `int x = [](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
+- 
