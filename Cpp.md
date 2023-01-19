@@ -1216,19 +1216,6 @@ int main()
 	}
 	```
 
-***pre-processor directives***
-- if a constant is needed across all files
-```cpp
-#define x 10
-#define c cout
-#include <iostream>
-using namespace std;
-int main()
-{
-    c << x;
-}
-```
-
 ***pointers and constants***
 ```cpp
 #include <iostream>
@@ -1264,4 +1251,17 @@ int main()
 ***if we write `const` at the end of a function signature in a class then the compiler will  not allow that functions to modify values of the class***
 	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables.
 
-***pre-processor directives and macros***
+***pre-processor directives***
+- if a constant is needed across all files
+```cpp
+#define x 10
+#define c cout
+#include <iostream>
+using namespace std;
+int main()
+{
+    c << x;
+}
+```
+- we can also define functions:
+	- 
