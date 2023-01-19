@@ -1306,3 +1306,10 @@ int main()
 		- only parent class destructor will be called
 		- to fix this make the parent class destructor virtual
 			- then parent class destructor is called the child class
+
+***Streams***
+- for input and output
+- iostream has istream for input and ostream for output
+- cin is an object of istream and cout is an object os ostream
+- insertions and extraction operator are used and sometimes overloaded
+- File handling:
