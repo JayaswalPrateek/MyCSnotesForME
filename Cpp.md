@@ -1353,4 +1353,12 @@ int main()
 - it has 3 things: algorithms, containers and iterators
 	- the functions to be performed on the data structures are called algorithms like pop and push, reverse, union, intersection
 	- the classes for data structures are called containers
+		- this is STL: standard template classes as containers are of generic types
+			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
+				- supports push back, pop back, insert, remove, is empty, size  
+			- list: are doubly linked list and have two nodes fwd and backward in the struct
+				- functions same as vectors+ push front, pop front, front, back
+			- forward list: singly linked list with functions same as doubly
+			- dequeue: double ended queue, similar to vector but with functions like lists 
 	- iterators are used to access container data
+	  
