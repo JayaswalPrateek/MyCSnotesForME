@@ -1439,3 +1439,6 @@ lambda functions are unnamed functions
 
 smart pointer:
 - deallocates itself when ptr not in scope
+
+ellipsis `...`
+- allows a function to take multiple args
