@@ -1055,27 +1055,30 @@ int main()
 ```cpp
 #include <iostream>
 using namespace std;
+
+int divider(int x, int y)
+{
+    if (y == 0)
+    {
+        throw 404;
+    }
+    return x / y;
+}
+
 int main()
 {
-    cout << "Enter any number: ";
-    float num;
-    cin >> num;
-    cout << "Enter denomiator: ";
-    float d;
-    cin >> d;
-
     try
     {
-        if (d == 0)
-            throw 404;
-        cout << "Fraction in Decimal: " << num / d;
+        divider(10, 0);
+        cout << "I am bout to divide by 0";
     }
     catch (int err)
     {
-        cout << "Error: Please retry, Code=" << err << endl;
-        return -1; // if not specified then the code after the catch block is executed which might be undesirable
+        cout << "Oops, ";
     }
+    cout << "Pakad liya";
 
     return 0;
 }
-``` 
+// Oops, Pakad liya
+```
