@@ -1085,4 +1085,37 @@ int main()
 	- the main use of try catch is when a function is expected to return a value but is not able to then what should it return? ans throw exception.
 		- if we know that the function can throw exception call it in try block
 	- you can throw any data type including object of a class
-		- when throwing 
+		- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
+	- you cann declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this step is optional 
+		- if you keep this round bracket empty means that the function throws no exception.
+```cpp
+#include <iostream>
+using namespace std;
+
+int divider(int x, int y)
+{
+    if (y == 0)
+    {
+        throw string("DivZer0");
+    }
+    return x / y;
+}
+
+int main()
+{
+    try
+    {
+        divider(10, 0);
+        cout << "Lets Divide!" << endl;
+    }
+    catch (const string &err)
+    {
+        cout << "Oops, Error:" << err << endl;
+    }
+    cout << "Program Ended";
+
+    return 0;
+}
+// Oops, Error:DivZer0
+// Program Ended
+```
