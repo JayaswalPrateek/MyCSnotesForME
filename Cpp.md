@@ -1220,11 +1220,12 @@ int main()
 - if a constant is needed across all files
 ```cpp
 #define x 10
+#define c cout
 #include <iostream>
 using namespace std;
 int main()
 {
-    cout << x;
+    c << x;
 }
 ```
 
@@ -1257,8 +1258,10 @@ int main()
 }
 // 11 21 21 21
 ```
-
+	- if variable is const and a ptr is pointing to it then the pointer ptr should be const of the data type not as a pointer which it can also be at the same time but will require 2 consts in declaration.
+	- you cann still point to the const of a data type of a variable without it having to be a constant
 
 ***if we write `const` at the end of a function signature in a class then the compiler will  not allow that functions to modify values of the class***
 	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables.
- 
+
+***pre-processor directives and macros***
