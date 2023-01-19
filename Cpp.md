@@ -1368,4 +1368,28 @@ int main()
 			- map is used to store key value pairs with all keys unique
 			- multi map allows duplicate keys but key value pair should be unique
 	- iterators are used to access container data
-	  
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    // vector<int> v;  by default creates a vector of len 16
+    // vector<int> v(50); creates a vector of len 50
+    vector<int> v = {1, 23, 456, 7890};
+    v.push_back(56); // added 56 at the end after 7890
+    v.push_back(69); // added 69 at the end after 56
+    v.pop_back();    // last element is removed
+    for (int x : v)
+    {
+        cout << x << " ";
+    }
+    cout << endl;
+    for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
+    {
+        cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
+    }
+}
+// u can replace occurences of vector with list or forward_list or dequeue or set
+```
+- for maps:
