@@ -1514,3 +1514,33 @@ STL:
 	}
 	```
 - list
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    list<int> ls; // same as vector but also allows front operations
+    ls.push_back(2);
+    ls.emplace_back(4);
+    ls.push_front(0);
+    ls.emplace_front(-2);
+    ls.pop_front();
+    ls.pop_back();
+}
+```
+- dequeue
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    deque<int> ls; // same as vector but also allows front operations
+    ls.push_back(2);
+    ls.emplace_back(4);
+    ls.push_front(0);
+    ls.emplace_front(-2);
+    ls.pop_front();
+    ls.pop_back();
+}
+```
+-  stack (lifo)
