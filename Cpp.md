@@ -1544,3 +1544,9 @@ int main()
 }
 ```
 -  stack (lifo)
+	- values are stored from bottom up using push/emplace and the last element is at the `top()` 
+	- cannot index like an array.
+- queue (fifo)
+	- `back()` instead of `top()`
+- priority queue
+	- largest element stays at the top of the stack
