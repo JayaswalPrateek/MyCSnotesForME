@@ -1350,8 +1350,8 @@ int main()
 
 ***STL***
 - classes that bundle common data structures and all the functions related to it.
-- it has 3 things: algorithms, containers and iterators
-	- the functions to be performed on the data structures are called algorithms like pop and push, reverse, union, intersection, begin end rbegin rend
+- it has 4 things: functions,algorithms, containers and iterators
+	- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
 	- the classes for data structures are called containers
 		- this is STL: standard template classes as containers are of generic types
 			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
@@ -1445,5 +1445,5 @@ ellipsis `...`
 
 
 STL:
-- to import all the containers, use `#include<bits/stdc++.h>`
-- 
+- to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
+- pairs and nested pairs
