@@ -1555,3 +1555,7 @@ int main()
 	- stores only unique elemnts in a sorted order max heap
 	- `someset.find(3);` returns them memory location of 3 in the set
 		- if not in the set then it returns `someset.end();` which points after the end of the last element
+- multiset
+	- like set as in stores sorted like max heap while allowing duplicate elements
+	- `.erase(3)` removes all occurrences of 3
+	- `.coun`
