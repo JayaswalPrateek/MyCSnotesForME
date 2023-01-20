@@ -1549,4 +1549,9 @@ int main()
 - queue (fifo)
 	- `back()` instead of `top()`
 - priority queue
-	- largest element stays at the top of the stack
+	- largest element stays at the top of the stack called max heap
+	- smallest element stays at the top of the stack called min heap
+- set
+	- stores only unique elemnts in a sorted order max heap
+	- `someset.find(3);` returns them memory location of 3 in the set
+		- if not in the set then it returns `someset.end();` which points after the end of the last element
