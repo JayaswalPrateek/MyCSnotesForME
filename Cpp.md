@@ -1442,3 +1442,8 @@ smart pointer:
 
 ellipsis `...`
 - allows a function to take multiple args
+
+
+STL:
+- to import all the containers, use `#include<bits/stdc++.h>`
+- 
