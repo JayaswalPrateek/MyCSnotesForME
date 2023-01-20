@@ -1365,8 +1365,9 @@ int main()
 			- stack: lifo with same funcs as priority queue
 			- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
 			- multiset: same as set but allows duplicate
-			- map is used to store key value pairs with all keys unique
+			- map is used to store key value pairs with all keys unique stores keys in sorted order
 			- multi map allows duplicate keys but key value pair should be unique
+			- unordered map needs unique keys but keys are not sorted
 	- iterators are used to access container data
 ```cpp
 #include <iostream>
@@ -1392,7 +1393,7 @@ int main()
 }
 // u can replace occurences of vector with list or forward_list or dequeue or set
 ```
-- for maps:
+- for maps: 
 ```cpp
 #include <iostream>
 #include <map>
@@ -1558,4 +1559,7 @@ int main()
 - multiset
 	- like set as in stores sorted like max heap while allowing duplicate elements
 	- `.erase(3)` removes all occurrences of 3
-	- `.coun`
+		- to erase only a particular instance proved the address using .find which is always unique
+	- `.count(3)` counts number of 3 in multiset
+- unordered set
+	- same as set but doen't sort like max heap
