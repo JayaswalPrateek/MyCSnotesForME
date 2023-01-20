@@ -1513,3 +1513,4 @@ STL:
 	    // v.empty gives bool if vector v is empty or not
 	}
 	```
+- list
