@@ -1463,3 +1463,53 @@ STL:
 	}
 	```
 - vector are arrays with dynamic length without being a linked list.
+	```cpp
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main()
+	{
+	    vector<int> v;
+	
+	    v.push_back(1);         // the first element of v becomes 1
+	    v.push_back(2);         // the second element of v becomes 1
+	    v.emplace_back(2);      // same as push_back but faster
+	    v.emplace_back(3);      // same as push_back but faster
+	    v.emplace_back(4);      // same as push_back but faster
+	    v.emplace_back(5);      // same as push_back but faster
+	    v.erase(v.end() - 1);   // exceptional case to remove last element
+	    v.erase(v.begin() + 1); // removes 2nd element
+	    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can also erase a range of elements if you provide
+	    v.insert(v.begin(), 0);
+	    // v.insert(address,howManyCopiesOf,ThisElement);
+	    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
+	
+	    cout << v.front() << " " << v.back() << endl;
+	
+	    for (auto itr = v.begin(); itr != v.end(); itr++)
+	        cout << *itr << " ";
+	
+	    cout << endl;
+	
+	    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
+	        cout << *itr << " ";
+	
+	    cout << endl;
+	
+	    for (auto x : v)
+	        cout << x << " ";
+	
+	    vector<pair<int, int>> vpair;
+	    vpair.push_back({1, 2});  // need to use flower braces to specify pair
+	    vpair.emplace_back(3, 4); // automatically infers that it is a pair
+	
+	    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
+	    vector<int> bydefault(5);    // creates {0,0,0,0,0}
+	
+	    vector<int> temp(v); // creates a seperate copy of v and names it temp
+	
+	    cout << endl
+	         << v.size();
+	    // v.clear() makes the vector empty
+	    // v.empty gives bool if vector v is empty or not
+	}
+	```
