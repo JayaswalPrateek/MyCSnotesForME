@@ -1462,3 +1462,4 @@ STL:
 	        cout << pairray[i].first << " " << pairray[i].second << endl;
 	}
 	```
+- vector are arrays with dynamic length without being a linked list.
