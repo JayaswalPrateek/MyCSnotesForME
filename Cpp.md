@@ -1447,3 +1447,18 @@ ellipsis `...`
 STL:
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - pairs and nested pairs
+	```cpp
+	#include <bits/stdc++.h>
+	using namespace std;
+	int main()
+	{
+	    pair<int, int> p = {1, 2};
+	    cout << p.first << " " << p.second << endl;
+	    pair<pair<int, int>, int> np = {p, 3};
+	    cout << np.first.first << " " << np.first.second << " " << np.second << endl;
+	
+	    pair<int, int> pairray[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
+	    for (int i = 0; i < sizeof(pairray) / 8; i++)
+	        cout << pairray[i].first << " " << pairray[i].second << endl;
+	}
+	```
