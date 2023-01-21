@@ -27,4 +27,7 @@
 		- then all pairs of 2 are sorted and then 2 pairs of 2 are merged and sorted till the array is completely merged back again
 		- best and worst case same O(n log n)
 	- quick sort
+		- recursive like merge sort so divides and conquers
+		- we choose a pivot element of the array which is closest to the median of the array elements
+		- then we split the lists into 2 such that one list has elements less than the pivot element and one where all elements are greater than the pivot element
 - greedy algorithm 
