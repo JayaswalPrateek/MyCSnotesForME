@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algo.md",
+                "file": "DStr.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -101,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algo.md",
+                "file": "DStr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algo.md",
+                "file": "DStr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algo.md"
+                "file": "DStr.md"
               }
             }
           }
@@ -167,9 +166,9 @@
   },
   "active": "326a4c72d98256e0",
   "lastOpenFiles": [
-    "DStr.md",
     "Algo.md",
     "Cpp.md",
+    "DStr.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
