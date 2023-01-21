@@ -57,4 +57,8 @@
 	- front reads the frontmost element O(1)
 	- more used than stack
 - binary search trees
-	- a tree where ever node can have only 2 child nodes and the left node should be 
+	- used for searching efficiently
+	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
+- graphs 
+	- linked lists and binary search trees are also types of graphs
+	- less restrictions than linked lists and binary search trees
