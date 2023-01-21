@@ -1,8 +1,16 @@
 ***Birds Eye View of important ones***
 - searching
 	- binary search
-	- depth first search
-	- breadth first search
+	- depth first search for trees and graphs
+		- start from the top of a tree and go as deep as possible along the same branch
+		- once you are at the bottom then go to nearest unvisited node usually a sibling of the deepest node
+			- this process is called backtracking
+		- used to solve a maze
+		- O(number of nodes+number of branches)
+		-  ![[Screenshot from 2023-01-21 10-27-06.png]]
+	- breadth first search for trees and graphs
+		- you dont go to deepest point like dfs
+		- instead you make sure that the sibling 
 - sorting
 	- insertion sort
 	- merge sort
