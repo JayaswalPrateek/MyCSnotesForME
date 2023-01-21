@@ -41,4 +41,9 @@
 		- still can be 2 to 3x faster than merge sort by reducing the chances of worst case
 		- needs less memory O(log n) than merge sort O(n)
 - greedy algorithm 
-	- 
+	- make best possible choice at every step
+	- when not to be greedy
+		- not for efficiency
+	- when to be greedy
+		- when you dont want to find the most efficient way out of millions of permutations then greedy might be good enough
+		- when optimal soln not possible and bruteforce is not acceptable
