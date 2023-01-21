@@ -34,7 +34,8 @@
 - O(n!) is very very bad and inefficient
 - Efficiency increases from left to right
 
-<img src="https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png?token=GHSAT0AAAAAAB5NNXHIXW4KLECTVSDXZQFEY6LT6PA">
+
+![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
 ***Bird Eye View***
 - Arrays

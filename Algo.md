@@ -7,7 +7,7 @@
 			- this process is called backtracking
 		- used to solve a maze
 		- O(number of nodes+number of branches)
-		- <img src="https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2010-27-06.png?token=GHSAT0AAAAAAB5NNXHJKG2SNQP75QS65MEOY6LT6OQ">
+		- ![dfs visualized](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2010-27-06.png)
 	- breadth first search for trees and graphs
 		- you dont go to deepest point like dfs
 		- instead you make sure that the sibling noed has been visited
