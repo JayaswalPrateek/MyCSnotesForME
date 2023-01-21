@@ -29,4 +29,5 @@
 	- so n=2^x where n is the length and x is the no of times will have to split in half so take log both sides to get O(log n)
 	- also used for binary trees
 	- very efficient
-- O(n log n ) is more efficient than 0(n^2) but less than O(n)  
+- O(n log n ) is more efficient than 0(n^2) but less than O(n)
+- imagine a tree which has 3 branches and each branch h
