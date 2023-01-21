@@ -9,4 +9,6 @@
 - but O(n^2) can have nested loops
 - if i am searching i 1-D loop twice it is O(2n)
 	- so if i doing it n times it is O(n^2)
-- 
+- suppose we have a 1-D array of length n and first we traverse from 0th index to (n-1)th index
+	- then in the 2nd pass we skip the 0th element and start from 1st element. next pass from 2nd one and so on.
+	- so we will have a total of n passes
