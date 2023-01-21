@@ -33,7 +33,9 @@
 - imagine a tree which has 3 branches and each branch has 3 more branches and so on and if the height of the tree is n then O(3^n)
 - O(n!) is very very bad and inefficient
 - Efficiency increases from left to right
-![[Screenshot from 2023-01-21 09-52-29.png]]
+
+<img src="https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png?token=GHSAT0AAAAAAB5NNXHIXW4KLECTVSDXZQFEY6LT6PA">
+
 ***Bird Eye View***
 - Arrays
 	- Read is O(1) but inserting and deleting is O(n)
