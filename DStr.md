@@ -34,3 +34,8 @@
 - O(n!) is very very bad and inefficient
 - Efficiency increases from left to right
 ![[Screenshot from 2023-01-21 09-52-29.png]]
+***Bird Eye View***
+- Arrays
+	- Read is O(1) but inserting and deleting is O(n)
+	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously
+	- 
