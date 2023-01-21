@@ -43,8 +43,9 @@
 	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously
 - Linked list:
 	- opposite of array
-	- read is O(n) insert and delete is O(1)
-	- they dont have indexes
+	- read is O(n), insert and delete is O(1)
+	- they dont have indexes like arrays
+	- address of the head node is stored and used and the last nodes points to null
 - hash maps are like arrays but indices can be of any data type
 	- read insert delete are all O(1)
 - stack: stack of washed plates
