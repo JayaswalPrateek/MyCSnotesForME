@@ -30,4 +30,7 @@
 	- also used for binary trees
 	- very efficient
 - O(n log n ) is more efficient than 0(n^2) but less than O(n)
-- imagine a tree which has 3 branches and each branch h
+- imagine a tree which has 3 branches and each branch has 3 more branches and so on and if the height of the tree is n then O(3^n)
+- O(n!) is very very bad and inefficient
+- Efficiency increases from left to right
+![[Screenshot from 2023-01-21 09-52-29.png]]
