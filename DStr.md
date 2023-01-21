@@ -3,4 +3,10 @@
 	- like searching a value in map using its key.
 - O(n) means the execution time is linearly dependent on the input size
 	- searching for an element in an array
-	- we usually take the worst case scenario like if the element we are looking for is at the end of the array for an array of length n then its 
+	- we usually take the worst case scenario like if the element we are looking for is at the end of the array for an array of length n then its O(n)
+	- O(n) can be O(1) if the element we are looking for is at the 0th index but this is not guaranteed
+- nested loop doesn't always imply O(n^2) 
+- but O(n^2) can have nested loops
+- if i am searching i 1-D loop twice it is O(2n)
+	- so if i doing it n times it is O(n^2)
+- 
