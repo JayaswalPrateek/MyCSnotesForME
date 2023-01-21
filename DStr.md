@@ -11,4 +11,19 @@
 	- so if i doing it n times it is O(n^2)
 - suppose we have a 1-D array of length n and first we traverse from 0th index to (n-1)th index
 	- then in the 2nd pass we skip the 0th element and start from 1st element. next pass from 2nd one and so on.
-	- so we will have a total of n passes
+	- so we will have a total of n passes for an array of length n
+	- if we draw the array one below the other for every pass and erase the block we skip, we will get 
+		```
+		------------,
+		\			|
+		  \			|
+			\		|
+			  \		|
+			    \   |
+				  \ |
+		```
+		- this has base and height n. the square had a O(n^2) this has O(n^2/2) but constant doesn't matter so its still O(n^2)
+- if a 2-D matrix is not a square and has sides nxm then it will have O(n x M) 
+- O(log n)
+	- we keep shrinking the array in half so we will never have to traverse all the n elements and always less than n so it will be O(log n)
+	- so n=2^x where n is the length and x is the no of 
