@@ -40,4 +40,21 @@
 	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously
 - Linked list:
 	- opposite of array
-	- 
+	- read is O(n) insert and delete is O(1)
+	- they dont have indexes
+- hash maps are like arrays but indices can be of any data type
+	- read insert delete are all O(1)
+- stack: stack of washed plates
+	- lifo
+	- push,pop and peek are O(1)
+	- push adds new element at the top of the stack
+	- pop removes the topmost element
+	- peek reads the topmost element
+- queue 
+	- fifo
+	- enqueue adds new element at the end of the queue O(1)
+	- dequeue is the pop for the stack removes front most element O(1)
+	- front reads the frontmost element O(1)
+	- more used than stack
+- binary search trees
+	- a tree where ever node can have only 2 child nodes and the left node should be 
