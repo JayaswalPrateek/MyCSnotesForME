@@ -19,8 +19,35 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "326a4c72d98256e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DStr.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "efb8e8f8695bfb18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DStr.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -87,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cpp.md",
+                "file": "DStr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cpp.md",
+                "file": "DStr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cpp.md"
+                "file": "DStr.md"
               }
             }
           }
@@ -151,17 +178,17 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "97ba27c2b04ef7f9",
+  "active": "5cde319b0177ac1d",
   "lastOpenFiles": [
+    "Algo.md",
     "Cpp.md",
+    "DStr.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Untitled 3.canvas",
-    "Untitled 4.canvas",
-    "2023-01-12.md",
-    "Recording 20230112232705.webm"
+    "Untitled 4.canvas"
   ]
 }
