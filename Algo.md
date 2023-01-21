@@ -10,9 +10,21 @@
 		-  ![[Screenshot from 2023-01-21 10-27-06.png]]
 	- breadth first search for trees and graphs
 		- you dont go to deepest point like dfs
-		- instead you make sure that the sibling 
+		- instead you make sure that the sibling noed has been visited
+		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
+		- if the node in the queues has more children then add them to queue when marking it visited
+		- used for chess
+		- has O(number of nodes+number of branches)
 - sorting
 	- insertion sort
+		- compares the nth element with n+1 th element and swaps them if nth one is larger
+		- best case O(n) if everything is sorted
+		- worst case O(n^2) when nothing is sorted
 	- merge sort
+		- divide and conquer and conquer by divide and conquer and so on
+		- recursion
+		- splits array in half till we have pairs of 2
+		- then all pairs of 2 are sorted and then 2 pairs of 2 are merged and sorted till the array is completely merged back again
+		- best and worst case same O(n log n)
 	- quick sort
 - greedy algorithm 
