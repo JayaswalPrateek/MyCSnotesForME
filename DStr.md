@@ -26,4 +26,7 @@
 - if a 2-D matrix is not a square and has sides nxm then it will have O(n x M) 
 - O(log n)
 	- we keep shrinking the array in half so we will never have to traverse all the n elements and always less than n so it will be O(log n)
-	- so n=2^x where n is the length and x is the no of 
+	- so n=2^x where n is the length and x is the no of times will have to split in half so take log both sides to get O(log n)
+	- also used for binary trees
+	- very efficient
+- O(n log n ) is more efficient than 0(n^2) but less than O(n)  
