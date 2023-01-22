@@ -49,7 +49,7 @@
 	- address of the head node is stored and used and the last nodes points to null
 	- no unused memory but pointer needs memory
 - doubly linked list:
-	- 
+	- ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
 - hash maps are like arrays but indices can be of any data type
 	- read insert delete are all O(1)
 - stack: stack of washed plates
