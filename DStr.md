@@ -74,7 +74,8 @@
 		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
 	- a tree with n nodes has n-1 links always
 	- depth and height
-		- root has depth 0, depth measured from top
+		- root has depth 0, depth measured from topmost root
+		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0 
 	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
 - graphs 
 	- linked lists and binary search trees are also types of graphs
