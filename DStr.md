@@ -72,7 +72,7 @@
 	- used for searching efficiently
 	- recursive data structure
 		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
-	- a tree with n nodes has n-1 links always
+	- a tree with n nodes has n-1 links always. used to check validity of tree
 	- depth and height
 		- root has depth 0, depth measured from topmost root
 		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0 
