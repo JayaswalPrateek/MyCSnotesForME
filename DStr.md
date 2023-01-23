@@ -80,6 +80,9 @@
 	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
 	 - number of nodes at height h = 2^h so we can find max number of nodes of the BINARY tree if we know the ht of the BINARY tree
 	 - for a BINARY tree of ht h, max nodes = 2^h - 1
+	 - a binary tree where a node can only have 2 or no nodes is called a perfect binary tree and its height is floor of log base2 n 
+	 - cost proportional to ht of tree
+		 - ht is less if the tree is dense and more like a perfect binary tree
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
