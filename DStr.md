@@ -67,6 +67,7 @@
 	- front reads the frontmost element O(1)
 	- more used than stack
 	- insert happens at one end and delete happens from other
+	- used when there is a shared resource and it can only handle only one resource at a time like printer or processor
 - binary search trees
 	- used for searching efficiently
 	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
