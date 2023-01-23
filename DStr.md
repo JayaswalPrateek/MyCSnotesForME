@@ -58,7 +58,7 @@
 	- push adds new element at the top of the stack
 	- pop removes the topmost element
 	- peek reads the topmost element
-	- useful for reversing
+	- useful for reversing without recursion
 - queue 
 	- fifo
 	- enqueue adds new element at the end of the queue O(1)
