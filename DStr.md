@@ -93,6 +93,7 @@
 		- ht of empty tree = -1 as no node
 		- ht of tree w/ 1 node is 0
 		- for n nodes its n-1 which is same as number of links
+	- try keeping tree balanced, balanced tree is one which 
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
