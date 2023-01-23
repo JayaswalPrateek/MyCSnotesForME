@@ -78,8 +78,8 @@
 		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0 
 			- ht of tree=ht of node	
 	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
-	 - number of nodes at height h = 2^h so we can find max number of nodes of the tree if we know the ht of the tree
-	 - for a tree of ht h, max nodes = 2^h - 1
+	 - number of nodes at height h = 2^h so we can find max number of nodes of the BINARY tree if we know the ht of the BINARY tree
+	 - for a BINARY tree of ht h, max nodes = 2^h - 1
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
