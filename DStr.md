@@ -77,7 +77,8 @@
 		- root has depth 0, depth measured from topmost root
 		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0 
 			- ht of tree=ht of node	
- - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
+	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
+	 - number of nodes at height h = 2^h so we can find max number of nodes of the tree if we know the ht of the tree
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
