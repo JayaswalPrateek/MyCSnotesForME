@@ -69,6 +69,7 @@
 	- insert happens at one end and delete happens from other
 	- used when there is a shared resource and it can only handle only one resource at a time like printer or processor
 - binary search trees
+	- a binary search tree is a binary tree that has the left child node lesser than the parent node and the right child node larger than the parent node
 	- used for searching efficiently
 	- recursive data structure
 		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
