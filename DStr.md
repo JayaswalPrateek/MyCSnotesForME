@@ -95,6 +95,7 @@
 		- for n nodes its n-1 which is same as number of links
 	- try keeping tree balanced, balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
 	- ![binary tree array](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2022-31-43.png)
+	- ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
