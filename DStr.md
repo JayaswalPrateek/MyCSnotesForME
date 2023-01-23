@@ -100,6 +100,7 @@
 	- ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
 	- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
 		- else you discard left or right sub tree
+	- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
