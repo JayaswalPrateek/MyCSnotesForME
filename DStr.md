@@ -65,6 +65,7 @@
 	- dequeue is the pop for the stack removes front most element O(1)
 	- front reads the frontmost element O(1)
 	- more used than stack
+	- insertion
 - binary search trees
 	- used for searching efficiently
 	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
