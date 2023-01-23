@@ -83,6 +83,10 @@
 	 - a binary tree where a node can only have 2 or no nodes is called a perfect binary tree and its height is floor of log base2 n 
 	 - cost proportional to ht of tree
 		 - ht is less if the tree is dense and more like a perfect binary tree
+		 - opposite of a perfect binary tree is a linked list
+			 - min ht can be floor of log base2 n
+			 - max ht is n-1
+			 - n is the number of nodes
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
