@@ -70,6 +70,11 @@
 	- used when there is a shared resource and it can only handle only one resource at a time like printer or processor
 - binary search trees
 	- used for searching efficiently
+	- recursive data structure
+		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
+	- a tree with n nodes has n-1 links always
+	- depth and height
+		- root has depth 0, depth measured from top
 	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
 - graphs 
 	- linked lists and binary search trees are also types of graphs
