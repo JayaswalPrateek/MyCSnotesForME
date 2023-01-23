@@ -87,6 +87,12 @@
 			 - min ht can be floor of log base2 n
 			 - max ht is n-1
 			 - n is the number of nodes
+		- so tree has O(ht)
+			- perfect hai toh O(log base2 n)
+			- linked list toh O(n)
+		- ht of empty tree = -1 as no node
+		- ht of tree w/ 1 node is 0
+		- for n nodes its n-1 which is same as number of links
 - graphs 
 	- linked lists and binary search trees are also types of graphs
 	- less restrictions than linked lists and binary search trees
