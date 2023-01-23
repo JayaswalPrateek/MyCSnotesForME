@@ -59,13 +59,14 @@
 	- pop removes the topmost element
 	- peek reads the topmost element
 	- useful for reversing without recursion
+	- inset and delete happen from the same end
 - queue 
 	- fifo
 	- enqueue adds new element at the end of the queue O(1)
 	- dequeue is the pop for the stack removes front most element O(1)
 	- front reads the frontmost element O(1)
 	- more used than stack
-	- insertion
+	- insert happens at one end and delete happens from other
 - binary search trees
 	- used for searching efficiently
 	- a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
