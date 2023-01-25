@@ -15,18 +15,18 @@
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- used for chess
 		- has O(number of nodes+number of branches)
-- sorting
-	- insertion sort
-		- compares the nth element with n+1 th element and swaps them if nth one is larger
-		- best case O(n) if everything is sorted
-		- worst case O(n^2) when nothing is sorted
-	- merge sort
+- Sorting
+	- Insertion Sort
+		- compares the nth element with (n+1)th element and swaps them if nth element is larger
+		- best case `O(n)` if everything is already sorted
+		- worst case `O(n^2)` when nothing is sorted beforehand
+	- Merge Sort
 		- divide and conquer and conquer by divide and conquer and so on
 		- recursion
 		- splits array in half till we have pairs of 2
 		- then all pairs of 2 are sorted and then 2 pairs of 2 are merged and sorted till the array is completely merged back again
-		- best and worst case same O(n log n)
-	- quick sort
+		- best and worst case are same `O(n log n)`
+	- Quick Sort
 		- recursive like merge sort so divides and conquers
 		- we choose a pivot element of the array which is closest to the median of the array elements
 		- then we split the lists into 2 such that one list has elements less than the pivot element and one where all elements are greater than the pivot element
