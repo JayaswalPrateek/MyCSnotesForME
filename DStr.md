@@ -123,3 +123,5 @@
 			- closed walk when start and end is the same vertex also called cycle
 				- tree is acyclic
 		- trail when edges are not repeated but vertices can be
+		- creating graph data str in the memory
+			- 
