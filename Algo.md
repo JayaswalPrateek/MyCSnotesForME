@@ -40,12 +40,12 @@
 		- worst case O(n^2)
 		- still can be 2 to 3x faster than merge sort by reducing the chances of worst case
 		- needs less memory O(log n) than merge sort O(n)
-- <mark style="background: #FFB86CA6;">greedy algorithm</mark> 
-	- make best possible choice at every step
+- Greedy Algorithm 
+	- It makes the best possible decision at every local step
 	- when not to be greedy
-		- not for efficiency
+		- not meant for efficiency
 	- when to be greedy
-		- when you dont want to find the most efficient way out of millions of permutations then greedy might be good enough
-		- when optimal solution not possible and brute force is not acceptable
+		- when you don't want to find the most efficient way out of millions of permutations then greedy might be a good enough solution
+		- when optimal solution not possible and brute force is not acceptable become greedy
 
 ***Deep Dive***
