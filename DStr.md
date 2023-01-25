@@ -111,3 +111,4 @@
 		- when no weights given assume all weights are equal to 1
 	- a self loop means the vertice has an edge that points to itself
 		- many websites have links to the same page and that is an example of self loop
+	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports 
