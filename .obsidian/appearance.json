@@ -3,9 +3,9 @@
   "theme": "system",
   "cssTheme": "Adwaita",
   "monospaceFontFamily": "Fira Code",
-  "textFontFamily": "Fira Code",
+  "textFontFamily": "Comic Sans MS",
   "interfaceFontFamily": "Fira Sans",
-  "baseFontSize": 16,
+  "baseFontSize": 20,
   "showViewHeader": true,
   "nativeMenus": false
 }

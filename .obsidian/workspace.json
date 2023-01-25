@@ -21,6 +21,19 @@
             }
           },
           {
+            "id": "bb8adce8bfeafc2f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algo.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
             "id": "326a4c72d98256e0",
             "type": "leaf",
             "state": {
@@ -32,22 +45,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "d8453224c453ba76",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algo.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,7 +178,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "d8453224c453ba76",
+  "active": "5cde319b0177ac1d",
   "lastOpenFiles": [
     "Cpp.md",
     "DStr.md",
