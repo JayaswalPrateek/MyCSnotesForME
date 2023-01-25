@@ -34,7 +34,7 @@
             }
           },
           {
-            "id": "60f99c2e57328518",
+            "id": "d8453224c453ba76",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -178,11 +178,11 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "60f99c2e57328518",
+  "active": "d8453224c453ba76",
   "lastOpenFiles": [
+    "Cpp.md",
     "DStr.md",
     "Algo.md",
-    "Cpp.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
