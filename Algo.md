@@ -13,8 +13,8 @@
 		- instead you make sure that the sibling node has been visited
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
 		- if the node in the queues has more children then add them to queue when marking it visited
-		- used for chess
-		- has O(number of nodes+number of branches)
+		- used in chess
+		- has `O(number of nodes + number of branches)`
 - Sorting
 	- Insertion Sort
 		- compares the nth element with (n+1)th element and swaps them if nth element is larger
