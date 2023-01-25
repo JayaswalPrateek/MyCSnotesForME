@@ -134,4 +134,5 @@
 			- finding adjacent nodes
 			- checking if 2 nodes are connected
 			- every time this will take O(number of Edges or |E|)
-			- 
+				- this is nearly O(n^2) as we know the formula for max number of edges from the number of nodes
+			- a O(n) is considered acceptable: which technically is O(number of vertices or |V|) 
