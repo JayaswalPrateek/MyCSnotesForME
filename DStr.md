@@ -105,3 +105,4 @@
 	- linked lists and binary search trees are also types of graphs
 	- no restrictions than linked lists and binary search trees
 	- G=(V,E) where G is an ordered pair of vertices and edges
+		- every edge can be directed(one way) or undirected(2 way)
