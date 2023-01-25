@@ -114,3 +114,6 @@
 	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports 
 	- a simple graph has no self loop or multiedges
 	- in a simple directed graph the max number of edges for n vertices is n(n-1) where n is not -ve
+		- for simple undirected it will be n(n-1)/2
+	- a dense graph has edges near to max possible else it is sparse
+	- for dense graph we use adjacency matrix and for sparse it it an adjacency list 
