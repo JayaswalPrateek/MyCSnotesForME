@@ -130,4 +130,8 @@
 			- we know every vertex stored in the vertex list vector has an index
 			- we can imagine that an edge connects these indices instead of pointing to them
 			- ![creating a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-25-06.png)
+		- common operations
+			- finding adjacent nodes
+			- checking if 2 nodes are connected
+			- every time this will take O(number of Edges or |E|)
 			- 
