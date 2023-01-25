@@ -109,6 +109,8 @@
 	- an edge can have weight like distance between 2 places
 		- with weights we cannot just rely on the number of edges between 2 vertices to find the shortest path
 		- when no weights given assume all weights are equal to 1
-	- a self loop means the vertice has an edge that points to itself
+	- a self loop means the vertex has an edge that points to itself
 		- many websites have links to the same page and that is an example of self loop
 	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports 
+	- a simple graph has no self loop or multiedges
+	- in a simple directed graph the max number of edges for n vertices is n(n-1) where n is not -ve
