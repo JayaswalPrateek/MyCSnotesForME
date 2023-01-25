@@ -1,4 +1,4 @@
-***Birds Eye View of important ones***
+***Birds Eye View of important Algorithms***
 - searching
 	- binary search
 	- depth first search for trees and graphs
