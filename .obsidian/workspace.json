@@ -21,19 +21,6 @@
             }
           },
           {
-            "id": "bb8adce8bfeafc2f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algo.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "326a4c72d98256e0",
             "type": "leaf",
             "state": {
@@ -46,8 +33,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algo.md",
+                "file": "Cpp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algo.md",
+                "file": "Cpp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algo.md"
+                "file": "Cpp.md"
               }
             }
           }
@@ -178,11 +164,11 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "5cde319b0177ac1d",
+  "active": "97ba27c2b04ef7f9",
   "lastOpenFiles": [
+    "Algo.md",
     "Cpp.md",
     "DStr.md",
-    "Algo.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
