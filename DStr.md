@@ -164,4 +164,11 @@
 					- O(1) in the matrix
 				- for finding adjacent nodes (all the neighbours of a node) then O(v)
 					- also O(v) in matrix
-				- 
+				- still practically list is better most of the times
+					- use matrix if the graph is dense and the v and e are small values.
+			- adding a new edge now
+				- for a matrix flip a zero to one
+				- for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one
+					- so use linked list? yes and each pointer in the array points to the head of a linked list
+						- technically this is an Adjacency list!
+						- the node will store weight if the graph is weighted
