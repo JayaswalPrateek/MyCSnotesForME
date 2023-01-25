@@ -106,3 +106,8 @@
 	- no restrictions than linked lists and binary search trees
 	- G=(V,E) where G is an ordered pair of vertices and edges
 		- every edge can be directed(one way) or undirected(2 way)
+	- an edge can have weight like distance between 2 places
+		- with weights we cannot just rely on the number of edges between 2 vertices to find the shortest path
+		- when no weights given assume all weights are equal to 1
+	- a self loop means the vertice has an edge that points to itself
+		- many websites have links to the same page and that is an example of self loop
