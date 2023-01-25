@@ -135,4 +135,9 @@
 			- checking if 2 nodes are connected
 			- every time this will take O(number of Edges or |E|)
 				- this is nearly O(n^2) as we know the formula for max number of edges from the number of nodes
-			- a O(n) is considered acceptable: which technically is O(number of vertices or |V|) 
+			- a O(n) is considered acceptable: which technically is O(number of vertices or |V|)
+			- Solution: Adjacency Matrix and Adjacency List
+			- Adjacency Matrix of order |V| x |V|
+				- rows are corresponding to the vertex list and 1 in columns represent that they are connected
+				- remaining values are set to zero
+				- for undirected grpah the matrix will be symmetric so Aij == Aji
