@@ -159,3 +159,9 @@
 			- adjacency list is an array of pointers
 				- less memory as space complexity is O(number of edges) as e << v^2
 				- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
+				- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected O(v) or O(log v)
+					- v is the number of vertices
+					- O(1) in the matrix
+				- for finding adjacent nodes (all the neighbours of a node) then O(v)
+					- also O(v) in matrix
+				- 
