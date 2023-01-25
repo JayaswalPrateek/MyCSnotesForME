@@ -103,4 +103,5 @@
 	- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
 - graphs 
 	- linked lists and binary search trees are also types of graphs
-	- less restrictions than linked lists and binary search trees
+	- no restrictions than linked lists and binary search trees
+	- G=(V,E) where G is an ordered pair of vertices and edges
