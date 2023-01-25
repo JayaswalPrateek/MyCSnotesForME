@@ -138,6 +138,8 @@
 			- a O(n) is considered acceptable: which technically is O(number of vertices or |V|)
 			- Solution: Adjacency Matrix and Adjacency List
 			- Adjacency Matrix of order |V| x |V|
+				- better for dense graphs beacuse we will store many 0s for a sparse graph
+				- huge storage footprint
 				- rows are corresponding to the vertex list and 1 in columns represent that they are connected
 				- remaining values are set to zero
 				- for undirected grpah the matrix will be symmetric so Aij == Aji so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
