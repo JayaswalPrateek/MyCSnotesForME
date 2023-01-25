@@ -152,3 +152,5 @@
 						- this can be avoided by using hash map so it will always be O(1)
 				- for weighted graphs:
 					- replace 1 with edge weights and 0 with INT_MAX
+				- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else
+					- this is impossible implying we will waste lot of memory
