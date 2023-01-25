@@ -140,4 +140,5 @@
 			- Adjacency Matrix of order |V| x |V|
 				- rows are corresponding to the vertex list and 1 in columns represent that they are connected
 				- remaining values are set to zero
-				- for undirected grpah the matrix will be symmetric so Aij == Aji
+				- for undirected grpah the matrix will be symmetric so Aij == Aji so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
+				- 
