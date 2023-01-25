@@ -158,4 +158,4 @@
 					- this is redundant info as it can be deduced from knowing what nodes are connected to each other
 			- adjacency list is an array of pointers
 				- less memory as space complexity is O(number of edges) as e << v^2
-				- 
+				- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
