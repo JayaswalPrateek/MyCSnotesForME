@@ -124,4 +124,9 @@
 				- tree is acyclic
 		- trail when edges are not repeated but vertices can be
 		- creating graph data str in the memory
+			- use 2 vectors
+			- one stores the content of the vertex called vertex list
+			- and edge list which is a struct of edge (and it weight also if needed) and stores 2 ints
+			- we know every vertex stored in the vertex list vector has an index
+			- we can imagine that an edge connects these indices instead of pointing to them
 			- 
