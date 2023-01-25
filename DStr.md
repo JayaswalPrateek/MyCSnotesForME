@@ -117,3 +117,9 @@
 		- for simple undirected it will be n(n-1)/2
 	- a dense graph has edges near to max possible else it is sparse
 	- for dense graph we use adjacency matrix and for sparse it it an adjacency list 
+	- path
+		- simple path when vertices/edges are not repeated
+		- if repeated it is a walk
+			- closed walk when start and end is the same vertex also called cycle
+				- tree is acyclic
+		- trail when edges are not repeated but vertices can be
