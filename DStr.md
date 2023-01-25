@@ -156,4 +156,5 @@
 					- this is impossible implying we will waste lot of memory
 				- we are storing what nodes are connected to each other and also the ones that are not
 					- this is redundant info as it can be deduced from knowing what nodes are connected to each other
-			- 
+			- adjacency list is an array of pointers
+				- less memory as space complexity is O(number of edges)
