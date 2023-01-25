@@ -147,6 +147,6 @@
 				- to find if 2 nodes are connected or not we can pass their indices i and j we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1
 				- so its a O(1)
 					- if the names are given then we need to do a linear search on the vertex list making it O(V)
-						- this can be avoided by using hashmap so it will always be O(1)
+						- this can be avoided by using hash map so it will always be O(1)
 				- for weighted graphs:
-					- 
+					- replace 1 with edge weights and 0 with INT_MAX
