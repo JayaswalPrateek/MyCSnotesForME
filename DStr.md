@@ -162,7 +162,7 @@
 				- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected O(v) or O(log v)
 					- v is the number of vertices
 					- O(1) in the matrix
-				- for finding adjacent nodes (all the neighbours of a node) then O(v)
+				- for finding adjacent nodes (all the neighbors of a node) then O(v)
 					- also O(v) in matrix
 				- still practically list is better most of the times
 					- use matrix if the graph is dense and the v and e are small values.
