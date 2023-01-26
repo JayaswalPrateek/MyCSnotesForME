@@ -46,8 +46,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DStr.md",
+                "file": "Cpp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DStr.md",
+                "file": "Cpp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DStr.md"
+                "file": "Cpp.md"
               }
             }
           }
@@ -178,11 +177,11 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "326a4c72d98256e0",
+  "active": "97ba27c2b04ef7f9",
   "lastOpenFiles": [
+    "DStr.md",
     "Algo.md",
     "Cpp.md",
-    "DStr.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
