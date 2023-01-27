@@ -1,32 +1,32 @@
 <mark style="background: #FFB86CA6;">Birds Eye View of important Algorithms:</mark>
-- Searching
-	- Binary Search
-	- Depth First Search (for trees and graphs)
+- <mark style="background: #D2B3FFA6;">Searching</mark>
+	- <mark style="background: #BBFABBA6;">Binary Search</mark>
+	- <mark style="background: #BBFABBA6;">Depth First Search</mark> for trees and graphs
 		- start from the top of a tree and go as deep as possible along the same branch
 		- once you are at the bottom then go to nearest unvisited node usually a sibling of the deepest node
 			- this process is called **Backtracking**
 		- used to solve a maze
 		- `O(number of nodes + number of branches)`
 		- ![dfs visualized](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2010-27-06.png)
-	- Breadth First Search for trees and graphs
+	- <mark style="background: #BBFABBA6;">Breadth First Search</mark> for trees and graphs
 		- you don't go to deepest point like DFS
 		- instead you make sure that the sibling node has been visited
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- used in chess
 		- has `O(number of nodes + number of branches)`
-- Sorting
-	- Insertion Sort
+- <mark style="background: #D2B3FFA6;">Sorting</mark>
+	- <mark style="background: #BBFABBA6;">Insertion Sort</mark>
 		- compares the nth element with (n+1)th element and swaps them if nth element is larger
 		- best case `O(n)` if everything is already sorted
 		- worst case `O(n^2)` when nothing is sorted beforehand
-	- Merge Sort
+	- <mark style="background: #BBFABBA6;">Merge Sort</mark>
 		- divide and conquer and conquer by divide and conquer and so on
 		- recursion
 		- splits array in half till we have pairs of 2
 		- then all pairs of 2 are sorted and then 2 pairs of 2 are merged and sorted till the array is completely merged back again
 		- best and worst case are same `O(n log n)`
-	- Quick Sort
+	- <mark style="background: #BBFABBA6;">Quick Sort</mark>
 		- recursive like merge sort so divides and conquers
 		- we choose a pivot element of the array which is closest to the median of the array elements
 		- then we split the lists into 2 such that one list has elements less than the pivot element and one where all elements are greater than the pivot element
@@ -40,7 +40,7 @@
 		- worst case `O(n^2)`
 		- still can be 2 to 3 times faster than merge sort by reducing the chances of worst case
 		- needs less memory `O(log n)` than merge sort `O(n)`
-- Greedy Algorithm 
+- <mark style="background: #D2B3FFA6;">Greedy Algorithm</mark> 
 	- It makes the best possible decision at every local step
 	- when not to be greedy
 		- not meant for efficiency
