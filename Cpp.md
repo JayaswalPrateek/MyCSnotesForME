@@ -1,4 +1,4 @@
-***Input Buffer***
+***<mark style="background: #FFF3A3A6;">Input Buffer</mark>***
 - When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
 ***Enum***
@@ -308,7 +308,7 @@ int main()
 			
 			*/
 			```
-- string class
+- `string` class
 	- creates an array bigger than the number of characters to maintain buffer capacity.
 	- if a modification adds characters more than the available buffer capacity then it internally creates another copy of the array, makes the modification and still leaves some buffer capacity to the newly copied array.
 	- `str.length()` gives length of string excluding `\0`
