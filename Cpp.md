@@ -223,9 +223,8 @@ int main()
 	- using class string
 	- using array of char
 		- without pointer: `char str[] = "Hello"`
-			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string.
+			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string
 		- with pointer: `char *s = "Hello"` 
-			- stored in HEAP
 - 2 ways to get user input
 	- if using class string
 		- `cin>>str` accepts one word
@@ -233,7 +232,7 @@ int main()
 	- if using array of char
 		- `cin>>str` accepts one word
 		- `cin.getline(str,50)`
-			- where 50 is the max length of string which is same as the length of the array of char.
+			- where 50 is the max length of string which is same as the length of the array of char
 - 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
