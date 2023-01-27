@@ -138,8 +138,8 @@ int main()
 	- | <mark style="background: #FF5582A6;">STACK</mark> | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. <mark style="background: #D2B3FFA6;">Automatically deleted when out of scope</mark>
 	- | <mark style="background: #FF5582A6;"> CODE </mark> | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
 		- <mark style="background: #D2B3FFA6;">The CODE section can access STACK and itself. Not the HEAP</mark>
-		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section
-			- Thus HEAP can only be accessed using pointers
+		- <mark style="background: #D2B3FFA6;">To access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
+			- Thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
 			- Accessing Files and hardware devices is also done using pointers
 		- Accessing HEAP using `new` 
 			- example: `int *p = new int[5]`
