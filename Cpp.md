@@ -388,7 +388,7 @@ int main()
 			- `rbegin` and `rend` are same as `begin` and `end` respectively but are used with `reverse_iterator` instead
 			- similar to `for(int i = 0; str[i] != '\0'; i++`
 
-***Functions***
+<mark style="background: #FFB86CA6;">Functions</mark>
 - avoid user input in functions, that should happen in the main function
 	- When a function has a local variable and a global variable of the same name then local variable is preferred
 		- use `::<nameOfVariable>` to access the global variable in a function that has a local variable of the same name.
