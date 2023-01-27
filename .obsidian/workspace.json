@@ -33,8 +33,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cpp.md",
+                "file": "DStr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cpp.md",
+                "file": "DStr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cpp.md"
+                "file": "DStr.md"
               }
             }
           }
@@ -165,11 +164,11 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "ac66cae34cae50d6",
+  "active": "3030dbcb20030220",
   "lastOpenFiles": [
+    "Cpp.md",
     "Untitled.md",
     "DStr.md",
-    "Cpp.md",
     "Algo.md",
     "Cpp.pdf",
     "cpp/Basics.md",
