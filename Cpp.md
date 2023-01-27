@@ -1,24 +1,16 @@
 ***Input Buffer***
-- For the user input `cin>>anInteger;` followed by `cin>>str;` on the next line, then the enter key pressed after typing the number is saved as input buffer and later accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
+- When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
 ***Enum***
-- User defined data types such that we can link a commonly used term with a constant integer:
-		**`enum day {mon,tue,wed,thr,fri,sat,sun};`** creates
-				0: mon
-				1: tue
-				2: wed
-				3: thr
-				4: fri
-				5: sat
-				6: sun
-			which is same as
-				`const int mon = 0;`
-				`const int tue = 1;`
-				`const int wed = 2;`
-				`const int thr = 3;`
-				`const int fri = 4;`
-				`const int sat = 5;`
-				`const int sun = 6;`
+- User defined data types that can alias a commonly used name with a constant integer improve readability
+	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
+		`const int mon = 0;`
+		`const int tue = 1;`
+		`const int wed = 2;`
+		`const int thr = 3;`
+		`const int fri = 4;`
+		`const int sat = 5;`
+		`const int sun = 6;`
 - day is a user defined data type which can only have names mon,tue,wed,thr,fri,sat,sun automatically it gets a value.
 		`day d;
 		*`d = jan; // error`*
