@@ -11,11 +11,13 @@
 		`const int fri = 4;`
 		`const int sat = 5;`
 		`const int sun = 6;`
-- day is a user defined data type which can only have names mon,tue,wed,thr,fri,sat,sun automatically it gets a value.
-		`day d;
-		*`d = jan; // error`*
-		`d = tue;
-		`cout << d; // 1`
+- day is a user defined data type which can only store mon, tue, wed, thr, fri, sat, sun and the variable automatically it gets an int value associated with the name
+```cpp
+day d;
+d = jan; // error
+d = tue;
+cout << d; // 1
+```
 	`enum day {mon=4,tue,wed,thr,fri,sat,sun};`
 		mon =4 tue=5 wed=6 thr=7 fri=8 sat=9 sun=10
 	`enum day {mon=4,tue,wed,thr,fri=13,sat,sun};`
