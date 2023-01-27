@@ -1,7 +1,7 @@
-***<mark style="background: #FFF3A3A6;">Input Buffer</mark>***
+<mark style="background: #FFF3A3A6;">Input Buffer</mark>
 - When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
-***Enum***
+<mark style="background: #FFF3A3A6;">Enum</mark>
 - User defined data types that can alias a commonly used name with a constant integer improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
 		`const int mon = 0;`
@@ -23,7 +23,7 @@
 - `enum day {mon=4,tue,wed,thr,fri=13,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=13 sat=14 sun=15
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
-***Type Definition***
+<mark style="background: #FFF3A3A6;">Type Definition</mark>
 - makes variables more readable
 - So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
 - To make it more readable we use `typedef` to alias the data type of mX from int to marks and rN from int to roll to add more context
@@ -33,7 +33,7 @@
 	roll r1, r2, r3;
 	```
 
-***For Each Loop***
+<mark style="background: #FFF3A3A6;">For Each Loop</mark>
 ```cpp
 int A[] = {1, 2, 3, 4, 5};
 for (int x : A)
@@ -45,11 +45,11 @@ for (int x : A)
 	for (auto x : A)
 	    cout << x;
 	```
-- modifying x in the loop doesn't change the corresponding element in array because x is a copy
+- <mark style="background: #D2B3FFA6;">modifying x in the loop doesn't change the corresponding element in array because x is a copy</mark>
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
 
-***Binary Search***
+<mark style="background: #FFF3A3A6;">Binary Search</mark>
 ```cpp
 #include <iostream>
 using namespace std;
@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-***Finding Min and Max of an Array***
+<mark style="background: #FFF3A3A6;">Finding Min and Max of an Array</mark>
 ```cpp
 #include <iostream>
 #include <climits>
@@ -104,12 +104,12 @@ int main()
 }
 ```
 
-***Note on Arrays***
-- When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0
+<mark style="background: #FFF3A3A6;">Note on Arrays</mark>
+- When an Array of length n is created and when m <mark style="background: #D2B3FFA6;">elements are hard coded then remaining n-m elements are automatically initialized to 0 (provided the length of the array is not an user imput)</mark>
 - `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
 - When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array
-- Need to use reference of x when A is 2-D array is iterated over using a for each loop, but you still have to use nested for each loop
+- <mark style="background: #D2B3FFA6;">Need to use reference of x when A is 2-D array is iterated over using a for each loop</mark>, but you still have to use nested for each loop
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -128,16 +128,16 @@ int main()
 	}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
-	- prefer using auto in a for each loop iterating over a 2-D array 
+	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark> 
 
 
-***Pointer***
-- Size of a pointer is independent of data type and always takes 8 bytes
+<mark style="background: #FFF3A3A6;">Pointer</mark>
+- <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type and always takes 8 bytes</mark>
 - *Memory Layout*
-	- | HEAP   |
-	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope
-	- | CODE   | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
-		- The CODE section can access STACK and itself. Not the HEAP
+	- | <mark style="background: #FF5582A6;"> HEAP </mark> |
+	- | <mark style="background: #FF5582A6;">STACK</mark> | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. <mark style="background: #D2B3FFA6;">Automatically deleted when out of scope</mark>
+	- | <mark style="background: #FF5582A6;"> CODE </mark> | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
+		- <mark style="background: #D2B3FFA6;">The CODE section can access STACK and itself. Not the HEAP</mark>
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section
 			- Thus HEAP can only be accessed using pointers
 			- Accessing Files and hardware devices is also done using pointers
@@ -168,7 +168,7 @@ int main()
 			    return 0;
 			}
 			```
-- *Pointer Arithmetic*
+- <mark style="background: #D2B3FFA6;">Pointer Arithmetic</mark>
 	- dereferencing is not needed
 	- subtracting 2 pointers pointing to different indices of an integer array gives how many indices far are the 2 pointers without dividing by 4(size of an int)
 	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array
@@ -201,7 +201,7 @@ int main()
 		    return 0;
 		}
 		```
-- *Runtime gotchas w/ pointers*
+- <mark style="background: #D2B3FFA6;">Runtime gotchas w/ pointers</mark>
 	- Memory Leak when HEAP allocations are not freed
 	- uninitialized pointer
 		- `int *p = 25` where 25 is not stored in a variable
@@ -209,7 +209,7 @@ int main()
 	- dangling pointer
 		- If a pointer is having an address of a memory location which is already deallocated
 		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak
-- *References*
+- <mark style="background: #D2B3FFA6;">References</mark>
 	- `int x = 10` allocates a box in the memory named x which stores 10
 	- `int &y = x` creates an alias of x which is y
 		- So x and y will always have the same value and changes to one can be reflected from the other variable as well
