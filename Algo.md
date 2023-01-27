@@ -1,4 +1,4 @@
-***Birds Eye View of important Algorithms:***
+<mark style="background: #FFB86CA6;">Birds Eye View of important Algorithms:</mark>
 - Searching
 	- Binary Search
 	- Depth First Search (for trees and graphs)

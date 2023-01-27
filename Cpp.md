@@ -1,7 +1,7 @@
-<mark style="background: #FFF3A3A6;">Input Buffer</mark>
+<mark style="background: #FFB86CA6;">Input Buffer</mark>
 - When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
-<mark style="background: #FFF3A3A6;">Enum</mark>
+<mark style="background: #FFB86CA6;">Enum</mark>
 - User defined data types that can alias a commonly used name with a constant integer improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
 		`const int mon = 0;`
@@ -23,7 +23,7 @@
 - `enum day {mon=4,tue,wed,thr,fri=13,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=13 sat=14 sun=15
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
-<mark style="background: #FFF3A3A6;">Type Definition</mark>
+<mark style="background: #FFB86CA6;">Type Definition</mark>
 - makes variables more readable
 - So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
 - To make it more readable we use `typedef` to alias the data type of mX from int to marks and rN from int to roll to add more context
@@ -33,7 +33,7 @@
 	roll r1, r2, r3;
 	```
 
-<mark style="background: #FFF3A3A6;">For Each Loop</mark>
+<mark style="background: #FFB86CA6;">For Each Loop</mark>
 ```cpp
 int A[] = {1, 2, 3, 4, 5};
 for (int x : A)
@@ -49,7 +49,7 @@ for (int x : A)
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
 
-<mark style="background: #FFF3A3A6;">Binary Search</mark>
+<mark style="background: #FFB86CA6;">Binary Search</mark>
 ```cpp
 #include <iostream>
 using namespace std;
@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-<mark style="background: #FFF3A3A6;">Finding Min and Max of an Array</mark>
+<mark style="background: #FFB86CA6;">Finding Min and Max of an Array</mark>
 ```cpp
 #include <iostream>
 #include <climits>
@@ -104,7 +104,7 @@ int main()
 }
 ```
 
-<mark style="background: #FFF3A3A6;">Note on Arrays</mark>
+<mark style="background: #FFB86CA6;">Note on Arrays</mark>
 - When an Array of length n is created and when m <mark style="background: #D2B3FFA6;">elements are hard coded then remaining n-m elements are automatically initialized to 0 (provided the length of the array is not an user imput)</mark>
 - `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
 - When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
@@ -131,7 +131,7 @@ int main()
 	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark> 
 
 
-<mark style="background: #FFF3A3A6;">Pointer</mark>
+<mark style="background: #FFB86CA6;">Pointer</mark>
 - <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type and always takes 8 bytes</mark>
 - *Memory Layout*
 	- | <mark style="background: #FF5582A6;"> HEAP </mark> |
@@ -218,7 +218,7 @@ int main()
 	- declaration without initialization is an error
 	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x
 
-<mark style="background: #FFF3A3A6;">Strings</mark>
+<mark style="background: #FFB86CA6;">Strings</mark>
 - 2 ways to create a string
 	- using class string
 	- using array of char
@@ -309,8 +309,8 @@ int main()
 			*/
 			```
 - `string` class
-	- creates an array bigger than the number of characters to maintain buffer capacity.
-	- if a modification adds characters more than the available buffer capacity then it internally creates another copy of the array, makes the modification and still leaves some buffer capacity to the newly copied array.
+	- creates an array bigger than the number of characters to maintain some buffer capacity like vectors
+	- any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
 	- `str.length()` gives length of string excluding `\0`
 		- `str.size()` is same as `str.length()`
 	- `str.capcity()` gives the actual capacity of the string including `str.length()`+ 1 due to `\0` + buffer capacity

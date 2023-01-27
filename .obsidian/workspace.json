@@ -32,6 +32,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4f5c1a2f4bdb2d5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algo.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
         ],
         "currentTab": 1
@@ -167,10 +180,10 @@
   },
   "active": "ac66cae34cae50d6",
   "lastOpenFiles": [
-    "DStr.md",
-    "Cpp.md",
-    "Untitled.md",
     "Algo.md",
+    "Cpp.md",
+    "DStr.md",
+    "Untitled.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
