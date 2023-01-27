@@ -244,15 +244,15 @@ int main()
 	- `strcpy(destination, source)` or `strncpy(destination, source, length)`
 	- `strstr(str,subStr)`
 		- used to check for sub string `subStr` in string `str`
-			- if found returns sub string from the first occurrence to the end of the string including the sub string.
+			- if found returns sub string from the first occurrence to the end of the string including the sub string itself
 			- else it returns `NULL`
-				- `NULL` cannot be printed by `cout` so write `cout` in if block that checks if `strstr(str,subStr)` doesn't return `NULL`.
+				- `NULL` cannot be printed by `cout` so write `cout` in an if block that checks if `strstr(str,subStr)` doesn't return `NULL`
 	- `strchr(str, ch)`
-		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including ch itself.
-	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left.
-	- `strcmp(s1,s2)` gives -ve, 0, +ve value
+		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including ch itself
+	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left instead
+	- `strcmp(s1,s2)` returns -ve, 0, +ve value
 	- `strtol(str,NULL,10)` converts string to long
-		- 10 means decimal system, 2 means binary system
+		- 10 means decimal system, 2 means binary system and so on
 	- `strtof(str,NULL)` converts string to float
 	- `strtok(str,"=;")`
 		- Tokeniser function
