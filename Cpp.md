@@ -158,10 +158,10 @@ int main()
 			        p[i] = i + 1;
 			        cout << p[i] << " ";
 			    }
-		
-				delete[] p; // to avoid leaking of {1, 2, 3, 4, 5}
-				p = new int[10]; // new memory gets allocated pointing to {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-		
+			
+			    delete[] p;      // to avoid leaking of {1, 2, 3, 4, 5}
+			    p = new int[10]; // new memory gets allocated pointing to {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+			
 			    delete[] p;
 			    p = nullptr;
 			
@@ -169,9 +169,9 @@ int main()
 			}
 			```
 - *Pointer Arithmetic*
-	- dereferencing is not needed.
-	- subtracting 2 pointers pointing to different indices of an integer Array gives how many indices far are the 2 pointers without dividing by 4.
-	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array.
+	- dereferencing is not needed
+	- subtracting 2 pointers pointing to different indices of an integer array gives how many indices far are the 2 pointers without dividing by 4(size of an int)
+	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array
 	- this is
 		```cpp
 		#include <iostream>
@@ -195,28 +195,28 @@ int main()
 		{
 		    int A[] = {1, 2, 3, 4, 5};
 		
-		    for (int i = 0; i < sizeof(A) / 4; i++)
+		    for (int i = 0; i < sizeof(A) / sizeof(int); i++)
 		        cout << *(A + i);
 		
 		    return 0;
 		}
 		```
 - *Runtime gotchas w/ pointers*
-	- Memory Leak when HEAP allocations are not freed.
+	- Memory Leak when HEAP allocations are not freed
 	- uninitialized pointer
-		- `int *p = 25` where 25 is not stored in a variable.
+		- `int *p = 25` where 25 is not stored in a variable
 			- you can use `int *p = &n` or `int *p = new int`
 	- dangling pointer
-		- If a pointer is having an address of a memory location which is already deallocated.
-		- when a pointer is passed to another function and freed at the end of that function and if the pointer is accessed again after the control is returned to the calling function then we have a runtime error but not a memory leak.
+		- If a pointer is having an address of a memory location which is already deallocated
+		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak.
 - *References*
-	- `int x = 10` allocates a box in the memory named x which stores 10.
-	- `int &y = x` creates an alias of x which is y.
-		- So x and y will always have the same value and changes to one can be reflected from the other variable as well.
+	- `int x = 10` allocates a box in the memory named x which stores 10
+	- `int &y = x` creates an alias of x which is y
+		- So x and y will always have the same value and changes to one can be reflected from the other variable as well
 	- doesn't consume memory
-	- &x is always same as &y
-	- declaration without initialization is an error.
-	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x.
+	- `&x` is always same as `&y`
+	- declaration without initialization is an error
+	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x
 
 ***Strings***
 - 2 ways to create a string
