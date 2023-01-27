@@ -132,20 +132,20 @@ int main()
 
 
 ***Pointer***
-- Size of a pointer is independent of data type and always takes 8 bytes.
+- Size of a pointer is independent of data type and always takes 8 bytes
 - *Memory Layout*
-	- | HEAP  |
+	- | HEAP   |
 	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
-	- | CODE  | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here.
+	- | CODE   | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here.
 		- The CODE section can access STACK and itself. Not the HEAP.
-		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section.
+		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section
 			- Thus HEAP can only be accessed using pointers.
 			- Accessing Files and hardware devices is also done using pointers.
 		- Accessing HEAP using `new` 
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
-				- if you do `p = nullptr` first then you won't be able to free HEAP later.
-			- once an array is declared in the STACK you cannot change its size but it is possible if it is in the HEAP.
+				- Don't do `p = nullptr` first as you won't be able to free HEAP later.
+			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP.
 			```cpp
 			#include <iostream>
 			using namespace std;
