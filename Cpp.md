@@ -24,20 +24,28 @@
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
 ***Type Definition***
-- makes variables more readable.
-- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N.
-- To make it more readable we use typedef to alias the data type of mX from int to marks and rN from int to roll.
-	`typedef int marks;`
-	`typedef int roll;`
-	`marks m1, m2, m3;`
-	`roll r1, r2, r3;`
+- makes variables more readable
+- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
+- To make it more readable we use `typedef` to alias the data type of mX from int to marks and rN from int to roll to add more context
+	 ```cpp
+	typedef int marks, roll;
+	marks m1, m2, m3;
+	roll r1, r2, r3;
+	```
 
 ***For Each Loop***
-- let `int A[] = {1, 2, 3, 4, 5};` then 
-- `for (int x : A)`
-	`cout << x;`
-- `for (auto x : A)` where the compiler takes care of the data type of x.
-- changing the value of x doesn't change the array element because x is a copy.
+```cpp
+int A[] = {1, 2, 3, 4, 5};
+for (int x : A)
+	cout << x;
+```
+- `for (auto x : A)` where the compiler takes care of the data type of x
+	```cpp
+	int A[] = {1, 2, 3, 4, 5};
+	for (auto x : A)
+	    cout << x;
+	```
+- modifying x in the loop doesn't change the corresponding element in array because x is a copy
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
 
