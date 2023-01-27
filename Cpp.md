@@ -105,11 +105,11 @@ int main()
 ```
 
 ***Note on Arrays***
-- When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0.
+- When an Array of length n is created and when m elements are hard coded then remaining n-m elements are automatically initialized to 0
 - `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
 - When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
-- When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array.
-- Need to use reference of x when A is 2-D array in a for each loop but you still need to use nested for each loop.
+- When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array
+- Need to use reference of x when A is 2-D array is iterated over using a for each loop but you still need to use nested for each loop
 	```cpp
 	#include <iostream>
 	using namespace std;
