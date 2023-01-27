@@ -218,7 +218,7 @@ int main()
 	- declaration without initialization is an error
 	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x
 
-***Strings***
+<mark style="background: #FFF3A3A6;">Strings</mark>
 - 2 ways to create a string
 	- using class string
 	- using array of char
