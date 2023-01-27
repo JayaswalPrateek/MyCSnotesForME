@@ -56,7 +56,7 @@ using namespace std;
 int main()
 {
     const int A[] = {4, 8, 24, 42, 101, 404, 1234};
-    int key, l = 0, h = (sizeof(A) / 4) - 1;
+    int key, l = 0, h = (sizeof(A) / sizeof(int)) - 1;
 
     cout << "Enter Key: ";
     cin >> key;
@@ -1553,7 +1553,7 @@ int main()
 	- largest element stays at the top of the stack called max heap
 	- smallest element stays at the top of the stack called min heap
 - set
-	- stores only unique elemnts in a sorted order max heap
+	- stores only unique elements in a sorted order max heap
 	- `someset.find(3);` returns them memory location of 3 in the set
 		- if not in the set then it returns `someset.end();` which points after the end of the last element
 - multiset
@@ -1562,4 +1562,4 @@ int main()
 		- to erase only a particular instance proved the address using .find which is always unique
 	- `.count(3)` counts number of 3 in multiset
 - unordered set
-	- same as set but doen't sort like max heap
+	- same as set but doesn't sort like max heap
