@@ -135,17 +135,17 @@ int main()
 - Size of a pointer is independent of data type and always takes 8 bytes
 - *Memory Layout*
 	- | HEAP   |
-	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope.
-	- | CODE   | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here.
-		- The CODE section can access STACK and itself. Not the HEAP.
+	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. Automatically deleted when out of scope
+	- | CODE   | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
+		- The CODE section can access STACK and itself. Not the HEAP
 		- To access the HEAP from the CODE section you need to create a pointer to a memory address in HEAP and the pointer is created in the STACK from the CODE section
-			- Thus HEAP can only be accessed using pointers.
-			- Accessing Files and hardware devices is also done using pointers.
+			- Thus HEAP can only be accessed using pointers
+			- Accessing Files and hardware devices is also done using pointers
 		- Accessing HEAP using `new` 
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
-				- Don't do `p = nullptr` first as you won't be able to free HEAP later.
-			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP.
+				- Don't do `p = nullptr` first as you won't be able to free HEAP later
+			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP
 			```cpp
 			#include <iostream>
 			using namespace std;
@@ -208,7 +208,7 @@ int main()
 			- you can use `int *p = &n` or `int *p = new int`
 	- dangling pointer
 		- If a pointer is having an address of a memory location which is already deallocated
-		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak.
+		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak
 - *References*
 	- `int x = 10` allocates a box in the memory named x which stores 10
 	- `int &y = x` creates an alias of x which is y
@@ -238,9 +238,9 @@ int main()
 	- if using char array, use `strlen(str)` and `#include<cstring>`
 - `cstring` functions: 
 	- `strcat(destination, source)`
-		- removes `\0` from source and merges them.
+		- removes `\0` from source and merges them
 		- `strncat(destination, source, length)`
-			- the length of the source to be concatenated.
+			- the length of the source to be concatenated
 	- `strcpy(destination, source)` or `strncpy(destination, source, length)`
 	- `strstr(str,subStr)`
 		- used to check for sub string `subStr` in string `str`
