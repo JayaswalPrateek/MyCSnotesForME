@@ -313,7 +313,7 @@ int main()
 	- any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
 	- `str.length()` gives length of string excluding `\0`
 		- `str.size()` is same as `str.length()`
-	- `str.capcity()` gives the actual capacity of the string including `str.length()`+ 1 due to `\0` + buffer capacity
+	- `str.capcity()` gives the actual capacity of the string including `str.length()` + 1 due to `\0` + buffer capacity
 	- `str.resize(newCapacity)` changes the capacity of `str` from `str.Capacity()` to `newCapacity` + buffer capacity
 	- `str.max_size()` gives the max size of a string the compiler supports
 		- depends on the CPU architecture and OS
@@ -337,8 +337,8 @@ int main()
 		- `str.pop_back()`
 			- removes last char of `str` 
 	- `str.copy(chArray,str.length())` 
-		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied.
-		- doesn't add `\0` so need to do it manually
+		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied
+		- doesn't add `\0` so need to do it manually, steps:
 			- `string str = "Welcome"`
 			- `char chArray[10]`
 			- `str.copy(chArray, 3)` <- `Wel` is stored in `chArray`
@@ -353,7 +353,7 @@ int main()
 		- gives the first occurrence of char `ch` in string `str`
 		-  `str.find_last_of(ch)` or `str.find_last_of(ch, startingIndex)`
 		- if a string is given its not a syntax error
-			- it traverses `str` char by char and as soon as a char at `str` also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence. 
+			- it traverses `str` char by char and as soon as a char at `str` also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence
 	- `str.substr(lowerLim, upperLim)`
 		- returns sub string of `str` from index `lowerLim` till index `upperLim`
 			- `upperLim` is not mandatory, when not provided, it is equal to `str.length()`
