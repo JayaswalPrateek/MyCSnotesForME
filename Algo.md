@@ -14,7 +14,7 @@
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- used in chess
-		- has `O(number of nodes + number of branches)`
+		- `O(number of nodes + number of branches)`
 - <mark style="background: #D2B3FFA6;">Sorting</mark>
 	- <mark style="background: #BBFABBA6;">Insertion Sort</mark>
 		- compares the nth element with (n+1)th element and swaps them if nth element is larger
