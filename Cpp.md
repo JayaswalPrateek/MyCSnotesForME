@@ -364,10 +364,8 @@ int main()
 			- string is a class so `[]` operator is overloaded
 	- `str.front()` gives first char of string `str`
 	- `str.back()` gives last char of string `str`
-	- + operator can be used to concatenate strings
-		- + is also overloaded
-	- = operator copies the content of r value to l value
-		- = is also overloaded
+	- + is an overloaded operator that concatenates strings
+	- = is an overloaded operator that copies the content of r value to l value
 	- String iterations
 		- 2 ways: `iterator` and `reverse_iterator`
 			- the iterator is pointer for the array of chars in the string class and we use pointer arithmetic to iterate using the string class
