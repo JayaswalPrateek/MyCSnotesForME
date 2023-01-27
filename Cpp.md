@@ -24,7 +24,7 @@
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
 ***Type Definition***
-- Used to make variables more readable.
+- makes variables more readable.
 - So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N.
 - To make it more readable we use typedef to alias the data type of mX from int to marks and rN from int to roll.
 	`typedef int marks;`
