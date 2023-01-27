@@ -109,7 +109,7 @@ int main()
 - `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
 - When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
 - When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array
-- Need to use reference of x when A is 2-D array is iterated over using a for each loop but you still need to use nested for each loop
+- Need to use reference of x when A is 2-D array is iterated over using a for each loop, but you still have to use nested for each loop
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -128,6 +128,7 @@ int main()
 	}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
+	- prefer using auto in a for each loop iterating over a 2-D array 
 
 
 ***Pointer***
