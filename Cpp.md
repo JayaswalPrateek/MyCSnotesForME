@@ -1013,7 +1013,7 @@ int main()
 - you can throw any data type including object of a class
 	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
 	- Throwing a constructor will create the object and then throw
-- you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this step is optional 
+- you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this is optional 
 	- if you keep this round bracket empty means that the function throws no exception
 ```cpp
 #include <iostream>
@@ -1022,9 +1022,7 @@ using namespace std;
 int divider(int x, int y)
 {
     if (y == 0)
-    {
         throw string("DivZer0");
-    }
     return x / y;
 }
 
@@ -1039,12 +1037,12 @@ int main()
     {
         cout << "Oops, Error:" << err << endl;
     }
-    cout << "Program Ended";
+    cout << "After Try Catch";
 
     return 0;
 }
 // Oops, Error:DivZer0
-// Program Ended
+// After Try Catch
 ```
 - you can write multiple catch blocks for single try block that handle different data types of thrown variables
 	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their type 
