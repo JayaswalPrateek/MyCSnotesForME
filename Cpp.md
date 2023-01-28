@@ -650,7 +650,9 @@ int main()
 	    return 0;
 	}
 	```
-- <mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
+- note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
+	- it is considered re declaration of the function 
+<mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
 	- setter functions of a class are public functions that get the value in a function call and assign it to initialize private variables of the class they belong to
 	- getters are functions that just return the value of the private variable
 	- if a variable has getter and no setter it becomes read only
@@ -838,8 +840,6 @@ int main()
 	```
 - if you are inheriting a class then you cannot rely on the constructor of that class
 	- so you need to make sure that the constructor of the child function can also initialize variables of parent class 
-- note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
-	- it is considered re declaration of the function 
 - constructors in inheritance
 	- if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the derived class is created then the default constructor of parent class is called first followed by a constructor of child class
 		- how to call the parameterized constructor of the parent class ?
@@ -865,7 +865,7 @@ int main()
 			
 			int main()
 			{
-			    son betaji(10, 20);
+			    son baccha(10, 20);
 			
 			    return 0;
 			}
@@ -874,17 +874,17 @@ int main()
 			// son has 10
 			// papa has 20
 			```
-			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and it gets executed.
-- isA and hasA
-	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA).
-	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle.
-	- when a class table uses an object of rectangle then the table has a rectangle.
+			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and then it gets executed
+- <mark style="background: #D2B3FFA6;">isA and hasA</mark>
+	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA)
+	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle
+	- when a class table uses an object of rectangle as its data member then the table has a rectangle
 - virtual parent classes
 	- 2 parent classes inherit from a grandparent class and a child class inherits from both the parent classes
 		- then the functions of the grandparent class can be accessed by 2 paths. This is multi path inheritance.
 			- to remove this ambiguity we use virtual parent classes
 				- just add keyword `virtual` before inheritance mode for the 2 parents
-- inheritance mode:
+- <mark style="background: #D2B3FFA6;">inheritance modes:</mark>
 	- if a class is inherited in public mode
 		- private cannot be accessed but public remains public and protected remains protected.
 	- protected mode:
