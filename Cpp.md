@@ -742,7 +742,7 @@ int main()
 	- reason for using friend: the friend function accepts 2 objects c1 and c2 of class complex
 		- objects c1 and c2 are not available in the scope of the class
 - <mark style="background: #D2B3FFA6;">insertion operator loading</mark> using `cout<<c`
-	- where c is a complex number and we will overload insertion operator `<<` to print both real and imaginary parts.
+	- where c is a complex number and we will overload insertion operator `<<` to print both real and imaginary parts
 	- we will have to use a friend function and also pass `cout` to it
 	```cpp
 	#include <iostream>
@@ -775,7 +775,7 @@ int main()
 	```
 	- we are returning `ostream` so that insertion operator can be chained
 		- `cout<<cnum<<endl;` is valid
-		- if we replace `ostream` return type with void then we cannot chain insertion operator.
+		- if we replace `ostream` return type with void then we cannot chain insertion operator
 
 <mark style="background: #FFB86CA6;">Inheritance</mark>
 - well designed classes using inheritance
