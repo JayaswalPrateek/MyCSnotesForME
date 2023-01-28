@@ -555,7 +555,7 @@ int main()
 		    return 0;
 		}
 		```
-- passing array to function
+- <mark style="background: #BBFABBA6;">passing array to function</mark>
 	- when an array is passed as a parameter to a function, it decays into a pointer to the first element of the array
 	```cpp
 	#include <iostream>
@@ -586,12 +586,11 @@ int main()
 	    }
 	
 	    cout << "Element found at index :" << index << endl;
-	
 	    return 0;
 	}
 	```
 
-***OOPS***
+<mark style="background: #FFB86CA6;">OOPS</mark>
 - size of a object = size of data types only as functions don't occupy memory
 - class doesn't occupy space, object does. Class is a blueprint
 - multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section.
