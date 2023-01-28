@@ -397,20 +397,14 @@ int main()
 				- solution is instead of declaring it as global variable make it a static local variable of that function
 				- they are located in the code section so their content is not lost after a function ends.
 - return types are not a deciding factor in function overloading
-- Function Templates (Generics)
+- <mark style="background: #D2B3FFA6;">Function Templates (Generics)</mark>
 	- overloaded functions may have entirely same logic but deal with different data type so we need to overload function for every data type
 		```cpp
 		#include <iostream>
 		using namespace std;
 		
-		int getmax(int a, int b)
-		{
-		    return a > b ? a : b;
-		}
-		float getmax(float a, float b)
-		{
-		    return a > b ? a : b;
-		}
+		int getmax(int a, int b) { return a > b ? a : b; }
+		float getmax(float a, float b) { return a > b ? a : b; }
 		
 		int main()
 		{
@@ -426,10 +420,7 @@ int main()
 		using namespace std;
 		
 		template <class T>
-		T getmax(T a, T b)
-		{
-		    return a > b ? a : b;
-		}
+		T getmax(T a, T b) { return a > b ? a : b; }
 		
 		int main()
 		{
@@ -439,43 +430,40 @@ int main()
 		    return 0;
 		}
 		```
-		- Here the data type of T is decided dynamically.
-		- T can also be an object.
-		- data types of both a and b should be same.
+		- Here the data type of T is decided dynamically
+		- T can also be an object
+		- data types of both a and b should be same
 			- if we pass an int and double then we get an error
-- Default arguments of a function
-	- a template function cannot have default arguments
+- <mark style="background: #D2B3FFA6;">Default arguments of a function</mark>
+	- <mark style="background: #BBFABBA6;">a template function cannot have default arguments</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
 	
-	int add(int x, int y, int z = 0)
-	{
-	    return x + y + z;
-	}
+	int add(int x, int y, int z = 0) { return x + y + z; }
 	
 	int main()
 	{
 	    cout << add(1, 2) << endl;
 	    cout << add(1, 2, 3);
 	
-		return 0;
+	    return 0;
 	}
 	```
 	- here the default arguments of variable z is 0 so if the value of z is not provided in the function call then it fall backs to the default value
-	- this way using one function we can add 2 or 3 numbers.
-	- allows to combine otherwise overloaded functions.
-	- rule: default arguments should be declared from right to left and you cannot have a variable with no default argument in between 2 variables which have default arguments.
-	- all variables can have default arguments, but if one of them doesn't have one then it should be the leftmost variable and cannot lie between any 2 variables.
+	- this way using one function we can add 2 or 3 numbers
+	- allows to combine otherwise overloaded functions
+	- rule: default arguments should be declared from right to left and you cannot have a variable with no default argument in between 2 variables which have default arguments
+	- all variables can have default arguments, but if one of them doesn't have one then it should be the leftmost variable and cannot lie between any 2 variables
 		- `int add(int x = 0, int y, int z = 0)` is an error
-		- `int add(int y, int x=0, int z = 0)` is correct.
-	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location. This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes.
-- call by reference functions are handled differently by the compiler.
+		- `int add(int y, int x=0, int z = 0)` is correct
+	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location. This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes
+- call by reference functions are handled differently by the compiler
 	- its machine code gets inserted in the machine code of the function calling another function by reference and pointers are not involved
 		- the function called by reference acts as if its content was in the calling function at the line where the function call happens
 		- all functions that are called by reference become inline functions because their machine code get copied to the function calling them 
 		- avoid loops in functions that are called by reference as the loop or any other complex code can change the nature of the call and it may not be by reference 
-- return by address
+- <mark style="background: #D2B3FFA6;">return by address</mark>
 	- functions perform operation on heap and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
 		```cpp
 		#include <iostream>
@@ -505,7 +493,7 @@ int main()
 		- you cannot return the address of a local variable as it will be destroyed after the function ends. 
 			- only HEAP memory address can be returned. 
 		- can be used to return arrays
-- return by reference 
+- <mark style="background: #D2B3FFA6;">return by reference</mark> 
 	- you cannot return the address of a local variable as it will be destroyed after the function ends. 
 		- only HEAP memory address can be returned. 
 	```cpp
@@ -527,7 +515,7 @@ int main()
 		return 0;
 	}
 	```
-- pointer to a function
+- <mark style="background: #D2B3FFA6;">pointer to a function</mark>
 	- rule: the name of the pointer variable whenever used with asterisk sign should be enclosed in round brackets.
 	```cpp
 	#include <iostream>
