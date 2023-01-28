@@ -465,7 +465,7 @@ int main()
 		- all functions that are called by reference become inline functions because their machine code get copied to the function calling them
 		- avoid loops in functions that are called by reference as the loop or any other complex code can change the nature of the call and it may not be by reference
 - <mark style="background: #D2B3FFA6;">return by address</mark>
-	- functions perform operation on heap and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
+	- functions perform operation in HEAP and return an address without freeing it to the calling function which can be used to read and print by dereferencing the address
 		```cpp
 		#include <iostream>
 		using namespace std;
@@ -491,20 +491,17 @@ int main()
 			return 0;
 		}
 		```
-		- you cannot return the address of a local variable as it will be destroyed after the function ends. 
-			- only HEAP memory address can be returned. 
-		- can be used to return arrays
+		- you cannot return the address of a local variable as it will be destroyed after the function ends
+			- only HEAP memory address can be returned 
+		- can be used to return arrays declared in HEAP
 - <mark style="background: #D2B3FFA6;">return by reference</mark> 
-	- you cannot return the address of a local variable as it will be destroyed after the function ends. 
-		- only HEAP memory address can be returned. 
+	- you cannot return the address of a local variable as it will be destroyed after the function ends
+		- only HEAP memory address can be returned
 	```cpp
 	#include <iostream>
 	using namespace std;
 	
-	int &retByRef(int &x)
-	{
-		return x;
-	}
+	int &retByRef(int &x) {	return x; }
 	
 	int main()
 	{
@@ -517,15 +514,12 @@ int main()
 	}
 	```
 - <mark style="background: #D2B3FFA6;">pointer to a function</mark>
-	- rule: the name of the pointer variable whenever used with asterisk sign should be enclosed in round brackets.
+	- rule: the name of the pointer variable whenever used with asterisk sign should be enclosed in round brackets
 	```cpp
 	#include <iostream>
 	using namespace std;
 	
-	void hello()
-	{
-	    cout << "hello world" << endl;
-	}
+	void hello() { cout << "hello world" << endl; }
 	
 	int main()
 	{
