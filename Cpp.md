@@ -1172,11 +1172,10 @@ int main()
 ```
 - if variable is const and a pointer `ptr` is pointing to it then the pointer `ptr` should be const of the data type not as a pointer which it can also be at the same time but will require 2 consts in declaration
 - you can still point to the const of a data type of a variable without it having to be a constant
+- if we write `const` at the end of a function signature in a class then the compiler will not allow that functions to modify values of the class
+	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables
 
-***if we write `const` at the end of a function signature in a class then the compiler will  not allow that functions to modify values of the class***
-	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables.
-
-***pre-processor directives***
+<mark style="background: #FFB86CA6;">preprocessor directives</mark>
 - if a constant is needed across all files
 ```cpp
 #define x 10
@@ -1217,7 +1216,7 @@ int main()
 }
 ```
 
-***Destructors***
+<mark style="background: #FFB86CA6;">Destructors</mark>
 - called when the object goes out of the scope
 - if the object is created in HEAP and deleted then the destructor gets called
 - if a file is opened in  a class then it should be closed in the destructor
@@ -1273,73 +1272,6 @@ int main()
 		}
 		```
 
-***STL***
-- classes that bundle common data structures and all the functions related to it.
-- it has 4 things: functions,algorithms, containers and iterators
-	- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
-	- the classes for data structures are called containers
-		- this is STL: standard template classes as containers are of generic types
-			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
-				- supports push back, pop back, insert, remove, is empty, size  
-			- list: are doubly linked list and have two nodes fwd and backward in the struct
-				- functions same as vectors+ push front, pop front, front, back
-			- forward list: singly linked list with functions same as doubly
-			- dequeue: double ended queue, similar to vector but with functions like lists
-			- priority queue: means max heap: so the largest element is deleted first
-				- push, pop, empty, size
-			- stack: lifo with same funcs as priority queue
-			- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
-			- multiset: same as set but allows duplicate
-			- map is used to store key value pairs with all keys unique stores keys in sorted order
-			- multi map allows duplicate keys but key value pair should be unique
-			- unordered map needs unique keys but keys are not sorted
-	- iterators are used to access container data
-```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-int main()
-{
-    // vector<int> v;  by default creates a vector of len 16
-    // vector<int> v(50); creates a vector of len 50
-    vector<int> v = {1, 23, 456, 7890};
-    v.push_back(56); // added 56 at the end after 7890
-    v.push_back(69); // added 69 at the end after 56
-    v.pop_back();    // last element is removed
-    for (int x : v)
-    {
-        cout << x << " ";
-    }
-    cout << endl;
-    for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
-    {
-        cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
-    }
-}
-// u can replace occurences of vector with list or forward_list or dequeue or set
-```
-- for maps: 
-```cpp
-#include <iostream>
-#include <map>
-using namespace std;
-int main()
-{
-    map<int, string> m;
-    m.insert(pair<int, string>(1, "john"));
-    m.insert(pair<int, string>(2, "ravi"));
-    m.insert(pair<int, string>(3, "khan"));
-
-    map<int, string>::iterator itr;
-    for (itr = m.begin(); itr != m.end(); itr++)
-        cout << itr->first << " " << itr->second << endl;
-
-    map<int, string>::iterator itr1;
-    itr1 = m.find(2);
-    cout << "value found: " << itr1->first << " " << itr1->second << endl;
-}
-```
-
 `decltype(x) y` is used to create a variable y of data type x;
 
 if a class is marked final by adding keyword final after the class name then the class cannot be inherited further
@@ -1370,121 +1302,3 @@ ellipsis `...`
 - allows a function to take multiple args
 
 
-STL:
-- to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
-- pairs and nested pairs
-	```cpp
-	#include <bits/stdc++.h>
-	using namespace std;
-	int main()
-	{
-	    pair<int, int> p = {1, 2};
-	    cout << p.first << " " << p.second << endl;
-	    pair<pair<int, int>, int> np = {p, 3};
-	    cout << np.first.first << " " << np.first.second << " " << np.second << endl;
-	
-	    pair<int, int> pairray[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
-	    for (int i = 0; i < sizeof(pairray) / 8; i++)
-	        cout << pairray[i].first << " " << pairray[i].second << endl;
-	}
-	```
-- vector are arrays with dynamic length without being a linked list.
-	```cpp
-	#include <bits/stdc++.h>
-	using namespace std;
-	int main()
-	{
-	    vector<int> v;
-	
-	    v.push_back(1);         // the first element of v becomes 1
-	    v.push_back(2);         // the second element of v becomes 1
-	    v.emplace_back(2);      // same as push_back but faster
-	    v.emplace_back(3);      // same as push_back but faster
-	    v.emplace_back(4);      // same as push_back but faster
-	    v.emplace_back(5);      // same as push_back but faster
-	    v.erase(v.end() - 1);   // exceptional case to remove last element
-	    v.erase(v.begin() + 1); // removes 2nd element
-	    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can also erase a range of elements if you provide
-	    v.insert(v.begin(), 0);
-	    // v.insert(address,howManyCopiesOf,ThisElement);
-	    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
-	
-	    cout << v.front() << " " << v.back() << endl;
-	
-	    for (auto itr = v.begin(); itr != v.end(); itr++)
-	        cout << *itr << " ";
-	
-	    cout << endl;
-	
-	    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
-	        cout << *itr << " ";
-	
-	    cout << endl;
-	
-	    for (auto x : v)
-	        cout << x << " ";
-	
-	    vector<pair<int, int>> vpair;
-	    vpair.push_back({1, 2});  // need to use flower braces to specify pair
-	    vpair.emplace_back(3, 4); // automatically infers that it is a pair
-	
-	    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
-	    vector<int> bydefault(5);    // creates {0,0,0,0,0}
-	
-	    vector<int> temp(v); // creates a seperate copy of v and names it temp
-	
-	    cout << endl
-	         << v.size();
-	    // v.clear() makes the vector empty
-	    // v.empty gives bool if vector v is empty or not
-	}
-	```
-- list
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    list<int> ls; // same as vector but also allows front operations
-    ls.push_back(2);
-    ls.emplace_back(4);
-    ls.push_front(0);
-    ls.emplace_front(-2);
-    ls.pop_front();
-    ls.pop_back();
-}
-```
-- dequeue
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    deque<int> ls; // same as vector but also allows front operations
-    ls.push_back(2);
-    ls.emplace_back(4);
-    ls.push_front(0);
-    ls.emplace_front(-2);
-    ls.pop_front();
-    ls.pop_back();
-}
-```
--  stack (lifo)
-	- values are stored from bottom up using push/emplace and the last element is at the `top()` 
-	- cannot index like an array.
-- queue (fifo)
-	- `back()` instead of `top()`
-- priority queue
-	- largest element stays at the top of the stack called max heap
-	- smallest element stays at the top of the stack called min heap
-- set
-	- stores only unique elements in a sorted order max heap
-	- `someset.find(3);` returns them memory location of 3 in the set
-		- if not in the set then it returns `someset.end();` which points after the end of the last element
-- multiset
-	- like set as in stores sorted like max heap while allowing duplicate elements
-	- `.erase(3)` removes all occurrences of 3
-		- to erase only a particular instance proved the address using .find which is always unique
-	- `.count(3)` counts number of 3 in multiset
-- unordered set
-	- same as set but doesn't sort like max heap
