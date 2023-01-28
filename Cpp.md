@@ -973,12 +973,12 @@ int main()
 	- a nested class acts independently as if it were an outer class
 
 <mark style="background: #FFB86CA6;">exception handling</mark>
-- during runtime errors
+- used during runtime errors
 - if there is any error in the try block then the control moves to the catch block
 	- the remaining lines of try block are not executed
 	- catch block will not execute if no errors in try block
-- to move the control use throw in the try block.
-- `throw var` then var needs to be a parameter of the catch block
+- to move the control use throw in the try block
+- `throw var` then `var` needs to be a parameter of the catch block
 	- `var` usually used to throw codes
 ```cpp
 #include <iostream>
@@ -987,9 +987,7 @@ using namespace std;
 int divider(int x, int y)
 {
     if (y == 0)
-    {
         throw 404;
-    }
     return x / y;
 }
 
@@ -1004,19 +1002,19 @@ int main()
     {
         cout << "Oops, ";
     }
-    cout << "Pakad liya";
+    cout << "After Try Catch";
 
     return 0;
 }
-// Oops, Pakad liya
+// Oops, After Try Catch
 ```
-- the main use of try catch is when a function is expected to return a value but is not able to then what should it return? ans throw exception.
-	- if we know that the function can throw exception call it in try block
+- the main use of try catch is when a function is expected to return a value but is not able to then it <mark style="background: #D2B3FFA6;">should throw an exception</mark>
+	- if we know that a function can throw an exception then call it in try block
 - you can throw any data type including object of a class
 	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
-	- Throwing a constructor will create the object and then throw.
+	- Throwing a constructor will create the object and then throw
 - you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this step is optional 
-	- if you keep this round bracket empty means that the function throws no exception.
+	- if you keep this round bracket empty means that the function throws no exception
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1054,7 +1052,7 @@ int main()
 		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will always be unused
 	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class 
 
-***Template functions and classes***
+<mark style="background: #FFB86CA6;">Template functions and classes</mark>
 - used for generic programming
 ```cpp
 #include <iostream>
