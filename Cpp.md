@@ -1223,18 +1223,18 @@ int main()
 - or any HEAP allocations made in the class should be deleted in the destructor
 - during inheritance
 	- first the parent constructor is called
-	- the the child constructor is called
-	- at the end the child destructor is called
+	- then the child constructor is called
+	- then the child destructor is called
 	- then the parent destructor is called
 	- if we have a parent pointer and child object and used delete ptr then
 		- only parent class destructor will be called
 		- to fix this make the parent class destructor virtual
-			- then parent class destructor is called the child class
+			- then parent class destructor is called then child class destructor
 
-***Streams***
+<mark style="background: #FFB86CA6;">Streams</mark>
 - for input and output
-- iostream has istream for input and ostream for output
-- cin is an object of istream and cout is an object os ostream
+- `iostream` has `istream` for input and `ostream` for output
+- `cin` is an object of `istream` and `cout` is an object of `ostream`
 - insertions and extraction operator are used and sometimes overloaded
 - File handling:
 	- writing
