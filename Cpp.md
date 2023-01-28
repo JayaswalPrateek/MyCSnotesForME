@@ -591,9 +591,9 @@ int main()
 	```
 
 <mark style="background: #FFB86CA6;">OOPS</mark>
-- size of a object = size of data types only as functions don't occupy memory
+- <mark style="background: #D2B3FFA6;">size of a object = size of data types only as functions don't occupy memory</mark>
 - class doesn't occupy space, object does. Class is a blueprint
-- multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section.
+- multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section
 - pointer to object in STACK
 	```cpp
 	#include <iostream>
@@ -604,15 +604,9 @@ int main()
 	public:
 	    float len, brd;
 	
-	    void area()
-	    {
-	        cout << "Area is " << len * brd << " sq. units" << endl;
-	    }
+	    void area() { cout << "Area is " << len * brd << " sq. units" << endl; }
 	
-	    void peri()
-	    {
-	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;
-	    }
+	    void peri() { cout << "Perimeter is " << 2 * (len + brd) << " units" << endl; }
 	};
 	
 	int main()
@@ -637,15 +631,9 @@ int main()
 	public:
 	    float len, brd;
 	
-	    void area()
-	    {
-	        cout << "Area is " << len * brd << " sq. units" << endl;
-	    }
+	    void area()   { cout << "Area is " << len * brd << " sq. units" << endl;	    }
 	
-	    void peri()
-	    {
-	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;
-	    }
+	    void peri()	    {	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;	    }
 	};
 	
 	int main()
