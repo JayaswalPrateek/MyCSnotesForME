@@ -1045,9 +1045,9 @@ int main()
 // After Try Catch
 ```
 - you can write multiple catch blocks for single try block that handle different data types of thrown variables
-	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their type 
+	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their data type
 	- write this as the last catch block and not the first one if you are using multiple catch blocks
-		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will always be unused
+		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will be redundant
 	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class 
 
 <mark style="background: #FFB86CA6;">Template functions and classes</mark>
