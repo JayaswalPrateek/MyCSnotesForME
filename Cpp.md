@@ -236,7 +236,7 @@ int main()
 - 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
-- `cstring` functions: 
+- <mark style="background: #D2B3FFA6;">cstring:</mark> 
 	- `strcat(destination, source)`
 		- removes `\0` from source and merges them
 		- `strncat(destination, source, length)`
@@ -308,7 +308,7 @@ int main()
 			
 			*/
 			```
-- `string` class
+- <mark style="background: #D2B3FFA6;">string class:</mark>
 	- creates an array bigger than the number of characters to maintain some buffer capacity like vectors
 	- any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
 	- `str.length()` gives length of string excluding `\0`
