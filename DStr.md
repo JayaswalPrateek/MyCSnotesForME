@@ -1,14 +1,14 @@
   <mark style="background: #FFB86CA6;">Big O</mark>
-- O(1) are the most efficient algorithms as they scale really well because the execution time is independent of the input size
-	- like searching a value in map using its key.
-- O(n) means the execution time is linearly dependent on the input size
+- `O(1)` algorithms are most efficient as they scale really well because the execution time is independent of the input size
+	- like searching a value in map using its key
+- `O(n)` means the execution time is linearly dependent on the input size
 	- searching for an element in an array
-	- we usually take the worst case scenario like if the element we are looking for is at the end of the array for an array of length n then its O(n)
-	- O(n) can be O(1) if the element we are looking for is at the 0th index but this is not guaranteed
-- nested loop doesn't always imply O(n^2)
-- but O(n^2) can have nested loops
-- if i am searching i 1-D loop twice it is O(2n)
-	- so if i doing it n times it is O(n^2)
+	- we usually take the worst case scenario like if the element we are looking for is at the end of the array for an array of length n then its `O(n)`
+	- `O(n)` can be `O(1)` if the element we are looking for is at the 0th index but this is not guaranteed
+- nested loop doesn't always imply `O(n^2)`
+- but `O(n^2)` can have nested loops
+- if i am searching i 1-D loop twice it is `O(2n)`
+	- so if i doing it n times it is `O(n^2)`
 - suppose we have a 1-D array of length n and first we traverse from 0th index to (n-1)th index
 	- then in the 2nd pass we skip the 0th element and start from 1st element. next pass from 2nd one and so on.
 	- so we will have a total of n passes for an array of length n
