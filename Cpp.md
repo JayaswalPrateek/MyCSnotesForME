@@ -514,7 +514,7 @@ int main()
 	}
 	```
 - <mark style="background: #D2B3FFA6;">pointer to a function</mark>
-	- rule: the name of the pointer variable whenever used with asterisk sign should be enclosed in round brackets
+	- rule: the name of the pointer variable whenever used <mark style="background: #BBFABBA6;">with asterisk sign should be enclosed in round brackets</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -535,17 +535,14 @@ int main()
 	    return 0;
 	}
 	```
-	- using with arguments to a function
+	- using <mark style="background: #BBFABBA6;">with arguments to a function</mark>
 		```cpp
 		#include <iostream>
 		using namespace std;
 		
 		int min(int x, int y) { return x > y ? y : x; }
 		
-		int max(int x, int y)
-		{
-		    return x < y ? y : x;
-		}
+		int max(int x, int y) { return x < y ? y : x; }
 		
 		int main()
 		{
