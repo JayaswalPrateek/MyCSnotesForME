@@ -926,26 +926,14 @@ int main()
 	class swift : public anyCar
 	{
 	public:
-	    void start()
-	    {
-	        cout << "started swift" << endl;
-	    }
-	    void stop()
-	    {
-	        cout << "stopped swift" << endl;
-	    }
+	    void start() { cout << "started swift" << endl; }
+	    void stop() { cout << "stopped swift" << endl; }
 	};
 	class innova : public anyCar
 	{
 	public:
-	    void start()
-	    {
-	        cout << "started innova" << endl;
-	    }
-	    void stop()
-	    {
-	        cout << "stopped innova" << endl;
-	    }
+	    void start() { cout << "started innova" << endl; }
+	    void stop() { cout << "stopped innova" << endl; }
 	};
 	
 	int main()
@@ -960,13 +948,13 @@ int main()
 	    return 0;
 	}
 	```
-  - generalization of swift and innova so we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when u do this make virtual functions = 0 then they are called pure virtual functions.
-	  - a class with pure virtual function is called abstract class
+  - generalization of swift and innova so we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when u do this make virtual functions = 0 then they are called pure virtual functions
+	  - a class with pure virtual function is called an abstract class
 		- you cannot create objects of abstract classes but you can make pointer objects to them
-		- 3 possible use cases of inheritance 
-			- if all functions of the class are non virtual then the its use is reusability 
-			- if some functions are virtual then both uses reusability and polymorphism 
-			- and if all virtual functions then only use is to achieve polymorphism and such a class is called an interface
+	- <mark style="background: #BBFABBA6;">3 possible use cases of inheritance:</mark>
+		- if <mark style="background: #BBFABBA6;">all functions of the class are non virtual</mark> then the its use is <mark style="background: #BBFABBA6;">re-usability</mark> 
+		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark> 
+		- and if <mark style="background: #BBFABBA6;">all virtual functions</mark> then <mark style="background: #BBFABBA6;">only use is to achieve polymorphism</mark> and <mark style="background: #BBFABBA6;">such a class is called an interface</mark>
 - <mark style="background: #D2B3FFA6;">Friend functions</mark>
 	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access.
 	- we add `friend` before the return type of the function in the class. 
