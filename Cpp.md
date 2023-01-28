@@ -777,7 +777,7 @@ int main()
 		- `cout<<cnum<<endl;` is valid
 		- if we replace `ostream` return type with void then we cannot chain insertion operator.
 
-Inheritance
+<mark style="background: #FFB86CA6;">Inheritance</mark>
 - well designed classes using inheritance
 	```cpp
 	#include <iostream>
