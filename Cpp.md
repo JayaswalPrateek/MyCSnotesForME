@@ -1,6 +1,9 @@
 <mark style="background: #FFB86CA6;">Input Buffer</mark>
 - When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
+<mark style="background: #FFB86CA6;">decltype</mark>
+- `decltype(x) y` is used to create a variable y with the data type of x
+
 <mark style="background: #FFB86CA6;">Enum</mark>
 - User defined data types that can alias a commonly used name with a constant integer improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
@@ -116,19 +119,19 @@ int main()
 	int main()
 	{
 	    const int A[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
-	
+
 	    for (auto &i : A)
 	    {
 	        for (auto j : i)
 	            cout << j << " ";
 	        cout << endl;
 	    }
-	
+
 	    return 0;
 	}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
-	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark> 
+	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark>
 
 
 <mark style="background: #FFB86CA6;">Pointer</mark>
@@ -141,7 +144,7 @@ int main()
 		- <mark style="background: #D2B3FFA6;">To access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
 			- Thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
 			- Accessing Files and hardware devices is also done using pointers
-		- Accessing HEAP using `new` 
+		- Accessing HEAP using `new`
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
 				- Don't do `p = nullptr` first as you won't be able to free HEAP later
@@ -152,19 +155,19 @@ int main()
 			int main()
 			{
 			    int *p = new int[5];
-			
+
 			    for (int i = 0; i < 5; i++)
 			    {
 			        p[i] = i + 1;
 			        cout << p[i] << " ";
 			    }
-			
+
 			    delete[] p;      // to avoid leaking of {1, 2, 3, 4, 5}
 			    p = new int[10]; // new memory gets allocated pointing to {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-			
+
 			    delete[] p;
 			    p = nullptr;
-			
+
 			    return 0;
 			}
 			```
@@ -180,10 +183,10 @@ int main()
 		{
 		    int A[] = {1, 2, 3, 4, 5};
 		    int *p = A; // Same as int *p = &A[0]
-		
+
 		    for (int i = 0; i < sizeof(A) / 4; i++, p++)
 		        cout << *p;
-		
+
 		    return 0;
 		}
 		```
@@ -194,10 +197,10 @@ int main()
 		int main()
 		{
 		    int A[] = {1, 2, 3, 4, 5};
-		
+
 		    for (int i = 0; i < sizeof(A) / sizeof(int); i++)
 		        cout << *(A + i);
-		
+
 		    return 0;
 		}
 		```
@@ -224,7 +227,7 @@ int main()
 	- using array of char
 		- without pointer: `char str[] = "Hello"`
 			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string
-		- with pointer: `char *s = "Hello"` 
+		- with pointer: `char *s = "Hello"`
 - 2 ways to get user input
 	- if using class string
 		- `cin>>str` accepts one word
@@ -236,7 +239,7 @@ int main()
 - 2 ways to find length(doesn't count `\0`)
 	- if using string class, use `str.length()`
 	- if using char array, use `strlen(str)` and `#include<cstring>`
-- <mark style="background: #D2B3FFA6;">cstring:</mark> 
+- <mark style="background: #D2B3FFA6;">cstring:</mark>
 	- `strcat(destination, source)`
 		- removes `\0` from source and merges them
 		- `strncat(destination, source, length)`
@@ -264,13 +267,13 @@ int main()
 			{
 			    char str[20] = "x=10;y=20;z=35";
 			    char *token = strtok(str, "=;");
-			
+
 			    while (token != NULL)
 			    {
 			        cout << token << endl;
 			        token = strtok(NULL, "=;");
 			    }
-			
+
 			    return 0;
 			}
 			/**
@@ -280,7 +283,7 @@ int main()
 			20
 			z
 			35
-			
+
 			*/
 			```
 		- `strtok(str,";")`
@@ -292,20 +295,20 @@ int main()
 			{
 			    char str[20] = "x=10;y=20;z=35";
 			    char *token = strtok(str, ";");
-			
+
 			    while (token != NULL)
 			    {
 			        cout << token << endl;
 			        token = strtok(NULL, ";");
 			    }
-			
+
 			    return 0;
 			}
 			/**
 			x=10
 			y=20
 			z=35
-			
+
 			*/
 			```
 - <mark style="background: #D2B3FFA6;">string class:</mark>
@@ -319,7 +322,7 @@ int main()
 		- depends on the CPU architecture and OS
 	- `str.clear()` to empty a string
 		- contains only `\0`
-			- so `str.length()` is 0 
+			- so `str.length()` is 0
 	- `str.empty()` checks if the string is empty or not
 		- `str.erase()` is same as `str.empty()`
 	- `str.append(anotherStr)` appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
@@ -330,13 +333,13 @@ int main()
 			- inserted till (n-1)th index of `snippetStr`
 	- `str.replace(strIndex, howMany, snippetStr)`
 		- it replaces `howMany` letters from `strIndex`th index with `snippetStr`
-	- `str1.swap(str2)` 
+	- `str1.swap(str2)`
 	- Stack operations
 		- `str.push_back(ch)`
 			- adds char ch at the end of `str`
 		- `str.pop_back()`
-			- removes last char of `str` 
-	- `str.copy(chArray,str.length())` 
+			- removes last char of `str`
+	- `str.copy(chArray,str.length())`
 		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied
 		- doesn't add `\0` so need to do it manually, steps:
 			- `string str = "Welcome"`
@@ -375,13 +378,13 @@ int main()
 			int main()
 			{
 			    string str = "Hello World";
-			
+
 			    for (string::iterator it = str.begin(); it != str.end(); it++)
 			        cout << *it;
 			    cout << endl;
 			    for (string::reverse_iterator it = str.rbegin(); it != str.rend(); it++)
 			        cout << *it;
-			
+
 			    return 0;
 			}
 			```
@@ -402,15 +405,15 @@ int main()
 		```cpp
 		#include <iostream>
 		using namespace std;
-		
+
 		int getmax(int a, int b) { return a > b ? a : b; }
 		float getmax(float a, float b) { return a > b ? a : b; }
-		
+
 		int main()
 		{
 		    cout << getmax(4, 8) << endl;
 		    cout << getmax(4.8f, 8.4f); // without specifying f they are doubles by default
-		
+
 		    return 0;
 		}
 		```
@@ -418,15 +421,15 @@ int main()
 		```cpp
 		#include <iostream>
 		using namespace std;
-		
+
 		template <class T>
 		T getmax(T a, T b) { return a > b ? a : b; }
-		
+
 		int main()
 		{
 		    cout << getmax(4, 8) << endl;
 		    cout << getmax(4.8f, 8.4f);
-		
+
 		    return 0;
 		}
 		```
@@ -439,14 +442,14 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	int add(int x, int y, int z = 0) { return x + y + z; }
-	
+
 	int main()
 	{
 	    cout << add(1, 2) << endl;
 	    cout << add(1, 2, 3);
-	
+
 	    return 0;
 	}
 	```
@@ -469,47 +472,47 @@ int main()
 		```cpp
 		#include <iostream>
 		using namespace std;
-		
+
 		int *retByAdd(int size)
 		{
 			int *p = new int[size];
 			for (int i = 0; i < size; i++)
 			    p[i] = i + 1;
-			
+
 			return p;
 		}
-		
+
 		int main()
 		{
 			int *ptr = retByAdd(5);
 			for (int i = 0; i < 5; i++)
 			    cout << ptr[i] << " ";
-			
+
 			delete[] ptr;
 			ptr = nullptr;
-			
+
 			return 0;
 		}
 		```
 		- you cannot return the address of a local variable as it will be destroyed after the function ends
-			- only HEAP memory address can be returned 
+			- only HEAP memory address can be returned
 		- can be used to return arrays declared in HEAP
-- <mark style="background: #D2B3FFA6;">return by reference</mark> 
+- <mark style="background: #D2B3FFA6;">return by reference</mark>
 	- you cannot return the address of a local variable as it will be destroyed after the function ends
 		- only HEAP memory address can be returned
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	int &retByRef(int &x) {	return x; }
-	
+
 	int main()
 	{
 		int a = 10;
 		cout << a << endl;
 		retByRef(a) = 20;
 		cout << a; // 20
-		
+
 		return 0;
 	}
 	```
@@ -518,9 +521,9 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	void hello() { cout << "hello world" << endl; }
-	
+
 	int main()
 	{
 	    // 1st way
@@ -531,7 +534,7 @@ int main()
 	    void (*anotherfunptr)();
 	    anotherfunptr = hello;
 	    (*anotherfunptr)();
-	
+
 	    return 0;
 	}
 	```
@@ -539,19 +542,19 @@ int main()
 		```cpp
 		#include <iostream>
 		using namespace std;
-		
+
 		int min(int x, int y) { return x > y ? y : x; }
-		
+
 		int max(int x, int y) { return x < y ? y : x; }
-		
+
 		int main()
 		{
 		    int (*funptr)(int, int) = &min;
 		    cout << (*funptr)(10, 20) << endl;
-		
+
 		    funptr = max;
 		    cout << (*funptr)(10, 20);
-		
+
 		    return 0;
 		}
 		```
@@ -560,7 +563,7 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	int search(const int A[], int len, int key)
 	{
 	    for (int i = 0; i < len; i++)
@@ -568,23 +571,23 @@ int main()
 	            return i;
 	    return -1;
 	}
-	
+
 	int main()
 	{
 	    const int A[] = {2, 4, 5, 7, 10, 9, 13};
-	
+
 	    int k;
 	    cout << "Enter an Element to be Searched:";
 	    cin >> k;
-	
+
 	    int index = search(A, 7, k);
-	
+
 	    if (index == -1)
 	    {
 	        cout << k << "not found";
 	        return -1;
 	    }
-	
+
 	    cout << "Element found at index :" << index << endl;
 	    return 0;
 	}
@@ -598,17 +601,17 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	class rect
 	{
 	public:
 	    float len, brd;
-	
+
 	    void area() { cout << "Area is " << len * brd << " sq. units" << endl; }
-	
+
 	    void peri() { cout << "Perimeter is " << 2 * (len + brd) << " units" << endl; }
 	};
-	
+
 	int main()
 	{
 	    rect r1;
@@ -617,7 +620,7 @@ int main()
 	    rectptr->brd = 2;
 	    rectptr->area();
 	    rectptr->peri();
-	
+
 	    return 0;
 	}
 	```
@@ -625,17 +628,17 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	class rect
 	{
 	public:
 	    float len, brd;
-	
+
 	    void area() { cout << "Area is " << len * brd << " sq. units" << endl; }
-	
+
 	    void peri() { cout << "Perimeter is " << 2 * (len + brd) << " units" << endl; }
 	};
-	
+
 	int main()
 	{
 	    rect *rectptr = new rect();
@@ -643,15 +646,15 @@ int main()
 	    rectptr->brd = 2;
 	    rectptr->area();
 	    rectptr->peri();
-	
+
 	    delete rectptr;
 	    rectptr = nullptr;
-	
+
 	    return 0;
 	}
 	```
 - note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
-	- it is considered re declaration of the function 
+	- it is considered re declaration of the function
 <mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
 	- setter functions of a class are public functions that get the value in a function call and assign it to initialize private variables of the class they belong to
 	- getters are functions that just return the value of the private variable
@@ -660,7 +663,7 @@ int main()
 - we should use constructor to assign default value instead of expecting that setters will always be used before getters
 	- if getters are used before setters we might see garbage value and we thus we should assign default values
 	- parameterized constructor can call setters as well
-- ideally a class should have a copy constructor and a parameterized constructor with default values 
+- ideally a class should have a copy constructor and a parameterized constructor with default values
 - prefer writing functions outside class
 	- functions declared outside the class have their machine code outside the main function's machine code
 	- if they are declared in the class they become inline functions and their machine code is inside the machine code of main
@@ -679,13 +682,13 @@ int main()
 	{
 	public:
 	    int r, i;
-	
+
 	    complex(int r = 0, int i = 0)
 	    {
 	        this->r = r;
 	        this->i = i;
 	    }
-	
+
 	    complex operator+(complex c)
 	    {
 	        complex temp;
@@ -693,15 +696,15 @@ int main()
 	        temp.i = c.i + i;
 	        return temp;
 	    }
-	
+
 	} c1(1, 2), c2(3, 4), c3;
-	
+
 	int main()
 	{
 	    c3 = c1 + c2;
 	    cout << c1.r << " + " << c2.r << " = " << c3.r << endl;
 	    cout << c1.i << "i + " << c2.i << "i = " << c3.i << "i ";
-	
+
 	    return 0;
 	}
 	```
@@ -713,17 +716,17 @@ int main()
 	{
 	public:
 	    int r, i;
-	
+
 	    complex(int r = 0, int i = 0)
 	    {
 	        this->r = r;
 	        this->i = i;
 	    }
-	
+
 	    friend complex operator+(complex c1, complex c2);
-	
+
 	} c1(1, 2), c2(3, 4), c3;
-	
+
 	complex operator+(complex c1, complex c2)
 	{
 	    complex temp;
@@ -731,13 +734,13 @@ int main()
 	    temp.i = c1.i + c2.i;
 	    return temp;
 	}
-	
+
 	int main()
 	{
 	    c3 = c1 + c2;
 	    cout << c1.r << " + " << c2.r << " = " << c3.r << endl;
 	    cout << c1.i << "i + " << c2.i << "i = " << c3.i << "i ";
-	
+
 	    return 0;
 	}
 	```
@@ -753,22 +756,22 @@ int main()
 	{
 	public:
 	    int r, i;
-	
+
 	    complex(int r = 0, int i = 0)
 	    {
 	        this->r = r;
 	        this->i = i;
 	    }
-	
+
 	    friend ostream &operator<<(ostream &out, complex &c);
 	} cnum(1, 2);
-	
+
 	ostream &operator<<(ostream &out, complex &c)
 	{
 	    out << c.r << " + " << c.i << "i";
 	    return out;
 	}
-	
+
 	int main()
 	{
 	    cout << cnum;
@@ -784,7 +787,7 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	class rectangle
 	{
 	    int len, brd;
@@ -818,7 +821,7 @@ int main()
 	void rectangle::setBrd(int brd)	{ this->brd = validator(brd); }
 	int rectangle::area() { return len * brd; }
 	int rectangle::peri() { return 2 * (len + brd); }
-	
+
 	class cuboid : public rectangle
 	{
 	    int hgt;
@@ -839,20 +842,20 @@ int main()
 	int cuboid::volume() { return getLen() * getBrd() * hgt; }
 	```
 - if you are inheriting a class then you cannot rely on the constructor of that class
-	- so you need to make sure that the constructor of the child function can also initialize variables of parent class 
+	- so you need to make sure that the constructor of the child function can also initialize variables of parent class
 - constructors in inheritance
 	- if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the derived class is created then the default constructor of parent class is called first followed by a constructor of child class
 		- how to call the parameterized constructor of the parent class ?
 			```cpp
 			#include <iostream>
 			using namespace std;
-			
+
 			class papa
 			{
 			public:
 			    papa(int x) { cout << "Papa has " << x << endl; }
 			};
-			
+
 			class son : public papa
 			{
 			public:
@@ -862,14 +865,14 @@ int main()
 			        cout << "papa has " << z;
 			    }
 			};
-			
+
 			int main()
 			{
 			    son baccha(10, 20);
-			
+
 			    return 0;
 			}
-			
+
 			// Papa has 20
 			// son has 10
 			// papa has 20
@@ -897,13 +900,13 @@ int main()
 		- further inheritance is not possible
 - <mark style="background: #D2B3FFA6;">2 ways to use inheritance</mark>
 	- to <mark style="background: #BBFABBA6;">generalize</mark> : you have square, rectangle, parallelogram and trapezium so you can create a parent class quadrilateral and generalize the shapes
-	- to <mark style="background: #BBFABBA6;">specialize</mark>  : you have parallelogram, you can create child classes square and rectangle to specialize the shape parallelogram 
+	- to <mark style="background: #BBFABBA6;">specialize</mark>  : you have parallelogram, you can create child classes square and rectangle to specialize the shape parallelogram
 - <mark style="background: #D2B3FFA6;">parent class pointer and child class object</mark> `beta b; papa *papaptr = &b` or `papa *papaptr = new beta();`
 	- if you use have a child class publicly inheriting from the parent class such that the child class object is created first and the parent class pointer points to the object of the child class (usually both should be same data type) and then you cannot call functions of the child class
 	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta
 	- the opposite: child class pointer and parent class object is not possible and is an error
 	- the constructors are called from child to parent
-- <mark style="background: #D2B3FFA6;">function overriding</mark> 
+- <mark style="background: #D2B3FFA6;">function overriding</mark>
 	- if the child class beta <mark style="background: #BBFABBA6;">inherits</mark> from parent class papa such that <mark style="background: #BBFABBA6;">there is a function which has the same name and parameters in both the classes</mark> and an <mark style="background: #BBFABBA6;">object of beta</mark> is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
 		- example if a beta is a new car and papa is the old car which has manual windows and the new car has power windows then the function is same but there is variation
 	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope
@@ -922,7 +925,7 @@ int main()
 	    virtual void stop() = 0;
 	    // {cout << "stopped a generic car" << endl;}
 	};
-	
+
 	class swift : public anyCar
 	{
 	public:
@@ -935,7 +938,7 @@ int main()
 	    void start() { cout << "started innova" << endl; }
 	    void stop() { cout << "stopped innova" << endl; }
 	};
-	
+
 	int main()
 	{
 	    anyCar *ptr = new swift();
@@ -944,7 +947,7 @@ int main()
 	    ptr = new innova();
 	    ptr->start();
 	    ptr->stop();
-	
+
 	    return 0;
 	}
 	```
@@ -952,20 +955,20 @@ int main()
 	  - a class with pure virtual function is called an abstract class
 		- you cannot create objects of abstract classes but you can make pointer objects to them
 	- <mark style="background: #BBFABBA6;">3 possible use cases of inheritance:</mark>
-		- if <mark style="background: #BBFABBA6;">all functions of the class are non virtual</mark> then the its use is <mark style="background: #BBFABBA6;">re-usability</mark> 
-		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark> 
+		- if <mark style="background: #BBFABBA6;">all functions of the class are non virtual</mark> then the its use is <mark style="background: #BBFABBA6;">re-usability</mark>
+		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark>
 		- and if <mark style="background: #BBFABBA6;">all virtual functions</mark> then <mark style="background: #BBFABBA6;">only use is to achieve polymorphism</mark> and <mark style="background: #BBFABBA6;">such a class is called an interface</mark>
 - <mark style="background: #D2B3FFA6;">Friend functions</mark>
 	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access
 	- we add `friend` before the return type of the function in the class
 	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
-- <mark style="background: #D2B3FFA6;">friend class</mark>  
+- <mark style="background: #D2B3FFA6;">friend class</mark>
 	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
 	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
 	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
 - <mark style="background: #D2B3FFA6;">static variables</mark>:
-	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects 
+	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects
 	- static members can be used outside the class using scope resolution operator without having to create an object of the class
 - static functions are similar but cannot access non static variable
 - nested class can access members of outer class only if they are static
@@ -1013,7 +1016,7 @@ int main()
 - you can throw any data type including object of a class
 	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
 	- Throwing a constructor will create the object and then throw
-- you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this is optional 
+- you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this is optional
 	- if you keep this round bracket empty means that the function throws no exception
 ```cpp
 #include <iostream>
@@ -1048,7 +1051,7 @@ int main()
 	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their data type
 	- write this as the last catch block and not the first one if you are using multiple catch blocks
 		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will be redundant
-	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class 
+	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class
 
 <mark style="background: #FFB86CA6;">Template functions and classes</mark>
 - used for <mark style="background: #D2B3FFA6;">generic programming</mark>
@@ -1072,15 +1075,15 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	template <class T, class R>
 	R adder(T x, R y) { return x + y; }
-	
+
 	int main()
 	{
 	    cout << adder(10, 3) << endl;
 	    cout << adder(10, 3.14) << endl;
-	
+
 	    return 0;
 	}
 	```
@@ -1089,14 +1092,14 @@ int main()
 	```cpp
 	#include <iostream>
 	using namespace std;
-	
+
 	template <class T>
 	class Stack
 	{
 	    T *stk;
 	    int top;
 	    int size;
-	
+
 	public:
 	    Stack(int sz)
 	    {
@@ -1174,6 +1177,10 @@ int main()
 - you can still point to the const of a data type of a variable without it having to be a constant
 - if we write `const` at the end of a function signature in a class then the compiler will not allow that functions to modify values of the class
 	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables
+- if a <mark style="background: #D2B3FFA6;">class is marked final</mark> by adding keyword final after the class name then the class cannot be inherited further
+	- in C++, the `final` keyword can be used to prevent a virtual function from being overridden in child classes
+- <mark style="background: #D2B3FFA6;">smart pointer</mark>
+	- deallocates itself when pointer out of scope
 
 <mark style="background: #FFB86CA6;">preprocessor directives</mark>
 - if a constant is needed across all files
@@ -1235,9 +1242,9 @@ int main()
 - for input and output
 - `iostream` has `istream` for input and `ostream` for output
 - `cin` is an object of `istream` and `cout` is an object of `ostream`
-- insertions and extraction operator are used and sometimes overloaded
-- File handling:
-	- writing
+- insertion and extraction operator are used and sometimes overloaded
+- <mark style="background: #D2B3FFA6;">File handling</mark>
+	- <mark style="background: #BBFABBA6;">writing</mark>
 		```cpp
 		#include <fstream>
 		using namespace std;
@@ -1252,7 +1259,7 @@ int main()
 		    outfile.close();
 		}
 		```
-	- reading
+	- <mark style="background: #BBFABBA6;">reading</mark>
 		```cpp
 		#include <iostream>
 		#include <fstream>
@@ -1272,17 +1279,14 @@ int main()
 		}
 		```
 
-`decltype(x) y` is used to create a variable y of data type x;
 
-if a class is marked final by adding keyword final after the class name then the class cannot be inherited further
-In C++, the `final` keyword can be used to prevent a virtual function from being overridden in child classes
-
-lambda functions are unnamed functions
+<mark style="background: #FFB86CA6;">Lambda functions</mark>
+- they are unnamed functions
 - `[](){cout<<"Hello World";}();`
 - `[](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
 - `int x = [](int a , int b){return a+b;}(10,5);`
 - `auto f = [](){cout<<"Hello World";};` and f() can be used later
-- we can specify return type but not compulsory `int x = [](int a , int b)->int{return a+b;}(10,5);` 
+- we can specify return type but not compulsory `int x = [](int a , int b)->int{return a+b;}(10,5);`
 - accessing variables outside the lambda expression
 	```cpp
 	#include <iostream>
@@ -1295,10 +1299,5 @@ lambda functions are unnamed functions
 	}
 	```
 
-smart pointer:
-- deallocates itself when ptr not in scope
-
-ellipsis `...`
+<mark style="background: #D2B3FFA6;">ellipsis</mark> `...`
 - allows a function to take multiple args
-
-

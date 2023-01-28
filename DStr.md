@@ -5,7 +5,7 @@
 	- searching for an element in an array
 	- we usually take the worst case scenario like if the element we are looking for is at the end of the array for an array of length n then its O(n)
 	- O(n) can be O(1) if the element we are looking for is at the 0th index but this is not guaranteed
-- nested loop doesn't always imply O(n^2) 
+- nested loop doesn't always imply O(n^2)
 - but O(n^2) can have nested loops
 - if i am searching i 1-D loop twice it is O(2n)
 	- so if i doing it n times it is O(n^2)
@@ -14,7 +14,7 @@
 	- so we will have a total of n passes for an array of length n
 	- if we draw the array one below the other for every pass and erase the block we skip, we will get ◹
 		- this has base and height n. the square had a O(n^2) this has O(n^2/2) but constant doesn't matter so its still O(n^2)
-- if a 2-D matrix is not a square and has sides nxm then it will have O(n x M) 
+- if a 2-D matrix is not a square and has sides nxm then it will have O(n x M)
 - O(log n)
 	- we keep shrinking the array in half so we will never have to traverse all the n elements and always less than n so it will be O(log n)
 	- so n=2^x where n is the length and x is the no of times will have to split in half so take log both sides to get O(log n)
@@ -35,7 +35,7 @@
 	- the classes for data structures are called containers
 		- this is STL: standard template classes as containers are of generic types
 			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
-				- supports push back, pop back, insert, remove, is empty, size  
+				- supports push back, pop back, insert, remove, is empty, size
 			- list: are doubly linked list and have two nodes fwd and backward in the struct
 				- functions same as vectors+ push front, pop front, front, back
 			- forward list: singly linked list with functions same as doubly
@@ -73,7 +73,7 @@ int main()
 }
 // u can replace occurences of vector with list or forward_list or dequeue or set
 ```
-- for maps: 
+- for maps:
 ```cpp
 #include <iostream>
 #include <map>
@@ -107,7 +107,7 @@ STL:
 	    cout << p.first << " " << p.second << endl;
 	    pair<pair<int, int>, int> np = {p, 3};
 	    cout << np.first.first << " " << np.first.second << " " << np.second << endl;
-	
+
 	    pair<int, int> pairray[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
 	    for (int i = 0; i < sizeof(pairray) / 8; i++)
 	        cout << pairray[i].first << " " << pairray[i].second << endl;
@@ -120,7 +120,7 @@ STL:
 	int main()
 	{
 	    vector<int> v;
-	
+
 	    v.push_back(1);         // the first element of v becomes 1
 	    v.push_back(2);         // the second element of v becomes 1
 	    v.emplace_back(2);      // same as push_back but faster
@@ -133,31 +133,31 @@ STL:
 	    v.insert(v.begin(), 0);
 	    // v.insert(address,howManyCopiesOf,ThisElement);
 	    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
-	
+
 	    cout << v.front() << " " << v.back() << endl;
-	
+
 	    for (auto itr = v.begin(); itr != v.end(); itr++)
 	        cout << *itr << " ";
-	
+
 	    cout << endl;
-	
+
 	    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
 	        cout << *itr << " ";
-	
+
 	    cout << endl;
-	
+
 	    for (auto x : v)
 	        cout << x << " ";
-	
+
 	    vector<pair<int, int>> vpair;
 	    vpair.push_back({1, 2});  // need to use flower braces to specify pair
 	    vpair.emplace_back(3, 4); // automatically infers that it is a pair
-	
+
 	    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
 	    vector<int> bydefault(5);    // creates {0,0,0,0,0}
-	
+
 	    vector<int> temp(v); // creates a seperate copy of v and names it temp
-	
+
 	    cout << endl
 	         << v.size();
 	    // v.clear() makes the vector empty
@@ -195,7 +195,7 @@ int main()
 }
 ```
 -  stack (lifo)
-	- values are stored from bottom up using push/emplace and the last element is at the `top()` 
+	- values are stored from bottom up using push/emplace and the last element is at the `top()`
 	- cannot index like an array.
 - queue (fifo)
 	- `back()` instead of `top()`
@@ -239,7 +239,7 @@ int main()
 	- peek reads the topmost element
 	- useful for reversing without recursion
 	- inset and delete happen from the same end
-- queue 
+- queue
 	- fifo
 	- enqueue adds new element at the end of the queue O(1)
 	- dequeue is the pop for the stack removes front most element O(1)
@@ -249,19 +249,19 @@ int main()
 	- used when there is a shared resource and it can only handle only one resource at a time like printer or processor
 - binary search trees
 	- a binary search tree is a binary tree that has the left child node lesser than or equal to the parent node and the right child node larger than or equal to the parent node
-	- a right child node of a left parent node cannot be greater than the grandparent node 
+	- a right child node of a left parent node cannot be greater than the grandparent node
 	- used for searching efficiently
 	- recursive data structure
 		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
 	- a tree with n nodes has n-1 links always. used to check validity of tree
 	- depth and height
 		- root has depth 0, depth measured from topmost root
-		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0 
-			- ht of tree=ht of node	
-	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node 
+		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0
+			- ht of tree=ht of node
+	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node
 	 - number of nodes at height h = 2^h so we can find max number of nodes of the BINARY tree if we know the ht of the BINARY tree
 	 - for a BINARY tree of ht h, max nodes = 2^h - 1
-	 - a binary tree where a node can only have 2 or no nodes is called a perfect binary tree and its height is floor of log base2 n 
+	 - a binary tree where a node can only have 2 or no nodes is called a perfect binary tree and its height is floor of log base2 n
 	 - cost proportional to ht of tree
 		 - ht is less if the tree is dense and more like a perfect binary tree
 		 - opposite of a perfect binary tree is a linked list
@@ -280,7 +280,7 @@ int main()
 	- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
 		- else you discard left or right sub tree
 	- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
-- graphs 
+- graphs
 	- linked lists and binary search trees are also types of graphs
 	- no restrictions than linked lists and binary search trees
 	- G=(V,E) where G is an ordered pair of vertices and edges
@@ -290,12 +290,12 @@ int main()
 		- when no weights given assume all weights are equal to 1
 	- a self loop means the vertex has an edge that points to itself
 		- many websites have links to the same page and that is an example of self loop
-	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports 
+	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports
 	- a simple graph has no self loop or multiedges
 	- in a simple directed graph the max number of edges for n vertices is n(n-1) where n is not -ve
 		- for simple undirected it will be n(n-1)/2
 	- a dense graph has edges near to max possible else it is sparse
-	- for dense graph we use adjacency matrix and for sparse it it an adjacency list 
+	- for dense graph we use adjacency matrix and for sparse it it an adjacency list
 	- path
 		- simple path when vertices/edges are not repeated
 		- if repeated it is a walk

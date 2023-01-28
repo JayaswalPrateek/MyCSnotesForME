@@ -40,7 +40,7 @@
 		- worst case `O(n^2)`
 		- still can be 2 to 3 times faster than merge sort by reducing the chances of worst case
 		- needs less memory `O(log n)` than merge sort `O(n)`
-- <mark style="background: #D2B3FFA6;">Greedy Algorithm</mark> 
+- <mark style="background: #D2B3FFA6;">Greedy Algorithm</mark>
 	- It makes the best possible decision at every local step
 	- when not to be greedy
 		- not meant for efficiency
