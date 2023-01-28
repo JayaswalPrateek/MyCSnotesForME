@@ -904,11 +904,11 @@ int main()
 	- the opposite: child class pointer and parent class object is not possible and is an error   
 	- the constructors are called from child to parent
 - <mark style="background: #D2B3FFA6;">function overriding</mark> 
-	- if the child class beta inherits from parent class papa such that there is a function which has the same name and parameters in both the classes and an object of beta is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
+	- if the child class beta <mark style="background: #BBFABBA6;">inherits</mark> from parent class papa such that <mark style="background: #BBFABBA6;">there is a function which has the same name and parameters in both the classes</mark> and an <mark style="background: #BBFABBA6;">object of beta</mark> is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
 		- example if a beta is a new car and papa is the old car which has manual windows and the new car has power windows then the function is same but there is variation
-	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope.
-	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa ke functions then it becomes function overloading instead of overriding
-	- if we have the same situation (same name functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called and not the one nearer to the scope which is in the beta class.
+	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope
+	- if the name of the two functions are same and there is a variation in the parameters it takes then whenever you call the papa's functions then it becomes function overloading instead of overriding
+	- if we have the same situation (same named functions in 2 classes that have inheritance relationship) with parent class pointer and child class object and call that function the parent class function is called and not the one nearer to the scope which is in the beta class
 		- if 2 functions have common name in separate classes having a inheritance relationship with parent class pointer and child class object then if we make on such function virtual by adding virtual keyword before return type then the non virtual function is called
 - so we can demonstrate run time polymorphism by using virtual functions with function overriding with parent class pointer and child class object  
 	```cpp
@@ -960,22 +960,22 @@ int main()
 	    return 0;
 	}
 	```
-		- genrealization of swift and innova so we can get away by just decalering empty virtual functions as we will never start a generic car, it has to have a modelbut when u do this make virtual functions = 0 then they are called pure virtual functions.
-		- a class with pure virtual function is called abstract class
+  - generalization of swift and innova so we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when u do this make virtual functions = 0 then they are called pure virtual functions.
+	  - a class with pure virtual function is called abstract class
 		- you cannot create objects of abstract classes but you can make pointer objects to them
 		- 3 possible use cases of inheritance 
 			- if all functions of the class are non virtual then the its use is reusability 
 			- if some functions are virtual then both uses reusability and polymorphism 
 			- and if all virtual functions then only use is to achieve polymorphism and such a class is called an interface
-- Friend functions
+- <mark style="background: #D2B3FFA6;">Friend functions</mark>
 	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access.
 	- we add `friend` before the return type of the function in the class. 
-- friend class  
+- <mark style="background: #D2B3FFA6;">friend class</mark>  
 	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
 	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating. 
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
 - a friend relationship cannot modify data and is read only
-- static variables:
+- <mark style="background: #D2B3FFA6;">static variables</mark>:
 	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects 
 	- static members can be used outside the class using scope resolution operator without having to create an object of the class
 - static functions are similar but cannot access non static variable
@@ -983,7 +983,7 @@ int main()
 	- but it can create an object of the outer class to access its members
 	- a nested class acts independently as if it were an outer class
 
-***exception handling***
+<mark style="background: #FFB86CA6;">exception handling</mark>
 - during runtime errors
 - if there is any error in the try block then the control moves to the catch block
 	- the remaining lines of try block are not executed
