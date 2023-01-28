@@ -888,21 +888,22 @@ int main()
 - <mark style="background: #D2B3FFA6;">inheritance modes:</mark>
 	- if a class is inherited in <mark style="background: #BBFABBA6;">public mode</mark>
 		- private cannot be accessed but public remains public and protected remains protected
+		- further inheritance is possible
 	- <mark style="background: #BBFABBA6;">protected mode</mark>
 		- public and protected variables and functions of the parent class become protected in the child class and private is not accessible
-		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class. 0
+		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class
 	- <mark style="background: #BBFABBA6;">private mode</mark>
-		- public and protected variables and functions of the parent class become private in the child class.
+		- public and protected variables and functions of the parent class become private in the child class
 		- further inheritance is not possible
-- <mark style="background: #BBFABBA6;">2 ways to use inheritance</mark>
-	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
-	- to specialize: you have parallelogram, you can create child classes square and rectangle 
-- parent class pointer and child class object `beta b; papa *papaptr = &b` or `papa *papaptr = new beta();`
+- <mark style="background: #D2B3FFA6;">2 ways to use inheritance</mark>
+	- to <mark style="background: #BBFABBA6;">generalize</mark> : you have square, rectangle, parallelogram and trapezium so you can create a parent class quadrilateral and generalize the shapes
+	- to <mark style="background: #BBFABBA6;">specialize</mark>  : you have parallelogram, you can create child classes square and rectangle to specialize the shape parallelogram 
+- <mark style="background: #D2B3FFA6;">parent class pointer and child class object</mark> `beta b; papa *papaptr = &b` or `papa *papaptr = new beta();`
 	- if you use have a child class publicly inheriting from the parent class such that the child class object is created first and the parent class pointer points to the object of the child class (usually both should be same data type) and then you cannot call functions of the child class
-	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta.
+	- suppose a class cuboid is the child class which inherits from parent class rectangle such that the pointer points to rectangle papa and is allocated heap address using new cuboid which is the child instead of rectangle papa then using pointer we can only call the function of rectangle papa and not the function of cuboid beta
 	- the opposite: child class pointer and parent class object is not possible and is an error   
 	- the constructors are called from child to parent
-- function overriding 
+- <mark style="background: #D2B3FFA6;">function overriding</mark> 
 	- if the child class beta inherits from parent class papa such that there is a function which has the same name and parameters in both the classes and an object of beta is created and that function with common name is called, then how do we get to control which of the 2 functions are called?
 		- example if a beta is a new car and papa is the old car which has manual windows and the new car has power windows then the function is same but there is variation
 	- without making any manual effort to address this, if an object of beta is created and that function is called with a common name the compiler calls the one in the child class as it is closer in scope.
