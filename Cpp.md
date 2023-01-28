@@ -881,19 +881,20 @@ int main()
 	- when a class table uses an object of rectangle as its data member then the table has a rectangle
 - virtual parent classes
 	- 2 parent classes inherit from a grandparent class and a child class inherits from both the parent classes
-		- then the functions of the grandparent class can be accessed by 2 paths. This is multi path inheritance.
+		- then the functions of the grandparent class can be accessed by 2 paths. This is multi path inheritance
 			- to remove this ambiguity we use virtual parent classes
 				- just add keyword `virtual` before inheritance mode for the 2 parents
+					- virtual functions are preferably called compared to non-virtual functions
 - <mark style="background: #D2B3FFA6;">inheritance modes:</mark>
-	- if a class is inherited in public mode
-		- private cannot be accessed but public remains public and protected remains protected.
-	- protected mode:
-		- public and protected variables and functions of the parent class become protected in the child class and private is not accessible.
+	- if a class is inherited in <mark style="background: #BBFABBA6;">public mode</mark>
+		- private cannot be accessed but public remains public and protected remains protected
+	- <mark style="background: #BBFABBA6;">protected mode</mark>
+		- public and protected variables and functions of the parent class become protected in the child class and private is not accessible
 		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class. 0
-	- private mode:
+	- <mark style="background: #BBFABBA6;">private mode</mark>
 		- public and protected variables and functions of the parent class become private in the child class.
 		- further inheritance is not possible
-- 2 ways to use inheritance
+- <mark style="background: #BBFABBA6;">2 ways to use inheritance</mark>
 	- to generalize: you have square rectangle parallelogram trapezium so you can create a parent class quadrilateral
 	- to specialize: you have parallelogram, you can create child classes square and rectangle 
 - parent class pointer and child class object `beta b; papa *papaptr = &b` or `papa *papaptr = new beta();`
