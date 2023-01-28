@@ -1051,7 +1051,7 @@ int main()
 	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class 
 
 <mark style="background: #FFB86CA6;">Template functions and classes</mark>
-- used for generic programming
+- used for <mark style="background: #D2B3FFA6;">generic programming</mark>
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1067,8 +1067,8 @@ int main()
     return 0;
 }
 ```
-	- here the function can only accept variables that are of the same data type
-- for a function to accept 2 generic variables of two different types'
+- the above function can <mark style="background: #D2B3FFA6;">only accept variables that are of the same data type</mark>
+- for a function <mark style="background: #D2B3FFA6;">to accept 2 generic variables of two different types</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -1084,7 +1084,7 @@ int main()
 	    return 0;
 	}
 	```
-		- we can still pass two variables of the same data type
+	- <mark style="background: #D2B3FFA6;">we can still pass two variables of the same data type</mark>
 - useful if you are going to create generic data structures and perform operations on them
 	```cpp
 	#include <iostream>
@@ -1136,7 +1136,8 @@ int main()
 	    Stack<float> s(10);
 	    s.push(10);
 	    s.push(23);
-	    s.push(33);
+	    s.push(3.14);
+	    s.push(6.023);
 	}
 	```
 
