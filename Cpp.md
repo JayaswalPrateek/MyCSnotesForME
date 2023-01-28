@@ -778,7 +778,7 @@ int main()
 		- if we replace `ostream` return type with void then we cannot chain insertion operator
 
 <mark style="background: #FFB86CA6;">Inheritance</mark>
-- well designed classes using inheritance
+- example of well designed class and inheritance
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -801,14 +801,8 @@ int main()
 	    this->len = len;
 	    this->brd = brd;
 	}
-	int rectangle::getLen()
-	{
-	    return len;
-	}
-	int rectangle::getBrd()
-	{
-	    return brd;
-	}
+	int rectangle::getLen() { return len; }
+	int rectangle::getBrd()	{ return brd; }
 	int rectangle::validator(int qty)
 	{
 	    if (qty < 0)
@@ -818,22 +812,10 @@ int main()
 	    }
 	    return qty;
 	}
-	void rectangle::setLen(int len)
-	{
-	    this->len = validator(len);
-	}
-	void rectangle::setBrd(int brd)
-	{
-	    this->brd = validator(brd);
-	}
-	int rectangle::area()
-	{
-	    return len * brd;
-	}
-	int rectangle::peri()
-	{
-	    return 2 * (len + brd);
-	}
+	void rectangle::setLen(int len) { this->len = validator(len); }
+	void rectangle::setBrd(int brd)	{ this->brd = validator(brd); }
+	int rectangle::area() { return len * brd; }
+	int rectangle::peri() { return 2 * (len + brd); }
 	
 	class cuboid : public rectangle
 	{
@@ -846,25 +828,16 @@ int main()
 	};
 	cuboid::cuboid(int len, int brd, int hgt)
 	{
-	    this->hgt = hgt;
+	    setHgt(hgt);
 	    setLen(validator(len));
 	    setBrd(validator(brd));
 	}
-	int cuboid::getHgt()
-	{
-	    return hgt;
-	}
-	void cuboid::setHgt(int hgt)
-	{
-	    this->hgt = validator(hgt);
-	}
-	int cuboid::volume()
-	{
-	    return getLen() * getBrd() * hgt;
-	}
+	int cuboid::getHgt() { return hgt; }
+	void cuboid::setHgt(int hgt) { this->hgt = validator(hgt); }
+	int cuboid::volume() { return getLen() * getBrd() * hgt; }
 	```
 - if you are inheriting a class then you cannot rely on the constructor of that class
-	- so you need to make sure that the constructor of the child function can also initialize parent variables 
+	- so you need to make sure that the constructor of the child function can also initialize variables of parent class 
 - note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
 	- it is considered re declaration of the function 
 - constructors in inheritance
