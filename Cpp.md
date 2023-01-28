@@ -631,14 +631,14 @@ int main()
 	public:
 	    float len, brd;
 	
-	    void area()   { cout << "Area is " << len * brd << " sq. units" << endl;	    }
+	    void area() { cout << "Area is " << len * brd << " sq. units" << endl; }
 	
-	    void peri()	    {	        cout << "Perimeter is " << 2 * (len + brd) << " units" << endl;	    }
+	    void peri() { cout << "Perimeter is " << 2 * (len + brd) << " units" << endl; }
 	};
 	
 	int main()
 	{
-	    rect *rectptr = new rect;
+	    rect *rectptr = new rect();
 	    rectptr->len = 123;
 	    rectptr->brd = 2;
 	    rectptr->area();
@@ -650,24 +650,26 @@ int main()
 	    return 0;
 	}
 	```
-- getters and setters / accessor and mutator
-	- setter functions of the class a public functions that get the value in a function call and assign it to initialize private variables
-	- getters are functions that just return the value of the private variable.
+- <mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
+	- setter functions of a class are public functions that get the value in a function call and assign it to initialize private variables of the class they belong to
+	- getters are functions that just return the value of the private variable
 	- if a variable has getter and no setter it becomes read only
 	- if a variable has a setter and no getter then it becomes write only (example passwords)
-- we should use constructor to assign default value instead of expecting that setters will always be used before getters. 
-	- if getters are used before setters we might see garbage value and we thus assign default values
+- we should use constructor to assign default value instead of expecting that setters will always be used before getters
+	- if getters are used before setters we might see garbage value and we thus we should assign default values
 	- parameterized constructor can call setters as well
-- ideally a class should have a copy constructor and a parameterized constructor with default values. 
+- ideally a class should have a copy constructor and a parameterized constructor with default values 
 - prefer writing functions outside class
-	- functions declared outside the class have their machine code outside the main function's machine code.
+	- functions declared outside the class have their machine code outside the main function's machine code
 	- if they are declared in the class they become inline functions and their machine code is inside the machine code of main
-		- inline function cannot have complex logic. so if you have complex logic use scope resolution operator for those functions.
-- so all functions defined in a class are inline and all functions outside it defined with scope resolution operator are not inline
+		- inline function cannot have complex logic, so if you have complex logic use scope resolution operator for those functions
+- so all functions defined in a class are inline and all functions defined outside it with scope resolution operator are not inline
 - to make a function inline explicitly write `inline` before the return type of the function
+	- inline functions improve performance as the function is not called but the code of the function is inserted where the function was called
+	- inline functions should not have complex logic and should be simple
 - struct and class are same in c++ as both of them can store variables and functions unlike c where structs can only store variables.
 	- the difference is that in a struct everything is public
-- operator overloading
+- <mark style="background: #D2B3FFA6;">operator overloading</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -701,7 +703,7 @@ int main()
 	    return 0;
 	}
 	```
-- friend operator overloading
+- <mark style="background: #D2B3FFA6;">friend operator overloading</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -739,7 +741,7 @@ int main()
 	```
 	- reason for using friend: the friend function accepts 2 objects c1 and c2 of class complex
 		- objects c1 and c2 are not available in the scope of the class
-- insertion operator loading using `cout<<c`
+- <mark style="background: #D2B3FFA6;">insertion operator loading</mark> using `cout<<c`
 	- where c is a complex number and we will overload insertion operator `<<` to print both real and imaginary parts.
 	- we will have to use a friend function and also pass `cout` to it
 	```cpp
@@ -775,7 +777,7 @@ int main()
 		- `cout<<cnum<<endl;` is valid
 		- if we replace `ostream` return type with void then we cannot chain insertion operator.
 
-***Inheritance***
+Inheritance
 - well designed classes using inheritance
 	```cpp
 	#include <iostream>
