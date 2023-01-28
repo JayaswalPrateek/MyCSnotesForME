@@ -389,12 +389,12 @@ int main()
 			- similar to `for(int i = 0; str[i] != '\0'; i++`
 
 <mark style="background: #FFB86CA6;">Functions</mark>
-- avoid user input in functions, that should happen in the main function
+- avoid user input in functions, input should be passed from the calling function
 	- When a function has a local variable and a global variable of the same name then local variable is preferred
-		- use `::<nameOfVariable>` to access the global variable in a function that has a local variable of the same name.
+		- use `::<nameOfVariable>` to access the global variable in a function that has a local variable of the same name
 		- even if a function ends the changes made to the global variable are preserved.
 			- this is useful, but i also want to make sure that the variable is not visible to all the functions of my program
-				- solution instead of declaring it as global variable make it a static local variable.
+				- solution is instead of declaring it as global variable make it a static local variable of that function
 				- they are located in the code section so their content is not lost after a function ends.
 - return types are not a deciding factor in function overloading
 - Function Templates (Generics)
