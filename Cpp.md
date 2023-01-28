@@ -958,16 +958,17 @@ int main()
 - <mark style="background: #D2B3FFA6;">Friend functions</mark>
 	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access
 	- we add `friend` before the return type of the function in the class
+	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
 - <mark style="background: #D2B3FFA6;">friend class</mark>  
 	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
 	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
-- a friend relationship cannot modify data and is read only
+	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
 - <mark style="background: #D2B3FFA6;">static variables</mark>:
 	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects 
 	- static members can be used outside the class using scope resolution operator without having to create an object of the class
 - static functions are similar but cannot access non static variable
-- nested class can access members of outer class if they are static
+- nested class can access members of outer class only if they are static
 	- but it can create an object of the outer class to access its members
 	- a nested class acts independently as if it were an outer class
 
