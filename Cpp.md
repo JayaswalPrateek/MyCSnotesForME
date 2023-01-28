@@ -956,11 +956,11 @@ int main()
 		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark> 
 		- and if <mark style="background: #BBFABBA6;">all virtual functions</mark> then <mark style="background: #BBFABBA6;">only use is to achieve polymorphism</mark> and <mark style="background: #BBFABBA6;">such a class is called an interface</mark>
 - <mark style="background: #D2B3FFA6;">Friend functions</mark>
-	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access.
-	- we add `friend` before the return type of the function in the class. 
+	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access
+	- we add `friend` before the return type of the function in the class
 - <mark style="background: #D2B3FFA6;">friend class</mark>  
 	- if an external class uses an object of another class as its data members then if it wants to access the private and protected variables/functions we use a friend class
-	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating. 
+	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
 - a friend relationship cannot modify data and is read only
 - <mark style="background: #D2B3FFA6;">static variables</mark>:
