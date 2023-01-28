@@ -1,4 +1,4 @@
-  ***Big O***
+  <mark style="background: #FFB86CA6;">Big O</mark>
 - O(1) are the most efficient algorithms as they scale really well because the execution time is independent of the input size
 	- like searching a value in map using its key.
 - O(n) means the execution time is linearly dependent on the input size
@@ -28,7 +28,7 @@
 
 ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
-***STL***
+STL ADT
 - classes that bundle common data structures and all the functions related to it.
 - it has 4 things: functions,algorithms, containers and iterators
 	- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
@@ -95,7 +95,7 @@ int main()
 }
 ```
 
-STL:
+STL ADT:
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - pairs and nested pairs
 	```cpp
