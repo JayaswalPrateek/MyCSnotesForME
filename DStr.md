@@ -133,7 +133,9 @@
 		- also called max heap
 		- pop deletes the largest element 
 	6. <mark style="background: #BBFABBA6;">stack</mark>
+		- lifo
 	7. <mark style="background: #BBFABBA6;">queue</mark>
+		- fifo
 	8. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
 	9. <mark style="background: #BBFABBA6;">multiset</mark>
@@ -218,8 +220,6 @@
 -  stack (lifo)
 	- values are stored from bottom up using push/emplace and the last element is at the `top()`
 	- cannot index like an array.
-- queue (fifo)
-	- `back()` instead of `top()`
 - priority queue
 	- largest element stays at the top of the stack called max heap
 	- smallest element stays at the top of the stack called min heap
@@ -232,8 +232,6 @@
 	- `.erase(3)` removes all occurrences of 3
 		- to erase only a particular instance proved the address using .find which is always unique
 	- `.count(3)` counts number of 3 in multiset
-- unordered set
-	- same as set but doesn't sort like max heap
 
 
 
