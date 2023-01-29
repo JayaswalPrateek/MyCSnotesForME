@@ -28,10 +28,28 @@
 
 ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
-STL ADT
-- classes that bundle common data structures and all the functions related to it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mark style="background: #FFB86CA6;">STL ADT</mark>
+- c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
 - it has 4 things: functions,algorithms, containers and iterators
-	- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
+- 
+- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
 	- the classes for data structures are called containers
 		- this is STL: standard template classes as containers are of generic types
 			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
@@ -213,6 +231,40 @@ int main()
 	- `.count(3)` counts number of 3 in multiset
 - unordered set
 	- same as set but doesn't sort like max heap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
