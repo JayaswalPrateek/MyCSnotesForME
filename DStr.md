@@ -40,29 +40,97 @@
 	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		- functions: push, pop, insert, remove, size, isempty, front, back
-	2. <mark style="background: #BBFABBA6;">list</mark>
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    vector<int> v;
+		
+		    v.push_back(1);         // the first element of v becomes 1
+		    v.push_back(2);         // the second element of v becomes 1
+		    v.emplace_back(2);      // same as push_back but faster
+		    v.emplace_back(3);      // same as push_back but faster
+		    v.emplace_back(4);      // same as push_back but faster
+		    v.emplace_back(5);      // same as push_back but faster
+		    v.erase(v.end() - 1);   // exceptional case to remove last element
+		    v.erase(v.begin() + 1); // removes 2nd element
+		    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can also erase a range of elements if you provide
+		    v.insert(v.begin(), 0);
+		    // v.insert(address,howManyCopiesOf,ThisElement);
+		    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
+		
+		    cout << v.front() << " " << v.back() << endl;
+		
+		    for (auto itr = v.begin(); itr != v.end(); itr++)
+		        cout << *itr << " ";
+		
+		    cout << endl;
+		
+		    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
+		        cout << *itr << " ";
+		
+		    cout << endl;
+		
+		    for (auto x : v)
+		        cout << x << " ";
+		
+		    vector<pair<int, int>> vpair;
+		    vpair.push_back({1, 2});  // need to use flower braces to specify pair
+		    vpair.emplace_back(3, 4); // automatically infers that it is a pair
+		
+		    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
+		    vector<int> bydefault(5);    // creates {0,0,0,0,0}
+		
+		    vector<int> temp(v); // creates a seperate copy of v and names it temp
+		
+		    cout << endl
+		         << v.size();
+		    // v.clear() makes the vector empty
+		    // v.empty gives bool if vector v is empty or not
+		    return 0;
+		}
+		```
+	1. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		- functions: similar to vector
-	3. <mark style="background: #BBFABBA6;">forward list</mark>
+	2. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
-	4. <mark style="background: #BBFABBA6;">dequeue</mark>
+	3. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
-	5. <mark style="background: #BBFABBA6;">priority queue</mark>
+	4. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
 		- pop deletes the largest element
-	6. <mark style="background: #BBFABBA6;">stack</mark>
+	5. <mark style="background: #BBFABBA6;">stack</mark>
 		- LIFO
-	7. <mark style="background: #BBFABBA6;">set</mark>
+	6. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	8. <mark style="background: #BBFABBA6;">multiset</mark>
+	7. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	9. <mark style="background: #BBFABBA6;">map</mark>
+	8. <mark style="background: #BBFABBA6;">map</mark>
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-	10. <mark style="background: #BBFABBA6;">multimap</mark>
+	9. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	11. <mark style="background: #BBFABBA6;">unordered map</mark>
+	10. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
+	11. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+		```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main()
+			{
+			    pair<int, int> p = {1, 2};
+			    cout << p.first << " " << p.second << endl;
+			    pair<pair<int, int>, int> np = {p, 3};
+			    cout << np.first.first << " " << np.first.second << " " << np.second << endl;
+		
+			    pair<int, int> pairray[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
+			    for (int i = 0; i < sizeof(pairray) / 8; i++)
+			        cout << pairray[i].first << " " << pairray[i].second << endl;
+			    return 0;
+			}	
+		```
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
 	```cpp
 	#include <iostream>
@@ -85,104 +153,33 @@
 	}
 	// u can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
 	```
-- using maps
-```cpp
-#include <iostream>
-#include <map>
-using namespace std;
-int main()
-{
-    map<int, string> m;
-    m.insert(pair<int, string>(1, "john"));
-    m.insert(pair<int, string>(2, "ravi"));
-    m.insert(pair<int, string>(3, "khan"));
-
-    map<int, string>::iterator itr;
-    for (itr = m.begin(); itr != m.end(); itr++)
-        cout << itr->first << " " << itr->second << endl;
-
-    map<int, string>::iterator itr1;
-    itr1 = m.find(2);
-    cout << "value found: " << itr1->first << " " << itr1->second << endl;
-    return 0;
-}
-```
-
-
-
-
-
-
-
-
-
-- pairs and nested pairs
+	- using maps
 	```cpp
-	#include <bits/stdc++.h>
+	#include <iostream>
+	#include <map>
 	using namespace std;
 	int main()
 	{
-	    pair<int, int> p = {1, 2};
-	    cout << p.first << " " << p.second << endl;
-	    pair<pair<int, int>, int> np = {p, 3};
-	    cout << np.first.first << " " << np.first.second << " " << np.second << endl;
-
-	    pair<int, int> pairray[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
-	    for (int i = 0; i < sizeof(pairray) / 8; i++)
-	        cout << pairray[i].first << " " << pairray[i].second << endl;
+	    map<int, string> m;
+	    m.insert(pair<int, string>(1, "john"));
+	    m.insert(pair<int, string>(2, "ravi"));
+	    m.insert(pair<int, string>(3, "khan"));
+	
+	    map<int, string>::iterator itr;
+	    for (itr = m.begin(); itr != m.end(); itr++)
+	        cout << itr->first << " " << itr->second << endl;
+	
+	    map<int, string>::iterator itr1;
+	    itr1 = m.find(2);
+	    cout << "value found: " << itr1->first << " " << itr1->second << endl;
+	    return 0;
 	}
 	```
-- vector are arrays with dynamic length without being a linked list.
-	```cpp
-	#include <bits/stdc++.h>
-	using namespace std;
-	int main()
-	{
-	    vector<int> v;
 
-	    v.push_back(1);         // the first element of v becomes 1
-	    v.push_back(2);         // the second element of v becomes 1
-	    v.emplace_back(2);      // same as push_back but faster
-	    v.emplace_back(3);      // same as push_back but faster
-	    v.emplace_back(4);      // same as push_back but faster
-	    v.emplace_back(5);      // same as push_back but faster
-	    v.erase(v.end() - 1);   // exceptional case to remove last element
-	    v.erase(v.begin() + 1); // removes 2nd element
-	    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can also erase a range of elements if you provide
-	    v.insert(v.begin(), 0);
-	    // v.insert(address,howManyCopiesOf,ThisElement);
-	    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
 
-	    cout << v.front() << " " << v.back() << endl;
 
-	    for (auto itr = v.begin(); itr != v.end(); itr++)
-	        cout << *itr << " ";
 
-	    cout << endl;
 
-	    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
-	        cout << *itr << " ";
-
-	    cout << endl;
-
-	    for (auto x : v)
-	        cout << x << " ";
-
-	    vector<pair<int, int>> vpair;
-	    vpair.push_back({1, 2});  // need to use flower braces to specify pair
-	    vpair.emplace_back(3, 4); // automatically infers that it is a pair
-
-	    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
-	    vector<int> bydefault(5);    // creates {0,0,0,0,0}
-
-	    vector<int> temp(v); // creates a seperate copy of v and names it temp
-
-	    cout << endl
-	         << v.size();
-	    // v.clear() makes the vector empty
-	    // v.empty gives bool if vector v is empty or not
-	}
-	```
 - list
 ```cpp
 #include <bits/stdc++.h>
