@@ -28,29 +28,13 @@
 
 ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
 - c++ STL  has 4 things: functions,algorithms, containers and iterators
 - containers are the classes for the data structures
 - algorithms are complex operations performed on the containers like search, sort
 - functions are simpler operations performed on the containers like push, pop
+- iterators are used to access containers in a simpler way
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
@@ -71,18 +55,14 @@
 	7. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
 	8. <mark style="background: #BBFABBA6;">multiset</mark>
-	9. .
-	10. 
-
-
-
-		- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
-		- multiset: same as set but allows duplicate
-		- map is used to store key value pairs with all keys unique stores keys in sorted order
-		- multi map allows duplicate keys but key value pair should be unique
-		- unordered map needs unique keys but keys are not sorted
-
-	- iterators are used to access container data
+		- same as set but allows duplicate
+	9. <mark style="background: #BBFABBA6;">map</mark>
+		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
+	10. <mark style="background: #BBFABBA6;">multimap</mark>
+		- like a map but allows duplicate keys but the key-value pairs must be unique
+	11. <mark style="background: #BBFABBA6;">unordered map</mark>
+		- like map but keys are not stored in sorted order
+- <mark style="background: #D2B3FFA6;">Iterators</mark>
 ```cpp
 #include <iostream>
 #include <vector>
@@ -96,16 +76,12 @@ int main()
     v.push_back(69); // added 69 at the end after 56
     v.pop_back();    // last element is removed
     for (int x : v)
-    {
         cout << x << " ";
-    }
     cout << endl;
     for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
-    {
         cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
-    }
 }
-// u can replace occurences of vector with list or forward_list or dequeue or set
+// u can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
 ```
 - for maps:
 ```cpp
