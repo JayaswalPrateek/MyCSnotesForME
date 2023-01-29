@@ -51,11 +51,17 @@
 - containers are the classes for the data structures
 - algorithms are complex operations performed on the containers like search, sort
 - functions are simpler operations performed on the containers like push, pop
-- 
-- this is STL: standard template classes as containers are of generic types
-	- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
-		- supports push back, pop back, insert, remove, is empty, size
-			- list: are doubly linked list and have two nodes fwd and backward in the struct
+- <mark style="background: #D2B3FFA6;">Containers</mark>
+	1. <mark style="background: #BBFABBA6;">vector</mark>
+		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
+		- functions: push, pop, insert, remove, size, isempty
+	1. <mark style="background: #BBFABBA6;">list</mark>
+		- doubly linked list
+		- functions: similar to vector
+	2. queue
+
+
+	- list: are doubly linked list and have two nodes fwd and backward in the struct
 				- functions same as vectors+ push front, pop front, front, back
 			- forward list: singly linked list with functions same as doubly
 			- dequeue: double ended queue, similar to vector but with functions like lists
