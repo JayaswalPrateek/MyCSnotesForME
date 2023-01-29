@@ -1141,6 +1141,7 @@ int main()
 	    s.push(23);
 	    s.push(3.14);
 	    s.push(6.023);
+	    return 0;
 	}
 	```
 
@@ -1170,6 +1171,7 @@ int main()
     // ptr4 = &x; error
 
     cout << x << " " << y << " " << *ptr2 << " " << *ptr4;
+    return 0;
 }
 // 11 21 21 21
 ```
@@ -1192,6 +1194,7 @@ using namespace std;
 int main()
 {
     c << x;
+    return 0;
 }
 ```
 - we can also define functions:
@@ -1203,6 +1206,7 @@ using namespace std;
 int main()
 {
     show(sqr(5));
+    return 0;
 }
 ```
 - we use ifndef to def only if not defined already
@@ -1220,6 +1224,7 @@ using namespace std;
 int main()
 {
     show(sqr(5));
+    return 0;
 }
 ```
 
@@ -1257,6 +1262,7 @@ int main()
 		    outfile << "HI" << endl;
 		    outfile << 123 << endl;
 		    outfile.close();
+			return 0;
 		}
 		```
 	- <mark style="background: #BBFABBA6;">reading</mark>
@@ -1276,6 +1282,7 @@ int main()
 		    infile >> n;
 		    cout << str << endl << n;
 		    infile.close();
+		    return 0;
 		}
 		```
 
@@ -1296,6 +1303,7 @@ int main()
 	    int a = 10, b = 20, c = 30;
 	    [&a, &b](){ cout << a << " " << b<< endl; }();
 	    [&](){ cout << a << " " << b << " " << c; }();
+		return 0;
 	}
 	```
 

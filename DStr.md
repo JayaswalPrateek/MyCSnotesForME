@@ -63,27 +63,28 @@
 	11. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
-```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-int main()
-{
-    // vector<int> v;  by default creates a vector of len 16
-    // vector<int> v(50); creates a vector of len 50
-    vector<int> v = {1, 23, 456, 7890};
-    v.push_back(56); // added 56 at the end after 7890
-    v.push_back(69); // added 69 at the end after 56
-    v.pop_back();    // last element is removed
-    for (int x : v)
-        cout << x << " ";
-    cout << endl;
-    for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
-        cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
-}
-// u can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
-```
-- for maps:
+	```cpp
+	#include <iostream>
+	#include <vector>
+	using namespace std;
+	int main()
+	{
+	    // vector<int> v;  by default creates a vector of len 16
+	    // vector<int> v(50); creates a vector of len 50
+	    vector<int> v = {1, 23, 456, 7890};
+	    v.push_back(56); // added 56 at the end after 7890
+	    v.push_back(69); // added 69 at the end after 56
+	    v.pop_back();    // last element is removed
+	    for (int x : v)
+	        cout << x << " ";
+	    cout << endl;
+	    for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
+	        cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
+	    return 0;
+	}
+	// u can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
+	```
+- using maps
 ```cpp
 #include <iostream>
 #include <map>
@@ -102,10 +103,17 @@ int main()
     map<int, string>::iterator itr1;
     itr1 = m.find(2);
     cout << "value found: " << itr1->first << " " << itr1->second << endl;
+    return 0;
 }
 ```
 
-STL ADT:
+
+
+
+
+
+
+
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - pairs and nested pairs
 	```cpp
