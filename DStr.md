@@ -208,7 +208,7 @@
 	}
 	```
 
-***Bird Eye View***
+<mark style="background: #FFB86CA6;">MyCodeSchool DStrs</mark>
 - Arrays
 	- Read is O(1) but inserting and deleting is O(n)
 	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously
