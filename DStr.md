@@ -215,8 +215,8 @@
 <mark style="background: #BBFABBA6;">Singly Linked List</mark>
 - opposite of an array
 - read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
-- they dont have indexes like arrays
-- address of the head node is stored and used and the last nodes points to null
+- they cannot be indexed like arrays
+- address of the head node is stored as a pointer to the node
 - no unused memory but pointer needs memory
 
 - doubly linked list:
