@@ -35,6 +35,7 @@
 - algorithms are complex operations performed on the containers like search, sort
 - functions are simpler operations performed on the containers like push, pop
 - iterators are used to access containers in a simpler way
+- to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
@@ -114,7 +115,7 @@ int main()
 
 
 
-- to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
+
 - pairs and nested pairs
 	```cpp
 	#include <bits/stdc++.h>
