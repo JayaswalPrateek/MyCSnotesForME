@@ -217,7 +217,40 @@
 - read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
 - they cannot be indexed like arrays
 - address of the head node is stored as a pointer to the node
-- no unused memory but pointer needs memory
+- less memory wasted than vectors
+```cpp
+#include <iostream>
+using namespace std;
+
+// Node and its head declaration
+struct Node
+{
+    int data;
+    Node *next;
+} *head = NULL;
+
+int main()
+{
+    Node *tmp = new Node();
+    tmp->data = 2;
+    tmp->next = NULL;
+    head = tmp->next;
+    delete tmp;
+    // linked list has one element that has the value 2
+
+    // to find the last node
+    Node *itr = head; // never directly use head otherwise you will lose it
+    while (itr->next != NULL)
+        itr = itr->next;
+
+    // adding 4 to the end of the list
+    tmp = new Node();
+    tmp->data = 4;
+    tmp->next = NULL;
+    itr->next = tmp;
+    delete tmp;
+}
+```
 
 - doubly linked list:
 	- ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
