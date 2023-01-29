@@ -54,25 +54,33 @@
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
-		- functions: push, pop, insert, remove, size, isempty
-	1. <mark style="background: #BBFABBA6;">list</mark>
+		- functions: push, pop, insert, remove, size, isempty, front, back
+	2. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		- functions: similar to vector
-	2. queue
+	3. <mark style="background: #BBFABBA6;">forward list</mark>
+		- same as list but singly linked list instead
+	4. <mark style="background: #BBFABBA6;">dequeue</mark>
+		- doubly ended queues are queues but elements can be pushed and popped from both ends
+		- kinda like vectors but contiguous memory allocations is not guaranteed
+	5. <mark style="background: #BBFABBA6;">priority queue</mark>
+		- also called max heap
+		- pop deletes the largest element
+	6. <mark style="background: #BBFABBA6;">stack</mark>
+		- LIFO
+	7. <mark style="background: #BBFABBA6;">set</mark>
+		- duplicates are not stored so every element in a set is unique
+	8. <mark style="background: #BBFABBA6;">multiset</mark>
+	9. .
+	10. 
 
 
-	- list: are doubly linked list and have two nodes fwd and backward in the struct
-				- functions same as vectors+ push front, pop front, front, back
-			- forward list: singly linked list with functions same as doubly
-			- dequeue: double ended queue, similar to vector but with functions like lists
-			- priority queue: means max heap: so the largest element is deleted first
-				- push, pop, empty, size
-			- stack: lifo with same funcs as priority queue
-			- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
-			- multiset: same as set but allows duplicate
-			- map is used to store key value pairs with all keys unique stores keys in sorted order
-			- multi map allows duplicate keys but key value pair should be unique
-			- unordered map needs unique keys but keys are not sorted
+
+		- set: duplicates are not allowed and order of storage is not guaranteed with func same as priority queue
+		- multiset: same as set but allows duplicate
+		- map is used to store key value pairs with all keys unique stores keys in sorted order
+		- multi map allows duplicate keys but key value pair should be unique
+		- unordered map needs unique keys but keys are not sorted
 
 	- iterators are used to access container data
 ```cpp
