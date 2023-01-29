@@ -208,17 +208,17 @@
 	}
 	```
 
-<mark style="background: #FFB86CA6;">MyCodeSchool DStrs</mark>
-- Arrays
-	- Read is O(1) but inserting and deleting is O(n)
-	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously
-	can have unused memory
-- singly Linked list:
-	- opposite of array
-	- read is O(n), insert and delete is O(1) if at the beginning, O(n) if at the end
-	- they dont have indexes like arrays
-	- address of the head node is stored and used and the last nodes points to null
-	- no unused memory but pointer needs memory
+<mark style="background: #FFB86CA6;">Arrays</mark>
+- Read is `O(1)` but inserting and deleting is `O(n)`
+- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously can have unused memory
+
+<mark style="background: #BBFABBA6;">Singly Linked List</mark>
+- opposite of an array
+- read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
+- they dont have indexes like arrays
+- address of the head node is stored and used and the last nodes points to null
+- no unused memory but pointer needs memory
+
 - doubly linked list:
 	- ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
 - hash maps are like arrays but indices can be of any data type
