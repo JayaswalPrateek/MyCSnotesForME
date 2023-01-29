@@ -94,27 +94,42 @@
 	1. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		- functions: similar to vector
-	2. <mark style="background: #BBFABBA6;">forward list</mark>
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    list<int> ls; // same as vector but also allows front operations
+		    ls.push_back(2);
+		    ls.emplace_back(4);
+		    ls.push_front(0);
+		    ls.emplace_front(-2);
+		    ls.pop_front();
+		    ls.pop_back();
+		    return 0;
+		}
+		```
+	1. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
-	3. <mark style="background: #BBFABBA6;">dequeue</mark>
+	2. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
-	4. <mark style="background: #BBFABBA6;">priority queue</mark>
+	3. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
 		- pop deletes the largest element
-	5. <mark style="background: #BBFABBA6;">stack</mark>
+	4. <mark style="background: #BBFABBA6;">stack</mark>
 		- LIFO
-	6. <mark style="background: #BBFABBA6;">set</mark>
+	5. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	7. <mark style="background: #BBFABBA6;">multiset</mark>
+	6. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	8. <mark style="background: #BBFABBA6;">map</mark>
+	7. <mark style="background: #BBFABBA6;">map</mark>
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-	9. <mark style="background: #BBFABBA6;">multimap</mark>
+	8. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	10. <mark style="background: #BBFABBA6;">unordered map</mark>
+	9. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	11. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	10. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
@@ -180,21 +195,13 @@
 
 
 
-- list
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    list<int> ls; // same as vector but also allows front operations
-    ls.push_back(2);
-    ls.emplace_back(4);
-    ls.push_front(0);
-    ls.emplace_front(-2);
-    ls.pop_front();
-    ls.pop_back();
-}
-```
+
+
+
+
+
+
+
 - dequeue
 ```cpp
 #include <bits/stdc++.h>
@@ -208,6 +215,7 @@ int main()
     ls.emplace_front(-2);
     ls.pop_front();
     ls.pop_back();
+    return 0;
 }
 ```
 -  stack (lifo)
