@@ -47,13 +47,14 @@
 
 <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
-- it has 4 things: functions,algorithms, containers and iterators
+- c++ STL  has 4 things: functions,algorithms, containers and iterators
+- containers are the classes for the data structures
+- algorithms are complex operations performed on the containers like search, sort
+- functions are simpler operations performed on the containers like push, pop
 - 
-- the operations to be performed on the data structures are called algorithms like sort and search and functions are like pop and push, union, intersection, begin end rbegin rend
-	- the classes for data structures are called containers
-		- this is STL: standard template classes as containers are of generic types
-			- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
-				- supports push back, pop back, insert, remove, is empty, size
+- this is STL: standard template classes as containers are of generic types
+	- vector: dynamic array but not a linked list. copies the content of smaller array to larger one. not to be confused with string class
+		- supports push back, pop back, insert, remove, is empty, size
 			- list: are doubly linked list and have two nodes fwd and backward in the struct
 				- functions same as vectors+ push front, pop front, front, back
 			- forward list: singly linked list with functions same as doubly
@@ -66,6 +67,7 @@
 			- map is used to store key value pairs with all keys unique stores keys in sorted order
 			- multi map allows duplicate keys but key value pair should be unique
 			- unordered map needs unique keys but keys are not sorted
+
 	- iterators are used to access container data
 ```cpp
 #include <iostream>
