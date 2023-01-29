@@ -91,7 +91,7 @@
 		    return 0;
 		}
 		```
-	1. <mark style="background: #BBFABBA6;">list</mark>
+	2. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		- functions: similar to vector
 		```cpp
@@ -109,9 +109,9 @@
 		    return 0;
 		}
 		```
-	1. <mark style="background: #BBFABBA6;">forward list</mark>
+	3. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
-	2. <mark style="background: #BBFABBA6;">dequeue</mark>
+	4. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
 		```cpp
@@ -129,22 +129,22 @@
 		    return 0;
 		}
 		```
-	1. <mark style="background: #BBFABBA6;">priority queue</mark>
+	5. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
-		- pop deletes the largest element
-	2. <mark style="background: #BBFABBA6;">stack</mark>
-		- LIFO
-	3. <mark style="background: #BBFABBA6;">set</mark>
+		- pop deletes the largest element 
+	6. <mark style="background: #BBFABBA6;">stack</mark>
+	7. <mark style="background: #BBFABBA6;">queue</mark>
+	8. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	4. <mark style="background: #BBFABBA6;">multiset</mark>
+	9. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	5. <mark style="background: #BBFABBA6;">map</mark>
+	10. <mark style="background: #BBFABBA6;">map</mark>
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-	6. <mark style="background: #BBFABBA6;">multimap</mark>
+	11. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	7. <mark style="background: #BBFABBA6;">unordered map</mark>
+	12. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	8. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	13. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
