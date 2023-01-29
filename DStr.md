@@ -114,22 +114,37 @@
 	2. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
-	3. <mark style="background: #BBFABBA6;">priority queue</mark>
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    deque<int> ls; // same as vector but also allows front operations
+		    ls.push_back(2);
+		    ls.emplace_back(4);
+		    ls.push_front(0);
+		    ls.emplace_front(-2);
+		    ls.pop_front();
+		    ls.pop_back();
+		    return 0;
+		}
+		```
+	1. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
 		- pop deletes the largest element
-	4. <mark style="background: #BBFABBA6;">stack</mark>
+	2. <mark style="background: #BBFABBA6;">stack</mark>
 		- LIFO
-	5. <mark style="background: #BBFABBA6;">set</mark>
+	3. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	6. <mark style="background: #BBFABBA6;">multiset</mark>
+	4. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	7. <mark style="background: #BBFABBA6;">map</mark>
+	5. <mark style="background: #BBFABBA6;">map</mark>
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-	8. <mark style="background: #BBFABBA6;">multimap</mark>
+	6. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	9. <mark style="background: #BBFABBA6;">unordered map</mark>
+	7. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	10. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	8. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
@@ -200,24 +215,6 @@
 
 
 
-
-
-- dequeue
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    deque<int> ls; // same as vector but also allows front operations
-    ls.push_back(2);
-    ls.emplace_back(4);
-    ls.push_front(0);
-    ls.emplace_front(-2);
-    ls.pop_front();
-    ls.pop_back();
-    return 0;
-}
-```
 -  stack (lifo)
 	- values are stored from bottom up using push/emplace and the last element is at the `top()`
 	- cannot index like an array.
