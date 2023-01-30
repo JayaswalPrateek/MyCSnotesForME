@@ -846,22 +846,22 @@ restart:
 	- height of a node in a tree is equal to the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under the node
 	- so height of all leaves is 0
 	- height of a tree is height of the topmost node of the tree
+	- height if an empty tree is -1
+	- height of a tree with one node is 0 and so on
+	- height if a tree with n nodes is n-1 which is equal to the number of connecting links
 - max number of nodes for a node at height h = (2^h)-1
 - a binary tree for which any node either has 2 or 0 nodes is called a perfect binary tree and height of a perfect binary tree = floor(log base2 of n) where n is number of nodes
 - cost proportional to the height of the tree
 	- the height is lesser if the tree is denser and a tree is denser if it is a perfect binary tree
 	- more a binary tree is perfect, denser it is
 	- linked list is the most imperfect binary tree as every node will have one node
-	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)`
+	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)` and `O(n)` for a linked list 
+- 
 
 
-		- so tree has O(ht)
-			- perfect hai toh O(log base2 n)
-			- linked list toh O(n)
-		- ht of empty tree = -1 as no node
-		- ht of tree w/ 1 node is 0
-		- for n nodes its n-1 which is same as number of links
-	- try keeping tree balanced, balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
+
+
+- try keeping tree balanced, balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
 
 
 
