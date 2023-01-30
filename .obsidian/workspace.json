@@ -19,8 +19,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "27a13aa75c7100ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cpp.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DStr.md",
+                "file": "Cpp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DStr.md",
+                "file": "Cpp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DStr.md"
+                "file": "Cpp.md"
               }
             }
           }
@@ -151,11 +165,11 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "3030dbcb20030220",
+  "active": "27a13aa75c7100ef",
   "lastOpenFiles": [
+    "Algorithms.md",
     "Cpp.md",
     "DStr.md",
-    "Algo.md",
     "Untitled.md",
     "Cpp.pdf",
     "cpp/Basics.md",

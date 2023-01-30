@@ -1,4 +1,4 @@
-<mark style="background: #FFB86CA6;">Birds Eye View of important Algorithms:</mark>
+# <mark style="background: #FFB86CA6;">Overview of important Algorithms</mark>
 - <mark style="background: #D2B3FFA6;">Searching</mark>
 	- <mark style="background: #BBFABBA6;">Binary Search</mark>
 	- <mark style="background: #BBFABBA6;">Depth First Search</mark> for trees and graphs

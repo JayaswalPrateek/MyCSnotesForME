@@ -1,10 +1,10 @@
-<mark style="background: #FFB86CA6;">Input Buffer</mark>
+# <mark style="background: #FFB86CA6;">Input Buffer</mark>
 - When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
 
-<mark style="background: #FFB86CA6;">decltype</mark>
+# <mark style="background: #FFB86CA6;">decltype</mark>
 - `decltype(x) y` is used to create a variable y with the data type of x
 
-<mark style="background: #FFB86CA6;">Enum</mark>
+# <mark style="background: #FFB86CA6;">Enum</mark>
 - User defined data types that can alias a commonly used name with a constant integer improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
 		`const int mon = 0;`
@@ -26,7 +26,7 @@
 - `enum day {mon=4,tue,wed,thr,fri=13,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=13 sat=14 sun=15
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
-<mark style="background: #FFB86CA6;">Type Definition</mark>
+# <mark style="background: #FFB86CA6;">Type Definition</mark>
 - makes variables more readable
 - So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
 - To make it more readable we use `typedef` to alias the data type of mX from int to marks and rN from int to roll to add more context
@@ -36,7 +36,7 @@
 	roll r1, r2, r3;
 	```
 
-<mark style="background: #FFB86CA6;">For Each Loop</mark>
+# <mark style="background: #FFB86CA6;">For Each Loop</mark>
 ```cpp
 int A[] = {1, 2, 3, 4, 5};
 for (int x : A)
@@ -52,7 +52,7 @@ for (int x : A)
 	- To avoid this you can used `int &x : A` instead of `int x : A`
 	- `auto &x : A` is also allowed
 
-<mark style="background: #FFB86CA6;">Binary Search</mark>
+# <mark style="background: #FFB86CA6;">Binary Search</mark>
 ```cpp
 #include <iostream>
 using namespace std;
@@ -84,7 +84,7 @@ int main()
 }
 ```
 
-<mark style="background: #FFB86CA6;">Finding Min and Max of an Array</mark>
+# <mark style="background: #FFB86CA6;">Finding Min and Max of an Array</mark>
 ```cpp
 #include <iostream>
 #include <climits>
