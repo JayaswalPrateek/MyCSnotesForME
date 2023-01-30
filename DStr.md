@@ -608,12 +608,233 @@ int main()
     print();
 }
 ```
+- printing reverse of the linked list using recursion
+```cpp
+#include <iostream>
+using namespace std;
 
+struct node
+{
+    int data;
+    node *next;
+} *head = NULL;
 
+void insert(int x) // at the end
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = NULL;
+    if (head == NULL)
+    {
+        head = tmp;
+        return;
+    }
+    node *itr = head;
+    while (itr->next != NULL)
+        itr = itr->next;
+    itr->next = tmp;
+}
 
+void print()
+{
+    node *itr = head;
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
 
+void reversePrinter(node *itr)
+{
+    if (itr == NULL)
+        return;
+    reversePrinter(itr->next);
+    cout << itr->data << " ";
+}
 
+int main()
+{
+    cout << "How many numbers: ";
+    int len;
+    cin >> len;
 
+    for (int i = 0, x; i < len; i++)
+    {
+        cout << "Element " << i + 1 << " is ";
+        cin >> x;
+        insert(x);
+        print();
+    }
+
+    cout << "\n\n\nReversed:" << endl;
+    reversePrinter(head);
+}
+```
+- storing reverse of the linked list using recursion
+```cpp
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node *next;
+} *head = NULL;
+
+void insert(int x) // at the end
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = NULL;
+    if (head == NULL)
+    {
+        head = tmp;
+        return;
+    }
+    node *itr = head;
+    while (itr->next != NULL)
+        itr = itr->next;
+    itr->next = tmp;
+}
+
+void print()
+{
+    node *itr = head;
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
+
+void reverse(node *crnt)
+{
+    if (crnt->next == NULL)
+    {
+        head = crnt; // head now set to last node crnt which point to NULL
+        return;
+    }
+    reverse(crnt->next);
+
+    node *nxt = crnt->next; // crnt is the 2nd last and nxt is the last node
+    nxt->next = crnt;
+    crnt->next = NULL;
+}
+/**
+ * head(1,a)      a(2,b)     b(3,c)     c(4,NULL)
+ * head points to a which has value 1
+ * we move itr till it points to the last node and when it does we shift our head to the last node and the last node points to NULL
+ * the recursive control moves to the 2nd last node at c
+ * make 4 point to c and 3 point to NULL
+ * make 3 point to 2 and make 2 point to NULL
+ * make 2 point to a and make a point to NULL
+ * DONE!
+ */
+
+int main()
+{
+    cout << "How many numbers: ";
+    int len;
+    cin >> len;
+
+    for (int i = 0, x; i < len; i++)
+    {
+        cout << "Element " << i + 1 << " is ";
+        cin >> x;
+        insert(x);
+        print();
+    }
+
+    reverse(head);
+    cout << "\n\n\nReversed:" << endl;
+    print();
+}
+```
+
+<mark style="background: #D2B3FFA6;">Doubly Linked List</mark>
+```cpp
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node *prev, *next;
+} *head = NULL;
+
+void insertAtHead(int x)
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->prev = NULL;
+    tmp->next = NULL;
+
+    if (head == NULL) // if the list is empty
+    {
+        head = tmp;
+        return;
+    }
+    // when the list is not empty
+    head->prev = tmp; // establishing link in forward dirn
+    tmp->next = head; // establishing link in backward dirn
+    head = tmp;       // head should now point at the node we inserted
+}
+
+void fwdPrint()
+{
+    for (node *itr = head; itr != NULL; itr = itr->next)
+        cout << "This is " << itr << " having (prev=" << itr->prev << " data=" << itr->data << " next=" << itr->next << ")" << endl;
+}
+
+void revPrint()
+{
+    node *itr = head;
+    if (head == NULL)
+        return;               // exit if empty list
+    while (itr->next != NULL) // to get to the last node
+        itr = itr->next;
+    while (itr != NULL)
+    {
+        cout << "This is " << itr << " having (prev=" << itr->prev << " data=" << itr->data << " next=" << itr->next << ")" << endl;
+        itr = itr->prev;
+    }
+}
+
+int main()
+{
+    cout << "[1] Insert At Head\n[2] Print Forward\n[3] Print Reverse\n[4] Quit\n\n";
+    int ch;
+restart:
+    do
+    {
+        cout << "\nChoice: ";
+        cin >> ch;
+    } while (ch != 1 && ch != 2 && ch != 3 && ch != 4);
+    switch (ch)
+    {
+    case 1:
+        cout << "Enter Element: ";
+        int x;
+        cin >> x;
+        insertAtHead(x);
+        break;
+    case 2:
+        fwdPrint();
+        break;
+    case 3:
+        revPrint();
+        break;
+    case 4:
+        return 0;
+    }
+    goto restart;
+}
+```
+
+<mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
 
 
 
