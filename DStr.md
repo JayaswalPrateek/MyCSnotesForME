@@ -311,6 +311,24 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - doubly linked list:
 	- ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
 - hash maps are like arrays but indices can be of any data type
