@@ -149,29 +149,27 @@
 		- peek reads the topmost element
 		- useful for reversing without recursion
 		- insert and delete happens from the same end
-	1. <mark style="background: #BBFABBA6;">queue</mark>
+	7. <mark style="background: #BBFABBA6;">queue</mark>
 		- fifo
-		- - queue
-	- enqueue adds new element at the end of the queue O(1)
-	- dequeue is the pop for the stack removes front most element O(1)
-	- front reads the frontmost element O(1)
-	- more used than stack
-	- insert happens at one end and delete happens from other
-	- used when there is a shared resource and it can only handle only one resource at a time like printer or processor
-
-	2. <mark style="background: #BBFABBA6;">set</mark>
+		- enqueue adds new element at the end of the queue `O(1)`
+		- dequeue is the pop for the stack removes front most element `O(1)`
+		- front reads the frontmost element `O(1)`
+		- more used than stack irl
+		- insert happens at one end and delete happens from other
+		- used when there is a shared resource and it can only handle only one resource at a time like a printer or a processor
+	8. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	3. <mark style="background: #BBFABBA6;">multiset</mark>
+	9. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	4. <mark style="background: #BBFABBA6;">map</mark>
+	10. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- read, insert and delete are `O(1)`
-	5. <mark style="background: #BBFABBA6;">multimap</mark>
+	11. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	6. <mark style="background: #BBFABBA6;">unordered map</mark>
+	12. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	7. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	13. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
