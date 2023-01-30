@@ -5,7 +5,7 @@
   "monospaceFontFamily": "Fira Code",
   "textFontFamily": "Comic Sans MS",
   "interfaceFontFamily": "Fira Sans",
-  "baseFontSize": 18,
+  "baseFontSize": 19,
   "showViewHeader": true,
   "nativeMenus": false
 }
