@@ -28,6 +28,10 @@
 
 ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
+<mark style="background: #FFB86CA6;">Arrays</mark>
+- Read is `O(1)` but inserting and deleting are `O(n)`
+	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously can have unused memory
+
 <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
 - c++ STL  has 4 things: functions,algorithms, containers and iterators
@@ -93,6 +97,7 @@
 		```
 	2. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
+		-  ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
 		- functions: similar to vector
 		```cpp
 		#include <bits/stdc++.h>
@@ -141,12 +146,14 @@
 	9. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
 	10. <mark style="background: #BBFABBA6;">map</mark>
+		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-	11. <mark style="background: #BBFABBA6;">multimap</mark>
+		- read, insert and delete are `O(1)`
+	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	12. <mark style="background: #BBFABBA6;">unordered map</mark>
+	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	13. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
@@ -208,11 +215,21 @@
 	}
 	```
 
-<mark style="background: #FFB86CA6;">Arrays</mark>
-- Read is `O(1)` but inserting and deleting is `O(n)`
-- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously can have unused memory
 
-<mark style="background: #BBFABBA6;">Singly Linked List</mark>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mark style="background: #FFB86CA6;">Singly Linked List</mark>
 - opposite of an array
 - read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
 - they cannot be indexed like arrays
@@ -300,39 +317,6 @@ int main()
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- doubly linked list:
-	- ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
-- hash maps are like arrays but indices can be of any data type
-	- read insert delete are all O(1)
 - stack: stack of washed plates
 	- lifo
 	- push,pop and peek are O(1)
