@@ -835,6 +835,9 @@ restart:
 ```
 
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
+- is a binary tree with left child node of a parent node always smaller than or equal to the parent node and the right child node of a parent node always larger than or equal to the parent node
+- used for effectively searching
+- recursion is used for common operations as tree has unidirectional next nodes, we use stack of activation record 
 
 
 
@@ -844,12 +847,10 @@ restart:
 
 
 
-
-
-- binary search trees
-	- a binary search tree is a binary tree that has the left child node lesser than or equal to the parent node and the right child node larger than or equal to the parent node
-	- a right child node of a left parent node cannot be greater than the grandparent node
-	- used for searching efficiently
+- [x] binary search trees
+	- [x] a binary search tree is a binary tree that has the left child node lesser than or equal to the parent node and the right child node larger than or equal to the parent node
+	- [x] a right child node of a left parent node cannot be greater than the grandparent node
+	- [x] used for searching efficiently
 	- recursive data structure
 		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
 	- a tree with n nodes has n-1 links always. used to check validity of tree
@@ -879,6 +880,39 @@ restart:
 	- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
 		- else you discard left or right sub tree
 	- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
