@@ -107,7 +107,7 @@ int main()
 }
 ```
 
-<mark style="background: #FFB86CA6;">Note on Arrays</mark>
+# <mark style="background: #FFB86CA6;">Note on Arrays</mark>
 - When an Array of length n is created and when m <mark style="background: #D2B3FFA6;">elements are hard coded then remaining n-m elements are automatically initialized to 0 (provided the length of the array is not an user imput)</mark>
 - `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
 - When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
@@ -134,7 +134,7 @@ int main()
 	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark>
 
 
-<mark style="background: #FFB86CA6;">Pointer</mark>
+# <mark style="background: #FFB86CA6;">Pointer</mark>
 - <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type and always takes 8 bytes</mark>
 - *Memory Layout*
 	- | <mark style="background: #FF5582A6;"> HEAP </mark> |
@@ -221,7 +221,7 @@ int main()
 	- declaration without initialization is an error
 	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x
 
-<mark style="background: #FFB86CA6;">Strings</mark>
+# <mark style="background: #FFB86CA6;">Strings</mark>
 - 2 ways to create a string
 	- using class string
 	- using array of char
@@ -391,7 +391,7 @@ int main()
 			- `rbegin` and `rend` are same as `begin` and `end` respectively but are used with `reverse_iterator` instead
 			- similar to `for(int i = 0; str[i] != '\0'; i++`
 
-<mark style="background: #FFB86CA6;">Functions</mark>
+# <mark style="background: #FFB86CA6;">Functions</mark>
 - avoid user input in functions, input should be passed from the calling function
 	- When a function has a local variable and a global variable of the same name then local variable is preferred
 		- use `::<nameOfVariable>` to access the global variable in a function that has a local variable of the same name
@@ -593,7 +593,7 @@ int main()
 	}
 	```
 
-<mark style="background: #FFB86CA6;">OOPS</mark>
+# <mark style="background: #FFB86CA6;">OOPS</mark>
 - <mark style="background: #D2B3FFA6;">size of a object = size of data types only as functions don't occupy memory</mark>
 - class doesn't occupy space, object does. Class is a blueprint
 - multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section
@@ -782,7 +782,7 @@ int main()
 		- `cout<<cnum<<endl;` is valid
 		- if we replace `ostream` return type with void then we cannot chain insertion operator
 
-<mark style="background: #FFB86CA6;">Inheritance</mark>
+# <mark style="background: #FFB86CA6;">Inheritance</mark>
 - example of well designed class and inheritance
 	```cpp
 	#include <iostream>
@@ -975,7 +975,7 @@ int main()
 	- but it can create an object of the outer class to access its members
 	- a nested class acts independently as if it were an outer class
 
-<mark style="background: #FFB86CA6;">exception handling</mark>
+# <mark style="background: #FFB86CA6;">exception handling</mark>
 - used during runtime errors
 - if there is any error in the try block then the control moves to the catch block
 	- the remaining lines of try block are not executed
@@ -1053,7 +1053,7 @@ int main()
 		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will be redundant
 	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class
 
-<mark style="background: #FFB86CA6;">Template functions and classes</mark>
+# <mark style="background: #FFB86CA6;">Template functions and classes</mark>
 - used for <mark style="background: #D2B3FFA6;">generic programming</mark>
 ```cpp
 #include <iostream>
