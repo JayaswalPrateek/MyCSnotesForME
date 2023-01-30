@@ -837,27 +837,20 @@ restart:
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
 - is a binary tree with left child node of a parent node always smaller than or equal to the parent node and the right child node of a parent node always larger than or equal to the parent node
 - used for effectively searching
-- recursion is used for common operations as tree has unidirectional next nodes, we use stack of activation record 
+- recursion is used for common operations as tree has unidirectional next nodes, we use stack of activation record of functions in recursive calls to remember the address of parental nodes
+- to check validity, n nodes = n-1 connecting links
+- depth
+	- depth is measured from the topmost node of the tree
+	- So root of the tree has depth 0
+- height
+	- height of a node in a tree is equal to the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under the node
+	- so height of all leaves is 0
+	- height of a tree is height of the topmost node of the tree
+- max number of nodes for a node at height h = 2^h
 
 
 
 
-
-
-
-
-
-- [x] binary search trees
-	- [x] a binary search tree is a binary tree that has the left child node lesser than or equal to the parent node and the right child node larger than or equal to the parent node
-	- [x] a right child node of a left parent node cannot be greater than the grandparent node
-	- [x] used for searching efficiently
-	- recursive data structure
-		- as tree has unidirectional links, recursion allows to maintain previous nodes in stack's activation record
-	- a tree with n nodes has n-1 links always. used to check validity of tree
-	- depth and height
-		- root has depth 0, depth measured from topmost root
-		- height of some node is the number of links to reach it from the furthest child so measured from leaf(childless node) and height of a leaf=0
-			- ht of tree=ht of node
 	 - a tree where every node can have only 2 child nodes and the left child node should be lesser than parent node and the right child node should be greater than the parent node
 	 - number of nodes at height h = 2^h so we can find max number of nodes of the BINARY tree if we know the ht of the BINARY tree
 	 - for a BINARY tree of ht h, max nodes = 2^h - 1
