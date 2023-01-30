@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DStr.md",
+                "file": "Data Strs.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -70,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -87,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DStr.md",
+                "file": "Data Strs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DStr.md",
+                "file": "Data Strs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DStr.md"
+                "file": "Data Strs.md"
               }
             }
           }
@@ -155,7 +154,7 @@
   "lastOpenFiles": [
     "Cpp.md",
     "Algorithms.md",
-    "DStr.md",
+    "Data Strs.md",
     "Untitled.md",
     "Cpp.pdf",
     "cpp/Basics.md",
