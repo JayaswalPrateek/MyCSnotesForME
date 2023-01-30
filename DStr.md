@@ -855,29 +855,13 @@ restart:
 	- the height is lesser if the tree is denser and a tree is denser if it is a perfect binary tree
 	- more a binary tree is perfect, denser it is
 	- linked list is the most imperfect binary tree as every node will have one node
-	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)` and `O(n)` for a linked list 
-- 
-
-
-
-
-- try keeping tree balanced, balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
-
-
-
-
-
-
-
-
-
-
-
-	- ![binary tree array](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2022-31-43.png)
-	- ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
-	- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
-		- else you discard left or right sub tree
-	- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
+	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)` and `O(n)` for a linked list
+- try keeping the tree balanced, a balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
+- ![binary tree array](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2022-31-43.png)
+- ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
+- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
+	- else you discard left or right sub tree after comparing the value you are looking for with the value at the current node
+- ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
 
 
 
