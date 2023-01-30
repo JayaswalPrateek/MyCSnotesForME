@@ -1,4 +1,4 @@
-  <mark style="background: #FFB86CA6;">Big O</mark>
+# <mark style="background: #FFB86CA6;">Big O</mark>
 - `O(1)` algorithms are most efficient as they scale really well because the execution time is independent of the input size
 	- like searching a value in map using its key
 - `O(n)` means the execution time is linearly dependent on the input size
@@ -28,11 +28,11 @@
 
 ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
-<mark style="background: #FFB86CA6;">Arrays</mark>
+# <mark style="background: #FFB86CA6;">Arrays</mark>
 - Read is `O(1)` but inserting and deleting are `O(n)`
 	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously can have unused memory
 
-<mark style="background: #FFB86CA6;">STL ADT</mark>
+# <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
 - c++ STL  has 4 things: functions,algorithms, containers and iterators
 - containers are the classes for the data structures
@@ -231,9 +231,9 @@
 	}
 	```
 
-# CDT: Concrete Data Types 
+# <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 
-<mark style="background: #FFB86CA6;">Singly Linked List</mark>
+<mark style="background: #D2B3FFA6;">Singly Linked List</mark>
 ```cpp
 #include <iostream>
 using namespace std;

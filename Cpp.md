@@ -1145,7 +1145,7 @@ int main()
 	}
 	```
 
-<mark style="background: #FFB86CA6;">pointers and constants</mark>
+# <mark style="background: #FFB86CA6;">pointers and constants</mark>
 ```cpp
 #include <iostream>
 using namespace std;
@@ -1184,7 +1184,7 @@ int main()
 - <mark style="background: #D2B3FFA6;">smart pointer</mark>
 	- deallocates itself when pointer out of scope
 
-<mark style="background: #FFB86CA6;">preprocessor directives</mark>
+# <mark style="background: #FFB86CA6;">preprocessor directives</mark>
 - if a constant is needed across all files
 ```cpp
 #define x 10
@@ -1228,7 +1228,7 @@ int main()
 }
 ```
 
-<mark style="background: #FFB86CA6;">Destructors</mark>
+# <mark style="background: #FFB86CA6;">Destructors</mark>
 - called when the object goes out of the scope
 - if the object is created in HEAP and deleted then the destructor gets called
 - if a file is opened in a class then it should be closed in its destructor
@@ -1243,7 +1243,7 @@ int main()
 		- to fix this make the parent class destructor virtual
 			- then parent class destructor is called then child class destructor
 
-<mark style="background: #FFB86CA6;">Streams</mark>
+# <mark style="background: #FFB86CA6;">Streams</mark>
 - for input and output
 - `iostream` has `istream` for input and `ostream` for output
 - `cin` is an object of `istream` and `cout` is an object of `ostream`
@@ -1287,7 +1287,7 @@ int main()
 		```
 
 
-<mark style="background: #FFB86CA6;">Lambda functions</mark>
+# <mark style="background: #FFB86CA6;">Lambda functions</mark>
 - they are unnamed functions
 - `[](){cout<<"Hello World";}();`
 - `[](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
@@ -1307,5 +1307,5 @@ int main()
 	}
 	```
 
-<mark style="background: #D2B3FFA6;">ellipsis</mark> `...`
+# <mark style="background: #FFB86CA6;">ellipsis</mark> `...`
 - allows a function to take multiple args
