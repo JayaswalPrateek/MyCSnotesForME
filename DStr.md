@@ -315,13 +315,229 @@ int main()
     }
 }
 ```
+- inserting elements at the beginning of the linked list
+```cpp
+#include <iostream>
+using namespace std;
 
-<mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
+struct node
+{
+    int data;
+    node *next;
+};
 
+node *insertAtStart(node *head, int x)
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = head;
+    // head = tmp; is redundant
+    return tmp;
+}
 
+void print(node *itr)
+{
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
 
+int main()
+{
+    node *head = NULL;
+    cout << "How many numbers: ";
+    int len;
+    cin >> len;
 
+    for (int i = 0, x; i < len; i++)
+    {
+        cout << "Element " << i + 1 << " is ";
+        cin >> x;
+        head = insertAtStart(head, x);
+        print(head);
+    }
+}
+```
+- inserting elements at the beginning of the linked list
+```cpp
+#include <iostream>
+using namespace std;
 
+struct node
+{
+    int data;
+    node *next;
+};
+
+void insertAtStart(node **head, int x)
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = *head;
+    *head = tmp;
+}
+
+void print(node *itr)
+{
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
+
+int main()
+{
+    node *head = NULL;
+    cout << "How many numbers: ";
+    int len;
+    cin >> len;
+
+    for (int i = 0, x; i < len; i++)
+    {
+        cout << "Element " << i + 1 << " is ";
+        cin >> x;
+        insertAtStart(&head, x);
+        print(head);
+    }
+}
+```
+- to insert the node at nth position goto n-1 th node and
+	- make sure it points to the node to be inserted and copy the node it is pointing to to the next of the node that will be inserted
+```cpp
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node *next;
+} *head = NULL;
+
+void print()
+{
+    node *itr = head;
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
+
+void insert(int x, int n)
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = NULL;
+    if (n == 1)
+    {
+        tmp->next = head;
+        head = tmp;
+        print();
+        return;
+    }
+    // else we will goto the n-1 th node
+    node *itr = head;
+    for (int i = 0; i < n - 2; i++)
+        itr = itr->next;
+    tmp->next = itr->next;
+    itr->next = tmp;
+    print();
+}
+
+int main()
+{
+    insert(2, 1); // 2
+    insert(3, 2); // 2,3
+    insert(4, 1); // 4,2,3
+    insert(5, 2); // 4,5,2,3
+}
+```
+- to delete nth node you need to link n-1 and n+1 th node to each other and free the nth node
+```cpp
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node *next;
+} *head = NULL;
+
+void insert(int x) // at the end
+{
+    node *tmp = new node();
+    tmp->data = x;
+    tmp->next = NULL;
+    if (head == NULL)
+    {
+        head = tmp;
+        return;
+    }
+    node *itr = head;
+    while (itr->next != NULL)
+        itr = itr->next;
+    itr->next = tmp;
+}
+
+void del(int n)
+{
+    node *nMinusOne = head;
+    if (n == 1)
+    {
+        head = nMinusOne->next;
+        delete nMinusOne;
+        return;
+    }
+    for (int i = 0; i < n - 2; i++)
+        nMinusOne = nMinusOne->next;
+    node *nPlusOne = nMinusOne->next->next;
+    nMinusOne->next = nPlusOne;
+    delete nMinusOne;
+}
+
+void print()
+{
+    node *itr = head;
+    while (itr != NULL)
+    {
+        cout << "[ This is " << itr << ", Value=" << itr->data << ", Next=" << itr->next << " ]\t";
+        itr = itr->next;
+    }
+    cout << "\n\n";
+}
+
+int main()
+{
+    cout << "How many numbers: ";
+    int len;
+    cin >> len;
+
+    for (int i = 0, x; i < len; i++)
+    {
+        cout << "Element " << i + 1 << " is ";
+        cin >> x;
+        insert(x);
+        print();
+    }
+
+    cout << "\n\n\n\n";
+
+    for (int i = 0, n; i < len; i++)
+    {
+        cout << "Remove position: ";
+        cin >> n;
+        del(n);
+        print();
+    }
+}
+```
+-  reversing the linked list using iteration
 
 
 
