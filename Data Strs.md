@@ -1109,13 +1109,12 @@ int main()
 - a simple graph has no self loop or multiple edges
 - for a simple directed graph the max number of edges for n vertices are n(n-1) where n is non -ve
 - for a simple undirected graph the max number of edges for n vertices are n(n-1)/2 where n is non -ve
-- a denser graph has number of edges closer to the ma
+- a denser graph has number of edges closer to the max limit else its sparse
+- for a dense graph we use adjacency matrix and for sparse we use adjacency list
 
 
 
-	- a dense graph has edges near to max possible else it is sparse
-	- for dense graph we use adjacency matrix and for sparse it it an adjacency list
-	- path
+	 - path
 		- simple path when vertices/edges are not repeated
 		- if repeated it is a walk
 			- closed walk when start and end is the same vertex also called cycle
