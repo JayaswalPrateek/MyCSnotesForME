@@ -1145,23 +1145,12 @@ int main()
 		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
 			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
-			- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected O(v) or O(log v)
-
-
-- 
-	- 
-		- 
-			- 
-				- 
-					- v is the number of vertices
-					- O(1) in the matrix
-				- for finding adjacent nodes (all the neighbors of a node) then O(v)
-					- also O(v) in matrix
-				- still practically list is better most of the times
-					- use matrix if the graph is dense and the v and e are small values.
-			- adding a new edge now
-				- for a matrix flip a zero to one
-				- for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one
-					- so use linked list? yes and each pointer in the array points to the head of a linked list
-						- technically this is an Adjacency list!
-						- the node will store weight if the graph is weighted
+			- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
+			- finding adjacent nodes(all the neighbors of a node) is `O(v)` same as Adjacency Matrix
+			- still Adjacency List is practically preferred over Adjacency Matrix most of the time
+				- Adjacency Matrix used when the graphs is dense and |V| and |E| are small
+	- adding a new edge
+		- for adjacency matrix flip a zero to one
+		- for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one
+			- so use linked list instead? yes and each pointer in the array points to the head of a linked list and the node will store weight if the graph is weighted
+			- Adjacency List always uses Linked List and not array or vector
