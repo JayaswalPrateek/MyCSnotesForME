@@ -1105,13 +1105,14 @@ int main()
 			- all weights for an unweighted graphs are 1
 - graph can have self loops meaning vertex has an edge pointing to itself
 	- many websites have links to the same page and that is an example of self loop
+- two vertices can have multiple edges example multiple airlines fly between 2 same airports
+- a simple graph has no self loop or multiple edges
+- for a simple directed graph the max number of edges for n vertices are n(n-1) where n is non -ve
+- for a simple undirected graph the max number of edges for n vertices are n(n-1)/2 where n is non -ve
+- a denser graph has number of edges closer to the ma
 
 
-- 
-	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports
-	- a simple graph has no self loop or multiedges
-	- in a simple directed graph the max number of edges for n vertices is n(n-1) where n is not -ve
-		- for simple undirected it will be n(n-1)/2
+
 	- a dense graph has edges near to max possible else it is sparse
 	- for dense graph we use adjacency matrix and for sparse it it an adjacency list
 	- path
