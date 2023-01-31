@@ -1100,17 +1100,14 @@ int main()
 	- vertices are nodes
 	- an edge is the connecting link between two nodes
 		- it can be directed(one way) or undirected(two way)
-		- the edge can have weights like distance
-
-
+		- the edge can have weights like distance between two cities
+			- when graph is weighted we cannot just rely on the number of edges between 2 vertices to find the shortest path and we need to consider weights
+			- all weights for an unweighted graphs are 1
+- graph can have self loops meaning vertex has an edge pointing to itself
+	- many websites have links to the same page and that is an example of self loop
 
 
 - 
-	- an edge can have weight like distance between 2 places
-		- with weights we cannot just rely on the number of edges between 2 vertices to find the shortest path
-		- when no weights given assume all weights are equal to 1
-	- a self loop means the vertex has an edge that points to itself
-		- many websites have links to the same page and that is an example of self loop
 	- multi edge when there are multiple edges between 2 vertices like airlines between 2 airports
 	- a simple graph has no self loop or multiedges
 	- in a simple directed graph the max number of edges for n vertices is n(n-1) where n is not -ve
