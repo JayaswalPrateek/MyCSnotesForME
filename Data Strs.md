@@ -1111,15 +1111,15 @@ int main()
 - for a simple undirected graph the max number of edges for n vertices are n(n-1)/2 where n is non -ve
 - a denser graph has number of edges closer to the max limit else its sparse
 - for a dense graph we use adjacency matrix and for sparse we use adjacency list
+- path
+	- simple path when vertices/edges are not repeated
+	- if repeated it is a walk
+		- closed walk when start and end is the same vertex also called cycle
+			- tree is acyclic
+	- trail when edges are not repeated but vertices are
 
 
 
-	 - path
-		- simple path when vertices/edges are not repeated
-		- if repeated it is a walk
-			- closed walk when start and end is the same vertex also called cycle
-				- tree is acyclic
-		- trail when edges are not repeated but vertices can be
 		- creating graph data str in the memory
 			- use 2 vectors
 			- one stores the content of the vertex called vertex list
