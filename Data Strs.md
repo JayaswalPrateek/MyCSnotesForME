@@ -1128,35 +1128,31 @@ int main()
 	- finding adjacent nodes, checking if 2 nodes are connected is `O(number of Edges or |E|)` which is nearly `O(n^2)` as we know the formula for max number of edges from the number of nodes
 	- `O(n)` is acceptable which is `O(number of vertices or |V|)` for graphs
 		- Using Adjacency Matrix and Adjacency List
-		- Adjacency Matrix of order `|V| x |V|`
+		- <mark style="background: #BBFABBA6;">Adjacency Matrix</mark> of order `|V| x |V|`
 		- better for dense graphs because we will store many 0s for a sparse graph
 		- huge storage footprint
 		- rows are corresponding to the vertex list and 1 in columns represent that they are connected
 		- remaining values are set to zero
 		- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
 		-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
+		- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
+		- which is `O(V+V) = O(2V) = O(V)`
+		- to find if 2 nodes are connected or not we can pass their indices i and j and we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1 which is `O(1)`
+			- if the Alphabets are given then we need to do a linear search to find the index in the vertex list making it `O(V)`
+			- this can be avoided by using hash map so it will always be `O(1)`
+		- for weighted graph replace 1 with edge weight and 0 with `INT_MAX`
+		- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing whose not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of whom which is more important
+		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
+			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
+			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
+			- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected O(v) or O(log v)
 
 
 - 
 	- 
 		- 
 			- 
-				- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
-				- so it is O(V+V) = O(2V) = O(V)
-				- to find if 2 nodes are connected or not we can pass their indices i and j we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1
-				- so its a O(1)
-					- if the names are given then we need to do a linear search on the vertex list making it O(V)
-						- this can be avoided by using hash map so it will always be O(1)
-				- for weighted graphs:
-					- replace 1 with edge weights and 0 with INT_MAX
-				- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else
-					- this is impossible implying we will waste lot of memory
-				- we are storing what nodes are connected to each other and also the ones that are not
-					- this is redundant info as it can be deduced from knowing what nodes are connected to each other
-			- adjacency list is an array of pointers
-				- less memory as space complexity is O(number of edges) as e << v^2
-				- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
-				- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected O(v) or O(log v)
+				- 
 					- v is the number of vertices
 					- O(1) in the matrix
 				- for finding adjacent nodes (all the neighbors of a node) then O(v)
