@@ -1117,16 +1117,15 @@ int main()
 		- closed walk when start and end is the same vertex also called cycle
 			- tree is acyclic
 	- trail when edges are not repeated but vertices are
-
-
-
-		- creating graph data str in the memory
-			- use 2 vectors
+	- representing graph in memory
+		- use 2 vectors
 			- one stores the content of the vertex called vertex list
-			- and edge list which is a struct of edge (and it weight also if needed) and stores 2 ints
+			- and edge list which is a struct of edge and stores 2 integers(and weight if needed)
 			- we know every vertex stored in the vertex list vector has an index
 			- we can imagine that an edge connects these indices instead of pointing to them
 			- ![creating a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-25-06.png)
+
+
 		- common operations
 			- finding adjacent nodes
 			- checking if 2 nodes are connected
