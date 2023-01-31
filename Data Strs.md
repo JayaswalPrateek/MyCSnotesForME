@@ -1124,22 +1124,23 @@ int main()
 			- we know every vertex stored in the vertex list vector has an index
 			- we can imagine that an edge connects these indices instead of pointing to them
 			- ![creating a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-25-06.png)
+-  <mark style="background: #D2B3FFA6;">Common Operations</mark>
+	- finding adjacent nodes, checking if 2 nodes are connected is `O(number of Edges or |E|)` which is nearly `O(n^2)` as we know the formula for max number of edges from the number of nodes
+	- `O(n)` is acceptable which is `O(number of vertices or |V|)` for graphs
+		- Using Adjacency Matrix and Adjacency List
+		- Adjacency Matrix of order `|V| x |V|`
+		- better for dense graphs because we will store many 0s for a sparse graph
+		- huge storage footprint
+		- rows are corresponding to the vertex list and 1 in columns represent that they are connected
+		- remaining values are set to zero
+		- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
+		-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
 
 
-		- common operations
-			- finding adjacent nodes
-			- checking if 2 nodes are connected
-			- every time this will take O(number of Edges or |E|)
-				- this is nearly O(n^2) as we know the formula for max number of edges from the number of nodes
-			- a O(n) is considered acceptable: which technically is O(number of vertices or |V|)
-			- Solution: Adjacency Matrix and Adjacency List
-			- Adjacency Matrix of order |V| x |V|
-				- better for dense graphs beacuse we will store many 0s for a sparse graph
-				- huge storage footprint
-				- rows are corresponding to the vertex list and 1 in columns represent that they are connected
-				- remaining values are set to zero
-				- for undirected grpah the matrix will be symmetric so Aij == Aji so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
-				- ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
+- 
+	- 
+		- 
+			- 
 				- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
 				- so it is O(V+V) = O(2V) = O(V)
 				- to find if 2 nodes are connected or not we can pass their indices i and j we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1
