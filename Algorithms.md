@@ -50,7 +50,7 @@
 
 # <mark style="background: #FFB86CA6;">Recursion</mark>
 - a recursive function should have a terminating condition also called as a base condition
-	- the values in the scope of the function can be used before or after the termination condition and recursive call
+	- the values in the scope of the function can be used before(ascending) or after(descending) the termination condition and recursive call
 		```cpp
 		#include <iostream>
 		using namespace std;
