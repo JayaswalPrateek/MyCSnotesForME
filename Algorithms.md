@@ -50,4 +50,35 @@
 
 # <mark style="background: #FFB86CA6;">Recursion</mark>
 - a recursive function should have a terminating condition also called as a base condition
-	- which can either have the recursive call at the t
+	- the values in the scope of the function can be used before or after the termination condition and recursive call
+		```cpp
+		#include <iostream>
+		using namespace std;
+		
+		void rec1(int n)
+		{
+		    if (n < 0)
+		        return;
+		    rec1(n - 1);
+		    cout << n;
+		}
+		
+		void rec2(int n)
+		{
+		    cout << n;
+		    if (n < 0)
+		        return;
+		    rec2(n - 1);
+		}
+		
+		int main()
+		{
+		    rec1(10);
+		    cout << endl;
+		    rec2(10);
+		
+		    return 0;
+		}
+		// 012345678910
+		// 109876543210-1
+		```
