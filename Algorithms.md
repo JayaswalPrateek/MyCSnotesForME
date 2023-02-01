@@ -47,3 +47,6 @@
 	- when to be greedy
 		- when you don't want to find the most efficient way out of millions of permutations then greedy might be a good enough solution
 		- when optimal solution not possible and brute force is not acceptable become greedy
+
+# <mark style="background: #FFB86CA6;">Recursion</mark>
+- 
