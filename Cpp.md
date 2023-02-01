@@ -132,6 +132,7 @@ int main()
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
 	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark>
+- passing an array to a function by value decays it into a pointer to the first element of the array but if the array is a member of a struct and the struct is passed by value then the array doesn't decay
 
 
 # <mark style="background: #FFB86CA6;">Pointer</mark>
