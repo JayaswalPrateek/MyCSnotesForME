@@ -49,4 +49,5 @@
 		- when optimal solution not possible and brute force is not acceptable become greedy
 
 # <mark style="background: #FFB86CA6;">Recursion</mark>
-- 
+- a recursive function should have a terminating condition also called as a base condition
+	- which can either have the recursive call at the t
