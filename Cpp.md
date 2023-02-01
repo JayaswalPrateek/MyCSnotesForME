@@ -438,6 +438,51 @@ int main()
 		- T can also be an object
 		- data types of both a and b should be same
 			- if we pass an int and double then we get an error
+	- for functions outside class
+		```cpp
+		#include <iostream>
+		using namespace std;
+		
+		template <class T>
+		class maths
+		{
+		    T a, b;
+		
+		public:
+		    maths(T a, T b);
+		    T add();
+		    T sub();
+		};
+		
+		template <class T>
+		maths<T>::maths(T a, T b)
+		{
+		    this->a = a;
+		    this->b = b;
+		}
+		
+		template <class T>
+		T maths<T>::add()
+		{
+		    T c = a + b;
+		    return c;
+		}
+		
+		template <class T>
+		T maths<T>::sub()
+		{
+		    T c = a - b;
+		    return c;
+		}
+		
+		int main()
+		{
+		    maths<int> obj(1, 2);
+		    cout << obj.add() << endl;
+		    cout << obj.sub();
+		    return 0;
+		}
+		```
 - <mark style="background: #D2B3FFA6;">Default arguments of a function</mark>
 	- <mark style="background: #BBFABBA6;">a template function cannot have default arguments</mark>
 	```cpp
