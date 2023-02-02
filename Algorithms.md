@@ -173,3 +173,4 @@
 			return 0;
 		}
 		```
+		- ![nested recursion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-02%2013-20-47.png)
