@@ -122,37 +122,38 @@
 		- ![tree recursion](https://github.com/JayaswalPrateek/MyCSnotesForME/blob/main/Attachments/Screenshot%20from%202023-02-02%2010-09-59.png?raw=true)
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
 		- when a function A calls B and B calls C and C calls A 
-```cpp
-#include <iostream>
-using namespace std;
-void funB(int n);
-
-void funA(int n)
-{
-    if (n > 0)
-    {
-        cout << n << " ";
-        funB(n - 1);
-    }
-}
-void funB(int n)
-{
-    if (n > 1)
-    {
-        cout << "\n"
-             << n << " ";
-        funA(n / 2);
-    }
-}
-
-int main()
-{
-    funA(20);
-    return 0;
-}
-// 20
-// 19 9
-// 8 4
-// 3 1
-```
+		```cpp
+		#include <iostream>
+		using namespace std;
+		void funB(int n);
+		
+		void funA(int n)
+		{
+		    if (n > 0)
+		    {
+		        cout << n << " ";
+		        funB(n - 1);
+		    }
+		}
+		void funB(int n)
+		{
+		    if (n > 1)
+		    {
+		        cout << "\n"
+		             << n << " ";
+		        funA(n / 2);
+		    }
+		}
+		
+		int main()
+		{
+		    funA(20);
+		    return 0;
+		}
+		// 20
+		// 19 9
+		// 8 4
+		// 3 1
+		```
+		- ![indirect recursion](https://github.com/JayaswalPrateek/MyCSnotesForME/blob/main/Attachments/Screenshot%20from%202023-02-02%2010-26-43.png?raw=true)
 	- <mark style="background: #D2B3FFA6;">nested</mark>
