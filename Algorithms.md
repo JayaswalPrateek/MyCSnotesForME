@@ -82,4 +82,12 @@
 		// 012345678910
 		// 109876543210-1
 		```
-- use static variables in recursive function if you need a counter and
+- use static variables in recursive function if you need a counter and don't want the counter to reset on every recursive call
+	- static variable will have a single copy for all recursive calls and will not be a local variable of the scope of a recursive function
+	- it is like global but more restrictive
+- types of recursion
+	- <mark style="background: #D2B3FFA6;">tail</mark>
+	- <mark style="background: #D2B3FFA6;">head</mark>
+	- <mark style="background: #D2B3FFA6;">tree</mark>
+	- <mark style="background: #D2B3FFA6;">indirect</mark>
+	- <mark style="background: #D2B3FFA6;">nested</mark>
