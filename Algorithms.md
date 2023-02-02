@@ -51,42 +51,14 @@
 # <mark style="background: #FFB86CA6;">Recursion</mark>
 - a recursive function should have a terminating condition also called as a base condition
 	- the values in the scope of the function can be used before(ascending) or after(descending) the termination condition and recursive call
-		```cpp
-		#include <iostream>
-		using namespace std;
-		
-		void rec1(int n)
-		{
-		    if (n < 0)
-		        return;
-		    rec1(n - 1);
-		    cout << n;
-		}
-		
-		void rec2(int n)
-		{
-		    cout << n;
-		    if (n < 0)
-		        return;
-		    rec2(n - 1);
-		}
-		
-		int main()
-		{
-		    rec1(10);
-		    cout << endl;
-		    rec2(10);
-		
-		    return 0;
-		}
-		// 012345678910
-		// 109876543210-1
-		```
+```cpp
+```
 - use static variables in recursive function if you need a counter and don't want the counter to reset on every recursive call
 	- static variable will have a single copy for all recursive calls and will not be a local variable of the scope of a recursive function
-	- it is like global but more restrictive
+	- it is like global but more restrictive 
 - types of recursion
 	- <mark style="background: #D2B3FFA6;">tail</mark>
+		- when the function calls itself in the last line of the function
 	- <mark style="background: #D2B3FFA6;">head</mark>
 	- <mark style="background: #D2B3FFA6;">tree</mark>
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
