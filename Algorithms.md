@@ -157,3 +157,4 @@
 		```
 		- ![indirect recursion](https://github.com/JayaswalPrateek/MyCSnotesForME/blob/main/Attachments/Screenshot%20from%202023-02-02%2010-26-43.png?raw=true)
 	- <mark style="background: #D2B3FFA6;">nested</mark>
+		- parameter of a recursive call function is the same function
