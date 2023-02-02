@@ -95,5 +95,6 @@
 		- when the function calls itself in the first line of the function
 		- harder to convert recursive logic to iterative 
 	- <mark style="background: #D2B3FFA6;">tree</mark>
+		- opposite of tree recursion is linear recursion when the recursive function has only one recursive call
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
 	- <mark style="background: #D2B3FFA6;">nested</mark>
