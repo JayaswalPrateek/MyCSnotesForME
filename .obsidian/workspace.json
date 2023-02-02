@@ -46,7 +46,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -113,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithms.md",
+                "file": "Data Strs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithms.md",
+                "file": "Data Strs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithms.md"
+                "file": "Data Strs.md"
               }
             }
           }
@@ -177,7 +178,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "7b4044190dcf1b7a",
+  "active": "2be5e28bcdfeb8ae",
   "lastOpenFiles": [
     "Cpp.md",
     "Algorithms.md",
