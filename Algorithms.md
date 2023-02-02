@@ -90,8 +90,10 @@
 - types of recursion
 	- <mark style="background: #D2B3FFA6;">tail</mark>
 		- when the function calls itself in the last line of the function
+		- easier to convert recursive logic to iterative
 	- <mark style="background: #D2B3FFA6;">head</mark>
 		- when the function calls itself in the first line of the function
+		- harder to convert recursive logic to iterative 
 	- <mark style="background: #D2B3FFA6;">tree</mark>
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
 	- <mark style="background: #D2B3FFA6;">nested</mark>
