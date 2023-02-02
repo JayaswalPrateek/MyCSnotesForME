@@ -119,5 +119,6 @@
 		// Time O(2^n)
 		// Space O(n)
 		```
+		- ![tree recursion](https://github.com/JayaswalPrateek/MyCSnotesForME/blob/main/Attachments/Screenshot%20from%202023-02-02%2010-09-59.png?raw=true)
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
 	- <mark style="background: #D2B3FFA6;">nested</mark>
