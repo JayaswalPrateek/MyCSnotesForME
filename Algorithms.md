@@ -97,5 +97,27 @@
 	- <mark style="background: #D2B3FFA6;">tree</mark>
 		- opposite of tree recursion is linear recursion when the recursive function calls itself only one time
 		- in tree recursion the recursive function calls itself more than one times
+		```cpp
+		#include <iostream>
+		using namespace std;
+		void tree(int n)
+		{
+		    if (n > 0)
+		    {
+		        cout << n << " ";
+		        tree(n - 1);
+		        tree(n - 1);
+		    }
+		}
+		
+		int main()
+		{
+		    tree(3);
+		    return 0;
+		}
+		// 3 2 1 1 2 1 1
+		// Time O(2^n)
+		// Space O(n)
+		```
 	- <mark style="background: #D2B3FFA6;">indirect</mark>
 	- <mark style="background: #D2B3FFA6;">nested</mark>
