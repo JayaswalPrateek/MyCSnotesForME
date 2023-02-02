@@ -82,4 +82,4 @@
 		// 012345678910
 		// 109876543210-1
 		```
-- 
+- use static variables in recursive function if you need a counter and
