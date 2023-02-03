@@ -240,3 +240,23 @@
 		- to print e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))
 			- we keep taking commons out and this reduces number of multiplications that are needed to be performed
 			- we find the value for the innermost bracket lets say (1+ x/4) here and multiply it with the common multiple x/3 and add 1 to it and go on recursively
+			- using recursion
+			```cpp
+			#include <iostream>
+			using namespace std;
+			float e(int x, int n)
+			{
+			    int s = 1;
+			    for (; n > 0; n--)
+			        s = 1 + x / n * s;
+			    return s;
+			}
+			int main()
+			{
+			    cout << "Enter x and n: ";
+			    int x, n;
+			    cin >> x >> n;
+			    cout << "e^" << x << " till n precision is " << e(x, n);
+			    return 0;
+			}
+			```
