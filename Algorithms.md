@@ -206,4 +206,9 @@
 		    return 0;
 		}
 		```
-	- Taylor Series using recursion is a combination of sum till n, 
+	- Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
+		- to print e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms
+		- we need to use static variables as 3 variables are involved but we can return only one
+			- the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again
+				- if factorial would have been static we just need to multiply a new number with the factorial of the previous number as n! = n x (n-1)!
+				- similarly we have to find x^n every time but if static we can store x^(n-1) and  multiply x once
