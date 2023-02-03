@@ -293,7 +293,8 @@
 	    return fibo(n - 2) + fibo(n - 1); // as the function calls itself 2 times with n as arg so O(2^n)
 	}
 	```
-	
+	- ![fibonacci recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-03%2023-24-52.png)
+		- here we can see that fib(3) and fib(2) get calculated over and over as the value is not stored
 	- using iteration `O(n)`
 	```cpp
 	#include <iostream>
