@@ -282,7 +282,7 @@
 			}
 			```
 - Fibonacci Series
-	- using recursion
+	- using recursion `O(2^n)`
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -290,9 +290,10 @@
 	{
 	    if (n <= 1)
 	        return n;
-	    return fibo(n - 2) + fibo(n - 1);
+	    return fibo(n - 2) + fibo(n - 1); // as the function calls itself 2 times with n as arg so O(2^n)
 	}
 	```
+	
 	- using iteration `O(n)`
 	```cpp
 	#include <iostream>
