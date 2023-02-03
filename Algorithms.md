@@ -234,4 +234,4 @@
 		    cout << "e^" << x << " till n precision is " << e(x, n);
 		    return 0;
 		}
-		``` 
+		```
