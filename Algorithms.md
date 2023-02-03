@@ -192,3 +192,17 @@
 		- this way we can reduce the stack height and increase memory efficiency
 		- so if the power is even we half it and then we square the constant
 		- else if the power is odd like 2^9 we can still do 2 x 2^8 and so on 
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int pow(int k, int p) { return p == 0 ? 1 : p % 2 == 0 ? pow(k * k, p / 2)
+		                                                       : k * pow(k * k, (p - 1) / 2); }
+		int main()
+		{
+		    cout << "Enter constant and power: ";
+		    int con, pwr;
+		    cin >> con >> pwr;
+		    cout << con << "^" << pwr << " = " << pow(con, pwr);
+		    return 0;
+		}
+		```
