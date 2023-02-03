@@ -206,32 +206,36 @@
 		    return 0;
 		}
 		```
-	- Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
-		- to print e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms
-		- we need to use static variables as 3 variables are involved but we can return only one
-			- the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again
-				- if factorial would have been static we just need to multiply a new number with the factorial of the previous number as n! = n x (n-1)!
-				- similarly we have to find x^n every time but if static we can store x^(n-1) and  multiply x once
-		```cpp
-		#include <iostream>
-		using namespace std;
-		float e(int x, int n)
-		{
-		    if (n == 0)
-		        return 1;
-		
-		    static float pwr = 1, fac = 1;
-		    float res = e(x, n - 1);
-		    pwr *= x;
-		    fac *= n;
-		    return res + pwr / fac;
-		}
-		int main()
-		{
-		    cout << "Enter x and n: ";
-		    int x, n;
-		    cin >> x >> n;
-		    cout << "e^" << x << " till n precision is " << e(x, n);
-		    return 0;
-		}
-		```
+- Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
+	- to print e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms
+	- we need to use static variables as 3 variables are involved but we can return only one
+		- the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again
+			- if factorial would have been static we just need to multiply a new number with the factorial of the previous number as n! = n x (n-1)!
+			- similarly we have to find x^n every time but if static we can store x^(n-1) and  multiply x once
+	```cpp
+	#include <iostream>
+	using namespace std;
+	float e(int x, int n)
+	{
+	    if (n == 0)
+	        return 1;
+	
+	    static float pwr = 1, fac = 1;
+	    float res = e(x, n - 1);
+	    pwr *= x;
+	    fac *= n;
+	    return res + pwr / fac;
+	}
+	int main()
+	{
+	    cout << "Enter x and n: ";
+	    int x, n;
+	    cin >> x >> n;
+	    cout << "e^" << x << " till n precision is " << e(x, n);
+	    return 0;
+	}
+	```
+	- optimizing using Horner's Rule
+		- earlier the number of times we were multiplying was `O(n^2)` but using Horner's Rule it can be `O(1)`
+		- to print e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))
+			- we keep taking commons out and this reduces number of multiplications that are needed to be performed
