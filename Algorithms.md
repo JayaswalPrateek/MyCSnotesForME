@@ -248,7 +248,7 @@
 			{
 			    int res = 1;
 			    for (; n > 0; n--)
-			        res = 1 + x / n * res;
+			        res = 1 + x * res / n;
 			    return res;
 			}
 			int main()
@@ -269,7 +269,7 @@
 			    static int res = 1;
 			    if (n == 0)
 			        return res;
-			    res = 1 + x / n * res;
+			    res = 1 + x * res / n;
 			    return e(x, n - 1);
 			}
 			int main()
@@ -281,3 +281,4 @@
 			    return 0;
 			}
 			```
+- Fibonacci Series
