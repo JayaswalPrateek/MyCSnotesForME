@@ -295,7 +295,9 @@
 	```
 	- ![fibonacci recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-03%2023-24-52.png)
 		- here we can see that fib(3) and fib(2) get calculated over and over as the value is not stored
-			- such si
+			- it is a case of excessive recursion and we can fix it by using static variables
+				- we create a static array that stores the fib(n) at index n and the default values for all the elements is -1 so we can check do we need to find fib(n) at every step so `O(n)` 
+				- this process is called memoization
 	- using iteration `O(n)`
 	```cpp
 	#include <iostream>
