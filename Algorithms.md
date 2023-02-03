@@ -239,3 +239,4 @@
 		- earlier the number of times we were multiplying was `O(n^2)` but using Horner's Rule it can be `O(1)`
 		- to print e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))
 			- we keep taking commons out and this reduces number of multiplications that are needed to be performed
+			- we find the value for the innermost bracket lets say (1+ x/4) here and multiply it with the common multiple x/3 and add 1 to it and go on recursively
