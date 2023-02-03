@@ -303,7 +303,7 @@
 				using namespace std;
 				int fibo(int n)
 				{
-				    vector<int> memo(n + 1, -1);
+				    static vector<int> memo(n + 1, -1);
 				    if (n <= 1)
 				    {
 				        memo[n] = n;
