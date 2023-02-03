@@ -174,3 +174,21 @@
 		}
 		```
 		- ![nested recursion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-02%2013-20-47.png)
+- Implementing `pow` function from `cmath` using recursion
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int pow(int k, int p) { return p == 0 ? 1 : pow(k, p - 1) * k; }
+	int main()
+	{
+	    cout << "Enter constant and power: ";
+	    int con, pwr;
+	    cin >> con >> pwr;
+	    cout << con << "^" << pwr << " = " << pow(con, pwr);
+	    return 0;
+	}
+	```
+	- optimization: for 2^8 instead of multiplying 2 8 times shouldn't we half and square like (2^2)^4 = 4^4
+		- this way we can reduce the stack height and increase memory efficiency
+		- so if the power is even we half it and then we square the constant
+		- else if the power is odd like 2^9 we can still do 2 x 2^8 and so on 
