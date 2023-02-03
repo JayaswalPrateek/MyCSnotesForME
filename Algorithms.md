@@ -295,6 +295,7 @@
 	```
 	- ![fibonacci recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-03%2023-24-52.png)
 		- here we can see that fib(3) and fib(2) get calculated over and over as the value is not stored
+			- such si
 	- using iteration `O(n)`
 	```cpp
 	#include <iostream>
