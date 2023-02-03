@@ -246,10 +246,10 @@
 			using namespace std;
 			float e(int x, int n)
 			{
-			    int s = 1;
+			    int res = 1;
 			    for (; n > 0; n--)
-			        s = 1 + x / n * s;
-			    return s;
+			        res = 1 + x / n * res;
+			    return res;
 			}
 			int main()
 			{
