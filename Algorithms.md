@@ -298,6 +298,24 @@
 			- it is a case of excessive recursion and we can fix it by using static variables
 				- we create a static array that stores the fib(n) at index n and the default values for all the elements is -1 so we can check do we need to find fib(n) at every step so `O(n)` 
 				- this process is called memoization
+				```cpp
+				#include <bits/stdc++.h>
+				using namespace std;
+				int fibo(int n)
+				{
+				    vector<int> memo(n + 1, -1);
+				    if (n <= 1)
+				    {
+				        memo[n] = n;
+				        return n;
+				    }
+				    else if (memo[n - 2] == -1)
+				        memo[n - 2] = fibo(n - 2);
+				    if (memo[n - 1] == -1)
+				        memo[n - 1] = fibo(n - 1);
+				    return memo[n - 2] + memo[n - 1];
+				}
+				```
 	- using iteration `O(n)`
 	```cpp
 	#include <iostream>
