@@ -336,3 +336,5 @@
 	```
 - nCr `= n!/(r!*(n-r)!)`
 	- using iteration
+```cpp
+```
