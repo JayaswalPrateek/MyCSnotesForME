@@ -334,4 +334,5 @@
 	    return s;
 	}
 	```
-- nCr
+- nCr `= n!/(r!*(n-r)!)`
+	- using iteration
