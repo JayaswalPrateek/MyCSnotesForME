@@ -361,4 +361,6 @@
 	}
 	```
 	- using recursion we need to use Pascal's Triangle
-	- 
+		- ![pascals triangle](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-04%2009-04-11.png)
+			- here we have rows and cols and an element having both `\` and `/` points to elements whose sum is equal to itself
+				- observe how 2C1 
