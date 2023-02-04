@@ -336,5 +336,29 @@
 	```
 - nCr `= n!/(r!*(n-r)!)`
 	- using iteration
-```cpp
-```
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int fac(int n)
+	{
+	    int res = 1;
+	    for (int i = 1; i <= n; i++)
+	        res *= i;
+	    return res;
+	}
+	int main()
+	{
+	    cout << "Enter n and r: ";
+	    int n, r;
+	    cin >> n >> r;
+	    if (r > n)
+	    {
+	        cout << "Invalid Input " << r << " grtr than " << n;
+	        return -1;
+	    }
+	    cout << n << "C" << r << " = " << fac(n) / (fac(r) * fac(n - r));
+	    return 0;
+	}
+	```
+	- using recursion we need to use Pascal's Triangle
+	- 
