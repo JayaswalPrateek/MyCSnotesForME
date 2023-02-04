@@ -395,7 +395,7 @@
 	- Question:
 		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
 		- Auxiliary pole is for helping like temp variable for swapping
-		- discs are always sorted in the source pole
+			- discs are always sorted in the source pole
 	- Procedure to Solution: `O(2^n)`
 		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
 	-  cases
@@ -412,6 +412,7 @@
 			1. ignore the largest disc (nth disc) and move the n-1 discs to 2nd pole as if the number of discs were n and do this recursively
 			2. move the largest disc (nth disc) to 3rd pole
 			3. move the n-1 discs in 2nd pole to the 3rd pole as if the number of discs were n
+		- ![tower of hanoi recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-04%2010-07-15.png)
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -433,3 +434,4 @@
 	    return 0;
 	}
 	```
+	
