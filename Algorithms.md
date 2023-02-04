@@ -395,6 +395,14 @@
 	- Question:
 		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
 		- Auxiliary pole is for helping like temp variable for swapping
+		- discs are always sorted in the source pole
 	- Procedure to Solution:
 		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
-	-  
+	-  cases
+		- if the number of discs is one then just move it from pole 1 to 3
+		- if the number of discs are 2 then
+			1. move the smaller disc to middle pole
+			2. move the larger disc from 1st to the 3rd pole
+			3. move the smallest disc from 2nd to 3rd pole
+		- if number of discs are 3 then
+			1. ignore the largest disc and move 
