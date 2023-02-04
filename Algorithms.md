@@ -405,6 +405,10 @@
 			2. move the larger disc from 1st to the 3rd pole
 			3. move the smallest disc from 2nd to 3rd pole
 		- if number of discs are 3 then
-			1. ignore the largest disc and move the 2 disc to 2nd pole as if the number of discs were 2
+			1. ignore the largest disc (3rd disc) and move the 2 discs to 2nd pole as if the number of discs were 2
 			2. move the largest disc to 3rd pole
 			3. move the 2 discs in 2nd pole to the 3rd pole as if the number of discs were 2
+		- if number of discs are n then
+			1. ignore the largest disc (nth disc) and move the n-1 discs to 2nd pole as if the number of discs were n and do this recursively
+			2. move the largest disc (nth disc) to 3rd pole
+			3. move the n-1 discs in 2nd pole to the 3rd pole as if the number of discs were n
