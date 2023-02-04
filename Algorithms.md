@@ -366,3 +366,28 @@
 				- observe how 2C1 points to above elements 1C0 and 1C1 and 2C1 = 2 = 1C0 + 1C1 = 1 + 1
 				- so we can say 6 is 4C2 is obtained from 3+3 of 3C1 and 3C2 which themselves are obtained from a sum
 				- our base condition can be outlined by observing that the extreme leftmost and rightmost elements are always 1 and the topmost element is also always 1
+				- so nCr = (n-1)C(r-1) + (n-1)Cr
+				- we go bottom to up for recursion and then come down from top to bottom when returning
+				```cpp
+				#include <iostream>
+				using namespace std;
+				int C(int n, int r)
+				{
+				    if (r == 0 || n == r)
+				        return 1; // extreme left and right base condition
+				    return C(n - 1, r - 1) + C(n - 1, r);
+				}
+				int main()
+				{
+				    cout << "Enter n and r: ";
+				    int n, r;
+				    cin >> n >> r;
+				    if (r > n)
+				    {
+				        cout << "Invalid Input " << r << " grtr than " << n;
+				        return -1;
+				    }
+				    cout << n << "C" << r << " = " << C(n, r);
+				    return 0;
+				}
+				```
