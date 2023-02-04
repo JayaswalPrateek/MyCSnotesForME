@@ -405,4 +405,6 @@
 			2. move the larger disc from 1st to the 3rd pole
 			3. move the smallest disc from 2nd to 3rd pole
 		- if number of discs are 3 then
-			1. ignore the largest disc and move 
+			1. ignore the largest disc and move the 2 disc to 2nd pole as if the number of discs were 2
+			2. move the largest disc to 3rd pole
+			3. move the 2 discs in 2nd pole to the 3rd pole as if the number of discs were 2
