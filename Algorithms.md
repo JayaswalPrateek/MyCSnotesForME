@@ -392,3 +392,9 @@
 				}
 				```
 - Tower of Hanoi
+	- Question:
+		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
+		- Auxiliary pole is for helping like temp variable for swapping
+	- Procedure to Solution:
+		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
+	-  
