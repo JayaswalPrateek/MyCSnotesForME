@@ -396,7 +396,7 @@
 		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
 		- Auxiliary pole is for helping like temp variable for swapping
 		- discs are always sorted in the source pole
-	- Procedure to Solution:
+	- Procedure to Solution: `O(2^n)`
 		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
 	-  cases
 		- if the number of discs is one then just move it from pole 1 to 3
@@ -412,3 +412,24 @@
 			1. ignore the largest disc (nth disc) and move the n-1 discs to 2nd pole as if the number of discs were n and do this recursively
 			2. move the largest disc (nth disc) to 3rd pole
 			3. move the n-1 discs in 2nd pole to the 3rd pole as if the number of discs were n
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	void toh(int n, int sp1, int mp2, int dp3)
+	// source pole 1, middle pole 2 and destination pole 3 are just pole numbers and n discs are stored in sp1 and we want to move it to dp3 in a specific order
+	{
+	    if (n < 0)
+	        return;
+	    toh(n - 1, sp1, dp3, mp2);                                  // move (n-1)th disc from sp1 to mp2 using dp3 as Auxiliary Pole
+	    cout << "moved disc from " << sp1 << " to " << dp3 << endl; // print what was done in the above step
+	    toh(n - 1, mp2, sp1, dp3);                                  // move (n-1)th disc from mp2 to dp3 using sp1 as Auxiliary Pole
+	    // when n=1 the topmost pole is moved and then n=2 so the one below it is moved and so on
+	}
+	
+	int main()
+	{
+	    toh(2, 1, 2, 3); // means sp1 is the 1st pole, mp2 is the 2nd pole and dp3 is the 3rd pole
+	    return 0;
+	}
+	```
