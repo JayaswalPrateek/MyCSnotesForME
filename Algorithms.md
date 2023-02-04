@@ -422,9 +422,11 @@
 	{
 	    if (n < 0)
 	        return;
-	    toh(n - 1, sp1, dp3, mp2);                                  // move (n-1)th disc from sp1 to mp2 using dp3 as Auxiliary Pole
-	    cout << "moved disc from " << sp1 << " to " << dp3 << endl; // print what was done in the above step
-	    toh(n - 1, mp2, sp1, dp3);                                  // move (n-1)th disc from mp2 to dp3 using sp1 as Auxiliary Pole
+	    static int ctr = 0;
+	    toh(n - 1, sp1, dp3, mp2); // move (n-1)th disc from sp1 to mp2 using dp3 as Auxiliary Pole
+	    ctr++;
+	    cout << "[Step " << ctr << "] move disc from " << sp1 << " to " << dp3 << endl; // print what was done in the above step
+	    toh(n - 1, mp2, sp1, dp3);                                             // move (n-1)th disc from mp2 to dp3 using sp1 as Auxiliary Pole
 	    // when n=1 the topmost pole is moved and then n=2 so the one below it is moved and so on
 	}
 	
@@ -433,5 +435,14 @@
 	    toh(2, 1, 2, 3); // means sp1 is the 1st pole, mp2 is the 2nd pole and dp3 is the 3rd pole
 	    return 0;
 	}
-	```
 	
+	/**
+	[Step 1] move disc from 1 to 3
+	[Step 2] move disc from 1 to 2
+	[Step 3] move disc from 3 to 2
+	[Step 4] move disc from 1 to 3
+	[Step 5] move disc from 2 to 1
+	[Step 6] move disc from 2 to 3
+	[Step 7] move disc from 1 to 3
+	*/
+	```
