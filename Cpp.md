@@ -149,6 +149,7 @@ int main()
 			- example: `int *p = new int[5]`
 			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
 				- Don't do `p = nullptr` first as you won't be able to free HEAP later
+			- a 2-D array in HEAP is an array of pointers in stack such that every pointer of the array points to an array in the HEAP 
 			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP
 			```cpp
 			#include <iostream>
