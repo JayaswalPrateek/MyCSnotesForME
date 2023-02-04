@@ -363,4 +363,6 @@
 	- using recursion we need to use Pascal's Triangle
 		- ![pascals triangle](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-04%2009-04-11.png)
 			- here we have rows and cols and an element having both `\` and `/` points to elements whose sum is equal to itself
-				- observe how 2C1 
+				- observe how 2C1 points to above elements 1C0 and 1C1 and 2C1 = 2 = 1C0 + 1C1 = 1 + 1
+				- so we can say 6 is 4C2 is obtained from 3+3 of 3C1 and 3C2 which themselves are obtained from a sum
+				- our base condition can be outlined by observing that the extreme leftmost and rightmost elements are always 1 and the topmost element is also always 1
