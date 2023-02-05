@@ -41,7 +41,8 @@
 - iterators are used to access containers in a simpler way
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
-	1. <mark style="background: #BBFABBA6;">vector</mark>
+	1. <mark style="background: #BBFABBA6;">Array</mark>
+	2. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		- functions: push, pop, insert, remove, size, isempty, front, back
 		```cpp
@@ -95,7 +96,7 @@
 		    return 0;
 		}
 		```
-	2. <mark style="background: #BBFABBA6;">list</mark>
+	3. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		-  ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
 		- functions: similar to vector
@@ -114,12 +115,12 @@
 		    return 0;
 		}
 		```
-	3. <mark style="background: #BBFABBA6;">forward list</mark>
+	4. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
 		- opposite to array as read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
 		- they cannot be indexed like arrays
 		- address of the head node is stored as a pointer to the node
-	4. <mark style="background: #BBFABBA6;">dequeue</mark>
+	5. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
 		```cpp
@@ -137,10 +138,10 @@
 		    return 0;
 		}
 		```
-	5. <mark style="background: #BBFABBA6;">priority queue</mark>
+	6. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
 		- pop deletes the largest element 
-	6. <mark style="background: #BBFABBA6;">stack</mark>
+	7. <mark style="background: #BBFABBA6;">stack</mark>
 		- lifo
 		- stack of washed plates
 		- push,pop and peek are `O(1)`
@@ -233,7 +234,7 @@
 		 * so return top
 		 */
 		```
-	7. <mark style="background: #BBFABBA6;">queue</mark>
+	8. <mark style="background: #BBFABBA6;">queue</mark>
 		- fifo
 		- enqueue adds new element at the end of the queue `O(1)`
 		- dequeue is the pop for the stack removes front most element `O(1)`
@@ -241,19 +242,19 @@
 		- more used than stack irl
 		- insert happens at one end and delete happens from other
 		- used when there is a shared resource and it can only handle only one resource at a time like a printer or a processor
-	8. <mark style="background: #BBFABBA6;">set</mark>
+	9. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
-	9. <mark style="background: #BBFABBA6;">multiset</mark>
+	10. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
-	10. <mark style="background: #BBFABBA6;">map</mark>
+	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- read, insert and delete are `O(1)`
-	11. <mark style="background: #BBFABBA6;">multimap</mark>
+	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	12. <mark style="background: #BBFABBA6;">unordered map</mark>
+	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	13. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
