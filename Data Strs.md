@@ -325,6 +325,142 @@
 
 <mark style="background: #D2B3FFA6;">Array</mark>
 ```cpp
+#include <iostream>
+using namespace std;
+
+struct array
+{
+    int *data, size = 0, len = 0;
+} arr;
+
+void printArray()
+{
+    if (arr.len == 0)
+    {
+        cout << "Array is empty" << endl;
+        return;
+    }
+    cout << "The Array is [ ";
+    for (int i = 0; i < arr.len; i++)
+        cout << arr.data[i] << " ";
+    cout << "]" << endl;
+}
+
+void makeArray()
+{
+    cout << "Enter size of Array: ";
+    cin >> arr.size;
+    arr.data = new int[arr.size];
+    cout << "How many numbers to insert: ";
+    int insLen;
+    cin >> insLen;
+    if (insLen > arr.size)
+    {
+        cout << "cannot insert " << insLen << " elements in an array of size " << arr.size;
+        exit(-1);
+    }
+    for (int i = 0; i < insLen; i++)
+    {
+        cout << "Enter element at index " << i << ": ";
+        cin >> arr.data[i];
+    }
+    arr.len = insLen;
+    printArray();
+}
+
+void deleteArray();
+void appendArray()
+{
+    if (arr.len == arr.size)
+    {
+        cout << "Array is full, cannot append" << endl;
+        deleteArray();
+    }
+    cout << "Enter new element: ";
+    cin >> arr.data[arr.len];
+    arr.len++;
+    printArray();
+}
+
+void replaceArray()
+{
+    cout << "Enter Index to replace: ";
+    int target;
+    cin >> target;
+    if (target > arr.len || target < 0)
+    {
+        cout << "index " << target << " is out of bounds for array of len " << arr.len;
+        exit(-1);
+    }
+    cout << "Enter new element: ";
+    cin >> arr.data[target];
+    printArray();
+}
+
+void insertArray()
+{
+    cout << "Enter index: ";
+    int target;
+    cin >> target;
+    if (arr.len == arr.size)
+    {
+        cout << "Array is full, cannot insert" << endl;
+        deleteArray();
+    }
+    if (target > arr.len || target < 0)
+    {
+        cout << "index " << target << " is out of bounds for array of len " << arr.len;
+        exit(-1);
+    }
+    for (int i = arr.len; i > target; i--)
+        arr.data[i] = arr.data[i - 1];
+    cout << "Enter new element: ";
+    cin >> arr.data[target];
+    arr.len++;
+    printArray();
+}
+
+void deleteArray()
+{
+    cout << "Enter index to be deleted: ";
+    int target;
+    cin >> target;
+    if (target > arr.len || target < 0)
+    {
+        cout << "index " << target << " is out of bounds for array of len " << arr.len;
+        exit(-1);
+    }
+    for (int i = target; i < arr.len - 1; i++)
+        arr.data[i] = arr.data[i + 1];
+    arr.len--;
+    printArray();
+}
+
+void linearSearch()
+{
+    cout << "Enter query element: ";
+    int query, i = 0;
+    cin >> query;
+    bool flag = false;
+    for (; i < arr.len; i++)
+        if (arr.data[i] == query)
+        {
+            flag = true;
+            return;
+        }
+    if (flag)
+        cout << "found " << query << " at index " << i << endl;
+}
+
+int main()
+{
+    makeArray();
+    appendArray();
+    replaceArray();
+    insertArray();
+    linearSearch();
+    return 0;
+}
 ```
 
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
