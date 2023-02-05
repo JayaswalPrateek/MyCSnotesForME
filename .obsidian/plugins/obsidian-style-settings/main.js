@@ -3416,6 +3416,7 @@ class ExportModal extends obsidian.Modal {
 
 const SettingType = {
     HEADING: 'heading',
+    INFO_TEXT: 'info-text',
     CLASS_TOGGLE: 'class-toggle',
     CLASS_SELECT: 'class-select',
     VARIABLE_TEXT: 'variable-text',
@@ -9105,9 +9106,38 @@ class VariableThemedColorSettingComponent extends AbstractSettingComponent {
     }
 }
 
+class InfoTextSettingComponent extends AbstractSettingComponent {
+    render(containerEl) {
+        const title = getTitle(this.setting);
+        const description = getDescription(this.setting);
+        this.settingEl = new obsidian.Setting(containerEl);
+        this.settingEl.setClass('style-settings-info-text');
+        if (title) {
+            this.settingEl.setName(title);
+        }
+        if (description) {
+            if (this.setting.markdown) {
+                obsidian.MarkdownRenderer.renderMarkdown(description, this.settingEl.descEl, '', undefined);
+                this.settingEl.descEl.addClass('style-settings-markdown');
+            }
+            else {
+                this.settingEl.setDesc(description);
+            }
+        }
+        this.settingEl.settingEl.dataset.id = this.setting.id;
+    }
+    destroy() {
+        var _a;
+        (_a = this.settingEl) === null || _a === void 0 ? void 0 : _a.settingEl.remove();
+    }
+}
+
 function createSettingComponent(sectionId, sectionName, setting, settingsManager, isView) {
     if (setting.type === SettingType.HEADING) {
         return new HeadingSettingComponent(sectionId, sectionName, setting, settingsManager, isView);
+    }
+    else if (setting.type === SettingType.INFO_TEXT) {
+        return new InfoTextSettingComponent(sectionId, sectionName, setting, settingsManager, isView);
     }
     else if (setting.type === SettingType.CLASS_TOGGLE) {
         return new ClassToggleSettingComponent(sectionId, sectionName, setting, settingsManager, isView);
@@ -9300,7 +9330,12 @@ function buildSettingComponentTree(opts) {
                 while (newHeading.level < currentHeading.setting.level) {
                     currentHeading = currentHeading.parent;
                 }
-                currentHeading = currentHeading.parent.addChild(newHeading);
+                if (currentHeading.setting.id === root.setting.id) {
+                    currentHeading = currentHeading.addChild(newHeading);
+                }
+                else {
+                    currentHeading = currentHeading.parent.addChild(newHeading);
+                }
             }
             else if (newHeading.level === currentHeading.setting.level) {
                 currentHeading = currentHeading.parent.addChild(newHeading);
@@ -9380,6 +9415,7 @@ class SettingsMarkup {
         });
     }
     generate(settings) {
+        var _a;
         const { containerEl, plugin } = this;
         containerEl.empty();
         this.cleanup();
@@ -9440,7 +9476,7 @@ class SettingsMarkup {
                     type: 'heading',
                     title: s.name,
                     level: 0,
-                    collapsed: true,
+                    collapsed: (_a = s.collapsed) !== null && _a !== void 0 ? _a : true,
                     resetFn: () => {
                         plugin.settingsManager.clearSection(s.id);
                         this.generate(this.settings);
@@ -9448,15 +9484,20 @@ class SettingsMarkup {
                 },
                 ...s.settings,
             ];
-            const settingsComponentTree = buildSettingComponentTree({
-                isView: this.isView,
-                sectionId: s.id,
-                sectionName: s.name,
-                settings: options,
-                settingsManager: plugin.settingsManager,
-            });
-            settingsComponentTree.render(this.settingsContainerEl);
-            this.settingsComponentTrees.push(settingsComponentTree);
+            try {
+                const settingsComponentTree = buildSettingComponentTree({
+                    isView: this.isView,
+                    sectionId: s.id,
+                    sectionName: s.name,
+                    settings: options,
+                    settingsManager: plugin.settingsManager,
+                });
+                settingsComponentTree.render(this.settingsContainerEl);
+                this.settingsComponentTrees.push(settingsComponentTree);
+            }
+            catch (e) {
+                console.error('Style Settings | Failed to render section', e);
+            }
         }
     }
     /**
@@ -9476,6 +9517,11 @@ class SettingsMarkup {
         this.cleanup();
         for (const settingsComponentTree of this.settingsComponentTrees) {
             settingsComponentTree.clearFilter();
+            settingsComponentTree.render(this.settingsContainerEl);
+        }
+    }
+    rerender() {
+        for (const settingsComponentTree of this.settingsComponentTrees) {
             settingsComponentTree.render(this.settingsContainerEl);
         }
     }
@@ -9527,6 +9573,7 @@ class CSSSettingsPlugin extends obsidian.Plugin {
         super(...arguments);
         this.settingsList = [];
         this.errorList = [];
+        this.commandList = [];
         this.debounceTimer = 0;
     }
     onload() {
@@ -9565,6 +9612,12 @@ class CSSSettingsPlugin extends obsidian.Plugin {
         clearTimeout(this.debounceTimer);
         this.settingsList = [];
         this.errorList = [];
+        // remove registered theme commands (sadly undocumented API)
+        for (const command of this.commandList) {
+            // @ts-ignore
+            this.app.commands.removeCommand(command.id);
+        }
+        this.commandList = [];
         this.debounceTimer = window.setTimeout(() => {
             const styleSheets = document.styleSheets;
             for (let i = 0, len = styleSheets.length; i < len; i++) {
@@ -9578,6 +9631,7 @@ class CSSSettingsPlugin extends obsidian.Plugin {
                 leaf.view.settingsMarkup.setSettings(this.settingsList, this.errorList);
             });
             this.settingsManager.initClasses();
+            this.registerSettingCommands();
         }, 100);
     }
     /**
@@ -9679,6 +9733,36 @@ class CSSSettingsPlugin extends obsidian.Plugin {
         settings.settings = settings.settings.filter((setting) => setting);
         return settings;
     }
+    registerSettingCommands() {
+        for (const section of this.settingsList) {
+            for (const setting of section.settings) {
+                if (setting.type === SettingType.CLASS_TOGGLE &&
+                    setting.addCommand) {
+                    this.addClassToggleCommand(section, setting);
+                }
+            }
+        }
+    }
+    addClassToggleCommand(section, setting) {
+        this.commandList.push(this.addCommand({
+            id: `style-settings-class-toggle-${section.id}-${setting.id}`,
+            name: `Toggle ${setting.title}`,
+            callback: () => {
+                const value = !this.settingsManager.getSetting(section.id, setting.id);
+                this.settingsManager.setSetting(section.id, setting.id, value);
+                if (value) {
+                    document.body.classList.add(setting.id);
+                }
+                else {
+                    document.body.classList.remove(setting.id);
+                }
+                this.settingsTab.settingsMarkup.rerender();
+                for (const leaf of this.app.workspace.getLeavesOfType(viewType)) {
+                    leaf.view.settingsMarkup.rerender();
+                }
+            },
+        }));
+    }
     onunload() {
         this.lightEl.remove();
         this.darkEl.remove();
@@ -9696,9 +9780,10 @@ class CSSSettingsPlugin extends obsidian.Plugin {
     activateView() {
         return __awaiter(this, void 0, void 0, function* () {
             this.deactivateView();
-            const leaf = this.app.workspace.createLeafBySplit(this.app.workspace.activeLeaf, 'vertical');
+            const leaf = this.app.workspace.getLeaf('tab');
             yield leaf.setViewState({
                 type: viewType,
+                active: true,
             });
             leaf.view.settingsMarkup.setSettings(this.settingsList, this.errorList);
         });
