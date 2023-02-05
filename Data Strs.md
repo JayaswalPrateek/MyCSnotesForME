@@ -323,6 +323,10 @@
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 
+<mark style="background: #D2B3FFA6;">Array</mark>
+```cpp
+```
+
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
 ```cpp
 #include <iostream>
