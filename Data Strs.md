@@ -42,8 +42,13 @@
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">Array</mark>
-	2. <mark style="background: #BBFABBA6;">vector</mark>
+		- just like primitive arrays but bundled with useful functions like display, append/add, insert, delete, search, get, set, max, reverse, shift/rotate, data
+		- inside the array template class a primitive array is used and .data is a function that returns that underlying primitive array
+		- an STL array can be indexed using overloaded `[]` operator or using .at function
+			- .at function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
+	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
+		- created in HEAP
 		- functions: push, pop, insert, remove, size, isempty, front, back
 		```cpp
 		#include <bits/stdc++.h>
