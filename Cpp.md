@@ -1,20 +1,14 @@
 # <mark style="background: #FFB86CA6;">Input Buffer</mark>
-- When `cin>>anInteger` is followed by `cin>>str` on the next line and the enter key that is pressed after typing the integer gets saved as an input buffer and later is accepted by `cin>>str` and to avoid this use **`cin.ignore()`** between `cin>>anInteger` and `cin>>str`
+- when `cin>>someInteger;` is followed by `cin>>str;` on the next line and the enter key which is pressed after typing the integer value gets saved as an input buffer and later is accepted by `cin>>str;` 
+	- to avoid this use **`cin.ignore();`** between `cin>>someInteger;` and `cin>>str;`
 
 # <mark style="background: #FFB86CA6;">decltype</mark>
-- `decltype(x) y` is used to create a variable y with the data type of x
+- `decltype(x) y;` will declare a new variable y which has the data type of variable x which already exists
 
 # <mark style="background: #FFB86CA6;">Enum</mark>
-- User defined data types that can alias a commonly used name with a constant integer improve readability
-	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as
-		`const int mon = 0;`
-		`const int tue = 1;`
-		`const int wed = 2;`
-		`const int thr = 3;`
-		`const int fri = 4;`
-		`const int sat = 5;`
-		`const int sun = 6;`
-- day is a user defined data type which can only store mon, tue, wed, thr, fri, sat, sun and the variable automatically it gets an int value associated with the name
+- used to alias a constant integer with a commonly used name to improve readability
+	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as `const int mon = 0, tue = 1, wed = 2, thr = 3, fri = 4, sat = 5, sun = 6;`
+- day is a user defined data type which can only store values mon, tue, wed, thr, fri, sat, sun and the variable automatically gets an int value aliased with the name
 	```cpp
 	enum day {mon,tue,wed,thr,fri,sat,sun};
 	day d = mon;
