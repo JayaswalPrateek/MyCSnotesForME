@@ -1,5 +1,5 @@
 # <mark style="background: #FFB86CA6;">Input Buffer</mark>
-- When `cin>>anInteger;` is followed by `cin>>str;` on the next line, then the enter key pressed after typing the integer gets saved as input buffer and later is accepted by `cin>>str;` and to avoid this use **`cin.ignore();`** between `cin>>anInteger;` and `cin>>str;`
+- When `cin>>anInteger` is followed by `cin>>str` on the next line and the enter key that is pressed after typing the integer gets saved as an input buffer and later is accepted by `cin>>str` and to avoid this use **`cin.ignore()`** between `cin>>anInteger` and `cin>>str`
 
 # <mark style="background: #FFB86CA6;">decltype</mark>
 - `decltype(x) y` is used to create a variable y with the data type of x
