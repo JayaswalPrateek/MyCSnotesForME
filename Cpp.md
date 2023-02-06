@@ -40,7 +40,7 @@
 
 # <mark style="background: #FFB86CA6;">Type Definition</mark>
 - makes variables more readable
-- so lets say a school has `int m1,m2,m3,h1,h2,h3` where `mX` are your marks in subject X and  `hX` is the highest marks in that subject
+- so lets say a school has `int m1,m2,m3,h1,h2,h3;` where `mX` are your marks in subject X and  `hX` is the highest marks in that subject
 - to make it more readable we use `typedef` to alias the data type of `mX` from int to marks and `hX` from int to highest to add more context
 	 ```cpp
 	typedef int marks, highest;
@@ -151,16 +151,16 @@ int main()
 - <mark style="background: #D2B3FFA6;">size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
 - *Memory Layout*
 	- `| HEAP  |`
-	- `| STACK |` <- declarations like `int i = 0` are stored in STACK and is <mark style="background: #D2B3FFA6;">automatically deleted when goes out of scope</mark>
+	- `| STACK |` <- declarations like `int i = 0;` are stored in STACK and is <mark style="background: #D2B3FFA6;">automatically deleted when goes out of scope</mark>
 	- `| CODE  |` <- <mark style="background: #D2B3FFA6;">read-only</mark> part of the memory where the <mark style="background: #D2B3FFA6;">code is loaded</mark> after launching the program and <mark style="background: #D2B3FFA6;">global variables are stored here</mark>
 		- <mark style="background: #D2B3FFA6;">the CODE section can access STACK and itself but not the HEAP</mark>
 		- <mark style="background: #D2B3FFA6;">to access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
 			- thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
 			- accessing Files and hardware devices is also done using pointers
 		- accessing HEAP using `new`
-			- example: `int *p = new int[5]`
-			- if not freed at the end, we get a Memory Leak so use `delete[] p` and then `p = nullptr`
-				- don't do `p = nullptr` first as you won't be able to free HEAP later
+			- example: `int *p = new int[5];`
+			- if not freed at the end, we get a Memory Leak so use `delete[] p;` and then `p = nullptr;`
+				- don't do `p = nullptr;` first as you won't be able to free HEAP later
 			- a 2-D array in HEAP is an array of pointers in stack such that every pointer of the array points to an array in the HEAP 
 			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP
 			```cpp
@@ -221,19 +221,19 @@ int main()
 - <mark style="background: #D2B3FFA6;">Runtime gotchas w/ pointers</mark>
 	- <mark style="background: #BBFABBA6;">memory leak</mark> when HEAP allocations are not freed
 	- <mark style="background: #BBFABBA6;">uninitialized pointer</mark>
-		- `int *p = 25` where 25 is not stored in a variable
-			- you can use `int *p = &n` or `int *p = new int`
+		- `int *p = 25;` where 25 is not stored in a variable
+			- you can use `int *p = &n;` or `int *p = new int;`
 	- <mark style="background: #BBFABBA6;">dangling pointer</mark>
 		- If a pointer is having an address of a memory location which is already deallocated
 		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak
 - <mark style="background: #D2B3FFA6;">References</mark>
-	- `int x = 10` allocates a box in the memory named x which stores 10
-	- `int &y = x` creates an alias of x which is y
-		- So x and y will always have the same value and changes to one can be reflected from the other variable as well
+	- `int x = 10;` allocates a box in the memory named x which stores value 10
+	- `int &y = x;` creates an alias of x which is y
+		- So x and y will always have the same value and changes to one can be reflected on the other variable as well
 	- doesn't consume memory
 	- `&x` is always same as `&y`
 	- declaration without initialization is an error
-	- later on you cannot reassign to reference so if `int z = 12` and `&y = z` is invalid since y is already a reference of x
+	- later on you cannot reassign to reference so if `int z = 12;` and `&y = z;` is invalid since y is already a reference of x
 
 # <mark style="background: #FFB86CA6;">Strings</mark>
 - 2 ways to create a string
