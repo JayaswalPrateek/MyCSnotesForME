@@ -148,19 +148,19 @@ int main()
 
 
 # <mark style="background: #FFB86CA6;">Pointer</mark>
-- <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
+- <mark style="background: #D2B3FFA6;">size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
 - *Memory Layout*
-	- `|  HEAP  |`
-	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. <mark style="background: #D2B3FFA6;">Automatically deleted when out of scope</mark>
-	- |  CODE  | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
-		- <mark style="background: #D2B3FFA6;">The CODE section can access STACK and itself. Not the HEAP</mark>
-		- <mark style="background: #D2B3FFA6;">To access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
-			- Thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
-			- Accessing Files and hardware devices is also done using pointers
-		- Accessing HEAP using `new`
+	- `| HEAP  |`
+	- `| STACK |` <- declarations like `int i = 0` are stored in STACK and is <mark style="background: #D2B3FFA6;">automatically deleted when goes out of scope</mark>
+	- `| CODE  |` <- <mark style="background: #D2B3FFA6;">read-only</mark> part of the memory where the <mark style="background: #D2B3FFA6;">code is loaded</mark> after launching the program and <mark style="background: #D2B3FFA6;">global variables are stored here</mark>
+		- <mark style="background: #D2B3FFA6;">the CODE section can access STACK and itself but not the HEAP</mark>
+		- <mark style="background: #D2B3FFA6;">to access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
+			- thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
+			- accessing Files and hardware devices is also done using pointers
+		- accessing HEAP using `new`
 			- example: `int *p = new int[5]`
-			- If not freed at the end, we get a Memory Leak. Use `delete[] p` and then `p = nullptr`
-				- Don't do `p = nullptr` first as you won't be able to free HEAP later
+			- if not freed at the end, we get a Memory Leak so use `delete[] p` and then `p = nullptr`
+				- don't do `p = nullptr` first as you won't be able to free HEAP later
 			- a 2-D array in HEAP is an array of pointers in stack such that every pointer of the array points to an array in the HEAP 
 			- once an array is created in the STACK you cannot change its size but it is possible if it is in the HEAP
 			```cpp
@@ -169,25 +169,25 @@ int main()
 			int main()
 			{
 			    int *p = new int[5];
-
+			
 			    for (int i = 0; i < 5; i++)
 			    {
 			        p[i] = i + 1;
 			        cout << p[i] << " ";
 			    }
-
+			
 			    delete[] p;      // to avoid leaking of {1, 2, 3, 4, 5}
 			    p = new int[10]; // new memory gets allocated pointing to {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-
+			
 			    delete[] p;
 			    p = nullptr;
-
+			
 			    return 0;
 			}
 			```
 - <mark style="background: #D2B3FFA6;">Pointer Arithmetic</mark>
-	- dereferencing is not needed
-	- subtracting 2 pointers pointing to different indices of an integer array gives how many indices far are the 2 pointers without dividing by 4(size of an int)
+	- <mark style="background: #BBFABBA6;">dereferencing is not needed</mark>
+	- <mark style="background: #BBFABBA6;">subtracting 2 pointers</mark> pointing to different indices of an integer array <mark style="background: #BBFABBA6;">gives how many indices far are the 2 pointers</mark> <mark style="background: #BBFABBA6;">without dividing by 4</mark>(size of an int)
 	- doing `p+=2` moves the pointer by 8 bytes instead of 2 bytes if it is pointing to integer array
 	- this is
 		```cpp
@@ -198,7 +198,7 @@ int main()
 		    int A[] = {1, 2, 3, 4, 5};
 		    int *p = A; // Same as int *p = &A[0]
 
-		    for (int i = 0; i < sizeof(A) / 4; i++, p++)
+		    for (int i = 0; i < sizeof(A) / sizeof(int); i++, p++)
 		        cout << *p;
 
 		    return 0;
@@ -219,11 +219,11 @@ int main()
 		}
 		```
 - <mark style="background: #D2B3FFA6;">Runtime gotchas w/ pointers</mark>
-	- Memory Leak when HEAP allocations are not freed
-	- uninitialized pointer
+	- <mark style="background: #BBFABBA6;">memory leak</mark> when HEAP allocations are not freed
+	- <mark style="background: #BBFABBA6;">uninitialized pointer</mark>
 		- `int *p = 25` where 25 is not stored in a variable
 			- you can use `int *p = &n` or `int *p = new int`
-	- dangling pointer
+	- <mark style="background: #BBFABBA6;">dangling pointer</mark>
 		- If a pointer is having an address of a memory location which is already deallocated
 		- if a pointer is passed to a function and freed at the end of that function and if the pointer is accessed again after the control returns to the calling function then we have a runtime error but not a memory leak
 - <mark style="background: #D2B3FFA6;">References</mark>
