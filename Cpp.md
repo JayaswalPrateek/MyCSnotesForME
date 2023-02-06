@@ -120,11 +120,11 @@ int main()
 ```
 
 # <mark style="background: #FFB86CA6;">Note on Arrays</mark>
-- When an Array of length n is created and when m <mark style="background: #D2B3FFA6;">elements are hard coded then remaining n-m elements are automatically initialized to 0 (provided the length of the array is not an user imput)</mark>
-- `A[i]` is always equal to `i[A]` where A is an array and i is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
-- When `int *p = A` and A is an array then we can used `p[i]` instead of `A[i]`
-- When a 2-D Array is created, all the elements are contiguous in the memory just like a 1-D array
-- <mark style="background: #D2B3FFA6;">Need to use reference of x when A is 2-D array is iterated over using a for each loop</mark>, but you still have to use nested for each loop
+- when an array of length n is created and when m <mark style="background: #D2B3FFA6;">elements are hard coded then remaining n-m elements are automatically assigned with 0(provided the length of the array is not an user input)</mark>
+- `A[i]` is always equal to `i[A]` where `A` is an array and `i` is an integer counter variable of a for loop because `*(A+i)` is same as `*(i+A)`
+- when `int *p = A` and `A` is an array then we can used `p[i]` instead of `A[i]` <mark style="background: #D2B3FFA6;">without having to dereference</mark>
+- <mark style="background: #D2B3FFA6;">all the elements of a 2-D array are contiguous in the memory just like a 1-D array</mark>
+- <mark style="background: #D2B3FFA6;">need to use reference of x when A is 2-D array is iterated over using a for each loop</mark>, but you still have to use nested for each loop
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -143,16 +143,16 @@ int main()
 	}
 	```
 	- `const int A[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}};` is invalid
-	- <mark style="background: #D2B3FFA6;">prefer using auto in a for each loop iterating over a 2-D array</mark>
-- passing an array to a function by value decays it into a pointer to the first element of the array but if the array is a member of a struct and the struct is passed by value then the array doesn't decay
+	- <mark style="background: #D2B3FFA6;">prefer using auto in a nested for each loop iterating over a 2-D array</mark>
+- <mark style="background: #D2B3FFA6;">passing an array to a function by value decays it into a pointer to the first element of the array but if the array is a member of a struct and the struct is passed by value then the array doesn't decay</mark>
 
 
 # <mark style="background: #FFB86CA6;">Pointer</mark>
-- <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type and always takes 8 bytes</mark>
+- <mark style="background: #D2B3FFA6;">Size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
 - *Memory Layout*
-	- | <mark style="background: #FF5582A6;"> HEAP </mark> |
-	- | <mark style="background: #FF5582A6;">STACK</mark> | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. <mark style="background: #D2B3FFA6;">Automatically deleted when out of scope</mark>
-	- | <mark style="background: #FF5582A6;"> CODE </mark> | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
+	- `|  HEAP  |`
+	- | STACK | <- declarations like `int i = 0` are stored in STACK. Students heavily use it. <mark style="background: #D2B3FFA6;">Automatically deleted when out of scope</mark>
+	- |  CODE  | <- read-only section of the memory where the code is loaded after launching the program. global variables are stored here
 		- <mark style="background: #D2B3FFA6;">The CODE section can access STACK and itself. Not the HEAP</mark>
 		- <mark style="background: #D2B3FFA6;">To access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
 			- Thus <mark style="background: #D2B3FFA6;">HEAP can only be accessed using pointers</mark>
