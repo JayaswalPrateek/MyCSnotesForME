@@ -6,15 +6,33 @@
 - `decltype(x) y;` will declare a new variable y which has the data type of variable x which already exists
 
 # <mark style="background: #FFB86CA6;">Enum</mark>
-- used to alias a constant integer with a commonly used name to improve readability
+- used to <mark style="background: #D2B3FFA6;">alias a constant integer with a commonly used name</mark> to improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as `const int mon = 0, tue = 1, wed = 2, thr = 3, fri = 4, sat = 5, sun = 6;`
 - day is a user defined data type which can only store values mon, tue, wed, thr, fri, sat, sun and the variable automatically gets an int value aliased with the name
 	```cpp
-	enum day {mon,tue,wed,thr,fri,sat,sun};
-	day d = mon;
-	// d = jan; error
-	d = tue;
-	cout << d; // 1
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	    enum day
+	    {
+	        mon,
+	        tue,
+	        wed,
+	        thr,
+	        fri,
+	        sat,
+	        sun
+	    } d = mon;
+	    // or day d = mon;
+	
+	    cout << d << endl; // 0
+	    // d = jan; error
+	
+	    cout << tue; // 1
+	
+	    return 0;
+	}
 	```
 - `enum day {mon=4,tue,wed,thr,fri,sat,sun};` assigns mon =4 tue=5 wed=6 thr=7 fri=8 sat=9 sun=10
 - `enum day {mon=4,tue,wed,thr,fri=13,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=13 sat=14 sun=15
@@ -22,12 +40,12 @@
 
 # <mark style="background: #FFB86CA6;">Type Definition</mark>
 - makes variables more readable
-- So lets say a school app has `int m1,m2,m3,r1,r2,r3` where mX are marks in subject X and rN is the roll number N
-- To make it more readable we use `typedef` to alias the data type of mX from int to marks and rN from int to roll to add more context
+- so lets say a school has `int m1,m2,m3,h1,h2,h3` where `mX` are your marks in subject X and  `hX` is the highest marks in that subject
+- to make it more readable we use `typedef` to alias the data type of `mX` from int to marks and `hX` from int to highest to add more context
 	 ```cpp
-	typedef int marks, roll;
+	typedef int marks, highest;
 	marks m1, m2, m3;
-	roll r1, r2, r3;
+	highest h1, h2, h3;
 	```
 
 # <mark style="background: #FFB86CA6;">For Each Loop</mark>
@@ -36,15 +54,15 @@ int A[] = {1, 2, 3, 4, 5};
 for (int x : A)
 	cout << x;
 ```
-- `for (auto x : A)` where the compiler takes care of the data type of x
+- `for (auto x : A)` where the <mark style="background: #D2B3FFA6;">compiler infers the data type of x on its own</mark>
 	```cpp
 	int A[] = {1, 2, 3, 4, 5};
 	for (auto x : A)
 	    cout << x;
 	```
 - <mark style="background: #D2B3FFA6;">modifying x in the loop doesn't change the corresponding element in array because x is a copy</mark>
-	- To avoid this you can used `int &x : A` instead of `int x : A`
-	- `auto &x : A` is also allowed
+	- to avoid this you can use `int &x : A` instead of `int x : A`
+		- `auto &x : A` is also allowed
 
 # <mark style="background: #FFB86CA6;">Binary Search</mark>
 ```cpp
