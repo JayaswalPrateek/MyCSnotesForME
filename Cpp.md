@@ -837,7 +837,7 @@ int main()
 	```
 	- we are returning `ostream` so that insertion operator can be chained
 		- `cout<<cnum<<endl;` is valid
-		- if we replace `ostream` return type with void then we cannot chain insertion operator
+		- if we replace `ostream` return type with `void` then we cannot chain insertion operator
 
 # <mark style="background: #FFB86CA6;">Inheritance</mark>
 - example of well designed class and inheritance
