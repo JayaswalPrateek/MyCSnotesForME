@@ -7,10 +7,10 @@
 	- `O(n)` can be `O(1)` if the element we are looking for is at the 0th index but this is not guaranteed
 - nested loop doesn't always imply `O(n^2)`
 	- but `O(n^2)` can have nested loops
-- if i am searching a 1-D loop twice it is `O(2n)`
-	- so if i doing it n times it is `O(n^2)`
+- when searching a 1-D loop twice it is `O(2n)`
+	- so doing it n times it is `O(n^2)`
 - suppose we have a 1-D array of length n and first we traverse from 0th index to (n-1)th index
-	- then in the 2nd pass we skip the 0th element and start from 1st element. next pass from 2nd one and so on
+	- then in the 2nd pass we skip the 0th element and start from 1st element. next pass from skip the 0th, 1st element and start from 2nd element and so on
 	- so we will have a total of n-1 passes for an array of length n
 	- if we draw the array one below the other for every pass and erase the block we skip, we will get ◹  shape
 		- this has base and height n-1. We ignore 1 so the square has a `O(n^2)` and ◹  shape has `O(n^2/2)` but constant doesn't matter so its still `O(n^2)`
@@ -23,10 +23,8 @@
 - `O(n log n)` is more efficient than `0(n^2)` but less than `O(n)`
 - imagine a tree which has 3 branches and each branch has 3 more branches and so on and if the height of the tree is n then `O(3^n)`
 - `O(n!)` is the worst
-- Efficiency increases from left to right in the graph below:
-
-
-![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
+- efficiency decreases as gradient increases
+- ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
 
 # <mark style="background: #FFB86CA6;">Arrays</mark>
 - Read is `O(1)` but inserting and deleting are `O(n)`
@@ -322,7 +320,6 @@
 	```
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
-
 <mark style="background: #D2B3FFA6;">Array</mark>
 ```cpp
 #include <iostream>
