@@ -718,17 +718,17 @@ int main()
 	- <mark style="background: #BBFABBA6;">getters are public functions that just return the value of the private variable</mark>
 	- <mark style="background: #BBFABBA6;">if a variable has getter and no setter it becomes read only</mark>
 	- <mark style="background: #BBFABBA6;">if a variable has a setter and no getter then it becomes write only (example passwords)</mark>
-- we should use constructor to assign default value instead of expecting that setters will always be used before getters and parameterized constructor can call setters as well
+- <mark style="background: #D2B3FFA6;">we should use constructor to assign default value instead of expecting that setters will always be used before getters and parameterized constructor can call setters as well</mark>
 	- if getters are used before setters we might see garbage value and we thus we should assign default values
-- <mark style="background: #BBFABBA6;">ideally a class should have a copy constructor and a parameterized constructor with default values</mark>
-- <mark style="background: #BBFABBA6;">prefer writing functions outside class</mark>
-	- functions declared outside the class have their machine code outside the main function's machine code
-	- if they are declared in the class they become inline functions and their machine code is inside the machine code of main
-		- inline function cannot have complex logic, so if you have complex logic use scope resolution operator for those functions
-- so all functions defined in a class are inline and all functions defined outside it with scope resolution operator are not inline
+- <mark style="background: #D2B3FFA6;">ideally a class should have a copy constructor and a parameterized constructor with default values</mark>
+- <mark style="background: #D2B3FFA6;">prefer writing functions outside class</mark>
+	- <mark style="background: #BBFABBA6;">functions declared outside the class have their machine code outside the main function's machine code</mark>
+	- <mark style="background: #BBFABBA6;">if they are declared in the class they become inline functions</mark> and their machine code is inside the machine code of main
+		- <mark style="background: #BBFABBA6;">inline function cannot have complex logic</mark>, so if you have complex logic use scope resolution operator for those functions
+- <mark style="background: #D2B3FFA6;">so all functions defined in a class are inline and all functions defined outside it with scope resolution operator are not inline</mark>
 - to make a function inline explicitly write `inline` before the return type of the function
 	- inline functions improve performance as the function is not called but the code of the function is inserted where the function was called
-	- inline functions should not have complex logic and should be simple
+	- inline functions should not have complex logic like loops or pointers and should be simple
 - struct and class are same in c++ as both of them can store variables and functions unlike c where structs can only store variables.
 	- the difference is that in a struct everything is public
 - <mark style="background: #D2B3FFA6;">operator overloading</mark>
