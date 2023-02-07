@@ -1287,13 +1287,13 @@ int main()
 - called when the object goes out of the scope
 - if the object is created in HEAP and deleted then the destructor gets called
 - <mark style="background: #D2B3FFA6;">if a file is opened in a class then it should be closed in its destructor</mark>
-- or any HEAP allocations made in the class should be deleted in its destructor
+- <mark style="background: #D2B3FFA6;">or any HEAP allocations made in the class should be deleted in its destructor</mark>
 - during inheritance
 	- first the parent constructor is called
 	- then the child constructor is called
 	- then the child destructor is called
 	- then the parent destructor is called
-	- if we have a parent pointer and child object and used delete ptr then
+	- if we have a parent pointer and child object and used delete pointer then
 		- only parent class destructor will be called
 		- to fix this make the parent class destructor virtual
 			- then parent class destructor is called then child class destructor
@@ -1301,7 +1301,7 @@ int main()
 # <mark style="background: #FFB86CA6;">Streams</mark>
 - for input and output
 - `iostream` has `istream` for input and `ostream` for output
-- `cin` is an object of `istream` and `cout` is an object of `ostream`
+- `cin` is a class of `istream` and `cout` is a class of `ostream`
 - insertion and extraction operator are used and sometimes overloaded
 - <mark style="background: #D2B3FFA6;">File handling</mark>
 	- <mark style="background: #BBFABBA6;">writing</mark>
@@ -1343,7 +1343,7 @@ int main()
 
 
 # <mark style="background: #FFB86CA6;">Lambda functions</mark>
-- they are unnamed functions
+- they are <mark style="background: #D2B3FFA6;">unnamed functions</mark>
 - `[](){cout<<"Hello World";}();`
 - `[](int a , int b){cout<<"Sum is = "<<a+b;}(10,5);`
 - `int x = [](int a , int b){return a+b;}(10,5);`
