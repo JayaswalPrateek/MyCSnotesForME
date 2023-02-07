@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d912ada42a707197",
+            "id": "7b4044190dcf1b7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cpp.md",
+                "file": "Algorithms.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "7b4044190dcf1b7a",
+            "id": "e4b8b3c8c5cab04c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms.md",
+                "file": "Cpp.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -46,7 +46,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,7 +178,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "d912ada42a707197",
+  "active": "e4b8b3c8c5cab04c",
   "lastOpenFiles": [
     "Algorithms.md",
     "Cpp.md",
