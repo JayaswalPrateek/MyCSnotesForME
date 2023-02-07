@@ -160,9 +160,7 @@
 		```
 	4. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
-		- opposite to array as read is `O(n)`, insert and delete is `O(1)` if at the beginning, `O(n)` if at the end
-		- they cannot be indexed like arrays
-		- address of the head node is stored as a pointer to the node
+		- can traverse only in one direction
 	5. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 		- kinda like vectors but contiguous memory allocations is not guaranteed
