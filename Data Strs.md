@@ -23,31 +23,27 @@
 - `O(n log n)` is more efficient than `0(n^2)` but less than `O(n)`
 - imagine a tree which has 3 branches and each branch has 3 more branches and so on and if the height of the tree is n then `O(3^n)`
 - `O(n!)` is the worst
-- efficiency decreases as gradient increases
-- ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
-- arrays
+- <mark style="background: #D2B3FFA6;">efficiency decreases as gradient increases</mark>
+	- ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
+- <mark style="background: #D2B3FFA6;">array/vector/string</mark>
 	- read is `O(1)`
 	- insert/delete are `O(n)`
 
-# <mark style="background: #FFB86CA6;">Arrays</mark>
-- Read is `O(1)` but inserting and deleting are `O(n)`
-	- Reason: contiguous memory allocation is done so if next address is occupied then the array needs to be copied to another location contiguously can have unused memory
-
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
-- c++ STL  has 4 things: functions,algorithms, containers and iterators
-- containers are the classes for the data structures
-- algorithms are complex operations performed on the containers like search, sort
-- functions are simpler operations performed on the containers like push, pop
-- iterators are used to access containers in a simpler way
+- c++ STL  has 4 things: containers, functions, algorithms and iterators
+	- containers are the classes for the data structures
+	- functions are primitive operations performed on the containers like push, pop
+	- algorithms are complex operations performed on the containers like search, sort
+	- iterators are used to access containers in a simpler way
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">Array</mark>
 		- just like primitive arrays but bundled with useful functions like display, append/add, insert, delete, search, get, set, max, reverse, shift/rotate, data
-		- inside the array template class a primitive array is used and .data is a function that returns that underlying primitive array
-		- an STL array can be indexed using overloaded `[]` operator or using .at function
-			- .at function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
-	1. <mark style="background: #BBFABBA6;">vector</mark>
+		- inside the array template class a primitive array is used and `.data()` is a function that returns that underlying primitive array
+		- an STL array can be indexed using overloaded `[]` operator or using `.at(x)` function
+			- `.at(x)` function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
+	2. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		- created in HEAP
 		- functions: push, pop, insert, remove, size, isempty, front, back
