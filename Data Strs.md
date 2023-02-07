@@ -67,7 +67,7 @@
 		    return 0;
 		}
 		```
-	1. <mark style="background: #BBFABBA6;">vector</mark>
+	2. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		```cpp
 		#include <bits/stdc++.h>
