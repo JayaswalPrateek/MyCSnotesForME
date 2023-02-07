@@ -1015,7 +1015,7 @@ int main()
 		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark>
 		- and if <mark style="background: #BBFABBA6;">all virtual functions</mark> then <mark style="background: #BBFABBA6;">only use is to achieve polymorphism</mark> and <mark style="background: #BBFABBA6;">such a class is called an interface</mark>
 - <mark style="background: #D2B3FFA6;">Friend functions</mark>
-	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the access
+	- functions outside the class which want to access the private and protected variables/functions can be declared as friend functions inside the class to give them the read only access
 	- we add `friend` before the return type of the function in the class
 	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
 - <mark style="background: #D2B3FFA6;">friend class</mark>
@@ -1023,20 +1023,19 @@ int main()
 	- declare the class which wants to access private and protected variables/functions as friend class inside the class whose object its creating
 	- add line `friend <name of the class that wants to access the private and protected variables/functions using objects of the class this line is in>`
 	- a friend relationship cannot modify data and is <mark style="background: #BBFABBA6;">read only</mark>
-- <mark style="background: #D2B3FFA6;">static variables</mark>:
+- <mark style="background: #D2B3FFA6;">static variables</mark>
 	- memory allocated by declaring a variable as static is shared between objects and changes to them are persistent across the lifetime of objects
 	- static members can be used outside the class using scope resolution operator without having to create an object of the class
-- static functions are similar but cannot access non static variable
-- nested class can access members of outer class only if they are static
-	- but it can create an object of the outer class to access its members
+- <mark style="background: #D2B3FFA6;">static functions</mark> are similar but cannot access non static variables and can be called without creating an object of the class they belong to
+- <mark style="background: #D2B3FFA6;">nested class can access members of outer class only if they are static</mark>
+	- <mark style="background: #BBFABBA6;">but it can create an object of the outer class to access its members</mark>
 	- a nested class acts independently as if it were an outer class
 
 # <mark style="background: #FFB86CA6;">exception handling</mark>
 - used during runtime errors
-- if there is any error in the try block then the control moves to the catch block
+- if any exception is thrown in the try block then the control moves to the catch block
 	- the remaining lines of try block are not executed
-	- catch block will not execute if no errors in try block
-- to move the control use throw in the try block
+	- catch block will not execute if no exceptions thrown in try block
 - `throw var` then `var` needs to be a parameter of the catch block
 	- `var` usually used to throw codes
 ```cpp
@@ -1067,9 +1066,9 @@ int main()
 }
 // Oops, After Try Catch
 ```
-- the main use of try catch is when a function is expected to return a value but is not able to then it <mark style="background: #D2B3FFA6;">should throw an exception</mark>
-	- if we know that a function can throw an exception then call it in try block
-- you can throw any data type including object of a class
+- the main use of try catch is <mark style="background: #D2B3FFA6;">when a function is expected to return a value but is not able to</mark> then it <mark style="background: #D2B3FFA6;">should throw an exception</mark>
+	- <mark style="background: #BBFABBA6;">if we know that a function can throw an exception then call it in try block</mark>
+- you can <mark style="background: #D2B3FFA6;">throw any data type including object of a class</mark>
 	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
 	- Throwing a constructor will create the object and then throw
 - you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this is optional
