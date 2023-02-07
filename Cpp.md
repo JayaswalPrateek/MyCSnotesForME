@@ -558,7 +558,7 @@ int main()
 		- <mark style="background: #BBFABBA6;">you cannot return the address of a local variable as it will be destroyed after the function ends so only HEAP memory address can be returned</mark>
 		- <mark style="background: #BBFABBA6;">used to return arrays declared in HEAP</mark>
 - <mark style="background: #D2B3FFA6;">return by reference</mark>
-	- you cannot return the address of a local variable as it will be destroyed after the function ends so only HEAP memory address can be returned
+	- <mark style="background: #BBFABBA6;">you cannot return the reference to a local variable as it will be destroyed after the function ends</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
