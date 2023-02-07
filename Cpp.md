@@ -339,18 +339,15 @@ int main()
 	- <mark style="background: #BBFABBA6;">str.empty()</mark> checks if the string is empty or not
 	-  <mark style="background: #BBFABBA6;">str.erase()</mark> is same as `str.clear()` but you can also pass index and can be used for trimming
 	- <mark style="background: #BBFABBA6;">str.append(anotherStr)</mark> appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
-	- `str.insert(strIndex, snippetStr)`
-		- inserts `snippetStr` in `str` at `strIndex`
+	- <mark style="background: #BBFABBA6;">str.insert(strIndex, snippetStr)</mark> inserts `snippetStr` in `str` at `strIndex`
 		- 0th index of `snippetStr` becomes `strIndex`th index of `str`
-		- `str.insert(strIndex, snippetStr, n)`
-			- inserted till (n-1)th index of `snippetStr`
-	- `str.replace(strIndex, howMany, snippetStr)`
-		- it replaces `howMany` letters from `strIndex`th index with `snippetStr`
-	- `str1.swap(str2)`
+		- <mark style="background: #BBFABBA6;">str.insert(strIndex, snippetStr, n)</mark> inserts substring of `snippetStr` which is till (n-1)th index
+	- <mark style="background: #BBFABBA6;">str.replace(strIndex, howMany, snippetStr)</mark> replaces `howMany` letters from `strIndex`th index with `snippetStr`
+	- <mark style="background: #BBFABBA6;">str1.swap(str2)</mark>
 	- Stack operations
-		- `str.push_back(ch)`
+		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark>
 			- adds char ch at the end of `str`
-		- `str.pop_back()`
+		- <mark style="background: #BBFABBA6;">str.pop_back()</mark>
 			- removes last char of `str`
 	- `str.copy(chArray,str.length())`
 		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied
