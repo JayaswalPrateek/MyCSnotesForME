@@ -39,12 +39,35 @@
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">Array</mark>
-		- just like primitive arrays but bundled with useful functions like display, append/add, insert, delete, search, get, set, max, reverse, shift/rotate, data
 		- inside the array template class a primitive array is used and `.data()` is a function that returns that underlying primitive array
 		- an STL array can be indexed using overloaded `[]` operator or using `.at(x)` function
 			- `.at(x)` function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
-		- length has to be a constant and can never be a variable so you cant user input the length
-		- 
+		- length provided during declaration has to be a constant and can never be a variable so you cant user input the length
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    array<int, 10> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		    cout << arr.at(4) << endl;   // 1
+		    cout << arr.front() << endl; // 1
+		    cout << arr.back() << endl;  // 10 returns the last element of the array container
+		    cout << arr.size();          // 10 len of array
+		
+		    cout << *arr.begin() << endl;  // 1 returns the address of the first element of the array container and is used for looping
+		    cout << arr.end() << endl;     // cannot dereference
+		    cout << *arr.rbegin() << endl; // 10
+		    // cout << arr.rend() << endl;  // cannot print dereference
+		
+		    cout << arr.empty() << endl; // 0 checks if the array container is empty or not
+		
+		    // cout<<arr.swap(anotherArrContainer);
+		
+		    arr.fill(7); // array has all 10 elements equal to 7 and fill function is used to initialise
+		
+		    return 0;
+		}
+		```
 	2. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		- created in HEAP
