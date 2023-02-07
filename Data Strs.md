@@ -43,6 +43,8 @@
 		- inside the array template class a primitive array is used and `.data()` is a function that returns that underlying primitive array
 		- an STL array can be indexed using overloaded `[]` operator or using `.at(x)` function
 			- `.at(x)` function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
+		- length has to be a constant and can never be a variable so you cant user input the length
+		- 
 	2. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
 		- created in HEAP
