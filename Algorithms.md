@@ -14,7 +14,7 @@
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- used in chess
 		- `O(number of nodes + number of branches)`
-	- 
+	- ![BFS and DFS](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/BFS-DFS.png)
 - <mark style="background: #D2B3FFA6;">Sorting</mark>
 	- <mark style="background: #BBFABBA6;">Insertion Sort</mark>
 		- compares the nth element with (n+1)th element and swaps them if nth element is larger
