@@ -1286,8 +1286,8 @@ int main()
 # <mark style="background: #FFB86CA6;">Destructors</mark>
 - called when the object goes out of the scope
 - if the object is created in HEAP and deleted then the destructor gets called
-- if a file is opened in a class then it should be closed in its destructor
-- or any HEAP allocations made in the class should be deleted in the destructor
+- <mark style="background: #D2B3FFA6;">if a file is opened in a class then it should be closed in its destructor</mark>
+- or any HEAP allocations made in the class should be deleted in its destructor
 - during inheritance
 	- first the parent constructor is called
 	- then the child constructor is called
