@@ -174,7 +174,7 @@
 		}
 		```
 		- ![nested recursion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-02%2013-20-47.png)
-- **<mark style="background: #FF5582A6;">Implementing pow function from cmath using recursion</mark>
+- <mark style="background: #FF5582A6;">Implementing pow function from cmath using recursion</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -190,8 +190,8 @@
 	```
 	- <mark style="background: #FF5582A6;">optimization</mark> for 2^8 instead of multiplying 2 8 times shouldn't we half and square like (2^2)^4 = 4^4
 		- this way we can reduce the stack height and increase memory efficiency
-		- so if the power is even we half it and then we square the constant
-		- else if the power is odd like 2^9 we can still do 2 x 2^8 and so on 
+		- <mark style="background: #BBFABBA6;">so if the power is even we half it and then we square the constant</mark>
+		- <mark style="background: #BBFABBA6;">else if the power is odd like 2^9 we can still do 2 x 2^8 and so on</mark> 
 		```cpp
 		#include <iostream>
 		using namespace std;
@@ -206,12 +206,12 @@
 		    return 0;
 		}
 		```
-- #### Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
-	- to print e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms
-	- we need to use static variables as 3 variables are involved but we can return only one
-		- the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again
-			- if factorial would have been static we just need to multiply a new number with the factorial of the previous number as n! = n x (n-1)!
-			- similarly we have to find x^n every time but if static we can store x^(n-1) and  multiply x once
+- <mark style="background: #FF5582A6;">Taylor Series using recursion is a combination of sum till n, power, factorial using recursion</mark>
+	- to print `e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms`
+	- we <mark style="background: #BBFABBA6;">need to use static variables as 3 variables are involved but we can return only one</mark>
+		- <mark style="background: #BBFABBA6;">the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again</mark>
+			- <mark style="background: #BBFABBA6;">if factorial would have been static we just need to multiply a new number with the factorial of the previous number as n! = n x (n-1)!</mark>
+			- <mark style="background: #BBFABBA6;">similarly we have to find x^n every time but if static we can store x^(n-1) and  multiply x once</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -235,10 +235,10 @@
 	    return 0;
 	}
 	```
-	- optimizing using Horner's Rule
+	- <mark style="background: #FF5582A6;">optimizing using Horner's Rule</mark>
 		- earlier the number of times we were multiplying was `O(n^2)` but using Horner's Rule it can be `O(1)`
-		- to print e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))
-			- we keep taking commons out and this reduces number of multiplications that are needed to be performed
+		- to print `e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))`
+			- we <mark style="background: #BBFABBA6;">keep taking commons out and this reduces number of multiplications that are needed to be performed</mark>
 			- we find the value for the innermost bracket lets say (1+ x/4) here and multiply it with the common multiple x/3 and add 1 to it and go on recursively
 			- using iteration
 			```cpp
