@@ -22,14 +22,14 @@
 		- worst case `O(n^2)` when nothing is sorted beforehand
 	- <mark style="background: #BBFABBA6;">Merge Sort</mark>
 		- divide and conquer and conquer by divide and conquer and so on
-		- recursion
+		- recursion is used
 		- splits array in half till we have pairs of 2
 		- then all pairs of 2 are sorted and then 2 pairs of 2 are merged and sorted till the array is completely merged back again
 		- best and worst case are same `O(n log n)`
 	- <mark style="background: #BBFABBA6;">Quick Sort</mark>
 		- recursive like merge sort so divides and conquers
 		- we choose a pivot element of the array which is closest to the median of the array elements
-		- then we split the lists into 2 such that one list has elements less than the pivot element and one where all elements are greater than the pivot element
+		- then we split the lists into 2 such that one list has elements smaller than the pivot element and one where all elements are greater than the pivot element
 		- we repeat the same on these 2 lists
 		- we move the pivot element to the end of the list
 		- we place 2 pointers one on the 0th index and the 2nd on the 2nd last element and compare the two if the 0th one is larger we swap
@@ -41,7 +41,7 @@
 		- still can be 2 to 3 times faster than merge sort by reducing the chances of worst case
 		- needs less memory `O(log n)` than merge sort `O(n)`
 - <mark style="background: #D2B3FFA6;">Greedy Algorithm</mark>
-	- It makes the best possible decision at every local step
+	- it makes the best possible decision at every local step
 	- when not to be greedy
 		- not meant for efficiency
 	- when to be greedy
@@ -84,9 +84,9 @@
 		// 1 2 3 4 5 6 7 8 9 10
 		// 10 9 8 7 6 5 4 3 2 1
 		```
-- use static variables in recursive function if you need a counter and don't want the counter to reset on every recursive call
+- use <mark style="background: #D2B3FFA6;">static variables in recursive function when you need a counter and don't want the counter to reset on every recursive call</mark>
 	- static variable will have a single copy for all recursive calls and will not be a local variable of the scope of a recursive function
-	- it is like global but more restrictive 
+	- it is like global but more restricted 
 - types of recursion
 	- <mark style="background: #D2B3FFA6;">tail</mark>
 		- when the function calls itself in the last line of the function
@@ -174,7 +174,7 @@
 		}
 		```
 		- ![nested recursion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-02%2013-20-47.png)
-- Implementing `pow` function from `cmath` using recursion
+- # <mark style="background: #FF5582A6;">Implementing `pow` function from `cmath` using recursion</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -206,7 +206,7 @@
 		    return 0;
 		}
 		```
-- Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
+- #### Taylor Series using recursion is a combination of sum till n, power, factorial using recursion
 	- to print e^x = 1 + x/1 + x^2/2! + x^3/3! + x^4/4! + ... till n terms
 	- we need to use static variables as 3 variables are involved but we can return only one
 		- the program will be less efficient if we don't use power and factorial as static variables as we will have to calculate the complete factorial over and over again
@@ -281,7 +281,7 @@
 			    return 0;
 			}
 			```
-- Fibonacci Series
+- #### Fibonacci Series
 	- using recursion `O(2^n)`
 	```cpp
 	#include <iostream>
@@ -334,7 +334,7 @@
 	    return s;
 	}
 	```
-- nCr `= n!/(r!*(n-r)!)`
+- #### nCr `= n!/(r!*(n-r)!)`
 	- using iteration
 	```cpp
 	#include <iostream>
@@ -391,7 +391,7 @@
 				    return 0;
 				}
 				```
-- Tower of Hanoi
+- #### <mark style="background: #FF5582A6;">Tower of Hanoi</mark>
 	- Question:
 		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
 		- Auxiliary pole is for helping like temp variable for swapping
