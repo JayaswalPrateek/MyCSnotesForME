@@ -328,17 +328,15 @@ int main()
 - <mark style="background: #D2B3FFA6;">string class</mark>
 	- creates an array bigger than the number of characters to maintain some buffer capacity like vectors
 	- if any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
-	- <mark style="background: #BBFABBA6;">str.length() </mark>gives length of string excluding `\0`
-		- str.size()` is same as `str.length()`
-	- `str.capcity()` gives the actual capacity of the string including `str.length()` + 1 due to `\0` + buffer capacity
-	- `str.resize(newCapacity)` changes the capacity of `str` from `str.Capacity()` to `newCapacity` + buffer capacity
-	- `str.max_size()` gives the max size of a string the compiler supports
-		- depends on the CPU architecture and OS
-	- `str.clear()` to empty a string
-		- contains only `\0`
+	- <mark style="background: #BBFABBA6;">str.length()</mark>gives length of string excluding `\0`
+		- <mark style="background: #BBFABBA6;">str.size()</mark> also does the same
+	- <mark style="background: #BBFABBA6;">str.capcity()</mark> gives the actual capacity of the string including `str.length()` + 1(due to `\0`) + buffer capacity
+	- <mark style="background: #BBFABBA6;">str.resize(newCapacity)</mark> changes the capacity of `str` from `str.Capacity()` to `newCapacity` + buffer capacity
+	- <mark style="background: #BBFABBA6;">str.max_size()</mark> gives the max size of a string the compiler supports which depends on the CPU architecture and OS
+	- <mark style="background: #BBFABBA6;">str.clear()</mark> to empty a string
+		- empty string contains only `\0`
 			- so `str.length()` is 0
-	- `str.empty()` checks if the string is empty or not
-		- `str.erase()` is same as `str.empty()`
+	- <mark style="background: #BBFABBA6;">str.empty()</mark> checks if the string is empty or not
 	- `str.append(anotherStr)` appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
 	- `str.insert(strIndex, snippetStr)`
 		- inserts `snippetStr` in `str` at `strIndex`
