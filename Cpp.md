@@ -344,22 +344,32 @@ int main()
 		- <mark style="background: #BBFABBA6;">str.insert(strIndex, snippetStr, n)</mark> inserts substring of `snippetStr` which is till (n-1)th index
 	- <mark style="background: #BBFABBA6;">str.replace(strIndex, howMany, snippetStr)</mark> replaces `howMany` letters from `strIndex`th index with `snippetStr`
 	- <mark style="background: #BBFABBA6;">str1.swap(str2)</mark>
-	- Stack operations
+	- stack operations
 		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark> adds char ch at the end of `str`
 		- <mark style="background: #BBFABBA6;">str.pop_back()</mark> removes last char of `str`
+		- <mark style="background: #BBFABBA6;">str.front()</mark> returns the first char of `str`
+		- <mark style="background: #BBFABBA6;">str.back()</mark> returns the last char of  `str`
 	- <mark style="background: #BBFABBA6;">str.copy(chArray,str.length())</mark>
 		- copies string `str` into char array `chArray`
 		- 2nd arg is the length of `str` to be copied
-		- doesn't add `\0` so need to do it manually, steps:
-			- `string str = "Welcome"`
-			- `char chArray[10]`
-			- `str.copy(chArray, 3)` <- `Wel` is stored in `chArray`
-			- `chArray[3] = '\0'` <- now `chArray` can be printed by `cout` as it identifies as a string
-	- `str.find(subStr)` or `str.find(ch)`
-		- returns the index of first occurrence of `ch` in `str` if char is used as arg
-		- if string is used then if the string `subStr` exists in `str` then the index of first occurrence of first letter of `subStr` in `str` is returned
-		- `str.rfind(subStr)` or `str.rfind(ch)` does the same thing but from Right to Left
-			- if not found then it returns an invalid index that doesn't lie between 0 and `str.length()`
+		- doesn't add `\0` so need to do it manually
+			```cpp
+			#include <iostream>
+			using namespace std;
+			int main()
+			{
+			    string str = "Welcome";
+			    char chArray[10];
+			    str.copy(chArray, 3); // `Wel` is stored in `chArray`
+			    chArray[3] = '\0';    // now `chArray` can be printed by `cout` as it identifies as a string
+			    return 0;
+			}
+			```
+	- <mark style="background: #BBFABBA6;">str.find(subStr)</mark> or <mark style="background: #BBFABBA6;">str.find(ch)</mark>
+		- returns the index of first occurrence of `ch` in `str` if char is provided as argument
+		- if string is provided then if the string `subStr` exists in `str` then the index of first occurrence of first letter of `subStr` in `str` is returned
+		- <mark style="background: #BBFABBA6;">str.rfind(subStr)</mark> or <mark style="background: #BBFABBA6;">str.rfind(ch)</mark> does the same thing but from Right to Left
+			- if not found then it returns an invalid index that doesn't lie between 0 to `str.length()`
 	- `str.find_first_of(ch)` or `str.find_first_of(ch, startingIndex)`
 		- `startingIndex` is the index from where searching starts
 		- gives the first occurrence of char `ch` in string `str`
@@ -374,11 +384,10 @@ int main()
 	- `str.at(ind)` returns char at index `ind` of string `str`
 		- same as writing `str[ind]`
 			- string is a class so `[]` operator is overloaded
-	- `str.front()` gives first char of string `str`
-	- `str.back()` gives last char of string `str`
+
 	- + is an overloaded operator that concatenates strings
 	- = is an overloaded operator that copies the content of r value to l value
-	- String iterations
+	- <mark style="background: #BBFABBA6;">String iterations</mark>
 		- 2 ways: `iterator` and `reverse_iterator`
 			- the iterator is pointer for the array of chars in the string class and we use pointer arithmetic to iterate using the string class
 			```cpp
