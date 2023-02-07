@@ -840,7 +840,7 @@ int main()
 		- if we replace `ostream` return type with `void` then we cannot chain insertion operator
 
 # <mark style="background: #FFB86CA6;">Inheritance</mark>
-- example of well designed class and inheritance
+- example of well designed class and inheritance(with copy constructor missing)
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -860,8 +860,8 @@ int main()
 	};
 	rectangle::rectangle(int len, int brd) // default values are not repeated again
 	{
-	    this->len = len;
-	    this->brd = brd;
+	    setLen(len);
+	    setBrd(brd);
 	}
 	int rectangle::getLen() { return len; }
 	int rectangle::getBrd()	{ return brd; }
@@ -870,7 +870,7 @@ int main()
 	    if (qty < 0)
 	    {
 	        cout << qty << "is a non positive number, invalid input";
-	        exit(0);
+	        exit(-1);
 	    }
 	    return qty;
 	}
@@ -891,8 +891,8 @@ int main()
 	cuboid::cuboid(int len, int brd, int hgt)
 	{
 	    setHgt(hgt);
-	    setLen(validator(len));
-	    setBrd(validator(brd));
+	    setLen(len);
+	    setBrd(brd);
 	}
 	int cuboid::getHgt() { return hgt; }
 	void cuboid::setHgt(int hgt) { this->hgt = validator(hgt); }
@@ -900,9 +900,9 @@ int main()
 	```
 - if you are inheriting a class then you cannot rely on the constructor of that class
 	- so you need to make sure that the constructor of the child function can also initialize variables of parent class
-- constructors in inheritance
-	- if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the derived class is created then the default constructor of parent class is called first followed by a constructor of child class
-		- how to call the parameterized constructor of the parent class ?
+- <mark style="background: #D2B3FFA6;">constructor precedence in inheritance</mark>
+	- <mark style="background: #D2B3FFA6;">if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the child class is created then the default constructor of parent class is called first followed by a constructor of child class</mark>
+		- <mark style="background: #BBFABBA6;">how to call the parameterized constructor of the parent class?</mark>
 			```cpp
 			#include <iostream>
 			using namespace std;
