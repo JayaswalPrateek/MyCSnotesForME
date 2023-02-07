@@ -617,7 +617,7 @@ int main()
 		    return 0;
 		}
 		```
-- <mark style="background: #BBFABBA6;">passing array to function</mark>
+- <mark style="background: #D2B3FFA6;">passing array to function</mark>
 	- when an array is passed as a parameter to a function, it decays into a pointer to the first element of the array
 	```cpp
 	#include <iostream>
