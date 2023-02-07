@@ -25,6 +25,9 @@
 - `O(n!)` is the worst
 - efficiency decreases as gradient increases
 - ![time vs input size](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2009-52-29.png)
+- arrays
+	- read is `O(1)`
+	- insert/delete are `O(n)`
 
 # <mark style="background: #FFB86CA6;">Arrays</mark>
 - Read is `O(1)` but inserting and deleting are `O(n)`
