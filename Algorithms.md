@@ -239,65 +239,65 @@
 		- earlier the number of times we were multiplying was `O(n^2)` but using Horner's Rule it can be `O(1)`
 		- to print `e^x = 1 + x/1(1 + x/2(1 + x/3(1 + x/4 + ... till n terms)))`
 			- we <mark style="background: #BBFABBA6;">keep taking commons out and this reduces number of multiplications that are needed to be performed</mark>
-			- we find the value for the innermost bracket lets say (1+ x/4) here and multiply it with the common multiple x/3 and add 1 to it and go on recursively
+			- we <mark style="background: #BBFABBA6;">find the value for the innermost bracket lets say (1+ x/4) here and multiply it with the common multiple x/3 and add 1 to it and go on recursively</mark>
 			- using iteration
-			```cpp
-			#include <iostream>
-			using namespace std;
-			float e(int x, int n)
-			{
-			    int res = 1;
-			    for (; n > 0; n--)
-			        res = 1 + x * res / n;
-			    return res;
-			}
-			int main()
-			{
-			    cout << "Enter x and n: ";
-			    int x, n;
-			    cin >> x >> n;
-			    cout << "e^" << x << " till n precision is " << e(x, n);
-			    return 0;
-			}
-			```
+				```cpp
+				#include <iostream>
+				using namespace std;
+				float e(int x, int n)
+				{
+				    int res = 1;
+				    for (; n > 0; n--)
+				        res = 1 + x * res / n;
+				    return res;
+				}
+				int main()
+				{
+				    cout << "Enter x and n: ";
+				    int x, n;
+				    cin >> x >> n;
+				    cout << "e^" << x << " till n precision is " << e(x, n);
+				    return 0;
+				}
+				```
 			- using recursion
-			```cpp
-			#include <iostream>
-			using namespace std;
-			float e(int x, int n)
-			{
-			    static int res = 1;
-			    if (n == 0)
-			        return res;
-			    res = 1 + x * res / n;
-			    return e(x, n - 1);
-			}
-			int main()
-			{
-			    cout << "Enter x and n: ";
-			    int x, n;
-			    cin >> x >> n;
-			    cout << "e^" << x << " till n precision is " << e(x, n);
-			    return 0;
-			}
-			```
-- #### Fibonacci Series
+				```cpp
+				#include <iostream>
+				using namespace std;
+				float e(int x, int n)
+				{
+				    static int res = 1;
+				    if (n == 0)
+				        return res;
+				    res = 1 + x * res / n;
+				    return e(x, n - 1);
+				}
+				int main()
+				{
+				    cout << "Enter x and n: ";
+				    int x, n;
+				    cin >> x >> n;
+				    cout << "e^" << x << " till n precision is " << e(x, n);
+				    return 0;
+				}
+				```
+- <mark style="background: #FF5582A6;">Fibonacci Series</mark>
 	- using recursion `O(2^n)`
-	```cpp
-	#include <iostream>
-	using namespace std;
-	int fibo(int n)
-	{
-	    if (n <= 1)
-	        return n;
-	    return fibo(n - 2) + fibo(n - 1); // as the function calls itself 2 times with n as arg so O(2^n)
-	}
-	```
-	- ![fibonacci recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-03%2023-24-52.png)
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int fibo(int n)
+		{
+		    if (n <= 1)
+		        return n;
+		    return fibo(n - 2) + fibo(n - 1); // as the function calls itself 2 times with n as arg so O(2^n)
+		}
+		```
+		- ![fibonacci recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-03%2023-24-52.png)
 		- here we can see that fib(3) and fib(2) get calculated over and over as the value is not stored
 			- it is a case of excessive recursion and we can fix it by using static variables
 				- we create a static array that stores the fib(n) at index n and the default values for all the elements is -1 so we can check do we need to find fib(n) at every step so `O(n)` 
-				- this process is called memoization
+				- this process is called <mark style="background: #D2B3FFA6;">memoization</mark>
 				```cpp
 				#include <bits/stdc++.h>
 				using namespace std;
@@ -317,50 +317,50 @@
 				}
 				```
 	- using iteration `O(n)`
-	```cpp
-	#include <iostream>
-	using namespace std;
-	int fibo(int n)
-	{
-	    if (n <= 1)
-	        return n;
-	    int t0 = 0, t1 = 1, s = 0;
-	    for (int i = 2; i <= n; i++)
-	    {
-	        s = t0 + t1;
-	        t0 = t1;
-	        t1 = s;
-	    }
-	    return s;
-	}
-	```
-- #### nCr `= n!/(r!*(n-r)!)`
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int fibo(int n)
+		{
+		    if (n <= 1)
+		        return n;
+		    int t0 = 0, t1 = 1, s = 0;
+		    for (int i = 2; i <= n; i++)
+		    {
+		        s = t0 + t1;
+		        t0 = t1;
+		        t1 = s;
+		    }
+		    return s;
+		}
+		```
+-  <mark style="background: #FF5582A6;">nCr = n!/(r!*(n-r)!)</mark>
 	- using iteration
-	```cpp
-	#include <iostream>
-	using namespace std;
-	int fac(int n)
-	{
-	    int res = 1;
-	    for (int i = 1; i <= n; i++)
-	        res *= i;
-	    return res;
-	}
-	int main()
-	{
-	    cout << "Enter n and r: ";
-	    int n, r;
-	    cin >> n >> r;
-	    if (r > n)
-	    {
-	        cout << "Invalid Input " << r << " grtr than " << n;
-	        return -1;
-	    }
-	    cout << n << "C" << r << " = " << fac(n) / (fac(r) * fac(n - r));
-	    return 0;
-	}
-	```
-	- using recursion we need to use Pascal's Triangle
+		```cpp
+		#include <iostream>
+		using namespace std;
+		int fac(int n)
+		{
+		    int res = 1;
+		    for (int i = 1; i <= n; i++)
+		        res *= i;
+		    return res;
+		}
+		int main()
+		{
+		    cout << "Enter n and r: ";
+		    int n, r;
+		    cin >> n >> r;
+		    if (r > n)
+		    {
+		        cout << "Invalid Input " << r << " grtr than " << n;
+		        return -1;
+		    }
+		    cout << n << "C" << r << " = " << fac(n) / (fac(r) * fac(n - r));
+		    return 0;
+		}
+		```
+	- <mark style="background: #FF5582A6;">for recursion we need to use Pascal's Triangle</mark>
 		- ![pascals triangle](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-04%2009-04-11.png)
 			- here we have rows and cols and an element having both `\` and `/` points to elements whose sum is equal to itself
 				- observe how 2C1 points to above elements 1C0 and 1C1 and 2C1 = 2 = 1C0 + 1C1 = 1 + 1
@@ -391,7 +391,7 @@
 				    return 0;
 				}
 				```
-- #### <mark style="background: #FF5582A6;">Tower of Hanoi</mark>
+- <mark style="background: #FF5582A6;">Tower of Hanoi</mark>
 	- Question:
 		- ![tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tower_of_hanoi-6667.jpg)
 		- Auxiliary pole is for helping like temp variable for swapping
@@ -399,16 +399,16 @@
 	- Procedure to Solution: `O(2^n)`
 		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
 	-  cases
-		- if the number of discs is one then just move it from pole 1 to 3
-		- if the number of discs are 2 then
+		- <mark style="background: #BBFABBA6;">if the number of discs is one then just move it from pole 1 to 3</mark>
+		- <mark style="background: #BBFABBA6;">if the number of discs are 2 then</mark>
 			1. move the smaller disc to middle pole
 			2. move the larger disc from 1st to the 3rd pole
 			3. move the smallest disc from 2nd to 3rd pole
-		- if number of discs are 3 then
+		- <mark style="background: #BBFABBA6;">if number of discs are 3 then</mark>
 			1. ignore the largest disc (3rd disc) and move the 2 discs to 2nd pole as if the number of discs were 2
 			2. move the largest disc to 3rd pole
 			3. move the 2 discs in 2nd pole to the 3rd pole as if the number of discs were 2
-		- if number of discs are n then
+		- <mark style="background: #BBFABBA6;">if number of discs are n then</mark>
 			1. ignore the largest disc (nth disc) and move the n-1 discs to 2nd pole as if the number of discs were n and do this recursively
 			2. move the largest disc (nth disc) to 3rd pole
 			3. move the n-1 discs in 2nd pole to the 3rd pole as if the number of discs were n
