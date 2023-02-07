@@ -7,7 +7,6 @@
 			- this process is called **Backtracking**
 		- used to solve a maze
 		- `O(number of nodes + number of branches)`
-		- ![dfs visualized](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-21%2010-27-06.png)
 	- <mark style="background: #BBFABBA6;">Breadth First Search</mark> for trees and graphs
 		- you don't go to deepest point like DFS
 		- instead you make sure that the sibling node has been visited
@@ -15,6 +14,7 @@
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- used in chess
 		- `O(number of nodes + number of branches)`
+	- 
 - <mark style="background: #D2B3FFA6;">Sorting</mark>
 	- <mark style="background: #BBFABBA6;">Insertion Sort</mark>
 		- compares the nth element with (n+1)th element and swaps them if nth element is larger
