@@ -1070,7 +1070,7 @@ int main()
 	- <mark style="background: #BBFABBA6;">if we know that a function can throw an exception then call it in try block</mark>
 - you can <mark style="background: #D2B3FFA6;">throw any data type including object of a class</mark>
 	- when throwing an object of a class, a good practice is to make sure that the class that might throw exception is inheriting publicly from c++'s built in class called exception
-	- Throwing a constructor will create the object and then throw
+	- <mark style="background: #BBFABBA6;">throwing a constructor will create the object</mark> and then throw
 - you can declare what a function throws by appending `throw (<data type thrown>)` at the end of the function signature but this is optional
 	- if you keep this round bracket empty means that the function throws no exception
 ```cpp
