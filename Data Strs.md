@@ -54,12 +54,11 @@
 		    cout << arr.back() << endl;  // 10 returns the last element of the array container
 		    cout << arr.size();          // 10 len of array
 		
-		    cout << *arr.begin() << endl;  // 1 returns the address of the first element of the array container and is used for looping
-		    cout << arr.end() << endl;     // cannot dereference
-		    cout << *arr.rbegin() << endl; // 10
-		    // cout << arr.rend() << endl;  // cannot print dereference
-		
-		    cout << arr.empty() << endl; // 0 checks if the array container is empty or not
+		    cout << *arr.begin() << endl;      // 1 returns the address of the first element of the array container and is used for looping
+		    cout << *(arr.end() - 1) << endl;  // 10
+		    cout << *arr.rbegin() << endl;     // 10
+		    cout << *(arr.rend() - 1) << endl; // 1
+		    cout << arr.empty() << endl;       // 0 checks if the array container is empty or not
 		
 		    // cout<<arr.swap(anotherArrContainer);
 		
@@ -68,10 +67,8 @@
 		    return 0;
 		}
 		```
-	2. <mark style="background: #BBFABBA6;">vector</mark>
+	1. <mark style="background: #BBFABBA6;">vector</mark>
 		- its a large array but not a linked list so when the array is filled then a new array is created and all the contents of the older array is copied to the new array
-		- created in HEAP
-		- functions: push, pop, insert, remove, size, isempty, front, back
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
