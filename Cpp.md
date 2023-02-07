@@ -370,13 +370,13 @@ int main()
 		- if string is provided then if the string `subStr` exists in `str` then the index of first occurrence of first letter of `subStr` in `str` is returned
 		- <mark style="background: #BBFABBA6;">str.rfind(subStr)</mark> or <mark style="background: #BBFABBA6;">str.rfind(ch)</mark> does the same thing but from Right to Left
 			- if not found then it returns an invalid index that doesn't lie between 0 to `str.length()`
-	- `str.find_first_of(ch)` or `str.find_first_of(ch, startingIndex)`
+	- <mark style="background: #BBFABBA6;">str.find_first_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_first_of(ch, startingIndex)</mark>
 		- `startingIndex` is the index from where searching starts
 		- gives the first occurrence of char `ch` in string `str`
-		-  `str.find_last_of(ch)` or `str.find_last_of(ch, startingIndex)`
-		- if a string is given its not a syntax error
-			- it traverses `str` char by char and as soon as a char at `str` also exists in the string arg then it returns the index for that char in `str` which will always be the first occurrence
-	- `str.substr(lowerLim, upperLim)`
+		-  <mark style="background: #BBFABBA6;">str.find_last_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_last_of(ch, startingIndex)</mark>
+		- if a string is given instead its not a syntax error
+			- it traverses `str` char by char and as soon as a char at `str` also exists in the string argument then it returns the index for that char in `str` which will always be the first occurrence
+	- <mark style="background: #BBFABBA6;">str.substr(lowerLim, upperLim)</mark>
 		- returns sub string of `str` from index `lowerLim` till index `upperLim`
 			- `upperLim` is not mandatory, when not provided, it is equal to `str.length()`
 		- returned string includes the char at index `lowerLim` of `str`
@@ -384,7 +384,6 @@ int main()
 	- `str.at(ind)` returns char at index `ind` of string `str`
 		- same as writing `str[ind]`
 			- string is a class so `[]` operator is overloaded
-
 	- + is an overloaded operator that concatenates strings
 	- = is an overloaded operator that copies the content of r value to l value
 	- <mark style="background: #BBFABBA6;">String iterations</mark>
