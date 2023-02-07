@@ -380,9 +380,9 @@ int main()
 		- returns sub string of `str` from index `lowerLim` till index `upperLim`
 			- `upperLim` is not mandatory, when not provided, it is equal to `str.length()`
 		- returned string includes the char at index `lowerLim` of `str`
-	- `str.compare` same as `strcmp(s1,s2)` of `cstring`
-	- `str.at(ind)` returns char at index `ind` of string `str`
-		- same as writing `str[ind]`
+	- <mark style="background: #BBFABBA6;">s1.compare(s2)</mark> same as `strcmp(s1,s2)` of `cstring`
+	- <mark style="background: #BBFABBA6;">str.at(ind)</mark> returns char at index `ind` of string `str` and throws an exception when out of bounds
+		- hence same as writing `str[ind]` which cannot throw an exception when out of bounds
 			- string is a class so `[]` operator is overloaded
 	- + is an overloaded operator that concatenates strings
 	- = is an overloaded operator that copies the content of r value to l value
