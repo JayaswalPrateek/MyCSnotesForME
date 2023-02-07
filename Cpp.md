@@ -1104,8 +1104,8 @@ int main()
 ```
 - you can write multiple catch blocks for single try block that handle different data types of thrown variables
 	- if you do `catch(...)` then the catch block can catch all thrown exceptions regardless of their data type
-	- write this as the last catch block and not the first one if you are using multiple catch blocks
-		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will be redundant
+	- `catch(...)` should be the last catch block and not the first one if you are using multiple catch blocks
+		- otherwise if the catch all block is at the top then it will handle all exceptions and the catch blocks below it will be unused
 	- if you are throwing objects of multiple classes in a try block such that the classes have an inheritance relationship then the catch block at the top should deal with the child class and the next catch block should deal with the parent class
 
 # <mark style="background: #FFB86CA6;">Template functions and classes</mark>
@@ -1230,14 +1230,14 @@ int main()
 }
 // 11 21 21 21
 ```
-- if variable is const and a pointer `ptr` is pointing to it then the pointer `ptr` should be const of the data type not as a pointer which it can also be at the same time but will require 2 consts in declaration
+- if variable is const and a pointer `ptr` is pointing to it then the pointer `ptr` should be const of the data type not as a pointer which it can also be at the same time but will require 2 const in declaration
 - you can still point to the const of a data type of a variable without it having to be a constant
 - if we write `const` at the end of a function signature in a class then the compiler will not allow that functions to modify values of the class
 	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables
 - if a <mark style="background: #D2B3FFA6;">class is marked final</mark> by adding keyword final after the class name then the class cannot be inherited further
 	- in C++, the `final` keyword can be used to prevent a virtual function from being overridden in child classes
 - <mark style="background: #D2B3FFA6;">smart pointer</mark>
-	- deallocates itself when pointer out of scope
+	- deallocates itself when pointer goes out of scope
 
 # <mark style="background: #FFB86CA6;">preprocessor directives</mark>
 - if a constant is needed across all files
@@ -1252,7 +1252,7 @@ int main()
     return 0;
 }
 ```
-- we can also define functions:
+- we can also define functions
 ```cpp
 #define sqr(x) (x * x)
 #define show(x) (cout << x);
