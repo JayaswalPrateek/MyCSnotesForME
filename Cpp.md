@@ -151,7 +151,7 @@ int main()
 - <mark style="background: #D2B3FFA6;">size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
 - *Memory Layout*
 	- `| HEAP  |`
-	- `| STACK |` <- declarations like `int i = 0;` are stored in STACK and is <mark style="background: #D2B3FFA6;">automatically deleted when goes out of scope</mark>
+	- `| STACK|` <- declarations like `int i = 0;` are stored in STACK and is <mark style="background: #D2B3FFA6;">automatically deleted when goes out of scope</mark>
 	- `| CODE  |` <- <mark style="background: #D2B3FFA6;">read-only</mark> part of the memory where the <mark style="background: #D2B3FFA6;">code is loaded</mark> after launching the program and <mark style="background: #D2B3FFA6;">global variables are stored here</mark>
 		- <mark style="background: #D2B3FFA6;">the CODE section can access STACK and itself but not the HEAP</mark>
 		- <mark style="background: #D2B3FFA6;">to access the HEAP</mark> from the CODE section you need to <mark style="background: #D2B3FFA6;">create a pointer to a memory address in HEAP and the pointer is created in the STACK</mark> from the CODE section
@@ -325,11 +325,11 @@ int main()
 
 			*/
 			```
-- <mark style="background: #D2B3FFA6;">string class:</mark>
+- <mark style="background: #D2B3FFA6;">string class</mark>
 	- creates an array bigger than the number of characters to maintain some buffer capacity like vectors
-	- any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
-	- `str.length()` gives length of string excluding `\0`
-		- `str.size()` is same as `str.length()`
+	- if any modification that adds characters more than the available buffer capacity then it internally creates another copy of that array, makes the modification and still leaves some buffer capacity in the newly copied array
+	- <mark style="background: #BBFABBA6;">str.length() </mark>gives length of string excluding `\0`
+		- str.size()` is same as `str.length()`
 	- `str.capcity()` gives the actual capacity of the string including `str.length()` + 1 due to `\0` + buffer capacity
 	- `str.resize(newCapacity)` changes the capacity of `str` from `str.Capacity()` to `newCapacity` + buffer capacity
 	- `str.max_size()` gives the max size of a string the compiler supports
