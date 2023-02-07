@@ -410,15 +410,15 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Functions</mark>
 - <mark style="background: #D2B3FFA6;">avoid user input in functions, input should be passed from the calling function</mark>
-- When a function has a local variable and a global variable of the same name then local variable is preferred as it is
-	- use `::<nameOfVariable>` to access the global variable in a function that has a local variable of the same name
-	- even if a function ends the changes made to the global variable are preserved.
-		- this is useful, but i also want to make sure that the variable is not visible to all the functions of my program
-			- solution is instead of declaring it as global variable make it a static local variable of that function
-			- they are located in the code section so their content is not lost after a function ends.
-- return types are not a deciding factor in function overloading
+- when a function has a local variable and a global variable of the same name then local variable is preferred as it has a smaller scope
+	- use `::<nameOfVariable>` to access the global variable in a function that also has a local variable of the same name
+	- even after a function ends the changes made to the global variable are preserved
+		- this is useful, but I also want to make sure that the variable is not visible to all the functions of my program so the <mark style="background: #D2B3FFA6;">changes are only preserved for one function</mark>
+			- so instead of declaring it as a global variable make it a <mark style="background: #D2B3FFA6;">static local variable</mark> of that function
+				- they are located in the code section so their content is not lost after a function ends
+- <mark style="background: #D2B3FFA6;">return types are not a deciding factor in function overloading</mark>
 - <mark style="background: #D2B3FFA6;">Function Templates (Generics)</mark>
-	- overloaded functions may have entirely same logic but deal with different data type so we need to overload function for every data type
+	- overloaded functions with the same logic might just deal with different data type so we need to overload function for every possible data type which makes code verbose
 		```cpp
 		#include <iostream>
 		using namespace std;
@@ -429,12 +429,12 @@ int main()
 		int main()
 		{
 		    cout << getmax(4, 8) << endl;
-		    cout << getmax(4.8f, 8.4f); // without specifying f they are doubles by default
+		    cout << getmax(4.8f, 8.4f); // without specifying f they are double as a default
 
 		    return 0;
 		}
 		```
-	- to avoid this we can create a generic data type using function templates.
+	- to avoid this we can <mark style="background: #BBFABBA6;">create a generic data type using function templates</mark>
 		```cpp
 		#include <iostream>
 		using namespace std;
@@ -452,9 +452,9 @@ int main()
 		```
 		- Here the data type of T is decided dynamically
 		- T can also be an object
-		- data types of both a and b should be same
+		- data types of both a and b should be same here
 			- if we pass an int and double then we get an error
-	- for functions outside class
+	- <mark style="background: #BBFABBA6;">when generic functions are outside a generic class</mark>
 		```cpp
 		#include <iostream>
 		using namespace std;
