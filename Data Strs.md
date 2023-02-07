@@ -28,6 +28,16 @@
 - <mark style="background: #D2B3FFA6;">array/vector/string</mark>
 	- read is `O(1)`
 	- insert/delete are `O(n)`
+- <mark style="background: #D2B3FFA6;">singly linked list</mark>
+	- read is `O(n)`
+	- insert/delete at the start is `O(1)`
+		- at the end is `O(n)`
+		- anywhere else `O(n)`
+- <mark style="background: #D2B3FFA6;">doubly lined list</mark>
+	- read is `O(n)`
+	- insert/delete at the start is `O(1)`
+		- at the end is `O(1)`
+		- anywhere else `O(n)`
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
@@ -76,54 +86,63 @@
 		{
 		    vector<int> v;
 		
-		    v.push_back(1);         // the first element of v becomes 1
-		    v.push_back(2);         // the second element of v becomes 1
-		    v.emplace_back(2);      // same as push_back but faster
-		    v.emplace_back(3);      // same as push_back but faster
-		    v.emplace_back(4);      // same as push_back but faster
-		    v.emplace_back(5);      // same as push_back but faster
-		    v.erase(v.end() - 1);   // exceptional case to remove last element
-		    v.erase(v.begin() + 1); // removes 2nd element
-		    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can also erase a range of elements if you provide
-		    v.insert(v.begin(), 0);
+		    v.push_back(1); // {1}
+		    v.push_back(2); // {1, 2}
+		
+		    // emplace_back is faster than push_back
+		    v.emplace_back(3); // [1, 2, 3]
+		    v.emplace_back(4); // [1, 2, 3, 4]
+		    v.emplace_back(5); // [1, 2, 3, 4, 5]
+		    v.emplace_back(6); // [1, 2, 3, 4, 5, 6]
+		
+		    v.erase(v.end() - 1); // to remove last element [1, 2, 3, 4, 5]
+		    v.erase(v.begin());   // removes 1st element [2, 3, 4, 5]
+		    // v.erase(startingIndexAddress,AdrOfLastElementToBeDeleted+1) can erase a range of elements if you provide
+		
+		    v.insert(v.begin(), 0); // [0, 2, 3, 4, 5]
 		    // v.insert(address,howManyCopiesOf,ThisElement);
 		    // to insert vector cpy into v: v.insert(Address, cpy.begin(),cpy.endl);
 		
-		    cout << v.front() << " " << v.back() << endl;
+		    cout << v.front() << " " << v.back() << endl; // 0 5
 		
-		    for (auto itr = v.begin(); itr != v.end(); itr++)
+		    for (auto itr = v.begin(); itr != v.end(); itr++) // 0 2 3 4 5
 		        cout << *itr << " ";
 		
 		    cout << endl;
 		
-		    for (auto itr = v.rbegin(); itr != v.rend(); itr++)
+		    for (auto itr = v.rbegin(); itr != v.rend(); itr++) // 5 4 3 2 0
 		        cout << *itr << " ";
 		
 		    cout << endl;
 		
-		    for (auto x : v)
+		    v.assign({1, 2, 3, 4, 5});
+		    for (auto x : v) // 1 2 3 4 5
 		        cout << x << " ";
 		
+		    cout << endl;
+		
+		    // v.capacity() is the max length of the vector including buffer capacity
+		    // v.resize() changes the size and not the capacity but can change capacity if the size is full
+		    // v.reserve() changes the capacity
+		    // v.clear() resets the vector
+		    // v.shrink_to_fit() releases unused memory
+		    // v.at(), v.swap(), v.data(), v.empty(), v.size() is same as arrays
+		
 		    vector<pair<int, int>> vpair;
-		    vpair.push_back({1, 2});  // need to use flower braces to specify pair
-		    vpair.emplace_back(3, 4); // automatically infers that it is a pair
+		    vpair.push_back({1, 2});  // need to use flower braces to specify a pair
+		    vpair.emplace_back(3, 4); // automatically infers that it is a pair with emplace_back
 		
 		    vector<int> hundred(5, 100); // creates {100,100,100,100,100}
 		    vector<int> bydefault(5);    // creates {0,0,0,0,0}
 		
 		    vector<int> temp(v); // creates a seperate copy of v and names it temp
 		
-		    cout << endl
-		         << v.size();
-		    // v.clear() makes the vector empty
-		    // v.empty gives bool if vector v is empty or not
 		    return 0;
 		}
 		```
 	3. <mark style="background: #BBFABBA6;">list</mark>
 		- doubly linked list
 		-  ![doubly linked list](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/DLL1.png)
-		- functions: similar to vector
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
