@@ -946,14 +946,14 @@ int main()
 					- <mark style="background: #BBFABBA6;">virtual functions are preferably called compared to non-virtual functions</mark>
 - <mark style="background: #D2B3FFA6;">inheritance modes:</mark>
 	- if a class is inherited in <mark style="background: #BBFABBA6;">public mode</mark>
-		- private cannot be accessed but public remains public and protected remains protected
+		- private variables cannot be accessed but public remains public and protected remains protected
 		- further inheritance is possible
 	- <mark style="background: #BBFABBA6;">protected mode</mark>
-		- public and protected variables and functions of the parent class become protected in the child class and private is not accessible
+		- public and protected variables and functions of the parent class become protected in the child class and private variables of parent are not accessible
 		- further inheritance is possible but the protected members cannot be accessed outside the parent and child class
 	- <mark style="background: #BBFABBA6;">private mode</mark>
-		- public and protected variables and functions of the parent class become private in the child class
-		- further inheritance is not possible
+		- public and protected variables and functions of the parent class become private in the child class and private variables of parent are not accessible
+		- further inheritance is not possible as all variables of child are private
 - <mark style="background: #D2B3FFA6;">2 ways to use inheritance</mark>
 	- to <mark style="background: #BBFABBA6;">generalize</mark> : you have square, rectangle, parallelogram and trapezium so you can create a parent class quadrilateral and generalize the shapes
 	- to <mark style="background: #BBFABBA6;">specialize</mark>  : you have parallelogram, you can create child classes square and rectangle to specialize the shape parallelogram
