@@ -347,8 +347,9 @@ int main()
 	- Stack operations
 		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark> adds char ch at the end of `str`
 		- <mark style="background: #BBFABBA6;">str.pop_back()</mark> removes last char of `str`
-	- `str.copy(chArray,str.length())`
-		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied
+	- <mark style="background: #BBFABBA6;">str.copy(chArray,str.length())</mark>
+		- copies string `str` into char array `chArray`
+		- 2nd arg is the length of `str` to be copied
 		- doesn't add `\0` so need to do it manually, steps:
 			- `string str = "Welcome"`
 			- `char chArray[10]`
