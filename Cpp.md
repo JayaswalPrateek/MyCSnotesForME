@@ -38,7 +38,7 @@
 - `enum day {mon=4,tue,wed,thr,fri=13,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=13 sat=14 sun=15
 - `enum day {mon=4,tue,wed,thr,fri=6,sat,sun};` assigns mon=4 tue=5 wed=6 thr=7 fri=6 sat=7 sun=8
 
-# <mark style="background: #FFB86CA6;">Type Definition</mark>
+# <mark style="background: #FFB86CA6;">Type Definitions</mark>
 - makes variables more readable
 - so lets say a school has `int m1,m2,m3,h1,h2,h3;` where `mX` are your marks in subject X and  `hX` is the highest marks in that subject
 - to make it more readable we use `typedef` to alias the data type of `mX` from int to marks and `hX` from int to highest to add more context
@@ -147,7 +147,7 @@ int main()
 - <mark style="background: #D2B3FFA6;">passing an array to a function by value decays it into a pointer to the first element of the array but if the array is a member of a struct and the struct is passed by value then the array doesn't decay</mark>
 
 
-# <mark style="background: #FFB86CA6;">Pointer</mark>
+# <mark style="background: #FFB86CA6;">Pointers</mark>
 - <mark style="background: #D2B3FFA6;">size of a pointer is independent of data type of the variable it is pointing to and always takes 8 bytes</mark>
 - *Memory Layout*
 	- `| HEAP  |`
@@ -654,9 +654,9 @@ int main()
 
 # <mark style="background: #FFB86CA6;">OOPS</mark>
 - <mark style="background: #D2B3FFA6;">size of a object = size of data types only as functions don't occupy any memory</mark>
-- class doesn't occupy any space, object does. Class is a blueprint
+- class doesn't occupy any space, object does as class is just a blueprint
 - multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section
-- pointer to object in STACK
+- <mark style="background: #D2B3FFA6;">pointer to object in STACK</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -683,7 +683,7 @@ int main()
 	    return 0;
 	}
 	```
-- pointer to object in HEAP
+- <mark style="background: #D2B3FFA6;">pointer to object in HEAP</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -708,22 +708,20 @@ int main()
 
 	    delete rectptr;
 	    rectptr = nullptr;
-
 	    return 0;
 	}
 	```
-- note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values outside the class
+- note that when using scope resolution operator `::` to write functions outside the class then don't need to rewrite the default values for parameters outside the class
 	- it is considered re declaration of the function
-<mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
-	- setter functions of a class are public functions that get the value in a function call and assign it to initialize private variables of the class they belong to
-	- getters are functions that just return the value of the private variable
-	- if a variable has getter and no setter it becomes read only
-	- if a variable has a setter and no getter then it becomes write only (example passwords)
-- we should use constructor to assign default value instead of expecting that setters will always be used before getters
+- <mark style="background: #D2B3FFA6;">getters and setters / accessor and mutator</mark>
+	- <mark style="background: #BBFABBA6;">setter functions of a class are public functions that get the value as a function parameter and assign it to initialize private variables of their class</mark>
+	- <mark style="background: #BBFABBA6;">getters are public functions that just return the value of the private variable</mark>
+	- <mark style="background: #BBFABBA6;">if a variable has getter and no setter it becomes read only</mark>
+	- <mark style="background: #BBFABBA6;">if a variable has a setter and no getter then it becomes write only (example passwords)</mark>
+- we should use constructor to assign default value instead of expecting that setters will always be used before getters and parameterized constructor can call setters as well
 	- if getters are used before setters we might see garbage value and we thus we should assign default values
-	- parameterized constructor can call setters as well
-- ideally a class should have a copy constructor and a parameterized constructor with default values
-- prefer writing functions outside class
+- <mark style="background: #BBFABBA6;">ideally a class should have a copy constructor and a parameterized constructor with default values</mark>
+- <mark style="background: #BBFABBA6;">prefer writing functions outside class</mark>
 	- functions declared outside the class have their machine code outside the main function's machine code
 	- if they are declared in the class they become inline functions and their machine code is inside the machine code of main
 		- inline function cannot have complex logic, so if you have complex logic use scope resolution operator for those functions
