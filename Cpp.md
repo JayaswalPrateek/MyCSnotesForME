@@ -237,29 +237,29 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Strings</mark>
 - 2 ways to create a string
-	- using class string
-	- using array of char
-		- without pointer: `char str[] = "Hello"`
+	1. using string class
+	2. using array of char
+		- without pointer: `char str[] = "Hello";`
 			- `char str[10]` can store 9 letters as 10th one has to be `\0` to identify the char array as a string
-		- with pointer: `char *s = "Hello"`
+		- with pointer: `char *s = "Hello";`
 - 2 ways to get user input
-	- if using class string
-		- `cin>>str` accepts one word
-		- `getline(cin,str)` accepts words with white spaces
+	- if using string class
+		1. `cin>>str;` accepts one word
+		2. `getline(cin,str);` accepts words with white spaces
 	- if using array of char
-		- `cin>>str` accepts one word
-		- `cin.getline(str,50)`
+		1. `cin>>str;` accepts one word
+		2. `cin.getline(str,50);`
 			- where 50 is the max length of string which is same as the length of the array of char
 - 2 ways to find length(doesn't count `\0`)
-	- if using string class, use `str.length()`
-	- if using char array, use `strlen(str)` and `#include<cstring>`
-- <mark style="background: #D2B3FFA6;">cstring:</mark>
-	- `strcat(destination, source)`
+	1. if using string class, use `str.length();`
+	2. if using char array, use `strlen(str);` and `#include<cstring>`
+- <mark style="background: #D2B3FFA6;">cstring</mark>
+	- <mark style="background: #BBFABBA6;">strcat(destination, source)</mark>
 		- removes `\0` from source and merges them
-		- `strncat(destination, source, length)`
+		- <mark style="background: #BBFABBA6;">strncat(destination, source, length)</mark>
 			- the length of the source to be concatenated
-	- `strcpy(destination, source)` or `strncpy(destination, source, length)`
-	- `strstr(str,subStr)`
+	- <mark style="background: #BBFABBA6;">strcpy(destination, source)</mark> or <mark style="background: #BBFABBA6;">strncpy(destination, source, length)</mark>
+	- <mark style="background: #BBFABBA6;">strstr(str,subStr)</mark>
 		- used to check for sub string `subStr` in string `str`
 			- if found returns sub string from the first occurrence to the end of the string including the sub string itself
 			- else it returns `NULL`
