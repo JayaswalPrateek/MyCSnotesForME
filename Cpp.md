@@ -1007,9 +1007,9 @@ int main()
 	    return 0;
 	}
 	```
-  - generalization of swift and innova so we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when u do this make virtual functions = 0 then they are called pure virtual functions
-	  - a class with pure virtual function is called an abstract class
-		- you cannot create objects of abstract classes but you can make pointer objects to them
+  - generalization of swift and innova so <mark style="background: #D2B3FFA6;">we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when you do this make virtual functions = 0 then they are called pure virtual functions</mark>
+	  - a <mark style="background: #BBFABBA6;">class with pure virtual function is called an abstract class</mark>
+		- <mark style="background: #BBFABBA6;">we cannot create objects of abstract classes but you can make pointer objects to them</mark>
 	- <mark style="background: #BBFABBA6;">3 possible use cases of inheritance:</mark>
 		- if <mark style="background: #BBFABBA6;">all functions of the class are non virtual</mark> then the its use is <mark style="background: #BBFABBA6;">re-usability</mark>
 		- if <mark style="background: #BBFABBA6;">some functions are virtual</mark> then both uses <mark style="background: #BBFABBA6;">re-usability and polymorphism</mark>
