@@ -264,15 +264,15 @@ int main()
 			- if found returns sub string from the first occurrence to the end of the string including the sub string itself
 			- else it returns `NULL`
 				- `NULL` cannot be printed by `cout` so write `cout` in an if block that checks if `strstr(str,subStr)` doesn't return `NULL`
-	- `strchr(str, ch)`
+	- <mark style="background: #BBFABBA6;">strchr(str, ch)</mark>
 		- used to check occurrence of `char ch` in `string str` and return the string ahead of it including ch itself
-	- `strrchr(str, ch)` same as `strchr(str, ch)` but checks from Right to Left instead
-	- `strcmp(s1,s2)` returns -ve, 0, +ve value
-	- `strtol(str,NULL,10)` converts string to long
+		- <mark style="background: #BBFABBA6;">strrchr(str, ch)</mark> checks from Right to Left instead
+	- <mark style="background: #BBFABBA6;">strcmp(s1,s2)</mark> returns -ve, 0, +ve value
+	- <mark style="background: #BBFABBA6;">strtol(str,NULL,10)</mark> converts string to long
 		- 10 means decimal system, 2 means binary system and so on
-	- `strtof(str,NULL)` converts string to float
-	- `strtok(str,"=;")`
-		- Tokeniser function
+	- <mark style="background: #BBFABBA6;">strtof(str,NULL)</mark> converts string to float
+	- <mark style="background: #BBFABBA6;">tokeniser function strtok(str,str2)</mark>
+		- `strtok(str,"=;")`
 			```cpp
 			#include <iostream>
 			#include <cstring>
