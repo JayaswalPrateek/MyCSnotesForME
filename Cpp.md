@@ -5,7 +5,7 @@
 # <mark style="background: #FFB86CA6;">decltype</mark>
 - `decltype(x) y;` will declare a new variable y which has the data type of variable x which already exists
 
-# <mark style="background: #FFB86CA6;">Enum</mark>
+# <mark style="background: #FFB86CA6;">enum</mark>
 - used to <mark style="background: #D2B3FFA6;">alias a constant integer with a commonly used name</mark> to improve readability
 	- `enum day {mon,tue,wed,thr,fri,sat,sun};` is same as `const int mon = 0, tue = 1, wed = 2, thr = 3, fri = 4, sat = 5, sun = 6;`
 - day is a user defined data type which can only store values mon, tue, wed, thr, fri, sat, sun and the variable automatically gets an int value aliased with the name
@@ -386,7 +386,7 @@ int main()
 			- string is a class so `[]` operator is overloaded
 	- + is an overloaded operator that concatenates strings
 	- = is an overloaded operator that copies the content of r value to l value
-	- <mark style="background: #BBFABBA6;">String iterations</mark>
+	- <mark style="background: #BBFABBA6;">string iterations</mark>
 		- 2 ways: `iterator` and `reverse_iterator`
 			- the iterator is pointer for the array of chars in the string class and we use pointer arithmetic to iterate using the string class
 			```cpp
@@ -417,7 +417,7 @@ int main()
 			- so instead of declaring it as a global variable make it a <mark style="background: #D2B3FFA6;">static local variable</mark> of that function
 				- they are located in the code section so their content is not lost after a function ends
 - <mark style="background: #D2B3FFA6;">return types are not a deciding factor in function overloading</mark>
-- <mark style="background: #D2B3FFA6;">Function Templates (Generics)</mark>
+- <mark style="background: #D2B3FFA6;">function templates (generics)</mark>
 	- overloaded functions with the same logic might just deal with different data type so we need to overload function for every possible data type which makes code verbose
 		```cpp
 		#include <iostream>
@@ -450,7 +450,7 @@ int main()
 		    return 0;
 		}
 		```
-		- Here the data type of T is decided dynamically
+		- here the data type of T is decided dynamically
 		- T can also be an object
 		- data types of both a and b should be same here
 			- if we pass an int and double then we get an error
@@ -499,7 +499,7 @@ int main()
 		    return 0;
 		}
 		```
-- <mark style="background: #D2B3FFA6;">Default arguments of a function</mark>
+- <mark style="background: #D2B3FFA6;">default arguments of a function</mark>
 	- <mark style="background: #BBFABBA6;">a template function cannot have default arguments</mark>
 	```cpp
 	#include <iostream>
@@ -522,7 +522,7 @@ int main()
 	- <mark style="background: #BBFABBA6;">all variables can have default arguments, but if one of them doesn't have one then it should be the leftmost variable and cannot lie between any 2 variables</mark>
 		- `int add(int x = 0, int y, int z = 0)` is an error
 		- `int add(int y, int x=0, int z = 0)` is correct
-	- It is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location
+	- it is a good practice to use `nullptr` as the default argument for functions that accept pointers, as it clearly indicates that the pointer is not pointing to a valid memory location
 		- This can help prevent issues such as dereferencing a null pointer, which can lead to undefined behavior and crashes
 - <mark style="background: #D2B3FFA6;">call by reference functions are handled differently by the compiler(provided pointers are not involved)</mark>
 	- <mark style="background: #BBFABBA6;">machine code of function called by reference gets appended to machine code where the function is called by reference</mark>
@@ -653,8 +653,8 @@ int main()
 	```
 
 # <mark style="background: #FFB86CA6;">OOPS</mark>
-- <mark style="background: #D2B3FFA6;">size of a object = size of data types only as functions don't occupy memory</mark>
-- class doesn't occupy space, object does. Class is a blueprint
+- <mark style="background: #D2B3FFA6;">size of a object = size of data types only as functions don't occupy any memory</mark>
+- class doesn't occupy any space, object does. Class is a blueprint
 - multiple objects have multiple copies of data members in the stack but all objects share the functions between them which are located in the code section
 - pointer to object in STACK
 	```cpp
