@@ -375,7 +375,7 @@ int main()
 		- gives the first occurrence of char `ch` in string `str`
 		-  <mark style="background: #BBFABBA6;">str.find_last_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_last_of(ch, startingIndex)</mark>
 		- if a string is given instead its not a syntax error
-			- it traverses `str` char by char and as soon as a char at `str` also exists in the string argument then it returns the index for that char in `str` which will always be the first occurrence
+			- it traverses `str` char by char and as soon as a char at `str` also exists in the string argument then it returns the index for that char in `str`(which will always be the first occurrence)
 	- <mark style="background: #BBFABBA6;">str.substr(lowerLim, upperLim)</mark>
 		- returns sub string of `str` from index `lowerLim` till index `upperLim`
 			- `upperLim` is not mandatory, when not provided, it is equal to `str.length()`
