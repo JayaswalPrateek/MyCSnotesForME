@@ -337,7 +337,8 @@ int main()
 		- empty string contains only `\0`
 			- so `str.length()` is 0
 	- <mark style="background: #BBFABBA6;">str.empty()</mark> checks if the string is empty or not
-	- `str.append(anotherStr)` appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
+	-  <mark style="background: #BBFABBA6;">str.erase()</mark> is same as `str.clear()` but you can also pass index and can be used for trimming
+	- <mark style="background: #BBFABBA6;">str.append(anotherStr)</mark> appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
 	- `str.insert(strIndex, snippetStr)`
 		- inserts `snippetStr` in `str` at `strIndex`
 		- 0th index of `snippetStr` becomes `strIndex`th index of `str`
