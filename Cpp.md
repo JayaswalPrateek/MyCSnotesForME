@@ -345,10 +345,8 @@ int main()
 	- <mark style="background: #BBFABBA6;">str.replace(strIndex, howMany, snippetStr)</mark> replaces `howMany` letters from `strIndex`th index with `snippetStr`
 	- <mark style="background: #BBFABBA6;">str1.swap(str2)</mark>
 	- Stack operations
-		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark>
-			- adds char ch at the end of `str`
-		- <mark style="background: #BBFABBA6;">str.pop_back()</mark>
-			- removes last char of `str`
+		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark> adds char ch at the end of `str`
+		- <mark style="background: #BBFABBA6;">str.pop_back()</mark> removes last char of `str`
 	- `str.copy(chArray,str.length())`
 		- copies string `str` into char array `chArray`. 2nd arg is the length of `str` to be copied
 		- doesn't add `\0` so need to do it manually, steps:
