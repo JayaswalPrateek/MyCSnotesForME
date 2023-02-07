@@ -902,7 +902,7 @@ int main()
 	- so you need to make sure that the constructor of the child function can also initialize variables of parent class
 - <mark style="background: #D2B3FFA6;">constructor precedence in inheritance</mark>
 	- <mark style="background: #D2B3FFA6;">if a child class is inheriting from the parent class in public mode such that a default constructor in parent class exists then when the object of the child class is created then the default constructor of parent class is called first followed by a constructor of child class</mark>
-		- <mark style="background: #BBFABBA6;">how to call the parameterized constructor of the parent class?</mark>
+		- <mark style="background: #BBFABBA6;">how to call the parameterized constructor of the parent class? when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and then it gets executed</mark>
 			```cpp
 			#include <iostream>
 			using namespace std;
@@ -934,17 +934,16 @@ int main()
 			// son has 10
 			// papa has 20
 			```
-			- when the constructor of the child class is called then its not immediately executed, instead the parameterized parent class constructor is called by giving it one parameter of the parameterized child class constructor. After the parameterized parent class constructor executes the control goes back to the parameterized base class constructor and then it gets executed
 - <mark style="background: #D2B3FFA6;">isA and hasA</mark>
-	- a class can be used by another class in two ways: one by inheriting it (isA) and one by creating an object of it (hasA)
-	- when a class cuboid inherits a class rectangle, the cuboid is a rectangle
-	- when a class table uses an object of rectangle as its data member then the table has a rectangle
-- virtual parent classes
+	- a class can be used by another class in two ways: one <mark style="background: #BBFABBA6;">by inheriting it (isA) and one by creating an object of it (hasA)</mark>
+	- <mark style="background: #BBFABBA6;">when a class cuboid inherits a class rectangle, the cuboid is a rectangle</mark>
+	- <mark style="background: #BBFABBA6;">when a class table uses an object of rectangle as its data member then the table has a rectangle</mark>
+- <mark style="background: #D2B3FFA6;">virtual parent classes</mark>
 	- 2 parent classes inherit from a grandparent class and a child class inherits from both the parent classes
 		- then the functions of the grandparent class can be accessed by 2 paths. This is multi path inheritance
 			- to remove this ambiguity we use virtual parent classes
 				- just add keyword `virtual` before inheritance mode for the 2 parents
-					- virtual functions are preferably called compared to non-virtual functions
+					- <mark style="background: #BBFABBA6;">virtual functions are preferably called compared to non-virtual functions</mark>
 - <mark style="background: #D2B3FFA6;">inheritance modes:</mark>
 	- if a class is inherited in <mark style="background: #BBFABBA6;">public mode</mark>
 		- private cannot be accessed but public remains public and protected remains protected
