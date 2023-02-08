@@ -335,13 +335,14 @@
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
-		- read, insert and delete are `O(1)`
-	3. <mark style="background: #BBFABBA6;">multimap</mark>
+		- functions like set
+	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same functions as a map but allows duplicate keys but the key-value pairs must be unique
-	4. <mark style="background: #BBFABBA6;">unordered map</mark>
+			- hence `.at()` function not available
+	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
 		- has some unique functions
-	5. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
