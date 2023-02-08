@@ -52,8 +52,11 @@
 	- read, insert and delete is `O(log n)`
 - <mark style="background: #D2B3FFA6;">multiset</mark>
 	- read and insert are `O(log n)` and delete is `O(k log n)` where k is the number of duplicate entries
-- <mark style="background: #D2B3FFA6;">map</mark>
-- <mark style="background: #D2B3FFA6;">multimap</mark>
+- <mark style="background: #D2B3FFA6;">map</mark> / <mark style="background: #D2B3FFA6;">multimap</mark>
+	- read, insert and delete are `O(log n)`
+- <mark style="background: #D2B3FFA6;">unordered map</mark>
+	- read, insert and delete are `O(1)` on average, `O(n)` in the worst case
+
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
@@ -333,9 +336,10 @@
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- read, insert and delete are `O(1)`
 	3. <mark style="background: #BBFABBA6;">multimap</mark>
-		- like a map but allows duplicate keys but the key-value pairs must be unique
+		- same functions as a map but allows duplicate keys but the key-value pairs must be unique
 	4. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
+		- has some unique functions
 	5. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
