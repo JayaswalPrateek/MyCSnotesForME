@@ -360,6 +360,7 @@
 			}	
 		```
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
+	- there are different iterators for different containers
 	```cpp
 	#include <iostream>
 	#include <vector>
@@ -379,7 +380,7 @@
 	        cout << *itr << " "; // becoz itr is a ptr which uses ptr arithmetic
 	    return 0;
 	}
-	// u can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
+	// we can replace occurences of vector with list or forward_list or dequeue or set and not other changes are needed
 	```
 	- using maps
 	```cpp
