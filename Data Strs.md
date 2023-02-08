@@ -28,16 +28,19 @@
 - <mark style="background: #D2B3FFA6;">array/vector/string</mark>
 	- read is `O(1)`
 	- insert/delete are `O(n)`
-- <mark style="background: #D2B3FFA6;">singly linked list</mark>
+- <mark style="background: #D2B3FFA6;">singly linked list(forward_list)</mark>
 	- read is `O(n)`
 	- insert/delete at the start is `O(1)`
 		- at the end is `O(n)`
 		- anywhere else `O(n)`
-- <mark style="background: #D2B3FFA6;">doubly lined list</mark>
+- <mark style="background: #D2B3FFA6;">doubly lined list(list)</mark>
 	- read is `O(n)`
 	- insert/delete at the start is `O(1)`
 		- at the end is `O(1)`
 		- anywhere else `O(n)`
+- <mark style="background: #D2B3FFA6;">dequeue</mark>
+	- read is `O(n)`
+	- insert/delete front/end is `O(1)`
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
