@@ -45,9 +45,13 @@
 	- read max/min element is `O(1)`
 	- insert and delete is `O(log n)`
 - <mark style="background: #D2B3FFA6;">stack</mark>
-	- push, pop and top are O(1)
+	- push, pop and top are `O(1)`
 - <mark style="background: #D2B3FFA6;">queue</mark>
-	- enqueue, dequeue
+	- same as stack
+- <mark style="background: #D2B3FFA6;">set</mark>
+	- read, insert and delete is `O(log n)`
+- <mark style="background: #D2B3FFA6;">multiset</mark>
+	- read and insert are `O(log n)` and delete is `O(k log n)` where k is the number of duplicate entries
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
@@ -275,13 +279,25 @@
 				- if opening bracket add it to the stack and if closing found then remove the topmost closing bracket type from the stack
 				- at the end the stack should be empty to conclude the expression as valid
 	8. <mark style="background: #BBFABBA6;">queue</mark>
-		- fifo
-		- enqueue adds new element at the end of the queue `O(1)`
-		- dequeue is the pop for the stack removes front most element `O(1)`
-		- front reads the frontmost element `O(1)`
+		- FIFO
 		- more used than stack irl
-		- insert happens at one end and delete happens from other
 		- used when there is a shared resource and it can only handle only one resource at a time like a printer or a processor
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    queue<int> q;
+		    // q.front();
+		    // q.back();
+		    // q.empty();
+		    // q.pop();
+		    // q.push();
+		    // q.size();
+		    // q.swap();
+		    return 0;
+		}
+		```
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- duplicates are not stored so every element in a set is unique
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
