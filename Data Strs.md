@@ -52,6 +52,8 @@
 	- read, insert and delete is `O(log n)`
 - <mark style="background: #D2B3FFA6;">multiset</mark>
 	- read and insert are `O(log n)` and delete is `O(k log n)` where k is the number of duplicate entries
+- <mark style="background: #D2B3FFA6;">map</mark>
+- <mark style="background: #D2B3FFA6;">multimap</mark>
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
