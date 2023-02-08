@@ -48,7 +48,7 @@
 	- iterators are used to access containers in a simpler way
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
 - <mark style="background: #D2B3FFA6;">Containers</mark>
-	1. <mark style="background: #BBFABBA6;">Array</mark>
+	1. <mark style="background: #BBFABBA6;">array</mark>
 		- inside the array template class a primitive array is used and `.data()` is a function that returns that underlying primitive array
 		- an STL array can be indexed using overloaded `[]` operator or using `.at(x)` function
 			- `.at(x)` function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
