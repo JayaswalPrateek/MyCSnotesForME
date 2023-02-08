@@ -56,7 +56,8 @@
 	- read, insert and delete are `O(log n)`
 - <mark style="background: #D2B3FFA6;">unordered map</mark>
 	- read, insert and delete are `O(1)` on average, `O(n)` in the worst case
-
+- <mark style="background: #D2B3FFA6;">pairs</mark>
+	- read is `O(1)`
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
