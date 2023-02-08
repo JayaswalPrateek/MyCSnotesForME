@@ -261,49 +261,17 @@
 		}
 		```
 		- <mark style="background: #FF5582A6;">bracket balancing</mark>
-			- 
-
-
-		- expression evaluation
-		```cpp
-		// infix expressions are ones which have operator that performs binary operation in the middle of two operands
-		// when we add braces the evaluation gets precedences
-		// such infix expressions can be evaluated by using stack
-		// when one operator and 2 operands and no braces then no problem
-		// when 2 operator and 4 operands and no brace like a+b*c use DMAS
-		// brackets>exponents>mul=div>sub=add
-		// for many exp go right to left
-		// for  only mul and div in same exp go from L to R
-		// for  only add and sub in same exp go from L to R
-		// so many rules
-		// so people proposed  postfix and prefix notation
-		
-		// prefix: 2-3 is - 2 3, p-q is - p q
-		// operator operand operand
-		// a+(b*c) is +a*bc
-		// (a+b)*c is +ab * c
-		
-		// postfix: least costly to evaluate
-		// operand operand operator
-		// 2 3 -
-		// p q -
-		// abc*+ is a(bc*)+ is a+(b*c) is a+b*c
-		// abc+* is a(bc+)* is a*(b+c)
-		// ab+c* is (a+b)*c
-		
-		/**
-		 * pseudo code for postfix evaluation
-		 * function that takes a string input
-		 * for loop runs till the len of string
-		 * if str(i) is operand push to stack
-		 * else if operator
-		 *      pop 2 operands and use operator
-		 *      push(result)
-		 *
-		 * after for loop ended the top of the stack gives the answer
-		 * so return top
-		 */
-		```
+			- in code editors the linter checks if an opening bracket in a expression is closed before the expression ends
+			- this operation uses stack and is called check for balanced parenthesis
+			- every opening bracket should have a closing pair so that it is balanced and expression is valid
+			- saying number of opening brackets should be equal to number of closing ones is incomplete as `)a+b(` or `[(])` are invalid
+			- so the rules are:
+				- an opening bracket should have a closing one to its right and not its left
+				- a bracket can be closed only if all the brackets opened inside it are already closed
+				- last unclosed bracket should be closed first `[()()]`
+				- scan from left to right
+				- if opening bracket add it to the stack and if closing found then remove the topmost closing bracket type from the stack
+				- at the end the stack should be empty to conclude the expression as valid
 	8. <mark style="background: #BBFABBA6;">queue</mark>
 		- fifo
 		- enqueue adds new element at the end of the queue `O(1)`
