@@ -46,6 +46,8 @@
 	- insert and delete is `O(log n)`
 - <mark style="background: #D2B3FFA6;">stack</mark>
 	- push, pop and top are O(1)
+- <mark style="background: #D2B3FFA6;">queue</mark>
+	- enqueue, dequeue
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
