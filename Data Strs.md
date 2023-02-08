@@ -299,7 +299,8 @@
 		}
 		```
 	9. <mark style="background: #BBFABBA6;">set</mark>
-		- duplicates are not stored so every element in a set is unique
+		- no duplicates so every element in a set is unique
+		- stored as sorted
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set but allows duplicate
 	11. <mark style="background: #BBFABBA6;">map</mark>
