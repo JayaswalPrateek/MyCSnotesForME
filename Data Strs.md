@@ -341,7 +341,7 @@
 			- hence `.at()` function not available
 	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-		- has some unique functions
+		- has some unique bucket functions
 	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
