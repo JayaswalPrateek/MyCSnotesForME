@@ -191,18 +191,36 @@
 		    // dq.shrink_to_fit();
 		    // dq.size();
 		    // dq.swap();
+		    return 0;
 		}
 		```
 	6. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap
+			- like a heap(FIFO) that stores the largest element on the top
 		- pop deletes the largest element 
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    priority_queue<int> pq;
+		    // pq.emplace(); // emplace_back obviously as no front operations possible
+		    // pq.empty();
+		    // pq.pop(); // removes largest element
+		    // pq.push();
+		    // pq.size();
+		    // pq.swap();
+		    // pq.top(); // returns the topmost element of the heap which it the largest one
+		    return 0;
+		}
+		```
 	7. <mark style="background: #BBFABBA6;">stack</mark>
-		- lifo
+		- LIFO
 		- stack of washed plates
-		- push,pop and peek are `O(1)`
+		- same functions as priority_queue
 		- push adds new element at the top of the stack
 		- pop removes the topmost element
-		- peek reads the topmost element
+		- top reads the topmost element
 		- useful for reversing without recursion
 		- insert and delete happens from the same end
 		```cpp
