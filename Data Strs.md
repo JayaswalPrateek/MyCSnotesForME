@@ -41,6 +41,11 @@
 - <mark style="background: #D2B3FFA6;">dequeue</mark>
 	- read is `O(n)`
 	- insert/delete front/end is `O(1)`
+- <mark style="background: #D2B3FFA6;">priority queue</mark>
+	- read max/min element is `O(1)`
+	- insert and delete is `O(log n)`
+- <mark style="background: #D2B3FFA6;">stack</mark>
+	- push, pop and top are O(1)
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
