@@ -410,140 +410,197 @@
 ```cpp
 #include <iostream>
 using namespace std;
-
-struct array
+class concreteArray
 {
-    int *data, size = 0, len = 0;
-} arr;
+    int *arrptr, size, len;
+    void swap(int *x, int *y);
 
-void printArray()
-{
-    if (arr.len == 0)
+public:
+    concreteArray(int size = 10)
     {
-        cout << "Array is empty" << endl;
+        this->size = size;
+        len = 0;
+        arrptr = new int[size];
+    }
+    ~concreteArray()
+    {
+        delete[] arrptr;
+    }
+    void Print(), Append(int x), Insert(int index, int x), Set(int index, int x) throw(string), ReverseMethodOne(), ReverseMethodTwo(), InsertSort(int x);
+    int Delete(int index) throw(string), LinearSearch(int key), BinarySearch(int key), Get(int index), Min(), Max(), Sum();
+    float Avg();
+    bool isSorted();
+};
+
+void concreteArray::Print()
+{
+    if (len == 0)
+    {
+        cout << "Array is empty";
         return;
     }
-    cout << "The Array is [ ";
-    for (int i = 0; i < arr.len; i++)
-        cout << arr.data[i] << " ";
+    cout << "[ ";
+    for (int i = 0; i < len; i++)
+        cout << arrptr[i] << " ";
     cout << "]" << endl;
 }
 
-void makeArray()
+void concreteArray::Append(int x)
 {
-    cout << "Enter size of Array: ";
-    cin >> arr.size;
-    arr.data = new int[arr.size];
-    cout << "How many numbers to insert: ";
-    int insLen;
-    cin >> insLen;
-    if (insLen > arr.size)
-    {
-        cout << "cannot insert " << insLen << " elements in an array of size " << arr.size;
-        exit(-1);
-    }
-    for (int i = 0; i < insLen; i++)
-    {
-        cout << "Enter element at index " << i << ": ";
-        cin >> arr.data[i];
-    }
-    arr.len = insLen;
-    printArray();
-}
-
-void deleteArray();
-void appendArray()
-{
-    if (arr.len == arr.size)
+    if (len == size)
     {
         cout << "Array is full, cannot append" << endl;
-        deleteArray();
+        return;
     }
-    cout << "Enter new element: ";
-    cin >> arr.data[arr.len];
-    arr.len++;
-    printArray();
+    arrptr[len] = x;
+    len++;
 }
 
-void replaceArray()
+void concreteArray::Insert(int index, int x)
 {
-    cout << "Enter Index to replace: ";
-    int target;
-    cin >> target;
-    if (target > arr.len || target < 0)
-    {
-        cout << "index " << target << " is out of bounds for array of len " << arr.len;
-        exit(-1);
-    }
-    cout << "Enter new element: ";
-    cin >> arr.data[target];
-    printArray();
-}
-
-void insertArray()
-{
-    cout << "Enter index: ";
-    int target;
-    cin >> target;
-    if (arr.len == arr.size)
+    if (len == size)
     {
         cout << "Array is full, cannot insert" << endl;
-        deleteArray();
+        return;
     }
-    if (target > arr.len || target < 0)
+    else if (index < 0 || index > len)
     {
-        cout << "index " << target << " is out of bounds for array of len " << arr.len;
-        exit(-1);
+        cout << "Invalid index" << endl;
+        return;
     }
-    for (int i = arr.len; i > target; i--)
-        arr.data[i] = arr.data[i - 1];
-    cout << "Enter new element: ";
-    cin >> arr.data[target];
-    arr.len++;
-    printArray();
+    for (int i = len; i > index; i++)
+        arrptr[i] = arrptr[i - 1];
+    arrptr[index] = x;
+    len++;
 }
 
-void deleteArray()
+int concreteArray::Delete(int index) throw(string)
 {
-    cout << "Enter index to be deleted: ";
-    int target;
-    cin >> target;
-    if (target > arr.len || target < 0)
+    if (index < 0 || index > len)
     {
-        cout << "index " << target << " is out of bounds for array of len " << arr.len;
-        exit(-1);
+        cout << "Invalid index" << endl;
+        throw string("badIndex");
     }
-    for (int i = target; i < arr.len - 1; i++)
-        arr.data[i] = arr.data[i + 1];
-    arr.len--;
-    printArray();
+    int deletedValue = arrptr[index];
+    for (int i = index; i < len - 1; i++)
+        arrptr[i] = arrptr[i + 1];
+    len--;
+    return deletedValue;
 }
 
-void linearSearch()
+void concreteArray::swap(int *x, int *y)
 {
-    cout << "Enter query element: ";
-    int query, i = 0;
-    cin >> query;
-    bool flag = false;
-    for (; i < arr.len; i++)
-        if (arr.data[i] == query)
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int concreteArray::LinearSearch(int key)
+{
+    for (int i = 0; i < len; i++)
+        if (arrptr[i] == key)
         {
-            flag = true;
-            return;
+            if (i != 0)
+                swap(&arrptr[i], &arrptr[0]);
+            return i;
         }
-    if (flag)
-        cout << "found " << query << " at index " << i << endl;
+    return -1;
 }
 
-int main()
+int concreteArray::BinarySearch(int key)
 {
-    makeArray();
-    appendArray();
-    replaceArray();
-    insertArray();
-    linearSearch();
-    return 0;
+    int l = 0, h = len - 1;
+    while (l <= h)
+    {
+        int mid = (l + h) / 2;
+
+        if (key == arrptr[mid])
+            return mid;
+        else if (key < arrptr[mid])
+            h = mid - 1;
+        else
+            l = mid + 1;
+    }
+    return -1;
 }
+
+int concreteArray::Get(int index) { return (index < 0 || index > len) ? -1 : arrptr[index]; }
+
+void concreteArray::Set(int index, int x) throw(string)
+{
+    if (index < 0 || index > len)
+    {
+        cout << "Invalid index" << endl;
+        throw string("badIndex");
+    }
+    arrptr[index] = x;
+}
+
+int concreteArray::Max()
+{
+    int max = arrptr[0];
+    for (int i = 1; i < len; i++)
+        max = arrptr[i] > max ? arrptr[i] : max;
+    return max;
+}
+
+int concreteArray::Min()
+{
+    int min = arrptr[0];
+    for (int i = 1; i < len; i++)
+        min = arrptr[i] < min ? arrptr[i] : min;
+    return min;
+}
+
+int concreteArray::Sum()
+{
+    int sum = arrptr[0];
+    for (int i = 1; i < len; i++)
+        sum += arrptr[i];
+    return sum;
+}
+
+float concreteArray::Avg() { return (float)(Sum() / len); }
+
+void concreteArray::ReverseMethodOne()
+{
+    int *temparrptr = new int[size];
+    for (int i = 0; i < len; i++)
+        temparrptr[len - 1 - i] = arrptr[i];
+    delete[] arrptr;
+    arrptr = temparrptr;
+    temparrptr = nullptr;
+}
+
+void concreteArray::ReverseMethodTwo()
+{
+    for (int i = 0; i < len; i++)
+        swap(&arrptr[i], &arrptr[len - 1 - i]);
+}
+
+void concreteArray::InsertSort(int x)
+{
+    if (len == size)
+    {
+        cout << "Array is full, cannot insert" << endl;
+        return;
+    }
+    int i;
+    for (i = len - 1; i >= 0 && arrptr[i] > x; i--)
+        arrptr[i + 1] = arrptr[i];
+    arrptr[i + 1] = x;
+    len++;
+}
+
+bool concreteArray::isSorted()
+{
+    for (int i = 0; i < len - 1; i++)
+        if (arrptr[i] > arrptr[i + 1])
+            return false;
+    return true;
+}
+is this clean code
+
 ```
 
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
