@@ -301,17 +301,40 @@
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- no duplicates so every element in a set is unique
 		- stored as sorted
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main()
+		{
+		    set<int> s;
+		
+		    s.count(); // returns number of occurences of an element in the set and makes sense only for multisets as fo sets it is always 1
+		
+		    // s.find(); // returns iterator pointing to the desired element and returns s.end() if not found
+		    // s.insert(); // element to be inserted is passed and it returns a pair of the iterator pointing to place where it might be inserted, bool if it was inserted or not
+		
+		    // s.emplace();
+		    // s.begin();
+		    // s.end();
+		    // s.clear();
+		    // s.empty();
+		    // s.erase();
+		    // s.size();
+		    // s.swap();
+		    return 0;
+		}
+		```
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set with the same functions but allows duplicate entries and still are sorted
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- read, insert and delete are `O(1)`
-	12. <mark style="background: #BBFABBA6;">multimap</mark>
+	3. <mark style="background: #BBFABBA6;">multimap</mark>
 		- like a map but allows duplicate keys but the key-value pairs must be unique
-	13. <mark style="background: #BBFABBA6;">unordered map</mark>
+	4. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
-	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	5. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
