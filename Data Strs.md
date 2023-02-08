@@ -302,7 +302,7 @@
 		- no duplicates so every element in a set is unique
 		- stored as sorted
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
-		- same as set but allows duplicate
+		- same as set with the same functions but allows duplicate entries and still are sorted
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
