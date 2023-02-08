@@ -163,20 +163,34 @@
 		- can traverse only in one direction
 	5. <mark style="background: #BBFABBA6;">dequeue</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
-		- kinda like vectors but contiguous memory allocations is not guaranteed
+			- ![dequeue](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/deque.png)
+		- kinda like vectors but contiguous memory allocations is not guaranteed but front operations are allowed along with back operations
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
 		int main()
 		{
-		    deque<int> ls; // same as vector but also allows front operations
-		    ls.push_back(2);
-		    ls.emplace_back(4);
-		    ls.push_front(0);
-		    ls.emplace_front(-2);
-		    ls.pop_front();
-		    ls.pop_back();
-		    return 0;
+		    deque<int> dq;
+		    // dq.assign();
+		    // dq.at();
+		    // dq.front();
+		    // dq.back();
+		    // dq.begin();
+		    // dq.end();
+		    // dq.emplace_back();
+		    // dq.emplace_front();
+		    // dq.pop_back();
+		    // dq.push_front();
+		
+		    // dq.clear();
+		    // dq.empty();
+		    // dq.erase();
+		
+		    // dq.insert();
+		    // dq.resize();
+		    // dq.shrink_to_fit();
+		    // dq.size();
+		    // dq.swap();
 		}
 		```
 	6. <mark style="background: #BBFABBA6;">priority queue</mark>
