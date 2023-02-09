@@ -450,4 +450,7 @@
 	- we create a tree which has a root node that doesn't store any value
 		- the number of children to this root node = length of the string and each child will be an element of the string
 			- these children will each be a parent to other elements and so on
-			- 
+			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
+	- we need a flag array of size of the string so that we can find out what elements of the string can be children as child and parent cannot be the same element
+	- we also need a result array to store the permutations of the original string
+	- 
