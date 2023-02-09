@@ -447,7 +447,7 @@
 	*/
 	```
 - <mark style="background: #FF5582A6;">Permutations of a String</mark>
-	- we create a tree which has a root node that doesn't store any value
+	- imagine a tree which has the original string as the root node 
 		- the number of children to this root node = length of the string and each child will be an element of the string
 			- these children will each be a parent to other elements and so on
 			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
@@ -462,3 +462,36 @@
 	- when `original[i] == '\0'` return and add `\0` to the result and one permutation is finished and print the result
 	- backtracking is used as it is depth first algorithm
 	- below the recursive call reset the flag array at index i
+	```cpp
+	#include <iostream>
+	using namespace std;
+	void permute(char strray[], int k = 0)
+	{
+	    static bool flag[10];
+	    static char result[10];
+	    if (strray[k] == '\0')
+	    {
+	        result[k] = '\0';
+	        cout << result << endl;
+	        return;
+	    }
+	    for (int i = 0; strray[i] != '\0'; i++)
+	    {
+	        bool *isOccupied = &flag[i];
+	        if (!*isOccupied)
+	        {
+	            result[k] = strray[i];
+	            *isOccupied = true;
+	            permute(strray, k + 1);
+	            *isOccupied = false;
+	        }
+	    }
+	}
+	
+	int main()
+	{
+	    char s[] = "ABC";
+	    permute(s);
+	    return 0;
+	}
+	```
