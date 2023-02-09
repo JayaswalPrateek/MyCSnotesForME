@@ -448,20 +448,20 @@
 	```
 - <mark style="background: #FF5582A6;">Permutations of a String</mark>
 	- imagine a tree which has the original string as the root node 
-		- the number of children to this root node = length of the string and each child will be an element of the string
-			- these children will each be a parent to other elements and so on
+		- the number of children to this root node = length of the string and each child will be an element of the string(underlined in 2nd row)
+			- these children will each be a parent to length - 1 nodes(the ones that are not underlined in the 3rd row) 
 			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
-	- we need a static flag array of size of the string so that we can find out what elements of the string can be children as child and parent cannot be the same element
+	- we need a static flag array so that we can find out what elements of the string can be children as child and parent cannot be the same element
 		- i is the counter variable for this array initially pointing to the 0th index
 	- we also need a static result array to store the permutations of the original string
 		- k is the counter variable for this array initially pointing to the 0th index
-	- result array stores the elements at the 0th index of original array in its 0th index and flags the 0th index of the flag assay as true
-	- recursive call for k+1 and i should reset to 0
+		- when we have used all the characters from the original string then the all flag array elements will be set to true then we can add the `\0` at the end and print it
+		- so adding any element at index n of the original array to the result array leads to toggling of nth index of flag array to true meaning that the index or original array is already used once in the resultant array
 	- check flag array for the first occurrence of `result[i]` is false
 		- when found at i set `result[k] = original[i]` 
-	- when `original[i] == '\0'` return and add `\0` to the result and one permutation is finished and print the result
+	- recursive call with k+1 and i should automatically reset to 0
 	- backtracking is used as it is depth first algorithm
-	- below the recursive call reset the flag array at index i
+		- so below the recursive call reset the flag array at index i back to false
 	```cpp
 	#include <iostream>
 	using namespace std;
