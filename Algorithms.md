@@ -451,9 +451,9 @@
 		- the number of children to this root node = length of the string and each child will be an element of the string
 			- these children will each be a parent to other elements and so on
 			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
-	- we need a flag array of size of the string so that we can find out what elements of the string can be children as child and parent cannot be the same element
+	- we need a static flag array of size of the string so that we can find out what elements of the string can be children as child and parent cannot be the same element
 		- i is the counter variable for this array initially pointing to the 0th index
-	- we also need a result array to store the permutations of the original string
+	- we also need a static result array to store the permutations of the original string
 		- k is the counter variable for this array initially pointing to the 0th index
 	- result array stores the elements at the 0th index of original array in its 0th index and flags the 0th index of the flag assay as true
 	- recursive call for k+1 and i should reset to 0
@@ -461,3 +461,4 @@
 		- when found at i set `result[k] = original[i]` 
 	- when `original[i] == '\0'` return and add `\0` to the result and one permutation is finished and print the result
 	- backtracking is used as it is depth first algorithm
+	- below the recursive call reset the flag array at index i
