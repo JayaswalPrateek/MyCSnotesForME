@@ -451,7 +451,7 @@
 	- imagine a tree which has the original string as the root node 
 		- the number of children to this root node = length of the string and each child will be an element of the string(underlined in 2nd row)
 			- these children will each be a parent to length - 1 nodes(the ones that are not underlined in the 3rd row) 
-			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
+			- img
 				-  a tree whose leaf nodes are the solution to the program is called a state space tree
 	- we need a static flag array so that we can find out what elements of the string can be children as child and parent cannot be the same element
 		- i is the counter variable for this array initially pointing to the 0th index
@@ -502,5 +502,39 @@
 	- swap element at `l` and element at `i`(which might be the same)
 	- recursive call with `l+1` instead
 		- base condition is to print string permutation when `l==i`
-	- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
+		- img
 		- now notice the swapping part on the connecting links
+```cpp
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void swap(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void permute(char strray[], int h, int l = 0)
+{
+    if (l == h)
+    {
+        cout << strray << endl;
+        return;
+    }
+    for (int i = l; i <= h; i++)
+    {
+        swap(strray[l], strray[i]);
+        permute(strray, h, l + 1);
+        swap(strray[l], strray[i]);
+    }
+}
+
+int main()
+{
+    char s[] = "ABC";
+    permute(s, strlen(s) - 1); // without -1 we will end up swapping '\0' as well so the elements after it will be ignored by cout
+    return 0;
+}
+``` 
