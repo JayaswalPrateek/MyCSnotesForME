@@ -503,3 +503,4 @@
 	- recursive call with `l+1` instead
 		- base condition is to print string permutation when `l==i`
 	- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
+		- now notice the swapping part on the connecting links
