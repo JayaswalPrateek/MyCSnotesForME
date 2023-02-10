@@ -446,7 +446,7 @@
 	[Step 7] move disc from 1 to 3
 	*/
 	```
-- <mark style="background: #FF5582A6;">Permutations of a String</mark>
+- <mark style="background: #FF5582A6;">Permutations of a String without swapping</mark>
 	- number of possible permutations = (length of the string)!
 	- imagine a tree which has the original string as the root node 
 		- the number of children to this root node = length of the string and each child will be an element of the string(underlined in 2nd row)
@@ -497,3 +497,5 @@
 	    return 0;
 	}
 	```
+- <mark style="background: #FF5582A6;">Permutations of a String with swapping</mark>
+	- 0th index is variable `l` and (length-1)th index is variable `h` 
