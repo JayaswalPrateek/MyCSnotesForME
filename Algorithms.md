@@ -447,10 +447,12 @@
 	*/
 	```
 - <mark style="background: #FF5582A6;">Permutations of a String</mark>
+	- number of possible permutations = (length of the string)!
 	- imagine a tree which has the original string as the root node 
 		- the number of children to this root node = length of the string and each child will be an element of the string(underlined in 2nd row)
 			- these children will each be a parent to length - 1 nodes(the ones that are not underlined in the 3rd row) 
 			- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
+				-  a tree whose leaf nodes are the solution to the program is called a state space tree
 	- we need a static flag array so that we can find out what elements of the string can be children as child and parent cannot be the same element
 		- i is the counter variable for this array initially pointing to the 0th index
 	- we also need a static result array to store the permutations of the original string
