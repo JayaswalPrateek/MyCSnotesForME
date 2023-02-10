@@ -498,4 +498,8 @@
 	}
 	```
 - <mark style="background: #FF5582A6;">Permutations of a String with swapping</mark>
-	- 0th index is variable `l` and (length-1)th index is variable `h` 
+	- 0th index is variable `l` and (length-1)th index is variable `h` and `i` is a local variable equal to `l` that increments till it is equal to (length-1)
+	- swap element at `l` and element at `i`(which might be the same)
+	- recursive call with `l+1` instead
+		- base condition is to print string permutation when `l==i`
+	- ![recursion tree for creating all permutations of a string](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
