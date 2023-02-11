@@ -589,6 +589,8 @@ int main()
 	- all elements are diagonally same
 	- `M[i][j] == M[i-1][j-1]`
 	- then we don't need to store duplicates
-		- only need to store the 1st row and 1st column
+		- only need to store the 1st row followed by 1st column elements in an linear array
 		- so linear array has length `n+n-1`
+	- ![toeplitz matrix mapped](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/toeplitz-mapped.png)
+		- notice how we can get the other elements just by storing the first row and first column
 	- 
