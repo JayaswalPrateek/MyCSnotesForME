@@ -555,4 +555,4 @@ int main()
 		- the 4th element of the linear array marks the start of the 3rd row and the 5th element marks its end 
 	- i,j of the 2-D matrix can be mapped to `(i(i-1)/2)+j-1`th index of the linear array
 	- the above mapping is called row major mapping as we fill the linear array by scanning the matrix from left to right then top to bottom like breadth first or row by row
-	- in column major mapping we fill the array 
+	- in column major mapping we fill the array column by column(top to bottom) then left to right
