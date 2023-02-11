@@ -576,8 +576,11 @@ int main()
 			- and for upper diagonal matrix i-j=-1
 			- we can say that for a non zero element `|i-j| <= 1` and for a zero element `|i-j| > 1`
 		- total number of non zero elements are `3n-2`
-		- the linear array is first populated with lower diagonal elements followed by center diagonal elements followed by upper diagonal elements 
+		- the linear array is first populated with lower diagonal elements followed by actual diagonal elements followed by upper diagonal elements 
 		- mapping non zero elements to a linear array
 			- when `i-j=1` then i,j of matrix is mapped with `index i-1` of the linear array
 			- when `i-j=0` the i,j of matrix is mapped with `index n-1+i-1` of the linear array
 			- when `i-j=-1` the i,j of matrix is mapped with `index 2n-1+i-1` of the linear array
+- square band matrix
+	- tridiagonal matrix had one upper diagonal and one lower diagonal above and below the actual diagonal
+	- a triangular matrix is a special type 
