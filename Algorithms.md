@@ -584,4 +584,11 @@ int main()
 - square band matrix
 	- tridiagonal matrix had one upper diagonal and one lower diagonal above and below the actual diagonal
 	- a triangular matrix is the simplest type of square band matrix as a square band matrix can have x upper diagonals and x lower diagonals above and below the actual diagonal
-		- so it will have 2x+1 diagonals 
+		- so it will have `2x+1` diagonals
+- toeplitz matrix
+	- all elements are diagonally same
+	- `M[i][j] == M[i-1][j-1]`
+	- then we don't need to store duplicates
+		- only need to store the 1st row and 1st column
+		- so linear array has length `n+n-1`
+	- 
