@@ -599,3 +599,6 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Sparse Matrices</mark>
 - when number of zeroes in a matrix >> number of non zero elements
+- 2 ways to represent such sparse matrices
+	1. coordinate lists/3 column representation
+	2. compressed sparse row
