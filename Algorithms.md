@@ -570,4 +570,6 @@ int main()
 - symmetric matrices: when element at i,j is equal to the element at j,i then the matrix is symmetric
 	- so we don't need to store duplicates, we can discard either the lower triangle or the upper triangle(always including the diagonal as for every diagonal element `i==j` so they are unique)
 - tridiagonal matrix
-	- 
+	- ![tridiagonal matrix](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tridiagonalMatrix.png)
+		- as we can see for the diagonal elements `i==j` so i-j=0
+			- similarly for the upper diagonal matrix
