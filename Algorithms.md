@@ -594,4 +594,5 @@ int main()
 	- ![toeplitz matrix mapped](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/toeplitz-mapped.png)
 		- notice how we can get the other elements just by storing the first row and first column
 	- mapping i and j of the toeplitz matrix to an linear array
-		- 
+		- if `i<=j` then element is in or above actual diagonal which are stored first in the linear array as shown as blue boxes in the image can be mapped with `(j-i)`th index on linear array
+		- if `i>j` the element is below the actual diagonal which is stored after the 1st row in the linear array as shown as green boxes in the image can be mapped with (n-1+i-j)th index on l
