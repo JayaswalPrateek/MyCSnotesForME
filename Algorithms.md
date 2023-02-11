@@ -567,3 +567,7 @@ int main()
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2` (same as lower triangular matrix)
 	- row major mapping: `(n(i-1)-((i-2)(i-1))/2)+j-i` (interchange i and j of column major mapping of lower triangular matrix)
 	- column major mapping: `(j(j-1)/2)+i-1` (interchange i and j of row major mapping of lower triangular matrix)
+- symmetric matrices: when element at i,j is equal to the element at j,i then the matrix is symmetric
+	- so we don't need to store duplicates, we can discard either the lower triangle or the upper triangle(always including the diagonal as for every diagonal element `i==j` so they are unique)
+- tridiagonal matrix
+	- 
