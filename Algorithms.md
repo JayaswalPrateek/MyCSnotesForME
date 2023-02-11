@@ -550,9 +550,13 @@ int main()
 	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2)`
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2`
 	- 1st row of matrix has one non zero element, 2nd has 2, 3rd has 3 and so on  **◺**
-		- the 1st element of the linear array is the first element of the first row
+		- the 1st element of the linear array is the 1st element of the 1st row
 		- the 2nd element of the linear array marks the start of the 2nd row and the 3rd element marks the end
 		- the 4th element of the linear array marks the start of the 3rd row and the 5th element marks its end 
 	- i,j of the 2-D matrix can be mapped to `(i(i-1)/2)+j-1`th index of the linear array
 	- the above mapping is called row major mapping as we fill the linear array by scanning the matrix from left to right then top to bottom like breadth first or row by row
 	- in column major mapping we fill the array column by column(top to bottom) then left to right
+		- 1st column has n elements 2nd has n-1 and 3rd has n-2 and so on  **◺**
+			- the 1st element of the linear array is the first element of the 1st column  and the nth element of linear array marks the end of the 1st column
+			- the (n+1)th element of the linear array marks the start of the 2nd column and is the 1st element of the 2nd column and the 2nd column ends at (n+n-1)th element of the linear array
+		- i,j of the 2-D matrix can be mapped to `(i(i-1)/2)+j-1`th index of the linear array
