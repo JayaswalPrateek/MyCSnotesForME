@@ -366,7 +366,7 @@
 				- observe how 2C1 points to above elements 1C0 and 1C1 and 2C1 = 2 = 1C0 + 1C1 = 1 + 1
 				- so we can say 6 is 4C2 is obtained from 3+3 of 3C1 and 3C2 which themselves are obtained from a sum
 				- our base condition can be outlined by observing that the extreme leftmost and rightmost elements are always 1 and the topmost element is also always 1
-				- so nCr = (n-1)C(r-1) + (n-1)Cr
+				- so `nCr = (n-1)C(r-1) + (n-1)Cr`
 				- we go bottom to up for recursion and then come down from top to bottom when returning
 				```cpp
 				#include <iostream>
@@ -576,5 +576,8 @@ int main()
 			- and for upper diagonal matrix i-j=-1
 			- we can say that for a non zero element `|i-j| <= 1` and for a zero element `|i-j| > 1`
 		- total number of non zero elements are `3n-2`
+		- the linear array is first populated with lower diagonal elements followed by center diagonal elements followed by upper diagonal elements 
 		- mapping non zero elements to a linear array
-			- 
+			- when `i-j=1` then i,j of matrix is mapped with `index i-1` of the linear array
+			- when `i-j=0` the i,j of matrix is mapped with `index n-1+i-1` of the linear array
+			- when `i-j=-1` the i,j of matrix is mapped with `index 2n-1+i-1` of the linear array
