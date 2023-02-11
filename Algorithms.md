@@ -593,4 +593,5 @@ int main()
 		- so linear array has length `n+n-1`
 	- ![toeplitz matrix mapped](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/toeplitz-mapped.png)
 		- notice how we can get the other elements just by storing the first row and first column
-	- 
+	- mapping i and j of the toeplitz matrix to an linear array
+		- 
