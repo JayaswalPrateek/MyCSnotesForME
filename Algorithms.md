@@ -601,4 +601,5 @@ int main()
 - when number of zeroes in a matrix >> number of non zero elements
 - 2 ways to represent such sparse matrices
 	1. coordinate lists/3 column representation
+		- ![3 column representation](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/sparse-form.jpg)
 	2. compressed sparse row
