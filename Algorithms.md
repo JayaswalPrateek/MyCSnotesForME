@@ -603,3 +603,5 @@ int main()
 	1. coordinate lists/3 column representation
 		- ![3 column representation](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/sparse-form.jpg)
 	2. compressed sparse row
+		- 3 arrays are needed
+			1. list of non zero elements while traversing left to right and top to bottom
