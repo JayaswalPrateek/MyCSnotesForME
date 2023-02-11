@@ -542,5 +542,5 @@ int main()
 - 2-D arrays can quickly get inefficient and end up wasting memory by storing information we don't need. Still they can be quickly read due to contagious memory allocations
 - a diagonal matrix has all non diagonal elements equal to zero and the amount of space wasted increases as we increase order of a diagonal matrix
 	- which can instead be represented by a linear array of just the diagonal elements
-	- when i equals j then use ith or jth index of the linear array else use 0
-- performing operations on a diagonal matrix introduces lot of redundancy in the operations as we perform more operations on the zeroes instead of the diagonal elements
+	- so when i equals j then use ith or jth index of the linear array else use 0
+	- performing operations on a diagonal matrix introduces lot of redundancy in the operations as we perform more operations on the zeroes instead of the diagonal elements
