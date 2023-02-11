@@ -604,4 +604,8 @@ int main()
 		- ![3 column representation](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/sparse-form.jpg)
 	2. compressed sparse row
 		- 3 arrays are needed
-			1. list of non zero elements while traversing left to right and top to bottom
+			1. list of non zero elements in order of traversing left to right and top to bottom
+			2. an array of size equal to the number of rows in the sparse matrix
+				- the 1st element is the number of non zero elements in the 1st row
+				- the 2nd element is the number of non zero elements in 1st + 2nd row
+				- the 3rd element is the number of non zero elements in 1st + 2nd + 3rd row and so on
