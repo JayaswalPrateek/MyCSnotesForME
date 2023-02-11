@@ -572,4 +572,9 @@ int main()
 - tridiagonal matrix
 	- ![tridiagonal matrix](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tridiagonalMatrix.png)
 		- as we can see for the diagonal elements `i==j` so i-j=0
-			- similarly for the upper diagonal matrix
+			- similarly for the lower diagonal matrix i-j=1
+			- and for upper diagonal matrix i-j=-1
+			- we can say that for a non zero element `|i-j| <= 1` and for a zero element `|i-j| > 1`
+		- total number of non zero elements are `3n-2`
+		- mapping non zero elements to a linear array
+			- 
