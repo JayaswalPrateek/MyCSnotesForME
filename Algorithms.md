@@ -583,4 +583,5 @@ int main()
 			- when `i-j=-1` the i,j of matrix is mapped with `index 2n-1+i-1` of the linear array
 - square band matrix
 	- tridiagonal matrix had one upper diagonal and one lower diagonal above and below the actual diagonal
-	- a triangular matrix is a special type 
+	- a triangular matrix is the simplest type of square band matrix as a square band matrix can have x upper diagonals and x lower diagonals above and below the actual diagonal
+		- so it will have 2x+1 diagonals 
