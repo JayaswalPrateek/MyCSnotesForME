@@ -543,4 +543,8 @@ int main()
 - a diagonal matrix has all non diagonal elements equal to zero and the amount of space wasted increases as we increase order of a diagonal matrix
 	- which can instead be represented by a linear array of just the diagonal elements
 	- so when i equals j then use ith or jth index of the linear array else use 0
-	- performing operations on a diagonal matrix introduces lot of redundancy in the operations as we perform more operations on the zeroes instead of the diagonal elements
+	- as performing operations on a diagonal matrix introduces lot of redundancy in the operations as we perform more operations on the zeroes instead of the diagonal elements
+- a lower triangular matrix has all elements above the diagonal equal to zero(excluding the diagonal itself)
+	- element at i,j is 0 when `i<j` and non-zero for `i>=j`
+	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2)`
+	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2`
