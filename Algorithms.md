@@ -561,3 +561,9 @@ int main()
 			- the (n+1)th element of the linear array marks the start of the 2nd column and is the 1st element of the 2nd column and the 2nd column ends at (n+n-1)th element of the linear array
 		- i,j(they start from 1 not 0) of the 2-D matrix can be mapped to `(n(j-1)-((j-2)(j-1))/2)+i-j`th index of the linear array
 			- the above mapping is called column major mapping
+- an upper triangular matrix has all elements below the diagonal equal to zero(excluding the diagonal as well)
+	- element at i,j is 0 when `i>j` and non-zero for `i<=j` (sign flipped)
+	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2` (same as lower triangular matrix)
+	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2` (same as lower triangular matrix)
+	- row major mapping: `(n(i-1)-((i-2)(i-1))/2)+j-i` (interchange i and j of column major mapping of lower triangular matrix)
+	- column major mapping: `(j(j-1)/2)+i-1` (interchange i and j of row major mapping of lower triangular matrix)
