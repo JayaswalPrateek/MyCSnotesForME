@@ -539,6 +539,7 @@ int main()
 ``` 
 
 # <mark style="background: #FFB86CA6;">Matrices</mark>
+- assuming matrices start from index 1 and arrays start from index 0 so i actually is i-1 and j is j-1
 - 2-D arrays can quickly get inefficient and end up wasting memory by storing information we don't need. Still they can be quickly read due to contagious memory allocations
 - a diagonal matrix has all non diagonal elements equal to zero and the amount of space wasted increases as we increase order of a diagonal matrix
 	- which can instead be represented by a linear array of just the diagonal elements
@@ -548,3 +549,8 @@ int main()
 	- element at i,j is 0 when `i<j` and non-zero for `i>=j`
 	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2)`
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2`
+	- 1st row has one non zero element, 2nd has 2, 3rd has 3 and so on
+		- so in a linear array the first element of it is the first element of the first row
+		- the 2nd element of the linear array marks the start of the 2nd row and the 3rd element marks the end
+		- the 4th element of the linear array marks the start of the 3rd row and the 5th element marks its end 
+	- row i elements are start from ith index of the linear array and the jth element is found at (i+j)th index
