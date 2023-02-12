@@ -614,4 +614,4 @@ int main()
 	- precondition: the dimensions of the two matrices to be added should be same and the number of non zero elements need not be same
 	- i and j point initially point to the 2nd row of both coordinate lists
 		- if the rows are different then add the smaller row's element to the new list and move the variable i or j the one which was associated with it
-		- when i rows and columns are same add the non zero elements and store them 
+		- when i rows and columns are same add the non zero elements and store them
