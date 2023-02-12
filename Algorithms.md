@@ -611,3 +611,4 @@ int main()
 				- the 3rd element is the number of non zero elements in 1st + 2nd + 3rd row and so on
 			3. an array such that index i of this array stores the column number of element at index i of the 1st array 
 - addition of 2 sparse matrices
+	- precondition: the dimensions of the two matrices to be added should be same and the number of non zero elements need not be same
