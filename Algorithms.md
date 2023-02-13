@@ -619,5 +619,65 @@ int main()
 		- if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
 		- if the row number is equal but column number is unequal then add the element with smaller column number to the new list and increment the variable i or j the one which was associated with it
 	- same for subtraction
-- creating a coordinate list
-	- 
+- creating and displaying a coordinate list
+	```cpp
+	#include <iostream>
+	using namespace std;
+	struct sparse
+	{
+	    int m, n, num; // m*n matrix with num non zero elements
+	    struct element // embedded coordinate list
+	    {
+	        int i, j, x;
+	    } *e; // will dynamically create array for the coordinate list
+	};
+	
+	void create(sparse *s)
+	{
+	    cout << "Enter Dimension: ";
+	    cin >> s->m >> s->n;
+	
+	    do
+	    {
+	        cout << "How many non zero elements does it have? ";
+	        cin >> s->num;
+	        if (s->m * s->n < s->num)
+	            cout << "Matrix can hold upto " << s->m * s->n << " elements" << endl;
+	    } while (s->m * s->n < s->num);
+	
+	    s->e = new sparse::element[s->num]; // creates the coordinate list
+	
+	    for (int i = 0; i < s->num; i++)
+	    {
+	        cout << "Enter Row,Column number for an element followed by the element: ";
+	        cin >> s->e[i].i >> s->e[i].j >> s->e[i].x;
+	        if (s->e[i].x == 0)
+	        {
+	            cout << "zero value not stored" << endl;
+	            i--; // will overewrite the zero value on next iteration
+	        }
+	    }
+	}
+	
+	void display(sparse s)
+	{
+	    for (int i = 0, k = 0; i < s.m; i++)
+	    {
+	        for (int j = 0; j < s.n; j++)
+	            if (k < s.num && i == s.e[k].i && j == s.e[k].j)
+	                cout << s.e[k++].x << " ";
+	            else
+	                cout << "0 ";
+	        cout << "\n";
+	    }
+	}
+	
+	int main()
+	{
+	    sparse s;
+	    create(&s);
+	    display(s);
+	    delete[] s.e;
+	    return 0;
+	}
+	```
