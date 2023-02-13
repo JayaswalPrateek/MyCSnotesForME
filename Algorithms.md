@@ -617,4 +617,7 @@ int main()
 	- i and j point initially point to the 2nd row of both coordinate lists as 1st row stores the dimensions and the number of non zero elements in the matrix
 		- if the row number is unequal then add the element with smaller row number to the new list and increment the variable i or j the one which was associated with it
 		- if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
-		- 
+		- if the row number is equal but column number is unequal then add the element with smaller column number to the new list and increment the variable i or j the one which was associated with it
+	- same for subtraction
+- creating a coordinate list
+	- 
