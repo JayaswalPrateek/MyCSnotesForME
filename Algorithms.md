@@ -619,7 +619,7 @@ int main()
 		- if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
 		- if the row number is equal but column number is unequal then add the element with smaller column number to the new list and increment the variable i or j the one which was associated with it
 	- same for subtraction
-- creating and displaying a coordinate list
+- creating and displaying and adding a coordinate list
 	```cpp
 	#include <iostream>
 	using namespace std;
@@ -664,7 +664,7 @@ int main()
 	    for (int i = 0, k = 0; i < s.m; i++)
 	    {
 	        for (int j = 0; j < s.n; j++)
-	            if (k < s.num && i == s.e[k].i && j == s.e[k].j)
+	            if (k < s.num && i == s.e[k].i && j == s.e[k].j) // we need to check k < s.num as c++ if statements short circuit if a single condition is false with && or true with &&
 	                cout << s.e[k++].x << " ";
 	            else
 	                cout << "0 ";
@@ -672,12 +672,70 @@ int main()
 	    }
 	}
 	
+	sparse *add(sparse s1, sparse s2)
+	{
+	    if (s1.m != s2.m || s1.n != s2.n)
+	        throw string("BadDimensions");
+	    sparse *sum = new sparse;
+	    sum->m = s1.m;
+	    sum->n = s1.n;
+	    sum->num = 0;
+	    // s1.num + s2.num is the max number of non zero elements the sum can have, so we will create a coordinate list of s1.num + s2.num which still could be underutilized
+	    sum->e = new sparse::element[s1.num + s2.num];
+	    int i = 0, j = 0, k = 0;
+	    for (; i < s1.num && j < s2.num; k++)
+	        if (s1.e[i].i < s2.e[j].i) // when row number of s2 is greater than row number of s1
+	            sum->e[k] = s1.e[i++];
+	        else if (s1.e[i].i > s2.e[j].i) // when row number of s1 is greater than row number of s2
+	            sum->e[k] = s2.e[j++];
+	        // if control reaches here, implies row numbers of s1 and s2 are same so we compare column numbers
+	        else if (s1.e[i].j < s2.e[j].j) // when row numbers are same and column number of s2 is greater than column number of s1
+	            sum->e[k] = s1.e[i++];
+	        else if (s1.e[i].j > s2.e[j].j) // when row numbers are same and column number of s1 is greater than column number of s2
+	            sum->e[k] = s2.e[j++];
+	        else // when row numbers are same and column numbers are also same
+	        {
+	            sum->e[k] = s1.e[i++];
+	            sum->e[k].x += s2.e[j++].x;
+	        }
+	    while (i < s1.num)
+	    {
+	        sum->e[k] = s1.e[i++];
+	        k = k + 1;
+	    }
+	    while (j < s2.num)
+	    {
+	        sum->e[k] = s2.e[j++];
+	        k = k + 1;
+	    }
+	    sum->num = k;
+	    return sum;
+	}
+	
 	int main()
 	{
-	    sparse s;
-	    create(&s);
-	    display(s);
-	    delete[] s.e;
+	    sparse s1;
+	    create(&s1);
+	    display(s1);
+	    sparse s2;
+	    create(&s2);
+	    display(s2);
+	    try
+	    {
+	        sparse *sum = add(s1, s2);
+	        cout << "The sum is: " << endl;
+	        display(*sum);
+	        delete[] sum->e;
+	        delete sum;
+	    }
+	    catch (const string &err)
+	    {
+	        cout << "dissimilar matrices cannot be added [BadDimensions]" << endl;
+	    }
+	
+	    delete[] s1.e;
+	    delete[] s2.e;
 	    return 0;
 	}
+	
 	```
