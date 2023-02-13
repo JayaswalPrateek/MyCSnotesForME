@@ -612,7 +612,8 @@ int main()
 			3. an array such that index i of this array stores the column number of element at index i of the 1st array 
 - addition of 2 sparse matrices
 	- precondition: the dimensions of the two matrices to be added should be same and the number of non zero elements need not be same
-		- so for the resultant matrix the dimensions are predefined but we increment/decrement the 
-	- i and j point initially point to the 2nd row of both coordinate lists
-		- if the rows are different then add the smaller row's element to the new list and move the variable i or j the one which was associated with it
-		- when i rows and columns are same add the non zero elements and store them
+		- so the dimensions of resultant matrix are predefined but we increment/decrement the number of non zero elements when we add individual elements from the 2 matrices and by default it is 0
+	- addition is done by scanning the row number in the coordinate lists of the 2 matrices to be added
+	- i and j point initially point to the 2nd row of both coordinate lists as 1st row stores the dimensions and the number of non zero elements in the matrix
+		- if the row number is unequal then add the element with smaller row number to the new list and increment the variable i or j the one which was associated with it
+		- when row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
