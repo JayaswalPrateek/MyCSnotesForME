@@ -616,4 +616,5 @@ int main()
 	- addition is done by scanning the row number in the coordinate lists of the 2 matrices to be added
 	- i and j point initially point to the 2nd row of both coordinate lists as 1st row stores the dimensions and the number of non zero elements in the matrix
 		- if the row number is unequal then add the element with smaller row number to the new list and increment the variable i or j the one which was associated with it
-		- when row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
+		- if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
+		- 
