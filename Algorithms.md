@@ -739,3 +739,6 @@ int main()
 	}
 	
 	```
+
+# <mark style="background: #FFB86CA6;">Polynomial Representation</mark>
+- to represent expressions like `3x^5 + 2x^4 + 5x^2 + 2x +7` 
