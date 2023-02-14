@@ -742,3 +742,68 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Polynomial Representation</mark>
 - to represent expressions like `3x^5 + 2x^4 + 5x^2 + 2x +7` 
+```
+#include <iostream>
+#include <cmath>
+using namespace std;
+struct poly
+{
+    int totalTerms;
+    struct term
+    {
+        int coeff, exp;
+    } *aTerm;
+};
+int main()
+{
+    poly p;
+    do
+    {
+        cout << "enter number of non zero terms: ";
+        cin >> p.totalTerms;
+        if (p.totalTerms < 0)
+            cout << "it cannot be lesser than 1, r";
+    } while (p.totalTerms < 0);
+
+    p.aTerm = new poly::term[p.totalTerms];
+
+    for (int i = 0; i < p.totalTerms; i++)
+    {
+        cout << "Enter Coeff. & Power of term " << i + 1 << ": ";
+        cin >> p.aTerm[i].coeff >> p.aTerm[i].exp;
+    }
+
+    cout << "The expression is p(x) = ";
+    for (int i = 0; i < p.totalTerms; i++)
+    {
+        if (p.aTerm[i].exp != 0 && p.aTerm[i].coeff != 0)
+            cout << p.aTerm[i].coeff << "x^" << p.aTerm[i].exp;
+        else if (p.aTerm[i].exp == 0 && p.aTerm[i].coeff != 0)
+            cout << p.aTerm[i].coeff;
+        if (i < p.totalTerms - 1 && p.aTerm[i + 1].coeff != 0)
+            cout << " + ";
+    }
+
+    cout << "\nEnter value of x: ";
+    int x, sum = 0;
+    cin >> x;
+
+    for (int i = 0; i < p.totalTerms; i++)
+        sum += p.aTerm[i].coeff * pow(x, p.aTerm[i].exp);
+    cout << "p(" << x << ") = " << sum << endl;
+
+    delete[] p.aTerm;
+    return 0;
+}
+
+/**
+enter number of non zero terms: 4
+Enter Coeff. & Power of term 1: 4 2
+Enter Coeff. & Power of term 2: 8 1
+Enter Coeff. & Power of term 3: 24 0
+Enter Coeff. & Power of term 4: 0 48
+The expression is p(x) = 4x^2 + 8x^1 + 24
+Enter value of x: 2
+p(2) = 56
+*/
+```
