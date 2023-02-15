@@ -549,26 +549,27 @@ int main()
 	- element at i,j is 0 when `i<j` and non-zero for `i>=j`
 	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2`
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2`
-	- 1st row of matrix has one non zero element, 2nd has 2, 3rd has 3 and so on  **◺**
-		- the 1st element of the linear array is the 1st element of the 1st row
-		- the 2nd element of the linear array marks the start of the 2nd row and the 3rd element marks the end
-		- the 4th element of the linear array marks the start of the 3rd row and the 5th element marks its end 
-	- i,j(they start from 1 not 0) of the 2-D matrix can be mapped to `(i(i-1)/2)+j-1`th index of the linear array
-		- the above mapping is called row major mapping as we fill the linear array by scanning the matrix from left to right then top to bottom like breadth first or row by row
-	- in column major mapping we fill the array column by column(top to bottom) then left to right
+	- <mark style="background: #BBFABBA6;">row major mapping</mark>
+		- 1st row of matrix has one non zero element, 2nd has 2, 3rd has 3 and so on  **◺**
+			- the 1st element of the linear array is the 1st element of the 1st row
+			- the 2nd element of the linear array marks the start of the 2nd row and the 3rd element marks the end
+			- the 4th element of the linear array marks the start of the 3rd row and the 5th element marks its end 
+		- i,j(they start from 1 not 0) of the 2-D matrix can be mapped to `(i(i-1)/2)+j-1`th index of the linear array
+			- <mark style="background: #BBFABBA6;">the above mapping is called row major mapping as we fill the linear array by scanning the matrix from left to right then top to bottom like breadth first or row by row</mark>
+	- <mark style="background: #BBFABBA6;">in column major mapping we fill the array column by column(top to bottom) then left to right</mark>
 		- 1st column has n elements 2nd has n-1 and 3rd has n-2 and so on  **◺**
-			- the 1st element of the linear array is the first element of the 1st column  and the nth element of linear array marks the end of the 1st column
+			- the 1st element of the linear array is the first element of the 1st column and the nth element of linear array marks the end of the 1st column
 			- the (n+1)th element of the linear array marks the start of the 2nd column and is the 1st element of the 2nd column and the 2nd column ends at (n+n-1)th element of the linear array
 		- i,j(they start from 1 not 0) of the 2-D matrix can be mapped to `(n(j-1)-((j-2)(j-1))/2)+i-j`th index of the linear array
-			- the above mapping is called column major mapping
+			- <mark style="background: #BBFABBA6;">the above mapping is called column major mapping</mark>
 - <mark style="background: #D2B3FFA6;">an upper triangular matrix has all elements below the diagonal equal to zero(excluding the diagonal as well)</mark>
-	- element at i,j is 0 when `i>j` and non-zero for `i<=j` (sign flipped)
-	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2` (same as lower triangular matrix)
-	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2` (same as lower triangular matrix)
-	- row major mapping: `(n(i-1)-((i-2)(i-1))/2)+j-i` (interchange i and j of column major mapping of lower triangular matrix)
-	- column major mapping: `(j(j-1)/2)+i-1` (interchange i and j of row major mapping of lower triangular matrix)
-- <mark style="background: #D2B3FFA6;">symmetric matrices:</mark> when element at i,j is equal to the element at j,i then the matrix is symmetric
-	- so we don't need to store duplicates, we can discard either the lower triangle or the upper triangle(always including the diagonal as for every diagonal element `i==j` so they are unique)
+	- element at i,j is 0 when `i>j` and non-zero for `i<=j` <mark style="background: #BBFABBA6;">(sign flipped)</mark>
+	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2` <mark style="background: #BBFABBA6;">(same as lower triangular matrix)</mark>
+	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2` <mark style="background: #BBFABBA6;">(same as lower triangular matrix)</mark>
+	- <mark style="background: #BBFABBA6;">row major mapping:</mark> `(n(i-1)-((i-2)(i-1))/2)+j-i` <mark style="background: #BBFABBA6;">(interchange i and j of column major mapping of lower triangular matrix)</mark>
+	- <mark style="background: #BBFABBA6;">column major mapping:</mark> `(j(j-1)/2)+i-1` <mark style="background: #BBFABBA6;">(interchange i and j of row major mapping of lower triangular matrix)</mark>
+- <mark style="background: #D2B3FFA6;">symmetric matrices:</mark> when <mark style="background: #BBFABBA6;">element at i,j is equal to the element at j,i</mark> then the matrix is symmetric
+	- so <mark style="background: #BBFABBA6;">we don't need to store duplicates, we can discard either the lower triangle or the upper triangle(always excluding the diagonal</mark> as for <mark style="background: #BBFABBA6;">every diagonal element</mark> `i==j` <mark style="background: #BBFABBA6;">is unique)</mark>
 - <mark style="background: #D2B3FFA6;">tridiagonal matrix</mark>
 	- ![tridiagonal matrix](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tridiagonalMatrix.png)
 		- as we can see for the diagonal elements `i==j` so i-j=0
@@ -576,35 +577,35 @@ int main()
 			- and for upper diagonal matrix i-j=-1
 			- we can say that for a non zero element `|i-j| <= 1` and for a zero element `|i-j| > 1`
 		- total number of non zero elements are `3n-2`
-		- the linear array is first populated with lower diagonal elements followed by actual diagonal elements followed by upper diagonal elements 
-		- mapping non zero elements to a linear array
+		- <mark style="background: #BBFABBA6;">the linear array is first populated with lower diagonal elements followed by actual diagonal elements followed by upper diagonal elements</mark> 
+		- <mark style="background: #BBFABBA6;">mapping</mark> non zero elements to a linear array
 			- when `i-j=1` then i,j of matrix is mapped with `index i-1` of the linear array
 			- when `i-j=0` the i,j of matrix is mapped with `index n-1+i-1` of the linear array
 			- when `i-j=-1` the i,j of matrix is mapped with `index 2n-1+i-1` of the linear array
 - <mark style="background: #D2B3FFA6;">square band matrix</mark>
 	- tridiagonal matrix had one upper diagonal and one lower diagonal above and below the actual diagonal
-	- a triangular matrix is the simplest type of square band matrix as a square band matrix can have x upper diagonals and x lower diagonals above and below the actual diagonal
+	- <mark style="background: #BBFABBA6;">a triangular matrix is the simplest type of square band matrix as a square band matrix can have x upper diagonals and x lower diagonals above and below the actual diagonal</mark>
 		- so it will have `2x+1` diagonals
 - <mark style="background: #D2B3FFA6;">toeplitz matrix</mark>
-	- all elements are diagonally same
+	- <mark style="background: #BBFABBA6;">all elements are diagonally same</mark>
 	- `M[i][j] == M[i-1][j-1]`
-	- then we don't need to store duplicates
-		- only need to store the 1st row followed by 1st column elements in an linear array
+	- then <mark style="background: #BBFABBA6;">we don't need to store duplicates</mark>
+		- <mark style="background: #BBFABBA6;">only need to store the 1st row followed by 1st column elements in an linear array</mark>
 		- so linear array has length `n+n-1`
 	- ![toeplitz matrix mapped](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/toeplitz-mapped.png)
-		- notice how we can get the other elements just by storing the first row and first column
-	- mapping i and j of the toeplitz matrix to an linear array
+		- <mark style="background: #BBFABBA6;">notice how we can get the other elements just by storing the first row and first column</mark>
+	- <mark style="background: #BBFABBA6;">mapping</mark> i and j of the toeplitz matrix to an linear array
 		- if `i<=j` then element is in or above actual diagonal which are stored first in the linear array as shown as blue boxes in the image can be mapped with `(j-i)`th index on linear array
 		- if `i>j` the element is below the actual diagonal which is stored after the 1st row in the linear array as shown as green boxes in the image can be mapped with (n-1+i-j)th index on linear array
 
 # <mark style="background: #FFB86CA6;">Sparse Matrices</mark>
-- when number of zeroes in a matrix >> number of non zero elements
+- <mark style="background: #D2B3FFA6;">when number of zeroes in a matrix >> number of non zero elements</mark>
 - 2 ways to represent such sparse matrices
-	1. coordinate lists/3 column representation
+	1. <mark style="background: #D2B3FFA6;">coordinate lists/3 column representation</mark>
 		- ![3 column representation](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/sparse-form.jpg)
-	2. compressed sparse row
-		- 3 arrays are needed
-			1. list of non zero elements in order of traversing left to right and top to bottom
+	2. <mark style="background: #D2B3FFA6;">compressed sparse row</mark>
+		- <mark style="background: #BBFABBA6;">3 arrays are needed</mark>
+			1. <mark style="background: #BBFABBA6;">list of non zero elements in order of traversing left to right and top to bottom</mark>
 			2. an array of size equal to the number of rows in the sparse matrix
 				- the 1st element is the number of non zero elements in the 1st row
 				- the 2nd element is the number of non zero elements in 1st + 2nd row
