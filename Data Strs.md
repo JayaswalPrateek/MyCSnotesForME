@@ -1207,14 +1207,14 @@ restart:
 ```
 
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
-- is a binary tree with left child node of a parent node always smaller than or equal to the parent node and the right child node of a parent node always larger than or equal to the parent node
+- is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
 - used for effectively searching
-- recursion is used for common operations as tree has unidirectional next nodes, we use stack of activation record of functions in recursive calls to remember the address of parental nodes
+- <mark style="background: #BBFABBA6;">recursion is used for common operations as tree has unidirectional next nodes, </mark> we use stack of activation record of function in recursive calls to remember the address of parental nodes
 - to check validity, n nodes = n-1 connecting links
-- depth
-	- depth is measured from the topmost node of the tree
-	- So root of the tree has depth 0
-- height
+- <mark style="background: #BBFABBA6;">depth</mark>
+	- depth is measured <mark style="background: #BBFABBA6;">from the topmost node of the tree</mark>
+	- So <mark style="background: #BBFABBA6;">root of the tree has depth 0</mark>
+- <mark style="background: #BBFABBA6;">height</mark>
 	- height of a node in a tree is equal to the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under the node
 	- so height of all leaves is 0
 	- height of a tree is height of the topmost node of the tree
@@ -1229,7 +1229,7 @@ restart:
 	- linked list is the most imperfect binary tree as every node will have one node
 	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)` and `O(n)` for a linked list
 	- for tree `O(n)` is worse than `O(height)` as height = log base2 of n
-- try keeping the tree balanced, a balanced tree is one for which (ht of left child subtree of parent) - (ht of right child subtree of parent) = 0 or 1
+- try keeping the tree balanced, a balanced tree is one for which (ht of left child sub tree of parent) - (ht of right child sub tree of parent) = 0 or 1
 - ![binary tree array](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2022-31-43.png)
 - ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
 - in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
