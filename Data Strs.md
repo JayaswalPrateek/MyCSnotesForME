@@ -1444,4 +1444,3 @@ int main()
 		- <mark style="background: #BBFABBA6;">for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one</mark>
 			- so <mark style="background: #BBFABBA6;">use linked list instead? yes</mark> and each pointer in the array points to the head of a linked list and the node will store weight if the graph is weighted
 			- <mark style="background: #BBFABBA6;">Adjacency List always uses Linked List and not array or vector</mark>
-
