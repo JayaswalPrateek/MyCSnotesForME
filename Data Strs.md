@@ -1422,22 +1422,22 @@ int main()
 			- <mark style="background: #BBFABBA6;">huge storage footprint</mark>
 			- <mark style="background: #BBFABBA6;">we have a vertex list of length equal to the total number of vertices in the graph</mark>
 				- if the length of vertex list be p then the adjacency matrix is `pxp` 
-			- imagine for any element at index i of the vertex list, row i of adjacency matrix has values 0 or 1 for every column
-				- for a column number c and row number r of the adjacency list if the value is 1 it means that the element at index r of the vertex list is connected to the element at index c of the vertex list in the graph and 0 means it is not connected
-			- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
+			- <mark style="background: #BBFABBA6;">for any element at index i of the vertex list, row i of adjacency matrix has values 0 or 1 for every column</mark>
+				- for column number c and row number r of the adjacency matrix if the value is 1 it means that the element at index r of the vertex list is connected to the element at index c of the vertex list in the graph and 0 means it is not connected
+			- <mark style="background: #BBFABBA6;">for any undirected graph the adjacency matrix will be symmetric</mark> so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
 			-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
-			- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
-			- which is `O(V+V) = O(2V) = O(V)`
-			- to find if 2 nodes are connected or not we can pass their indices i and j and we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1 which is `O(1)`
-				- if the Alphabets are given then we need to do a linear search to find the index in the vertex list making it `O(V)`
+			- <mark style="background: #BBFABBA6;">to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix</mark> corresponding to the index found in vertex list
+				- which is `O(V+V) = O(2V) = O(V)`
+			- <mark style="background: #BBFABBA6;">to find if 2 nodes are connected or not</mark> we can pass their indices i and j and we just need to <mark style="background: #BBFABBA6;">find the value of A[i][j] in the Adjacency matrix and see if it is 0 or 1</mark> which is `O(1)`
+				- if the alphabets are given then we need to do a linear search to find the index in the vertex list making it `O(V)`
 				- this can be avoided by using hash map so it will always be `O(1)`
-			- for weighted graph replace 1 with edge weight and 0 with `INT_MAX`
-			- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing whose not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of whom which is more important
+			- <mark style="background: #BBFABBA6;">for weighted graph replace 1 with edge weight and 0 with INT_MAX</mark>
+			- <mark style="background: #BBFABBA6;">for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing who is not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of who which is infact more important</mark>
 		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
 			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
 			- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
-			- finding adjacent nodes(all the neighbors of a node) is `O(v)` same as Adjacency Matrix
+			- <mark style="background: #BBFABBA6;">finding adjacent nodes(all the neighbors of a node) is O(v) same as Adjacency Matrix</mark>
 			- still Adjacency List is practically preferred over Adjacency Matrix most of the time
 				- Adjacency Matrix used when the graphs is dense and |V| and |E| are small
 	- adding a new edge
