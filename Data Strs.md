@@ -1403,34 +1403,34 @@ int main()
 - <mark style="background: #BBFABBA6;">path</mark>
 	- <mark style="background: #BBFABBA6;">simple path when vertices/edges are not repeated</mark>
 	- <mark style="background: #BBFABBA6;">if repeated it is a walk</mark>
-		- closed walk when start and end is the same vertex also called cycle
-			- tree is acyclic
-	- trail when edges are not repeated but vertices are
-	- representing graph in memory
-		- use 2 vectors
-			- one stores the content of the vertex called vertex list
-			- and edge list which is a struct of edge and stores 2 integers(and weight if needed)
+		- <mark style="background: #BBFABBA6;">closed walk when start and end is the same vertex</mark> <mark style="background: #BBFABBA6;">also called cycle</mark>
+			- trees are acyclic
+			- singly and doubly linked lists are acyclic but we also have <mark style="background: #BBFABBA6;">cyclic/circular linked list where the last node points to the 1st node (not the head)</mark>
+	- <mark style="background: #BBFABBA6;">trail when edges are not repeated but vertices are</mark>
+	- <mark style="background: #BBFABBA6;">representing graph</mark> in memory
+		- <mark style="background: #BBFABBA6;">using 2 vectors</mark>
+			- <mark style="background: #BBFABBA6;">one stores the content of the vertex called vertex list</mark>
+			- and <mark style="background: #BBFABBA6;">edge list which is a vector of a struct</mark> and <mark style="background: #BBFABBA6;">stores 2 integers that indicate a link between the same indices corresponding to the vertex list</mark> <mark style="background: #BBFABBA6;">(and weight also if needed)</mark>
 			- we know every vertex stored in the vertex list vector has an index
 			- we can imagine that an edge connects these indices instead of pointing to them
 			- ![creating a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-25-06.png)
 -  <mark style="background: #D2B3FFA6;">Common Operations</mark>
-	- finding adjacent nodes, checking if 2 nodes are connected is `O(number of Edges or |E|)` which is nearly `O(n^2)` as we know the formula for max number of edges from the number of nodes
-	- `O(n)` is acceptable which is `O(number of vertices or |V|)` for graphs
-		- Using Adjacency Matrix and Adjacency List
+	- <mark style="background: #BBFABBA6;">finding adjacent nodes,</mark> <mark style="background: #BBFABBA6;">checking if 2 nodes are connected is</mark> `O(number of Edges or |E|)` which is nearly `O(n^2)` as we know the formula for max number of edges from the number of nodes
+	- `O(n)` is acceptable which is `O(number of vertices or |V|)` for graphs <mark style="background: #BBFABBA6;">Using Adjacency Matrix and Adjacency List</mark>
 		- <mark style="background: #BBFABBA6;">Adjacency Matrix</mark> of order `|V| x |V|`
-		- better for dense graphs because we will store many 0s for a sparse graph
-		- huge storage footprint
-		- rows are corresponding to the vertex list and 1 in columns represent that they are connected
-		- remaining values are set to zero
-		- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
-		-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
-		- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
-		- which is `O(V+V) = O(2V) = O(V)`
-		- to find if 2 nodes are connected or not we can pass their indices i and j and we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1 which is `O(1)`
-			- if the Alphabets are given then we need to do a linear search to find the index in the vertex list making it `O(V)`
-			- this can be avoided by using hash map so it will always be `O(1)`
-		- for weighted graph replace 1 with edge weight and 0 with `INT_MAX`
-		- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing whose not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of whom which is more important
+			- <mark style="background: #BBFABBA6;">better for dense graphs because we will store many 0s for a sparse graph</mark>
+			- <mark style="background: #BBFABBA6;">huge storage footprint</mark>
+			- rows are corresponding to the vertex list and 1 in columns represent that they are connected
+			- remaining values are set to zero
+			- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
+			-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
+			- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
+			- which is `O(V+V) = O(2V) = O(V)`
+			- to find if 2 nodes are connected or not we can pass their indices i and j and we just need to find the value of `A[i][j]` in the Adjacency matrix and see if it is 0 or 1 which is `O(1)`
+				- if the Alphabets are given then we need to do a linear search to find the index in the vertex list making it `O(V)`
+				- this can be avoided by using hash map so it will always be `O(1)`
+			- for weighted graph replace 1 with edge weight and 0 with `INT_MAX`
+			- for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing whose not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of whom which is more important
 		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
 			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
