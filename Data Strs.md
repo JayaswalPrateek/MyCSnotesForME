@@ -1440,7 +1440,7 @@ int main()
 			- <mark style="background: #BBFABBA6;">finding adjacent nodes(all the neighbors of a node) is O(v) same as Adjacency Matrix</mark>
 			- <mark style="background: #BBFABBA6;">Adjacency Matrix used when the graphs is dense</mark> and |V| and |E| are small otherwise Adjacency List is practically preferred over Adjacency Matrix most of the time
 	- <mark style="background: #BBFABBA6;">adding a new edge</mark>
-		- for adjacency matrix flip a zero to one
-		- for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one
-			- so use linked list instead? yes and each pointer in the array points to the head of a linked list and the node will store weight if the graph is weighted
-			- Adjacency List always uses Linked List and not array or vector
+		- <mark style="background: #BBFABBA6;">for adjacency matrix flip a zero to one</mark>
+		- <mark style="background: #BBFABBA6;">for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one</mark>
+			- so <mark style="background: #BBFABBA6;">use linked list instead? yes</mark> and each pointer in the array points to the head of a linked list and the node will store weight if the graph is weighted
+			- <mark style="background: #BBFABBA6;">Adjacency List always uses Linked List and not array or vector</mark>
