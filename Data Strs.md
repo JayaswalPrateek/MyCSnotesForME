@@ -627,11 +627,11 @@ int main()
     // linked list has one element that has the value 2
 
     // to find the last node
-    Node *itr = head; // never directly use head otherwise you will lose it
+    Node *itr = head; // never directly use head otherwise you will lose it while iterating
     while (itr->next != NULL)
         itr = itr->next;
 
-    // adding 4 to the end of the list
+    // adding 4 to the end of the linked list
     tmp = new Node();
     tmp->data = 4;
     tmp->next = NULL;
