@@ -606,21 +606,21 @@ int main()
 	2. <mark style="background: #D2B3FFA6;">compressed sparse row</mark>
 		- <mark style="background: #BBFABBA6;">3 arrays are needed</mark>
 			1. <mark style="background: #BBFABBA6;">list of non zero elements in order of traversing left to right and top to bottom</mark>
-			2. an array of size equal to the number of rows in the sparse matrix
+			2. <mark style="background: #BBFABBA6;">an array of size equal to the number of rows in the sparse matrix where every index stores the number of non zero elements in and above that row</mark>
 				- the 1st element is the number of non zero elements in the 1st row
 				- the 2nd element is the number of non zero elements in 1st + 2nd row
 				- the 3rd element is the number of non zero elements in 1st + 2nd + 3rd row and so on
-			3. an array such that index i of this array stores the column number of element at index i of the 1st array 
-- addition of 2 sparse matrices
+			3. <mark style="background: #BBFABBA6;">an array such that index i of this array stores the column number of the non zero element at index i of the 1st array </mark>
+- <mark style="background: #D2B3FFA6;">addition of 2 sparse matrices</mark>
 	- precondition: the dimensions of the two matrices to be added should be same and the number of non zero elements need not be same
-		- so the dimensions of resultant matrix are predefined but we increment/decrement the number of non zero elements when we add individual elements from the 2 matrices and by default it is 0
-	- addition is done by scanning the row number in the coordinate lists of the 2 matrices to be added
-	- i and j point initially point to the 2nd row of both coordinate lists as 1st row stores the dimensions and the number of non zero elements in the matrix
-		- if the row number is unequal then add the element with smaller row number to the new list and increment the variable i or j the one which was associated with it
-		- if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j
-		- if the row number is equal but column number is unequal then add the element with smaller column number to the new list and increment the variable i or j the one which was associated with it
-	- same for subtraction
-- creating and displaying and adding a coordinate list
+		- so the <mark style="background: #BBFABBA6;">dimensions of resultant matrix is predefined but we increment/decrement the number of non zero elements when we add individual elements from the 2 matrices and by default it is 0</mark>
+	- <mark style="background: #BBFABBA6;">addition is done by scanning the row number in the coordinate lists of the 2 matrices to be added</mark>
+	- <mark style="background: #BBFABBA6;">i and j point initially point to the 2nd row of both coordinate lists</mark> because 1st row stores the dimensions and the number of non zero elements in the matrix
+		- <mark style="background: #BBFABBA6;">if the row number is unequal then add the element with smaller row number to the new list and increment either i or j</mark> (the one which was associated with it)
+		- <mark style="background: #BBFABBA6;">if the row number is equal and column number is also equal then add the non zero elements and store them and increment both i and j</mark>
+		- <mark style="background: #BBFABBA6;">if the row number is equal but column number is unequal then add the element with smaller column number to the new list and increment either i or j</mark> (the one which was associated with it)
+	- <mark style="background: #D2B3FFA6;">same for subtraction</mark>
+- <mark style="background: #D2B3FFA6;">creating and displaying and adding a coordinate list</mark>
 	```cpp
 	#include <iostream>
 	using namespace std;
