@@ -1420,8 +1420,10 @@ int main()
 		- <mark style="background: #BBFABBA6;">Adjacency Matrix</mark> of order `|V| x |V|`
 			- <mark style="background: #BBFABBA6;">better for dense graphs because we will store many 0s for a sparse graph</mark>
 			- <mark style="background: #BBFABBA6;">huge storage footprint</mark>
-			- rows are corresponding to the vertex list and 1 in columns represent that they are connected
-			- remaining values are set to zero
+			- <mark style="background: #BBFABBA6;">we have a vertex list of length equal to the total number of vertices in the graph</mark>
+				- if the length of vertex list be p then the adjacency matrix is `pxp` 
+			- imagine for any element at index i of the vertex list, row i of adjacency matrix has values 0 or 1 for every column
+				- for a column number c and row number r of the adjacency list if the value is 1 it means that the element at index r of the vertex list is connected to the element at index c of the vertex list in the graph and 0 means it is not connected
 			- for undirected graph the matrix will be symmetric so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
 			-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
 			- to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix corresponding to the index in vertex list
