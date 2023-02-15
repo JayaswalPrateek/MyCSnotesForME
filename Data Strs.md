@@ -778,8 +778,8 @@ int main()
     }
 }
 ```
-- to insert the node at nth position goto n-1 th node and
-	- make sure it points to the node to be inserted and copy the node it is pointing to to the next of the node that will be inserted
+- to insert the node at nth position go to n-1 th node and
+	- make sure the n-1 th node's next points to the node to be inserted and copy the node it is pointing to to the next of the node that will be inserted
 ```cpp
 #include <iostream>
 using namespace std;
@@ -813,7 +813,7 @@ void insert(int x, int n)
         print();
         return;
     }
-    // else we will goto the n-1 th node
+    // else lets go to n-1 th node
     node *itr = head;
     for (int i = 0; i < n - 2; i++)
         itr = itr->next;
