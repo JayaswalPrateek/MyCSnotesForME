@@ -606,40 +606,6 @@ is this clean code
 ```
 
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
-```cpp
-#include <iostream>
-using namespace std;
-
-// Node and its head declaration
-struct Node
-{
-    int data;
-    Node *next;
-} *head = NULL;
-
-int main()
-{
-    Node *tmp = new Node();
-    tmp->data = 2;
-    tmp->next = NULL;
-    head = tmp->next;
-    delete tmp;
-    // linked list has one element that has the value 2
-
-    // to find the last node
-    Node *itr = head; // never directly use head otherwise you will lose it while iterating
-    while (itr->next != NULL)
-        itr = itr->next;
-
-    // adding 4 to the end of the linked list
-    tmp = new Node();
-    tmp->data = 4;
-    tmp->next = NULL;
-    itr->next = tmp;
-    delete tmp;
-    return 0;
-}
-```
 - inserting elements at the beginning of a linked list
 ```cpp
 #include <iostream>
