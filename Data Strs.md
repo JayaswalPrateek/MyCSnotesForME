@@ -1381,27 +1381,28 @@ int main()
  */
 ```
 
-# <mark style="background: #FFB86CA6;">Graphs</mark>
-- linked list and trees are also graphs
-- graphs have no restrictions on connecting links between nodes
+<mark style="background: #D2B3FFA6;">Graphs</mark>
+- <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
+- <mark style="background: #BBFABBA6;">graphs have no restrictions on connecting links between nodes</mark>
 - a graph is represented as G=(V,E) where G is an ordered pair of vertices and edges
-	- vertices are nodes
-	- an edge is the connecting link between two nodes
-		- it can be directed(one way) or undirected(two way)
-		- the edge can have weights like distance between two cities
-			- when graph is weighted we cannot just rely on the number of edges between 2 vertices to find the shortest path and we need to consider weights
-			- all weights for an unweighted graphs are 1
-- graph can have self loops meaning vertex has an edge pointing to itself
-	- many websites have links to the same page and that is an example of self loop
-- two vertices can have multiple edges example multiple airlines fly between 2 same airports
-- a simple graph has no self loop or multiple edges
-- for a simple directed graph the max number of edges for n vertices are n(n-1) where n is non -ve
-- for a simple undirected graph the max number of edges for n vertices are n(n-1)/2 where n is non -ve
-- a denser graph has number of edges closer to the max limit else its sparse
-- for a dense graph we use adjacency matrix and for sparse we use adjacency list
-- path
-	- simple path when vertices/edges are not repeated
-	- if repeated it is a walk
+	- <mark style="background: #BBFABBA6;">vertices are nodes</mark>
+	- an <mark style="background: #BBFABBA6;">edge is the connecting link between two nodes</mark>
+		- <mark style="background: #BBFABBA6;">an edge can be directed(one way) or undirected(two way)</mark>
+		- <mark style="background: #BBFABBA6;">an edge can have weights like distance between two cities</mark>
+			- <mark style="background: #BBFABBA6;">when graph is weighted</mark> we cannot just rely on the number of edges between 2 vertices <mark style="background: #BBFABBA6;">to find the shortest path as we need to consider weights</mark>
+			- <mark style="background: #BBFABBA6;">all weights for an unweighted graphs are 1</mark>
+- <mark style="background: #BBFABBA6;">graph can have self loops</mark> <mark style="background: #BBFABBA6;">meaning vertex has an edge pointing to itself</mark>
+	- <mark style="background: #BBFABBA6;">like how many websites have links to the same page</mark> and that is an example of self loop
+	- <mark style="background: #BBFABBA6;">refresh page on the browser leads to the same page</mark>
+- <mark style="background: #BBFABBA6;">two vertices can have multiple edges between them example multiple airlines fly between 2 same airports</mark>
+-<mark style="background: #BBFABBA6;"> a simple graph has no self loop or multiple edges</mark>
+- for a <mark style="background: #BBFABBA6;">simple directed graph the max number of edges for n vertices</mark> `= n(n-1)`
+- for a <mark style="background: #BBFABBA6;">simple undirected graph the max number of edges for n vertices</mark> `= n(n-1)/2` 
+- <mark style="background: #BBFABBA6;">a denser graph has number of edges closer to the max limit else its sparse</mark>
+	- <mark style="background: #BBFABBA6;">for a dense graph we use adjacency matrix and for sparse we use adjacency list</mark>
+- <mark style="background: #BBFABBA6;">path</mark>
+	- <mark style="background: #BBFABBA6;">simple path when vertices/edges are not repeated</mark>
+	- <mark style="background: #BBFABBA6;">if repeated it is a walk</mark>
 		- closed walk when start and end is the same vertex also called cycle
 			- tree is acyclic
 	- trail when edges are not repeated but vertices are
