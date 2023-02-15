@@ -1215,25 +1215,25 @@ restart:
 	- depth is measured <mark style="background: #BBFABBA6;">from the topmost node of the tree</mark>
 	- So <mark style="background: #BBFABBA6;">root of the tree has depth 0</mark>
 - <mark style="background: #BBFABBA6;">height</mark>
-	- height of a node in a tree is equal to the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under the node
-	- so height of all leaves is 0
-	- height of a tree is height of the topmost node of the tree
-	- height if an empty tree is -1
-	- height of a tree with one node is 0 and so on
-	- height if a tree with n nodes is n-1 which is equal to the number of connecting links
-- max number of nodes for a node at height h = (2^h)-1
-- a binary tree for which any node either has 2 or 0 nodes is called a perfect binary tree and height of a perfect binary tree = floor(log base2 of n) where n is number of nodes
-- cost proportional to the height of the tree
-	- the height is lesser if the tree is denser and a tree is denser if it is a perfect binary tree
-	- more a binary tree is perfect, denser it is
-	- linked list is the most imperfect binary tree as every node will have one node
+	- height of a node in a tree is equal to <mark style="background: #BBFABBA6;">the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under that node</mark>
+	- <mark style="background: #BBFABBA6;">height of all leaves is 0</mark>
+	- <mark style="background: #BBFABBA6;">height of a tree is height of the topmost node of the tree</mark>
+	- <mark style="background: #BBFABBA6;">height if an empty tree is -1</mark>
+	- <mark style="background: #BBFABBA6;">height of a tree with one node is 0</mark> and so on
+	- <mark style="background: #BBFABBA6;">height if a tree with n nodes is n-1</mark> which is equal to the number of connecting links
+- <mark style="background: #BBFABBA6;">max number of nodes for a node at height h</mark> `= (2^h)-1`
+- <mark style="background: #BBFABBA6;">a binary tree for which any node either has 2 or 0 nodes</mark> is called a <mark style="background: #BBFABBA6;">perfect binary tree and height of a perfect binary tree</mark> `= floor(log base2 of n)` where n is number of nodes
+- <mark style="background: #BBFABBA6;">cost is proportional to the height of the tree</mark>
+	- the <mark style="background: #BBFABBA6;">height is lesser if the tree is denser and a tree is denser if it is a perfect binary tree</mark>
+	- more a <mark style="background: #BBFABBA6;">binary tree is perfect, denser it is</mark>
+	- <mark style="background: #BBFABBA6;">linked list is the most imperfect binary tree as every node will have one node</mark>
 	- tree operations are `O(height)` so for a perfect binary tree `O(log base2 of n)` and `O(n)` for a linked list
-	- for tree `O(n)` is worse than `O(height)` as height = log base2 of n
-- try keeping the tree balanced, a balanced tree is one for which (ht of left child sub tree of parent) - (ht of right child sub tree of parent) = 0 or 1
+	- for tree `O(n)` is worse than `O(height)` as `height = log base2 of n`
+- <mark style="background: #BBFABBA6;">try keeping the tree balanced</mark>, a balanced tree is one <mark style="background: #BBFABBA6;">for which (ht of left child sub tree of parent) - (ht of right child sub tree of parent) = 0 or 1</mark>
 - ![binary tree array](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2022-31-43.png)
 - ![why use binary search tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-18-36.png)
-- in a binary search tree at every step you compare the value you are looking for with the value at the node and if it is match you stop
-	- else you discard left or right sub tree after comparing the value you are looking for with the value at the current node
+- in a binary search tree <mark style="background: #BBFABBA6;">at every step you compare the value you are looking for with the value at the node and if it is match you stop</mark>
+	- <mark style="background: #BBFABBA6;">else you discard left or right sub tree after comparing</mark> the value you are looking for with the value at the current node
 - ![this is insertion](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-23%2023-29-47.png)
 ```cpp
 #include <iostream>
