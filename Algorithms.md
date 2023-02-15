@@ -539,13 +539,13 @@ int main()
 ``` 
 
 # <mark style="background: #FFB86CA6;">Matrices</mark>
-- assuming square matrices are of order n start from index 1 and arrays start from index 0 so i, j is actually i-1, j-1
-- 2-D arrays can quickly get inefficient and end up wasting memory by storing information we don't need. Still they can be quickly read due to contagious memory allocations
-- a diagonal matrix has all non diagonal elements equal to zero and the amount of space wasted increases as we increase order of a diagonal matrix
-	- which can instead be represented by a linear array of just the diagonal elements
-	- so when i equals j then use ith or jth index of the linear array else use 0
+- <mark style="background: #D2B3FFA6;">assuming square matrices are of order n start from index 1 and arrays start from index 0 so i, j is actually i-1, j-1</mark>
+- <mark style="background: #D2B3FFA6;">2-D arrays can quickly get inefficient</mark> and end up wasting memory by storing information we don't need. Still they can be quickly read due to contagious memory allocations
+- <mark style="background: #D2B3FFA6;">a diagonal matrix has all non diagonal elements equal to zero and the amount of space wasted increases as we increase order of a diagonal matrix</mark>
+	- which <mark style="background: #BBFABBA6;">can instead be represented by a linear array of just the diagonal elements</mark>
+	- so when i equals j then use ith or jth index of the linear array else use 0 and <mark style="background: #BBFABBA6;">this is called mapping</mark>
 	- as performing operations on a diagonal matrix introduces lot of redundancy in the operations as we perform more operations on the zeroes instead of the diagonal elements
-- a lower triangular matrix has all elements above the diagonal equal to zero(excluding the diagonal as well)
+- <mark style="background: #D2B3FFA6;">a lower triangular matrix has all elements above the diagonal equal to zero(excluding the diagonal)</mark>
 	- element at i,j is 0 when `i<j` and non-zero for `i>=j`
 	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2`
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2`
@@ -561,15 +561,15 @@ int main()
 			- the (n+1)th element of the linear array marks the start of the 2nd column and is the 1st element of the 2nd column and the 2nd column ends at (n+n-1)th element of the linear array
 		- i,j(they start from 1 not 0) of the 2-D matrix can be mapped to `(n(j-1)-((j-2)(j-1))/2)+i-j`th index of the linear array
 			- the above mapping is called column major mapping
-- an upper triangular matrix has all elements below the diagonal equal to zero(excluding the diagonal as well)
+- <mark style="background: #D2B3FFA6;">an upper triangular matrix has all elements below the diagonal equal to zero(excluding the diagonal as well)</mark>
 	- element at i,j is 0 when `i>j` and non-zero for `i<=j` (sign flipped)
 	- total number of non zero elements is `n(n+1)/2` and total number of zero elements are `(n^2)-(n(n+1)/2) = n(n-1)/2` (same as lower triangular matrix)
 	- to store the elements below diagonal and including diagonal elements we need a linear array of size `n(n+1)2` (same as lower triangular matrix)
 	- row major mapping: `(n(i-1)-((i-2)(i-1))/2)+j-i` (interchange i and j of column major mapping of lower triangular matrix)
 	- column major mapping: `(j(j-1)/2)+i-1` (interchange i and j of row major mapping of lower triangular matrix)
-- symmetric matrices: when element at i,j is equal to the element at j,i then the matrix is symmetric
+- <mark style="background: #D2B3FFA6;">symmetric matrices:</mark> when element at i,j is equal to the element at j,i then the matrix is symmetric
 	- so we don't need to store duplicates, we can discard either the lower triangle or the upper triangle(always including the diagonal as for every diagonal element `i==j` so they are unique)
-- tridiagonal matrix
+- <mark style="background: #D2B3FFA6;">tridiagonal matrix</mark>
 	- ![tridiagonal matrix](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/tridiagonalMatrix.png)
 		- as we can see for the diagonal elements `i==j` so i-j=0
 			- similarly for the lower diagonal matrix i-j=1
@@ -581,11 +581,11 @@ int main()
 			- when `i-j=1` then i,j of matrix is mapped with `index i-1` of the linear array
 			- when `i-j=0` the i,j of matrix is mapped with `index n-1+i-1` of the linear array
 			- when `i-j=-1` the i,j of matrix is mapped with `index 2n-1+i-1` of the linear array
-- square band matrix
+- <mark style="background: #D2B3FFA6;">square band matrix</mark>
 	- tridiagonal matrix had one upper diagonal and one lower diagonal above and below the actual diagonal
 	- a triangular matrix is the simplest type of square band matrix as a square band matrix can have x upper diagonals and x lower diagonals above and below the actual diagonal
 		- so it will have `2x+1` diagonals
-- toeplitz matrix
+- <mark style="background: #D2B3FFA6;">toeplitz matrix</mark>
 	- all elements are diagonally same
 	- `M[i][j] == M[i-1][j-1]`
 	- then we don't need to store duplicates
