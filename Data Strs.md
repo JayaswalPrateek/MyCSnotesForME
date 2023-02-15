@@ -1436,11 +1436,10 @@ int main()
 		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
 			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
-			- we need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
+			- we <mark style="background: #BBFABBA6;">need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected</mark> `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
 			- <mark style="background: #BBFABBA6;">finding adjacent nodes(all the neighbors of a node) is O(v) same as Adjacency Matrix</mark>
-			- still Adjacency List is practically preferred over Adjacency Matrix most of the time
-				- Adjacency Matrix used when the graphs is dense and |V| and |E| are small
-	- adding a new edge
+			- <mark style="background: #BBFABBA6;">Adjacency Matrix used when the graphs is dense</mark> and |V| and |E| are small otherwise Adjacency List is practically preferred over Adjacency Matrix most of the time
+	- <mark style="background: #BBFABBA6;">adding a new edge</mark>
 		- for adjacency matrix flip a zero to one
 		- for a list if we are using array of pointers we need to create a new array and copy previous elements into it and then add the new one
 			- so use linked list instead? yes and each pointer in the array points to the head of a linked list and the node will store weight if the graph is weighted
