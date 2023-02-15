@@ -601,8 +601,6 @@ bool concreteArray::isSorted()
             return false;
     return true;
 }
-is this clean code
-
 ```
 
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
