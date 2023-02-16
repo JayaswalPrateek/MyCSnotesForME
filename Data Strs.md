@@ -604,6 +604,143 @@ bool concreteArray::isSorted()
 ```
 
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
+```cpp
+#include <iostream>
+using namespace std;
+
+class LinkedList
+{
+    struct node
+    {
+        int data;
+        node *next;
+    } *head = nullptr;
+    int len;
+
+public:
+    LinkedList(int n = 5)
+    {
+        if (n < 1)
+        {
+            cout << "Length of Linked List cannot be smaller than 1";
+            exit(-1);
+        }
+        len = n;
+        cout << "insert at beginning of the Linked List: elements that are filled first get pushed towards the end" << endl;
+        for (int i = len; i > 0; i--)
+        {
+            cout << "Enter element " << i << ": ";
+            node *tmp = new node;
+            cin >> tmp->data;
+            tmp->next = head; // tmp->next now points at the 1st node of the linked list while the head is also pointing at it
+            head = tmp;       // head now points at the new node tmp and tmp->next was already pointing to the node that was previously the first node
+        }
+        cout << "\nThe constructed Linked List of length " << len << " is:" << endl;
+        printLinkedList();
+    }
+    LinkedList(int arr[], int n)
+    {
+        len = n;
+        cout << "creating Linked List from array elements" << endl;
+        for (int i = n - 1; i >= 0; i--)
+        {
+            node *tmp = new node;
+            tmp->data = arr[i];
+            tmp->next = head;
+            head = tmp;
+        }
+        cout << "\nThe constructed Linked List of length " << len << " is:" << endl;
+        printLinkedList();
+    }
+    ~LinkedList()
+    {
+    }
+
+    void printLinkedList(), insertDataAt(), deleteDataAt();
+};
+
+void LinkedList::printLinkedList()
+{
+    // cannot iterate directly using head otherwise we will lose its orignal value while incrementing when traversing Linked List
+    cout << "The Head points to [" << head << "] and" << endl;
+    int ctr = 1;
+    for (node *itr = head; itr != nullptr; itr = itr->next)
+        cout
+            << "Node Number " << ctr++ << ": This is [" << itr << "]\t storing " << itr->data << "\t and the next address is 👉 [" << itr->next << "]" << endl;
+}
+
+void LinkedList::insertDataAt()
+{
+    // to insert a new node at the position pos we create a tmp node that is to be inserted
+    // and then make the pos-1 th node point to it and store (pos-1)->next in tmp->next
+    int pos;
+    do
+    {
+        cout << "\nEnter Insertion point: ";
+        cin >> pos;
+    } while (pos < 0 || pos > len);
+    cout << "Enter Value to be inserted at Node Number " << pos << ": ";
+    node *tmp = new node;
+    cin >> tmp->data;
+    tmp->next = nullptr;
+    if (pos == 1)
+    {
+        tmp->next = head;
+        head = tmp;
+    }
+    else
+    {
+        // lets go to the pos-1 th node
+        node *itr = head;
+        for (int i = 0; i < pos - 2; i++)
+            itr = itr->next;
+        tmp->next = itr->next;
+        itr->next = tmp;
+    }
+    len++;
+    cout << "Added " << tmp->data << " at Node Number " << pos << " pushing the nodes after it 1 place ahead\n\n";
+    printLinkedList();
+}
+
+void LinkedList::deleteDataAt()
+{
+    // to delete an existing node you need to link the node before and after it by making the next of node before it point to the node after it
+    // remember to free the deleted node at the end else it will be a memory leak
+    int pos;
+    do
+    {
+        cout << "\nEnter Node Number to be deleted: ";
+        cin >> pos;
+    } while (pos < 0 || pos > len);
+    node *before = head;
+    if (pos == 1)
+    {
+        head = before->next;
+        delete before;
+        return;
+    }
+    else
+    {
+        for (int i = 0; i < pos - 2; i++)
+            before = before->next;
+        node *after = before->next->next;
+        delete before->next;
+        before->next = after;
+    }
+    cout << "Deleted Node Number " << pos << " pulling the nodes after it 1 place behind\n\n";
+    printLinkedList();
+}
+
+int main()
+{
+    // int arr[] = {4, 8, 16, 32, 64};
+    // LinkedList linkls(arr, 5);
+    LinkedList linkls;
+    linkls.insertDataAt();
+    linkls.deleteDataAt();
+    return 0;
+}
+```
 - reversing the linked list using iteration
 ```cpp
 #include <iostream>
