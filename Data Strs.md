@@ -618,7 +618,7 @@ class LinkedList
     int len;
 
 public:
-    LinkedList(int n = 5)
+    explicit LinkedList(int n = 5) // explicit can be used with any constructor that takes a single argument to avoid unexpected behaviour
     {
         if (n < 1)
         {
@@ -638,7 +638,7 @@ public:
         cout << "\nThe constructed Linked List of length " << len << " is:" << endl;
         printLinkedList();
     }
-    LinkedList(int arr[], int n)
+    LinkedList(const int arr[], int n)
     {
         len = n;
         cout << "creating Linked List from array elements" << endl;
@@ -656,7 +656,8 @@ public:
     {
     }
 
-    void printLinkedList(), insertDataAt(), deleteDataAt();
+    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt();
+    node *getHead() { return head; }
 };
 
 void LinkedList::printLinkedList()
@@ -665,8 +666,17 @@ void LinkedList::printLinkedList()
     cout << "The Head points to [" << head << "] and" << endl;
     int ctr = 1;
     for (node *itr = head; itr != nullptr; itr = itr->next)
-        cout
-            << "Node Number " << ctr++ << ": This is [" << itr << "]\t storing " << itr->data << "\t and the next address is 👉 [" << itr->next << "]" << endl;
+        cout << "Node Number " << ctr++ << ": This is [" << itr << "]\t storing " << itr->data << "\t and the next address is 👉 [" << itr->next << "]" << endl;
+}
+
+void LinkedList::recursivePrintLinkedList(node *p)
+{
+    if (p != nullptr)
+    {
+        static int ctr = 1;
+        cout << "Node Number " << ctr++ << ": This is [" << p << "]\t storing " << p->data << "\t and the next address is 👉 [" << p->next << "]" << endl;
+        recursivePrintLinkedList(p->next);
+    }
 }
 
 void LinkedList::insertDataAt()
@@ -738,6 +748,8 @@ int main()
     LinkedList linkls;
     linkls.insertDataAt();
     linkls.deleteDataAt();
+    cout << "\nPrinting the Linked List recursively" << endl;
+    linkls.recursivePrintLinkedList(linkls.getHead());
     return 0;
 }
 ```
