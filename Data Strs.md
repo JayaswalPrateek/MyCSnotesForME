@@ -606,16 +606,24 @@ bool concreteArray::isSorted()
 <mark style="background: #D2B3FFA6;">Singly Linked List</mark>
 ```cpp
 #include <iostream>
+#include <climits>
 using namespace std;
 
 class LinkedList
 {
     struct node
     {
-        int data;
-        node *next;
+        int data = 0;
+        node *next = nullptr;
     } *head = nullptr;
-    int len;
+    struct minmax
+    {
+        int min = 0, max = 0;
+        minmax() = default;                      // default constructor, gerenated automatically but not when there is a parametrized constructor declared
+        minmax(int x, int y) : min(x), max(y) {} // parametrized constructor for the struct
+    };
+    int len = 0;
+    minmax findMinMax(node *p);
 
 public:
     explicit LinkedList(int n = 5) // explicit can be used with any constructor that takes a single argument to avoid unexpected behaviour
@@ -656,7 +664,8 @@ public:
     {
     }
 
-    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt();
+    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax();
+    int recursiveAdd(node *p);
     node *getHead() { return head; }
 };
 
@@ -741,6 +750,26 @@ void LinkedList::deleteDataAt()
     printLinkedList();
 }
 
+int LinkedList::recursiveAdd(node *p)
+{
+    if (p == NULL)
+        return 0;
+    return recursiveAdd(p->next) + p->data;
+}
+
+LinkedList::minmax LinkedList::findMinMax(node *p)
+{
+    if (p == 0)
+        return (minmax){INT_MAX, INT_MIN};
+    minmax mm = findMinMax(p->next);
+    return {mm.min < p->data ? mm.min : p->data, mm.max > p->data ? mm.max : p->data};
+}
+void LinkedList::printMinMax()
+{
+    minmax final = findMinMax(head);
+    cout << "\nThe smallest value is " << final.min << " and the largest value is " << final.max << endl;
+}
+
 int main()
 {
     // int arr[] = {4, 8, 16, 32, 64};
@@ -750,6 +779,8 @@ int main()
     linkls.deleteDataAt();
     cout << "\nPrinting the Linked List recursively" << endl;
     linkls.recursivePrintLinkedList(linkls.getHead());
+    cout << "\nThe sum of all elemets is " << linkls.recursiveAdd(linkls.getHead()) << endl;
+    linkls.printMinMax();
     return 0;
 }
 ```
