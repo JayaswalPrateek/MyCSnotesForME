@@ -664,7 +664,7 @@ public:
     {
     }
 
-    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax();
+    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax(), swappyLinearSearch();
     int recursiveAdd(node *p);
     node *getHead() { return head; }
 };
@@ -691,7 +691,7 @@ void LinkedList::recursivePrintLinkedList(node *p)
 void LinkedList::insertDataAt()
 {
     // to insert a new node at the position pos we create a tmp node that is to be inserted
-    // and then make the pos-1 th node point to it and store (pos-1)->next in tmp->next
+    // and then make the next of pos-1 th node point to it and store (pos-1)->next in tmp->next
     int pos;
     do
     {
@@ -701,7 +701,6 @@ void LinkedList::insertDataAt()
     cout << "Enter Value to be inserted at Node Number " << pos << ": ";
     node *tmp = new node;
     cin >> tmp->data;
-    tmp->next = nullptr;
     if (pos == 1)
     {
         tmp->next = head;
@@ -738,14 +737,11 @@ void LinkedList::deleteDataAt()
         delete before;
         return;
     }
-    else
-    {
-        for (int i = 0; i < pos - 2; i++)
-            before = before->next;
-        node *after = before->next->next;
-        delete before->next;
-        before->next = after;
-    }
+    for (int i = 0; i < pos - 2; i++)
+        before = before->next;
+    node *after = before->next->next;
+    delete before->next;
+    before->next = after;
     cout << "Deleted Node Number " << pos << " pulling the nodes after it 1 place behind\n\n";
     printLinkedList();
 }
@@ -760,14 +756,46 @@ int LinkedList::recursiveAdd(node *p)
 LinkedList::minmax LinkedList::findMinMax(node *p)
 {
     if (p == 0)
-        return (minmax){INT_MAX, INT_MIN};
+        return {INT_MAX, INT_MIN}; // parametrized constructor handles it
     minmax mm = findMinMax(p->next);
-    return {mm.min < p->data ? mm.min : p->data, mm.max > p->data ? mm.max : p->data};
+    return {mm.min > p->data ? p->data : mm.min, mm.max < p->data ? p->data : mm.max};
 }
 void LinkedList::printMinMax()
 {
     minmax final = findMinMax(head);
     cout << "\nThe smallest value is " << final.min << " and the largest value is " << final.max << endl;
+}
+
+void LinkedList::swappyLinearSearch()
+{
+    /**
+     * a swappy linear search is a variation of linear search
+     * where if we find the key in a node we move the node to the start
+     * so that the next time searching will be quicker
+     *
+     * we have to iterators p and q such that q is always one node behind p
+     * when we find the key at p we link q node->next to p node->next
+     * and copy head into p node->next and make head point to p node now
+     */
+    cout << "\nEnter Query: ";
+    int key;
+    cin >> key;
+    node *p = head, *q = nullptr;
+    while (p != nullptr)
+    {
+        if (key == p->data)
+        {
+            q->next = p->next;
+            p->next = head;
+            head = p;
+            cout << "Found! Pulled to head" << endl;
+            printLinkedList();
+            return;
+        }
+        q = p;
+        p = p->next;
+    }
+    cout << "Not Found" << endl;
 }
 
 int main()
@@ -781,6 +809,7 @@ int main()
     linkls.recursivePrintLinkedList(linkls.getHead());
     cout << "\nThe sum of all elemets is " << linkls.recursiveAdd(linkls.getHead()) << endl;
     linkls.printMinMax();
+    linkls.swappyLinearSearch();
     return 0;
 }
 ```
