@@ -10,7 +10,7 @@
   "pdfExportSettings": {
     "includeName": false,
     "pageSize": "A4",
-    "landscape": false,
+    "landscape": true,
     "margin": "1",
     "downscalePercent": 100
   },
