@@ -624,6 +624,7 @@ class LinkedList
     };
     int len = 0;
     minmax findMinMax(node *p);
+    void dupliDeleter();
 
 public:
     explicit LinkedList(int n = 5) // explicit can be used with any constructor that takes a single argument to avoid unexpected behaviour
@@ -664,7 +665,7 @@ public:
     {
     }
 
-    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax(), swappyLinearSearch();
+    void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax(), swappyLinearSearch(), amIsorted(), reverseByLinkFlipBySlidingPointers();
     int recursiveAdd(node *p);
     node *getHead() { return head; }
 };
@@ -798,6 +799,68 @@ void LinkedList::swappyLinearSearch()
     cout << "Not Found" << endl;
 }
 
+void LinkedList::amIsorted()
+{
+    bool flag = true;
+    int compare = INT_MIN;
+    for (node *itr = head; itr != nullptr; itr = itr->next)
+    {
+        if (itr->data < compare)
+        {
+            flag = false;
+            break;
+        }
+        compare = itr->data;
+    }
+    if (flag)
+    {
+        cout << "\nLinked List is sorted, Lets check for duplicates" << endl;
+        dupliDeleter();
+    }
+    else
+        cout << "\nLinked List is not sorted" << endl;
+}
+void LinkedList::dupliDeleter()
+{
+    bool flag = false;
+    node *p = head, *q = head->next;
+    while (q != nullptr)
+    {
+        if (p->data != q->data)
+        {
+            p = q;
+            q = q->next;
+            continue;
+        } // below lines are executed when p->data == q->data
+        p->next = q->next;
+        delete q;
+        flag = true;
+        q = p->next;
+    }
+    if (flag)
+    {
+        cout << "Deleted found duplicates" << endl;
+        printLinkedList();
+    }
+    else
+        cout << "No Duplicates were found" << endl;
+}
+
+void LinkedList::reverseByLinkFlipBySlidingPointers()
+{
+    node *p = head, *q = nullptr, *r = nullptr;
+    while (p != nullptr)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    head = q;
+    cout << "\nLinked List stored in reverse" << endl;
+    printLinkedList();
+}
+
 int main()
 {
     // int arr[] = {4, 8, 16, 32, 64};
@@ -810,6 +873,8 @@ int main()
     cout << "\nThe sum of all elemets is " << linkls.recursiveAdd(linkls.getHead()) << endl;
     linkls.printMinMax();
     linkls.swappyLinearSearch();
+    linkls.amIsorted();
+    linkls.reverseByLinkFlipBySlidingPointers();
     return 0;
 }
 ```
