@@ -65,7 +65,7 @@
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
 - c++ STL  has 4 things: containers, functions, algorithms and iterators
 	- containers are the classes for the data structures
-	- functions are primitive operations performed on the containers like push, pop
+		- container functions are primitive operations performed on the containers like push, pop
 	- algorithms are complex operations performed on the containers like search, sort
 	- iterators are used to access containers in a simpler way
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
@@ -75,6 +75,7 @@
 		- an STL array can be indexed using overloaded `[]` operator or using `.at(x)` function
 			- `.at(x)` function will throw an exception if the index is out of bounds but `[]` will give garbage value instead
 		- length provided during declaration has to be a constant and can never be a variable so you cant user input the length
+			- these arrays can be passed by value to a function without any decay as the size can be found out by `.size()` function and the size is always known before compile time
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
