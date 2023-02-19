@@ -310,8 +310,9 @@
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- no duplicates so every element in a set is unique
 		- stored in ascending by default
-			- `set<int, std::greater>` stores the elements in descending order
-		- but if we are providing structs or objects as template then we need to specify comperator 
+			- `set<int, greater<int>>` stores the elements in descending order
+		- but if we are providing structs or objects as template then we need to specify comparator 
+			- 
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
