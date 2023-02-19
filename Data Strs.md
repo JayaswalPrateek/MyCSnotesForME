@@ -663,6 +663,13 @@ public:
     }
     ~LinkedList()
     {
+	    node *tmp=head;
+		while(head != nullptr)
+		{
+			head=head->next;
+			delete tmp;
+			tmp=first;
+		}
     }
 
     void printLinkedList(), recursivePrintLinkedList(node *p), insertDataAt(), deleteDataAt(), printMinMax(), swappyLinearSearch(), amIsorted(), reverseByLinkFlipBySlidingPointers();
@@ -879,7 +886,10 @@ int main()
 }
 ```
 
-<mark style="background: #D2B3FFA6;">Circular Linked list:</mark> The last node of the linked list points to the head t 
+<mark style="background: #D2B3FFA6;">Circular Linked list</mark>
+- the last node of the linked list points to the head of the linked list instead of `nullptr`
+- an empty linked list can never be circular as it needs at least one node and a head so that the head can point to node and node can point to the head
+	- just like how a bidirectional arrow cannot point to the same dot and needs at least 2 dots
 
 <mark style="background: #D2B3FFA6;">Doubly Linked List</mark>
 ```cpp
