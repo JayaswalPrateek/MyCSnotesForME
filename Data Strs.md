@@ -879,6 +879,8 @@ int main()
 }
 ```
 
+<mark style="background: #D2B3FFA6;">Circular Linked list:</mark> The last node of the linked list points to the head t 
+
 <mark style="background: #D2B3FFA6;">Doubly Linked List</mark>
 ```cpp
 #include <iostream>
