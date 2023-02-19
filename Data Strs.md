@@ -146,7 +146,7 @@
 		
 		    // v.capacity() is the max length of the vector including buffer capacity
 		    // v.resize() changes the size and not the capacity but can change capacity if the size is full
-		    // v.reserve() changes the capacity
+		    // v.reserve(1000) changes the capacity so that the vector doesn't resize till we push 1000 elements 
 		    // v.clear() resets the vector
 		    // v.shrink_to_fit() releases unused memory
 		    // v.at(), v.swap(), v.data(), v.empty(), v.size() is same as arrays
