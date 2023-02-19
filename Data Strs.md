@@ -51,7 +51,7 @@
 - <mark style="background: #D2B3FFA6;">queue</mark>
 	- same as stack
 - <mark style="background: #D2B3FFA6;">set</mark>
-	- read, insert and delete is `O(log n)`
+	- read, insert and delete is `O(log n)` as it is implemented using trees
 - <mark style="background: #D2B3FFA6;">multiset</mark>
 	- read and insert are `O(log n)` and delete is `O(k log n)` where k is the number of duplicate entries
 - <mark style="background: #D2B3FFA6;">map</mark> / <mark style="background: #D2B3FFA6;">multimap</mark>
@@ -309,7 +309,9 @@
 		```
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- no duplicates so every element in a set is unique
-		- stored as sorted
+		- stored in ascending by default
+			- `set<int, std::greater>` stores the elements in descending order
+		- but if we are providing structs or objects as template then we need to specify comperator 
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
