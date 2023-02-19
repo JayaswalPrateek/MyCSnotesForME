@@ -664,11 +664,11 @@ public:
     ~LinkedList()
     {
 	    node *tmp=head;
-		while(head != nullptr)
+		while (head != nullptr)
 		{
-			head=head->next;
+			head = head->next;
 			delete tmp;
-			tmp=first;
+			tmp = head;
 		}
     }
 
