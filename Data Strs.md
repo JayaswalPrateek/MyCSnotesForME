@@ -310,10 +310,35 @@
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- no duplicates so every element in a set is unique
 		- stored in ascending by default
-			- `set<int, greater<int>>` stores the elements in descending order
+			- `set<int, greater<>>` stores the elements in descending order
 		- but if we are providing structs or objects as template then we need to specify comparator 
-			- 
-		```cpp
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			
+			class student
+			{
+			public:
+			    string name;
+			    int roll;
+			    bool operator<(const student &rhs) const { return roll < rhs.roll; } // default ascending comparator
+			    bool operator>(const student &rhs) const { return roll > rhs.roll; } // default descending comparator
+			};
+			
+			int main()
+			{
+			    cout << "Asc:" << endl;
+			    set<student> grade1 = {{"A", 4}, {"B", 8}, {"C", 16}, {"D", 32}};
+			    for (auto x : grade1)
+			        cout << x.name << " " << x.roll << endl;
+			    cout << "Desc:" << endl;
+			    set<student, std::greater<>> grade2 = {{"A", 4}, {"B", 8}, {"C", 16}, {"D", 32}};
+			    for (auto x : grade2)
+			        cout << x.name << " " << x.roll << endl;
+			}
+			```
+
+  ```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
 		int main()
