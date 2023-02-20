@@ -345,7 +345,7 @@
 		{
 		    set<int> s;
 		
-		    s.count(); // returns number of occurences of an element in the set and makes sense only for multisets as fo sets it is always 1
+		    // s.count(); // returns number of occurences of an element in the set and makes sense only for multisets as fo sets it is always 1
 		
 		    // s.find(); // returns iterator pointing to the desired element and returns s.end() if not found
 		    // s.insert(); // element to be inserted is passed and it returns a pair of the iterator pointing to place where it might be inserted, bool if it was inserted or not
@@ -365,6 +365,7 @@
 		- same as set with the same functions but allows duplicate entries and still are sorted
 		- `.equal_range(key)` used with auto returns an iterable container of values as the same key can have multiple values so we can use auto with for each loop to print all values of this container
 			- prefer using auto as the return type is pair of 2 iterators where one is for the keys and the other for values
+		- use this instead of keys 
 	1. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
