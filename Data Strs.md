@@ -392,7 +392,8 @@
 		```
 	15. <mark style="background: #BBFABBA6;">tree</mark>
 		- a vector of vector can be interpreted as a STL tree
-			- the parent vector contains all the elements of the tree and the child vec 
+			- every element in the parent vector is a child vector
+			- the index of the parent array represents the parent node of the tree and the associated vector stores the child node of the parent
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
 	- there are different iterators for different containers
 	```cpp
