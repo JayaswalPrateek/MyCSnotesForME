@@ -311,7 +311,7 @@
 		- no duplicates so every element in a set is unique
 		- stored in ascending by default
 			- `set<int, greater<>>` stores the elements in descending order
-		- but if we are providing structs or objects as template then we need to specify comparator 
+		- but if we are providing objects/structs as template type then we need comparator as the set is implemented using a Binary Search Tree which needs a comparator for objects/structs sorting
 			```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
