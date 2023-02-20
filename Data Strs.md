@@ -69,6 +69,12 @@
 	- algorithms are complex operations performed on the containers like search, sort
 	- iterators are used to access containers in a simpler way
 - to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
+- insert vs emplace
+	- all containers might not have push operation but all have insert and emplace operations
+		- both are same when using primitive data types
+		- but when we use structs or objects emplace is more efficient
+		- when we use insert it calls thee constructor of the struct or object then it copies the struct or object and this copy is inserted
+		- emplace just copies the object without c
 - <mark style="background: #D2B3FFA6;">Containers</mark>
 	1. <mark style="background: #BBFABBA6;">array</mark>
 		- inside the array template class a primitive array is used and `.data()` is a function that returns that underlying primitive array
