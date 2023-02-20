@@ -309,7 +309,7 @@
 		```
 	9. <mark style="background: #BBFABBA6;">set</mark>
 		- no duplicates so every element in a set is unique
-		- stored in ascending by default
+		- stored in ascending by default implemented using red-black/AVL tree
 			- `set<int, greater<>>` stores the elements in descending order
 		- but if we are providing objects/structs as template type then we need comparator as the set is implemented using a Binary Search Tree which needs a comparator for objects/structs sorting
 			```cpp
@@ -362,11 +362,13 @@
 		}
 		```
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
-		- same as set with the same functions but allows duplicate entries and still are sorted
+		- same as set with the same functions but allows duplicate entries and still are sorted and implemented using red-black/AVL tree
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- functions like set
+		- need to specify comparator as it is implemented using red-black/AVL tree
+		- `.first` gives the key and `.second` gives the value
 	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same functions as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
