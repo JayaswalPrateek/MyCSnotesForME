@@ -365,8 +365,8 @@
 		- same as set with the same functions but allows duplicate entries and still are sorted
 		- `.equal_range(key)` used with auto returns an iterable container of values as the same key can have multiple values so we can use auto with for each loop to print all values of this container
 			- prefer using auto as the return type is pair of 2 iterators where one is for the keys and the other for values
-		- use this instead of keys 
-	1. <mark style="background: #BBFABBA6;">map</mark>
+		- use this instead of map of key and vector value 
+	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- functions like set
@@ -376,13 +376,13 @@
 		- keys are immutable and values are mutable
 		- insertion requires passing of a pair as a parameter like `.insert(make_pair(1, 'a'))` where the type of pair is inferred automatically
 			- otherwise the type of the pair can be explicitly provided like `.insert(pair<int, char>(1, 'a'))`
-	2. <mark style="background: #BBFABBA6;">multimap</mark>
+	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
-	3. <mark style="background: #BBFABBA6;">unordered map</mark>
+	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
 		- has some unique bucket functions
-	4. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
