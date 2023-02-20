@@ -362,7 +362,8 @@
 		}
 		```
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
-		- same as set with the same functions but allows duplicate entries and still are sorted and implemented using red-black/AVL tree so comparator needed when using struct/object
+		- same as set with the same functions but allows duplicate entries and still are sorted
+		- `.equal_range(key)` used with auto returns an iterable container of values as the same key can have multiple values so we can use auto with for each loop to print all values of this container
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
@@ -372,7 +373,7 @@
 		- `someMap[key]` returns value
 		- keys are immutable and values are mutable
 	12. <mark style="background: #BBFABBA6;">multimap</mark>
-		- same functions as a map but allows duplicate keys but the key-value pairs must be unique
+		- same as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
 	13. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
