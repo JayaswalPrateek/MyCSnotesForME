@@ -394,6 +394,82 @@
 		- a vector of vector can be interpreted as a STL tree
 			- every element in the parent vector is a child vector
 			- the index of the parent array represents the parent node of the tree and the associated vector stores the child node of the parent
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		
+		int main()
+		{
+		    vector<vector<int>> tree;
+		    int edge, parentIndex, childValue;
+		    cin >> edge; // = len of the parent vector
+		    tree.resize(edge + 1);
+		
+		    // to populate the tree
+		    for (int i = 0; i <= edge; ++i)
+		    {
+		        cout << "Enter Parent Index: ";
+		        cin >> parentIndex;
+		        cout << "Enter the value it points to: ";
+		        cin >> childValue;
+		        tree[parentIndex].push_back(childValue);
+		        cout << endl;
+		    }
+		
+		    int ctr = 0;
+		    for (const auto &p : tree)
+		    {
+		        cout << "\nParent Node " << ctr++ << ": points to children nodes ";
+		        for (const auto &c : p)
+		            cout << c << " ";
+		    }
+		    return 0;
+		}
+		/*
+		9
+		Enter Parent Index: 1
+		Enter the value it points to: 2
+		
+		Enter Parent Index: 1
+		Enter the value it points to: 3
+		
+		Enter Parent Index: 2
+		Enter the value it points to: 4
+		
+		Enter Parent Index: 2
+		Enter the value it points to: 5
+		
+		Enter Parent Index: 3
+		Enter the value it points to: 6
+		
+		Enter Parent Index: 3
+		Enter the value it points to: 8
+		
+		Enter Parent Index: 4
+		Enter the value it points to: 0
+		
+		Enter Parent Index: 5
+		Enter the value it points to: 0
+		
+		Enter Parent Index: 6
+		Enter the value it points to: 0
+		
+		Enter Parent Index: 8
+		Enter the value it points to: 0
+		
+		
+		Parent Node 0: points to children nodes
+		Parent Node 1: points to children nodes 2 3
+		Parent Node 2: points to children nodes 4 5
+		Parent Node 3: points to children nodes 6 8
+		Parent Node 4: points to children nodes 0
+		Parent Node 5: points to children nodes 0
+		Parent Node 6: points to children nodes 0
+		Parent Node 7: points to children nodes
+		Parent Node 8: points to children nodes 0
+		Parent Node 9: points to children nodes
+		*/
+		```
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
 	- there are different iterators for different containers
 	```cpp
