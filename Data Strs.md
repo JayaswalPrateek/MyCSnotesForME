@@ -470,6 +470,7 @@
 		Parent Node 9: points to children nodes
 		*/
 		```
+		- ![tree created](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-02-20%2010-17-53.png)
 - <mark style="background: #D2B3FFA6;">Iterators</mark>
 	- there are different iterators for different containers
 	```cpp
