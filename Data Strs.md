@@ -362,13 +362,15 @@
 		}
 		```
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
-		- same as set with the same functions but allows duplicate entries and still are sorted and implemented using red-black/AVL tree
+		- same as set with the same functions but allows duplicate entries and still are sorted and implemented using red-black/AVL tree so comparator needed when using struct/object
 	11. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- functions like set
-		- need to specify comparator as it is implemented using red-black/AVL tree
-		- `.first` gives the key and `.second` gives the value
+		- need to specify comparator a template type is a struct/object as it is implemented using red-black/AVL tree
+		- `.first` gives the key and `.second` gives the value when using an iterator
+		- `someMap[key]` returns value
+		- keys are immutable and values are mutable
 	12. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same functions as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
