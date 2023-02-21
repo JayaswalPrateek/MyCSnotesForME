@@ -186,12 +186,13 @@
 		    ls.pop_back();
 		    list<int> ls2;
 		    ls.splice(ls.begin(), ls2); // this will slice ls from ls.begin() and merge the sliced part with ls2
-		    ls.unique(); // will remove all duplicates from ls only if the duplicates are consecutive in positions
+		    ls.unique();  // will remove all duplicates from ls only if the duplicates are adjacent in positions so you might want to sort beforehand
 		    ls.remove(2); // will remove all occurances of 2 from the ls
-		    ls.remove_if([] (int n)) { // lamda function that removes all values grtr than 4 from the list 
+		    ls.remove_if([] (int n) { // lamda function that removes all values grtr than 4 from the list 
 				return n>4;
 			});
 			ls.resize(2); // resizes the list to 2 so if there are more than 2 elements they are deleted otherwise the list is extended with values 0
+		    ls.sort();    // O(n log(n)) 
 		    return 0;
 		}
 		```
