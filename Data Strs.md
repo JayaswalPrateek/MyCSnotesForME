@@ -201,10 +201,14 @@
 		- can traverse only in one direction
 	5. <mark style="background: #BBFABBA6;">deque</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
-			- ![dequeue](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/deque.png)
 		- kinda like vectors but contiguous memory allocations is not guaranteed but front operations are allowed along with back operations
 			- implementation uses multiple arrays of fixed size such that the end of one array points to the start of another array 
-			- in vector push and pop are done from back but for deque they can be done from both front and back 
+			- in vector push and pop are done from back but for deque they can be done from both front and back
+			- imagine deque as parallel arrays of same size
+			- so if we have 10 parallel arrays of size 5 and we want 44th element then we can search 44%5=4th elements of 44/5th array
+			- still random access read is O(1) 
+			- expanding deque is cheaper than expanding vector as we will never have to copy all the elements like we might have to in vectors
+			- insertion and deletion at the front or back is O(1) else it is O(n)
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
