@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -143,8 +142,17 @@
                 "file": "Data Strs.md"
               }
             }
+          },
+          {
+            "id": "75e68e6302bbd378",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -153,8 +161,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "audio-recorder:Start/stop recording": true,
       "switcher:Open quick switcher": true,
       "graph:Open graph view": true,
@@ -164,7 +172,7 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "f12b9b24a9425ed1",
+  "active": "5cde319b0177ac1d",
   "lastOpenFiles": [
     "Cpp.md",
     "Data Strs.md",
