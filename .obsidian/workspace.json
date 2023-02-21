@@ -87,6 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Data Strs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,6 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Data Strs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +126,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Data Strs.md"
+              }
             }
           }
         ]

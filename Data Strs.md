@@ -199,10 +199,12 @@
 	4. <mark style="background: #BBFABBA6;">forward list</mark>
 		- same as list but singly linked list instead
 		- can traverse only in one direction
-	5. <mark style="background: #BBFABBA6;">dequeue</mark>
+	5. <mark style="background: #BBFABBA6;">deque</mark>
 		- doubly ended queues are queues but elements can be pushed and popped from both ends
 			- ![dequeue](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/deque.png)
 		- kinda like vectors but contiguous memory allocations is not guaranteed but front operations are allowed along with back operations
+			- implementation uses multiple arrays of fixed size such that the end of one array points to the start of another array 
+			- in vector push and pop are done from back but for deque they can be done from both front and back 
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
