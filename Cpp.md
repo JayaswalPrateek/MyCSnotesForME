@@ -1234,6 +1234,7 @@ int main()
 - you can still point to the const of a data type of a variable without it having to be a constant
 - if we write `const` at the end of a function signature in a class then the compiler will not allow that functions to modify values of the class
 	- you can also make a parameter in call by reference const to add some restrictions on what a function can do with the variables
+	- if you still want to change a private variable in a constant function of a class then you can declare the variable with `mutable` keyword
 - if a <mark style="background: #D2B3FFA6;">class is marked final</mark> by adding keyword final after the class name then the class cannot be inherited further
 	- in C++, the `final` keyword can be used to prevent a virtual function from being overridden in child classes
 - <mark style="background: #D2B3FFA6;">smart pointer</mark>
