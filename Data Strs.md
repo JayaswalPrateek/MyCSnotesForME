@@ -22,7 +22,7 @@
 	- very efficient for sorted data
 - `O(n log n)` is more efficient than `0(n^2)` but less than `O(n)`
 - imagine a tree which has 3 branches and each branch has 3 more branches and so on and if the height of the tree is n then `O(3^n)`
-- in case of recursion if the reucrsive function calls itself 2 times it is `O(2^n)` as each call creates 2 more calls and each of the 2 create 2 more so it can be 2^0, 2^1 or 2^2 calls and so on
+- in case of recursion if the recursive function calls itself 2 times it is `O(2^n)` as each call creates 2 more calls and each of the 2 create 2 more so it can be 2^0, 2^1 or 2^2 calls and so on
 	- so if a recursive function is called in a loop m times then it is `O(m^n)`
 - `O(n!)` is the worst
 - <mark style="background: #D2B3FFA6;">efficiency decreases as gradient increases</mark>
