@@ -19,8 +19,17 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "574ea25e5d68b866",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -70,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -87,7 +95,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Strs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +111,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Strs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,9 +132,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Data Strs.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -151,12 +155,12 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "f12b9b24a9425ed1",
+  "active": "5cde319b0177ac1d",
   "lastOpenFiles": [
-    "Cpp.md",
     "Data Strs.md",
+    "Cpp.md",
     "Algorithms.md",
-    "Untitled.md",
+    "hey.md",
     "Cpp.pdf",
     "cpp/Basics.md",
     "Untitled 2.canvas",
