@@ -6,7 +6,7 @@
   "cm-editor-syntax-highlight-obsidian",
   "obsidian-mind-map",
   "obsidian-git",
-  "obsidian-pandoc",
   "templater-obsidian",
-  "obsidian-style-settings"
+  "obsidian-style-settings",
+  "obsidian-pandoc"
 ]
