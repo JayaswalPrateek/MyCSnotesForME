@@ -410,6 +410,7 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Functions</mark>
 - <mark style="background: #D2B3FFA6;">avoid user input in functions, input should be passed from the calling function</mark>
+- use tuples to return multiple values and if you only want to return array use object of array from STL which 
 - when a function has a local variable and a global variable of the same name then local variable is preferred as it has a smaller scope
 	- use `::<nameOfVariable>` to access the global variable in a function that also has a local variable of the same name
 	- even after a function ends the changes made to the global variable are preserved
