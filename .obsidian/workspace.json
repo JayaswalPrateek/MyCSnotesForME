@@ -153,6 +153,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
       "audio-recorder:Start/stop recording": true,
       "switcher:Open quick switcher": true,
       "graph:Open graph view": true,
