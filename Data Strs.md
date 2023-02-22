@@ -241,13 +241,14 @@
 	6. <mark style="background: #BBFABBA6;">priority queue</mark>
 		- also called max heap/min heap 
 			- like a heap(FIFO) that stores the largest/smallest element on the top
-		- pop deletes the largest element 
+		- pop deletes the largest element
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
 		int main()
 		{
-		    priority_queue<int> pq;
+		    priority_queue<int> pq; // default is descending order
+		    // priority_queue<int> pq;
 		    // pq.emplace(); // emplace_back obviously as no front operations possible
 		    // pq.empty();
 		    // pq.pop(); // removes largest element
