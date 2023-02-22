@@ -44,8 +44,8 @@
 	- read is `O(n)`
 	- insert/delete front/end is `O(1)`
 - <mark style="background: #D2B3FFA6;">priority queue</mark>
-	- read max/min element is `O(1)`
-	- insert and delete is `O(log n)`
+	- read max/min element is `O(1)` as already sorted
+	- insert and delete is `O(log n)` as sorting is required
 - <mark style="background: #D2B3FFA6;">stack</mark>
 	- push, pop and top are `O(1)`
 - <mark style="background: #D2B3FFA6;">queue</mark>
@@ -239,8 +239,8 @@
 		}
 		```
 	6. <mark style="background: #BBFABBA6;">priority queue</mark>
-		- also called max heap
-			- like a heap(FIFO) that stores the largest element on the top
+		- also called max heap/min heap 
+			- like a heap(FIFO) that stores the largest/smallest element on the top
 		- pop deletes the largest element 
 		```cpp
 		#include <bits/stdc++.h>
@@ -267,6 +267,7 @@
 		- top reads the topmost element
 		- useful for reversing without recursion
 		- insert and delete happens from the same end
+		- no iterator for a stack, you need to pass the stack object to another function by value which prints the top element and then pops in in a loop `while(!strack.empty())`
 		```cpp
 		// reverse string using stack
 		#include <iostream>
@@ -312,7 +313,7 @@
 		- FIFO
 		- more used than stack irl
 		- used when there is a shared resource and it can only handle only one resource at a time like a printer or a processor
-		- no iterator for a queue, you need to pass the queue object to another function by value which prints the front element and then pops in in a loop `while(!q.empty())`
+		- no iterator for a queue, you need to pass the queue object to another function by value which prints the front/back element and then pops in in a loop `while(!q.empty())`
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
