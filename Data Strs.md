@@ -312,6 +312,7 @@
 		- FIFO
 		- more used than stack irl
 		- used when there is a shared resource and it can only handle only one resource at a time like a printer or a processor
+		- no iterator for a queue, you need to pass the queue object to another function by value which prints the front element and then pops in in a loop `while(!q.empty())`
 		```cpp
 		#include <bits/stdc++.h>
 		using namespace std;
@@ -324,7 +325,7 @@
 		    // q.pop();
 		    // q.push();
 		    // q.size();
-		    // q.swap();
+		    // q.swap(anotherqueue);
 		    return 0;
 		}
 		```
