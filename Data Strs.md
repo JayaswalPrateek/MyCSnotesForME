@@ -391,7 +391,7 @@
 		- lets say you have a bunch of numbers in random order and you want to count how many times did it appear
 			- here you don't want to sort these numbers nor do you want to store only unique numbers
 			- unordered set can be used in such cases and will provide lookup, insertion and removal in `O(1)` as map would never takes `O(1)` for insertion and deletion and `O(1)` for lookup
-	1. <mark style="background: #BBFABBA6;">map</mark>
+	13. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- functions like set
@@ -401,13 +401,16 @@
 		- keys are immutable and values are mutable
 		- insertion requires passing of a pair as a parameter like `.insert(make_pair(1, 'a'))` where the type of pair is inferred automatically
 			- otherwise the type of the pair can be explicitly provided like `.insert(pair<int, char>(1, 'a'))`
-	2. <mark style="background: #BBFABBA6;">multimap</mark>
+	14. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
-	3. <mark style="background: #BBFABBA6;">unordered map</mark>
+	15. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
 		- has some unique bucket functions
-	4. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+		- map in c++'s STL uses Red Black Tree which might be slow at times, then we can use unordered map which uses hash function so `O(1)` achieved at the cost of unsorted keys
+	 16. <mark style="background: #BBFABBA6;">unordered multimap</mark>
+		 - used to maintain duplicate key value pair and stored with hashing instead of Red Black Tree so operations are `O(1)` 
+	17. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
@@ -424,7 +427,7 @@
 			    return 0;
 			}	
 		```
-	17. <mark style="background: #BBFABBA6;">tree</mark>
+	18. <mark style="background: #BBFABBA6;">tree</mark>
 		- a vector of vector can be interpreted as a STL tree
 			- every element in the parent vector is a child vector
 			- the index of the parent array represents the parent node of the tree and the associated vector stores the child node of the parent
@@ -550,6 +553,9 @@
 	    return 0;
 	}
 	```
+- <mark style="background: #D2B3FFA6;">Algorithms</mark>
+	- STL algorithms can be imported using `#include <algorithms>` or `#include <bits/stdc++.h>`
+	- used to perform operations like searching, sorting, counting etc on the containers
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
