@@ -1,11 +1,11 @@
 {
-  "accentColor": "#3e67e4",
+  "accentColor": "#4c78e7",
   "theme": "system",
   "cssTheme": "Adwaita",
   "monospaceFontFamily": "JetBrains Mono",
   "textFontFamily": "Comic Sans MS",
-  "interfaceFontFamily": "Fira Sans",
+  "interfaceFontFamily": "Cantarell",
   "baseFontSize": 19,
   "showViewHeader": true,
-  "nativeMenus": false
+  "nativeMenus": true
 }
