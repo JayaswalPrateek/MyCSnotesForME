@@ -335,6 +335,25 @@
 		- no duplicates so every element in a set is unique
 		- stored in ascending by default implemented using red-black/AVL tree
 			- `set<int, greater<>>` stores the elements in descending order
+		```cpp
+		#include <bits/stdc++.h>
+		using namespace std;
+		int main() {
+			set<int> s;
+			// s.count(); // returns number of occurences of an element in the set and makes sense only for multisets as fo sets it is always 1
+			// s.find(); // returns iterator pointing to the desired element and returns s.end() if not found
+			// s.insert(); // element to be inserted is passed and it returns a pair of the iterator pointing to place where it might be inserted, bool if it was inserted or not
+			// s.emplace();		
+			// s.begin();		
+			// s.end();		
+			// s.clear();		
+			// s.empty();		
+			// s.erase();		
+			// s.size();		
+			// s.swap();
+			return 0;
+		}
+		```
 		- but if we are providing objects/structs as template type then we need comparator as the set is implemented using a Binary Search Tree which needs a comparator for objects/structs sorting
 			```cpp
 			#include <bits/stdc++.h>
@@ -361,30 +380,6 @@
 			        cout << x.name << " " << x.roll << endl;
 			}
 			```
-
-  ```cpp
-		#include <bits/stdc++.h>
-		using namespace std;
-		int main()
-		{
-		    set<int> s;
-		
-		    // s.count(); // returns number of occurences of an element in the set and makes sense only for multisets as fo sets it is always 1
-		
-		    // s.find(); // returns iterator pointing to the desired element and returns s.end() if not found
-		    // s.insert(); // element to be inserted is passed and it returns a pair of the iterator pointing to place where it might be inserted, bool if it was inserted or not
-		
-		    // s.emplace();
-		    // s.begin();
-		    // s.end();
-		    // s.clear();
-		    // s.empty();
-		    // s.erase();
-		    // s.size();
-		    // s.swap();
-		    return 0;
-		}
-		```
 	10. <mark style="background: #BBFABBA6;">multiset</mark>
 		- same as set with the same functions but allows duplicate entries and still are sorted
 		- `.equal_range(key)` used with auto returns an iterable container of values as the same key can have multiple values so we can use auto with for each loop to print all values of this container
