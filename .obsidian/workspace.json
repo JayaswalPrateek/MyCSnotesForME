@@ -19,6 +19,32 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "feb9dcbf849fe15f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithms.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2d87da01608ccef9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Data Strs.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -162,9 +188,12 @@
   },
   "active": "f12b9b24a9425ed1",
   "lastOpenFiles": [
+    "Algorithms.md",
     "Data Strs.md",
     "Cpp.md",
-    "Algorithms.md",
+    "pdf/Algorithms.pdf",
+    "pdf/Data Strs.pdf",
+    "pdf/Cpp.pdf",
     "hey.md",
     "Cpp.pdf",
     "cpp/Basics.md",
