@@ -385,7 +385,9 @@
 		- `.equal_range(key)` used with auto returns an iterable container of values as the same key can have multiple values so we can use auto with for each loop to print all values of this container
 			- prefer using auto as the return type is pair of 2 iterators where one is for the keys and the other for values
 		- use this instead of map of key and vector value 
-	11. <mark style="background: #BBFABBA6;">map</mark>
+	11. <mark style="background: #BBFABBA6;">unordered set</mark>
+		- when we just want to store unique elements in the set without storing them in sorted order, this uses hashing so `O(1)` instead of `O(n logn)`
+	12. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
 		- functions like set
@@ -395,13 +397,13 @@
 		- keys are immutable and values are mutable
 		- insertion requires passing of a pair as a parameter like `.insert(make_pair(1, 'a'))` where the type of pair is inferred automatically
 			- otherwise the type of the pair can be explicitly provided like `.insert(pair<int, char>(1, 'a'))`
-	12. <mark style="background: #BBFABBA6;">multimap</mark>
+	13. <mark style="background: #BBFABBA6;">multimap</mark>
 		- same as a map but allows duplicate keys but the key-value pairs must be unique
 			- hence `.at()` function not available
-	13. <mark style="background: #BBFABBA6;">unordered map</mark>
+	14. <mark style="background: #BBFABBA6;">unordered map</mark>
 		- like map but keys are not stored in sorted order
 		- has some unique bucket functions
-	14. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
+	15. <mark style="background: #BBFABBA6;">pairs and nested pairs</mark> 
 		```cpp
 			#include <bits/stdc++.h>
 			using namespace std;
@@ -418,7 +420,7 @@
 			    return 0;
 			}	
 		```
-	15. <mark style="background: #BBFABBA6;">tree</mark>
+	16. <mark style="background: #BBFABBA6;">tree</mark>
 		- a vector of vector can be interpreted as a STL tree
 			- every element in the parent vector is a child vector
 			- the index of the parent array represents the parent node of the tree and the associated vector stores the child node of the parent
