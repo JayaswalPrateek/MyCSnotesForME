@@ -390,7 +390,7 @@
 	12. <mark style="background: #BBFABBA6;">unordered multiset</mark>
 		- lets say you have a bunch of numbers in random order and you want to count how many times did it appear
 			- here you don't want to sort these numbers nor do you want to store only unique numbers
-			- unordered set can be used in such cases and will provide lookup, insertion and removal in `O(1)` as map would take `O(n log n)` as it uses red black tree
+			- unordered set can be used in such cases and will provide lookup, insertion and removal in `O(1)` as map would never takes `O(1)` for insertion and deletion and `O(1)` for lookup
 	1. <mark style="background: #BBFABBA6;">map</mark>
 		- like arrays but the indices are called keys and keys can be of any data type
 		- stores key-value pairs and all keys must be unique and keys are stored in sorted order
