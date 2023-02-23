@@ -386,7 +386,7 @@
 			- prefer using auto as the return type is pair of 2 iterators where one is for the keys and the other for values
 		- use this instead of map of key and vector value 
 	11. <mark style="background: #BBFABBA6;">unordered set</mark>
-		- when we just want to store unique elements in the set without storing them in sorted order, this uses hashing so `O(1)` instead of `O(n logn)`
+		- when we just want to store unique elements in the set without storing them in sorted order, it uses hashing so `O(1)`
 	12. <mark style="background: #BBFABBA6;">unordered multiset</mark>
 		- lets say you have a bunch of numbers in random order and you want to count how many times did it appear
 			- here you don't want to sort these numbers nor do you want to store only unique numbers
