@@ -556,6 +556,10 @@
 - <mark style="background: #D2B3FFA6;">Algorithms</mark>
 	- STL algorithms can be imported using `#include <algorithms>` or `#include <bits/stdc++.h>`
 	- used to perform operations like searching, sorting, counting etc on the containers
+	- always applied for a range in the container, like sort from begin to the end of a container
+	- <mark style="background: #BBFABBA6;">find</mark>
+		- function parameters: begin, end, query
+		- returns iterator to the value if found else it returns `.end()`
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
