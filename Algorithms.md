@@ -808,3 +808,7 @@ Enter value of x: 2
 p(2) = 56
 */
 ```
+
+# <mark style="background: #FFB86CA6;">Prime Numbers</mark>
+- instead of checking divisibility form 2 to one less than the number itself, we can check it from 2 to square root of the number
+- 
