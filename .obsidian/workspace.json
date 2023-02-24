@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git.md",
+                "file": "git cli.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -84,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1f81b9b42acf2efb",
@@ -100,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git.md",
+                "file": "git cli.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git.md",
+                "file": "git cli.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git.md"
+                "file": "git cli.md"
               }
             }
           },
@@ -176,7 +177,7 @@
   "active": "8357b5c4e57cddc4",
   "lastOpenFiles": [
     "Algorithms.md",
-    "Git.md",
+    "git cli.md",
     "Data Strs.md",
     "Cpp.md",
     "pdf/Algorithms.pdf",
