@@ -55,3 +55,15 @@
 2. `git checkout <name of new branch>` like git add
 3. `git merge <name of new branch>` merges the branch with master
 	- commits made in the new branch will be visible from master branch
+
+# Contributing
+- origin URL is the forked version which you have access to
+- upstream URL is the repo you forked
+- once you clone the fork locally run `git remote add upstream <upstream URL>`
+- NEVER COMMIT TO ORIGIN, Create a separate branch instead as it is considered a good practice
+	- once the last commit is made, we can make a pull request
+		- git restricts one pull request per branch so if you had used your origin branch then for another set of features you would have to create a new fork unless the older fork is merged
+			- hence we create different branches for different features so that we can have multiple pull requests about specific features
+		- further commits from that branch will be reflected in the previously made pull request
+		- this ensures that the maintainer knows that all commits in a single pull request can be related to a single feature
+			- instead of all commits in a single pull request can be related to a multiple unrelated features
