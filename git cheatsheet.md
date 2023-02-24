@@ -67,3 +67,9 @@
 		- further commits from that branch will be reflected in the previously made pull request
 		- this ensures that the maintainer knows that all commits in a single pull request can be related to a single feature
 			- instead of all commits in a single pull request can be related to a multiple unrelated features
+
+# force push
+- lets say if the pull request shows some commits that were made
+- then I locally reset and stash some commits
+- we cannot simply push it as the pull request contains commits that my local machine doesn't
+- hence we need to add `-f` argument during pushing
