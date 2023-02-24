@@ -4,23 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "f34aa8c0ee2ba4ae",
+        "id": "eddb9f9ab86f6d72",
         "type": "tabs",
         "children": [
           {
-            "id": "8357b5c4e57cddc4",
+            "id": "d178bc7f549ac536",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "e6590a0d8c1f133f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "git cheatsheet.md",
+                "file": "Algorithms.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "git cheatsheet.md",
+                "file": "Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "git cheatsheet.md",
+                "file": "Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "git cheatsheet.md"
+                "file": "Algorithms.md"
               }
             }
           },
@@ -160,10 +169,10 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "8357b5c4e57cddc4",
+  "active": "e6590a0d8c1f133f",
   "lastOpenFiles": [
-    "Cpp.md",
     "git cheatsheet.md",
+    "Cpp.md",
     "Data Strs.md",
     "Algorithms.md",
     "pdf/git cheatsheet.pdf",

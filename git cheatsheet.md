@@ -85,4 +85,13 @@
 - `git pull upstream main` and `git push origin main` will do the same as above
 - **WHENEVER YOU CREATE A NEW BRANCH OF ORIGIN PULL THE CHANGES FROM UPSTREAM BEFORE**
 
-# Merging Commut
+# `git rebase -i <commit id>`
+- merges all commits above commit id interactively
+- replace `pick` with `s` stands for squash meaning those commits will be merged into one single commit with the nearest push commit above it
+- then create a new message for the merged/squashed commit
+
+# Merge Conflicts
+- when the maintainer has 2 or more pull requests that modify the same lines of code
+- when we try to merge one of the pull request we get a merge conflict
+- we need to resolve it manually by specifying code from which pull request should be merged
+	- then you mark the conflict as resolved
