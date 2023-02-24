@@ -73,3 +73,16 @@
 - then I locally reset and stash some commits
 - we cannot simply push it as the pull request contains commits that my local machine doesn't
 - hence we need to add `-f` argument during pushing
+
+# `git fetch`
+- when I was working on my branch on a file x, some changes were made upstream to files y and z
+- I cannot see those changes in my fork/branch till I fetch those changes
+- firstly you change to the main branch of your fork using `git checkout main`
+- run `git checkout --all --prune`
+- now reset main branch of origin to the main branch of origin using `git reset --hard upstream/main`
+- `git push origin main`
+# or just use `git pull` instead
+- `git pull upstream main` and `git push origin main` will do the same as above
+- **WHENEVER YOU CREATE A NEW BRANCH OF ORIGIN PULL THE CHANGES FROM UPSTREAM BEFORE**
+
+# Merging Commut
