@@ -44,3 +44,8 @@
 
 # `git push origin master`
 - uploads the local git folder/new commits to github.com 
+
+# Branches
+- the master branch reflects production ready code that is not work in progress
+- to start working on a feature addition you should create a separate branch and merge it with master when the work is done
+	- meanwhile it is possible that the same files you worked on were modified by someone else as they got their
