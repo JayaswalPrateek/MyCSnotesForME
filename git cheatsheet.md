@@ -24,3 +24,9 @@
 - if you want to roll back to older commit 
 - git log removes the commits above `<commit id>` including the `<commit id>`
 	- these commits were unstaged so you need to add them to the stage before committing again so you have untracked changes
+
+## `git stash`
+- when you want to reset, but could modify the files and still might want to undo the reset later
+- before stashing, files should be staged
+- status after stashing is nothing to commit, working tree clean
+- allows you to try somethi
