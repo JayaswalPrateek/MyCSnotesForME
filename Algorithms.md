@@ -810,5 +810,5 @@ p(2) = 56
 ```
 
 # <mark style="background: #FFB86CA6;">Prime Numbers</mark>
-- instead of checking divisibility form 2 to one less than the number itself, we can check it from 2 to square root of the number
-- 
+- to find the primality of a number instead of checking divisibility form 2 to one less than the number itself `O(n)`, we can check it from 2 to √number `O(√n)` 
+	- optimization: use trial division method
