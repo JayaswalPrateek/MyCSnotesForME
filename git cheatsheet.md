@@ -41,6 +41,7 @@
 
 # `git remote add origin https://github.com/<username>/<reponame>.git`
 - binds a git repo on github to a local git folder
+- origin means that `<username>` is the owner of the `<reponame>` 
 
 # `git push origin master`
 - uploads the local git folder/new commits to github.com 
@@ -48,4 +49,9 @@
 # Branches
 - the master branch reflects production ready code that is not work in progress
 - to start working on a feature addition you should create a separate branch and merge it with master when the work is done
-	- meanwhile it is possible that the same files you worked on were modified by someone else as they got their
+	- meanwhile it is possible that the same files you worked on were modified by someone else as they got their branch merged
+	- lets suppose this did not happen, then your branch can be merged smoothly
+1. `git branch <name of new branch>` creates the new branch
+2. `git checkout <name of new branch>` like git add
+3. `git merge <name of new branch>` merges the branch with master
+	- commits made in the new branch will be visible from master branch
