@@ -821,48 +821,28 @@ p(2) = 56
 			- so we can run the outermost loop till √number
 	- time complexity is `O(n log(logn))` as per a proof
 		- we check the worst case on the most nested statement for time complexity analysis
-```cpp
-#include <cmath>
-#include <iostream>
-using namespace std;
-int main() {
-cout << "Enter number: ";
-
-int n;
-
-cin >> n;
-
-if (n <= 1) {
-
-cout << "not prime";
-
-return 0;
-
-}
-
-  
-
-bool primes[n + 1];
-
-for (bool& x : primes)
-
-x = true;
-
-primes[0] = primes[1] = false;
-
-  
-
-for (int i = 2; i <= sqrt(n); i++)
-
-if (primes[i])
-
-for (int j = 2; i * j < n; j++)
-
-primes[i * j] = false;
-
-  
-
-return 0;
-
-}
-```
+	```cpp
+	#include <cmath>
+	#include <iostream>
+	using namespace std;
+	int main() {
+		cout << "Enter number: ";
+		int n;
+		cin >> n;
+		if (n <= 1) {
+			cout << "not prime";
+			return 0;
+		}
+	
+		bool primes[n + 1];
+		for (bool& x : primes)
+			x = true;
+		primes[0] = primes[1] = false;
+	
+		for (int i = 2; i <= sqrt(n); i++)
+			if (primes[i])
+				for (int j = 2; i * j < n; j++)
+					primes[i * j] = false;
+	
+		return 0;
+	```
