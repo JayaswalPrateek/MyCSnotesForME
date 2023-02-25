@@ -892,5 +892,10 @@ p(2) = 56
 				- similarly to find the number of digits in a number we keep on dividing by 10 so it is `O(log base10 den)`
 					- we can ignore the base of logs like coefficients of polynomials when calculating the time complexity so `O(log den)`
 	- recursive function
-		- disa: higher space complexity
-		- 
+		- disadvantage is higher space complexity
+		- advantage is readability
+		```cpp
+		int euclidGCDrecursion(int num, int den) {
+			return den == 0 ? num : euclidGCDrecursion(den, num % den);
+		}
+		```
