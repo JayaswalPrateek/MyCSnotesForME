@@ -810,5 +810,8 @@ p(2) = 56
 ```
 
 # <mark style="background: #FFB86CA6;">Prime Numbers</mark>
-- to find the primality of a number instead of checking divisibility form 2 to one less than the number itself `O(n)`, we can check it from 2 to √number `O(√n)` 
-	- optimization: use trial division method
+- to find the primality of a number instead of checking divisibility form 2 to one less than the number itself `O(n)`, we can check it from 2 to √number `O(√n)`
+- Sieve of Eratosthenes algorithm to find prime numbers till n
+	- initially we assume that all numbers from 2 to n are prime by creating an array of length-2 and setting all to true
+	- we then loop over this list and we can say as 2 is a prime number, all multiples of 2 will never be prime and same for 3 and its multiples
+		- so we set these multiples as false
