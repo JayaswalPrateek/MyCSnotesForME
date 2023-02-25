@@ -850,3 +850,34 @@ p(2) = 56
 # <mark style="background: #FFB86CA6;">GCD by Euclid's Algorithm</mark>
 - fastest algorithm to compute GCD(Greatest Common Denominator)
 - `gcd(a,b) = g` where `g` is the maximum possible value for `g%a==0 and g/b==0`
+- gcd of 105 and 350 is 35
+	- 105 = 5 x 7 x 3 and 350 = 5 x 7 x 5 x 2
+		- 5 and 7 are common so gcd = 35
+		- note that no factor can be greater than square root of the number itself
+	- above is not Euclid's Algorithm
+- Euclid's Algorithm
+	1. modulo the larger number by the smaller number
+	2. modulo the smaller number by the remainder found from above step
+	3. stop when the modulo is zero (denominator is zero)
+	4. and in the last step the numerator is the gcd 
+	```cpp
+	#include <iostream>
+	using namespace std;
+	int main() {
+		cout << "Enter 2 numbers: ";
+		int num, den;
+		cin >> num >> den;
+		if (num < den) {
+			int tmp = num;
+			num = den;
+			den = tmp;
+		}
+		while (den != 0) {
+			int remainder = num % den;
+			num = den;
+			den = remainder;
+		}
+		cout << "GCD IS " << num;
+		return 0;
+	}
+	```
