@@ -846,3 +846,7 @@ p(2) = 56
 	
 		return 0;
 	```
+
+# <mark style="background: #FFB86CA6;">GCD by Euclid's Algorithm</mark>
+- fastest algorithm to compute GCD(Greatest Common Denominator)
+- `gcd(a,b) = g` where `g` is the maximum possible value for `g%a==0 and g/b==0`
