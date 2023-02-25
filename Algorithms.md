@@ -867,11 +867,14 @@ p(2) = 56
 		cout << "Enter 2 numbers: ";
 		int num, den;
 		cin >> num >> den;
-		if (num < den) {
-			int tmp = num;
-			num = den;
-			den = tmp;
-		}
+	
+		// this snippet is not needed as this will automatically happen in the while loop
+		// if (num < den) {
+		// 	int tmp = num;
+		// 	num = den;
+		// 	den = tmp;
+		// }
+	
 		while (den != 0) {
 			int remainder = num % den;
 			num = den;
@@ -881,3 +884,13 @@ p(2) = 56
 		return 0;
 	}
 	```
+	- each line take `O(1)` to execute but we don't know how many times will the while loop run
+		- let the while loop run `x` times and let `f(x)` be a function of variables `num` and `den`
+		- the while loop executes 4  `O(1)` operations which is one comparison and 3 assignments `x` times so it is `O(x)` time complexity
+			- in the 1800s it was proven that this `x` is proportional to the number of digits in the smaller number which is always the denominator
+				- in binary search we used to divide by 2 over and over so it became `O(log base2 n)`
+				- similarly to find the number of digits in a number we keep on dividing by 10 so it is `O(log base10 den)`
+					- we can ignore the base of logs like coefficients of polynomials when calculating the time complexity so `O(log den)`
+	- recursive function
+		- disa: higher space complexity
+		- 
