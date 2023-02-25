@@ -812,6 +812,57 @@ p(2) = 56
 # <mark style="background: #FFB86CA6;">Prime Numbers</mark>
 - to find the primality of a number instead of checking divisibility form 2 to one less than the number itself `O(n)`, we can check it from 2 to √number `O(√n)`
 - Sieve of Eratosthenes algorithm to find prime numbers till n
-	- initially we assume that all numbers from 2 to n are prime by creating an array of length-2 and setting all to true
+	- initially we assume that all numbers from 2 to n are prime by creating an array of length+1 and setting all to true
 	- we then loop over this list and we can say as 2 is a prime number, all multiples of 2 will never be prime and same for 3 and its multiples
 		- so we set these multiples as false
+		- note that all multiples will be greater than the number itself
+		- we can further optimize it as we know that if the factor of a number doesn't exist till √number then it is prime
+			- one factor is less than/equal to and other one is greater than/equal to √number
+			- so we can run the outermost loop till √number
+	- time complexity is `O(n log(logn))` as per a proof
+		- we check the worst case on the most nested statement for time complexity analysis
+```cpp
+#include <cmath>
+#include <iostream>
+using namespace std;
+int main() {
+cout << "Enter number: ";
+
+int n;
+
+cin >> n;
+
+if (n <= 1) {
+
+cout << "not prime";
+
+return 0;
+
+}
+
+  
+
+bool primes[n + 1];
+
+for (bool& x : primes)
+
+x = true;
+
+primes[0] = primes[1] = false;
+
+  
+
+for (int i = 2; i <= sqrt(n); i++)
+
+if (primes[i])
+
+for (int j = 2; i * j < n; j++)
+
+primes[i * j] = false;
+
+  
+
+return 0;
+
+}
+```
