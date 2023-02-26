@@ -66,9 +66,9 @@
 - c++ STL  has 4 things: containers, functions, algorithms and iterators
 	- containers are the classes for the data structures
 		- container functions are primitive operations performed on the containers like push, pop
-	- algorithms are complex operations performed on the containers like search, sort
+	- algorithms are complex operations performed on the containers like search, sort and imported using `#include <algorithms>`
 	- iterators are used to access containers in a simpler way
-- to import all the containers and common header files like iostream etc, use `#include<bits/stdc++.h>`
+- to import all the containers and common header files like iostream etc, use `#include <bits/stdc++.h>`
 - insert vs emplace
 	- all containers might not have push operation but all have insert and emplace operations
 		- both are same when using primitive data types
@@ -561,6 +561,11 @@
 	- <mark style="background: #BBFABBA6;">find</mark>
 		- function parameters: begin, end, query
 		- returns iterator to the value if found else it returns `.end()`
+	- <mark style="background: #BBFABBA6;">is_sorted_until</mark>
+		- function parameters: begin, end, optional: ascending, descending
+			- ascending is default, for descending pass `greater<int>()`
+		- checks if elements belonging to `[first, last)` are sorted
+		- returns the iterator to the last sorted element
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
