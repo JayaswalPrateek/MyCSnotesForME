@@ -840,6 +840,33 @@ int main()
 		- `cout<<cnum<<endl;` is valid
 		- if we replace `ostream` return type with `void` then we cannot chain insertion operator
 
+# <mark style="background: #FFB86CA6;">Member Initializer List</mark>
+- instead of using a constructor to initialize the data members of a class, a member initializer list can be used
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	class byConstructor {
+	public:
+		int x;
+		explicit byConstructor(int x) { this->x = x; }
+	};
+	
+	class byInitializerList {
+	public:
+		int x;
+		explicit byInitializerList(int x) : x{x} {}
+	};
+	
+	int main() {
+		byConstructor byc(123);
+		cout << byc.x << endl;
+		byInitializerList byinls(456);
+		cout << byinls.x;
+		return 0;
+	}
+	```
+
 # <mark style="background: #FFB86CA6;">Inheritance</mark>
 - example of well designed class and inheritance(with copy constructor missing)
 	```cpp
