@@ -584,7 +584,8 @@
 			```
 			- sorting with user defined data type like objects
 				- the class should overload either the lesser than or the greater than operator
-					- the default is the ascending order so you just need to specify the 
+					- the default is the ascending order so you just need to overload lesser than operator and don't need to specify any argument
+					- to sort in descending order overload the greater than operator and provide `std::greater<data type>()`
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
