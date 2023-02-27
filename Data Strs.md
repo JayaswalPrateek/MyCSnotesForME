@@ -619,7 +619,14 @@
 			- function parameters: begin, end, `greater<data type>()` for descending(optional for ascending)
 			- refer to `sort` for sorting with user defined data type like objects as the steps are same
 		- `partial_sort`
-			- 
+			- it rearranges the elements such that the range `[first index, middle index)` contain the sorted elements 
+			- order of remaining elements is unknown(may or may not be sorted or preserved)
+			- helpful for sorting a sub array
+			- middle is the non inclusive index so elements from begin to middle-1 are sorted
+			- function parameters: begin, middle, end, `greater<data type>()` for descending(optional for ascending)
+				- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `execution::par`
+				- depends on `#include <execution>` not included in `#include <bits/stdc++.h>`
+				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
