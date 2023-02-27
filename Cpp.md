@@ -866,6 +866,34 @@ int main()
 		return 0;
 	}
 	```
+- for multiple variables
+	```cpp
+	#include <iostream>
+	using namespace std;
+	
+	class byConstructor {
+	public:
+		int x, y;
+		explicit byConstructor(int x, int y) {
+			this->x = x;
+			this->y = y;
+		}
+	};
+	
+	class byInitializerList {
+	public:
+		int x, y;
+		explicit byInitializerList(int x, int y) : x{x}, y{y} {}
+	};
+	
+	int main() {
+		byConstructor byc(123, 321);
+		cout << byc.x << byc.y << endl;
+		byInitializerList byinls(456, 654);
+		cout << byinls.x << byinls.y;
+		return 0;
+	}
+	```
 
 # <mark style="background: #FFB86CA6;">Inheritance</mark>
 - example of well designed class and inheritance(with copy constructor missing)
