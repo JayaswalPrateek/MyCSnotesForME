@@ -563,7 +563,10 @@
 			- function parameters: begin, end, query
 			- returns iterator to the value if found else it returns `.end()`
 	- <mark style="background: #BBFABBA6;">sorting</mark>
-		- also allows multi-threaded sorting
+		- internally it uses intro sort which is a combination of quick sort, heap sort and insertion sort
+			- it defaults to quick sort but if the quick sort is doing unfair partitioning and having more time complexity than `O(n logn)` then it switches to heap sort 
+				- but if the array size is very small it uses insertion sort instead
+		- **ALLOWS MULTI-THREADED EXECUTION BY PASSING ONE ARGUMENT**
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
