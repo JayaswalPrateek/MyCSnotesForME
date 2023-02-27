@@ -375,7 +375,7 @@
 			    for (auto x : grade1)
 			        cout << x.name << " " << x.roll << endl;
 			    cout << "Desc:" << endl;
-			    set<student, std::greater<>> grade2 = {{"A", 4}, {"B", 8}, {"C", 16}, {"D", 32}};
+			    set<student, greater<>> grade2 = {{"A", 4}, {"B", 8}, {"C", 16}, {"D", 32}};
 			    for (auto x : grade2)
 			        cout << x.name << " " << x.roll << endl;
 			}
@@ -567,7 +567,7 @@
 			- internally it uses intro sort which is a combination of quick sort, heap sort and insertion sort
 				- it defaults to quick sort but if the quick sort is doing unfair partitioning and having more time complexity than `O(n logn)` then it switches to heap sort 
 					- but if the array size is very small it uses insertion sort instead
-			- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `std::execution::par`
+			- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `execution::par`
 				- depends on `#include <execution>` not included in `#include <bits/stdc++.h>`
 				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
 			```cpp
@@ -576,7 +576,7 @@
 			using namespace std;
 			int main() {
 				vector<int> v = {4, 8, 7, 3, 9, 1, 6, 2, 0, 5};
-				sort(std::execution::par, v.begin(), v.end());
+				sort(execution::par, v.begin(), v.end());
 				for (auto x : v)
 					cout << x << " ";
 				return 0;
@@ -585,7 +585,7 @@
 			- sorting with user defined data type like objects
 				- the class should overload either the lesser than or the greater than operator
 					- the default is the ascending order so you just need to overload lesser than operator and don't need to specify any argument
-					- to sort in descending order overload the greater than operator and provide `std::greater<data type>()`
+					- to sort in descending order overload the greater than operator and provide `greater<data type>()`
 				```cpp
 				#include <bits/stdc++.h>
 				#include <execution>
@@ -601,17 +601,21 @@
 				
 				int main() {
 					vector<coordinate> points{{1, 2}, {4, 5}, {2, 3}, {7, 8}, {6, 7}, {5, 6}};
-					sort(std::execution::par, points.begin(), points.end());
+					sort(execution::par, points.begin(), points.end());
 					cout << "Ascending order:";
 					for (auto pt : points)
 						cout << "{" << pt.x << ", " << pt.y << "} ";
-					sort(std::execution::par, points.begin(), points.end(), std::greater<coordinate>());
+					sort(execution::par, points.begin(), points.end(), greater<coordinate>());
 					cout << "\nDescending order:";
 					for (auto pt : points)
 						cout << "{" << pt.x << ", " << pt.y << "} ";
 					return 0;
 				}
 				```
+		- `is_sort`
+			- to check if the data is already sorted
+			- returns true or false
+			- checks for ascending order by default
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
