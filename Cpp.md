@@ -842,6 +842,7 @@ int main()
 
 # <mark style="background: #FFB86CA6;">Member Initializer List</mark>
 - instead of using a constructor to initialize the data members of a class, a member initializer list can be used
+	- prefer using this instead of a constructor function as sometime there is no other option but to use member initializer list so you can use them everywhere
 	```cpp
 	#include <iostream>
 	using namespace std;
