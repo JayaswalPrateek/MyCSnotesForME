@@ -563,10 +563,28 @@
 			- function parameters: begin, end, query
 			- returns iterator to the value if found else it returns `.end()`
 	- <mark style="background: #BBFABBA6;">sorting</mark>
-		- internally it uses intro sort which is a combination of quick sort, heap sort and insertion sort
-			- it defaults to quick sort but if the quick sort is doing unfair partitioning and having more time complexity than `O(n logn)` then it switches to heap sort 
-				- but if the array size is very small it uses insertion sort instead
-		- **ALLOWS MULTI-THREADED EXECUTION BY PASSING ONE ARGUMENT**
+		- `sort`
+			- internally it uses intro sort which is a combination of quick sort, heap sort and insertion sort
+				- it defaults to quick sort but if the quick sort is doing unfair partitioning and having more time complexity than `O(n logn)` then it switches to heap sort 
+					- but if the array size is very small it uses insertion sort instead
+			- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `std::execution::par`
+				- depends on `#include <execution>`
+				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
+			```cpp
+			#include <bits/stdc++.h>
+			#include <execution>
+			using namespace std;
+			int main() {
+				vector<int> v = {4, 8, 7, 3, 9, 1, 6, 2, 0, 5};
+				sort(std::execution::par, v.begin(), v.end());
+				for (auto x : v)
+					cout << x << " ";
+				return 0;
+			}
+			```
+			- sorting with user defined data type like objects
+				- the class should overload either the lesser than or the greater than operator
+					- the default is the ascending order so you just need to specify the 
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
