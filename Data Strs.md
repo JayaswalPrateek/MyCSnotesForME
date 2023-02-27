@@ -568,7 +568,7 @@
 				- it defaults to quick sort but if the quick sort is doing unfair partitioning and having more time complexity than `O(n logn)` then it switches to heap sort 
 					- but if the array size is very small it uses insertion sort instead
 			- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `std::execution::par`
-				- depends on `#include <execution>`
+				- depends on `#include <execution>` not included in `#include <bits/stdc++.h>`
 				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
 			```cpp
 			#include <bits/stdc++.h>
@@ -586,6 +586,32 @@
 				- the class should overload either the lesser than or the greater than operator
 					- the default is the ascending order so you just need to overload lesser than operator and don't need to specify any argument
 					- to sort in descending order overload the greater than operator and provide `std::greater<data type>()`
+				```cpp
+				#include <bits/stdc++.h>
+				#include <execution>
+				using namespace std;
+				
+				class coordinate {
+				public:
+					int x, y;
+					coordinate(int x = 0, int y = 0) : x{x}, y{y} {}													 // lambda function inside a constructor
+					bool operator<(const coordinate& anotherPt) const { return (x + y) < (anotherPt.x + anotherPt.y); }	 // take a const reference of another object and compare it
+					bool operator>(const coordinate& anotherPt) const { return (x + y) > (anotherPt.x + anotherPt.y); }	 // for descending order
+				};
+				
+				int main() {
+					vector<coordinate> points{{1, 2}, {4, 5}, {2, 3}, {7, 8}, {6, 7}, {5, 6}};
+					sort(std::execution::par, points.begin(), points.end());
+					cout << "Ascending order:";
+					for (auto pt : points)
+						cout << "{" << pt.x << ", " << pt.y << "} ";
+					sort(std::execution::par, points.begin(), points.end(), std::greater<coordinate>());
+					cout << "\nDescending order:";
+					for (auto pt : points)
+						cout << "{" << pt.x << ", " << pt.y << "} ";
+					return 0;
+				}
+				```
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`

@@ -8,7 +8,7 @@
   "spellcheck": true,
   "spellcheckLanguages": null,
   "pdfExportSettings": {
-    "includeName": true,
+    "includeName": false,
     "pageSize": "A4",
     "landscape": true,
     "margin": "1",
