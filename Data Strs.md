@@ -617,6 +617,7 @@
 			- returns true or false
 			- checks for ascending order by default
 			- function parameters: begin, end, `greater<data type>()` for descending(optional for ascending)
+			- refer t
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
