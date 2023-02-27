@@ -627,6 +627,8 @@
 				- **ALLOWS BETTER PERFORMANCE USING PARALLEL EXECUTION POLICY BY PASSING ONE ARGUMENT** `execution::par`
 				- depends on `#include <execution>` not included in `#include <bits/stdc++.h>`
 				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
+		- `nth_element`
+			- by default it will find nth smallest element of array/vector
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
