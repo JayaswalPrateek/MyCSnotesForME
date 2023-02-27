@@ -558,14 +558,17 @@
 	- used to perform operations like searching, sorting, counting etc on the containers
 	- always applied for a range in the container, like sort from begin to the end of a container
 	- makes running algorithms multi threaded easier and safer
-	- <mark style="background: #BBFABBA6;">find</mark>
-		- function parameters: begin, end, query
-		- returns iterator to the value if found else it returns `.end()`
-	- <mark style="background: #BBFABBA6;">is_sorted_until</mark>
-		- function parameters: begin, end, optional: ascending, descending
-			- ascending is default, for descending pass `greater<int>()`
-		- checks if elements belonging to `[first, last)` are sorted
-		- returns the iterator to the last sorted element
+	- <mark style="background: #BBFABBA6;">searching</mark>
+		 - `find`
+			- function parameters: begin, end, query
+			- returns iterator to the value if found else it returns `.end()`
+	- <mark style="background: #BBFABBA6;">sorting</mark>
+		- also allows multi-threaded sorting
+		- `is_sorted_until`
+			- function parameters: begin, end, optional: ascending, descending
+				- ascending is default, for descending pass `greater<int>()`
+			- checks if elements belonging to `[first, last)` are sorted
+			- returns the iterator to the last sorted element
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
