@@ -628,7 +628,14 @@
 				- depends on `#include <execution>` not included in `#include <bits/stdc++.h>`
 				- NOTE THAT NOT ALL ALGORITHMS IN STL SUPPORT THIS
 		- `nth_element`
+			- it is a partial sorting algorithm
 			- by default it will find nth smallest element
+				- with find nth largest by passing `greater<int>()`
+			- you have to provide 3 parameters: begin, location, end
+				- the value at location when the entire array is sorted will be returned
+				- begin is inclusive and end is non inclusive so `[begin, end)`
+				- location should be an iterator like begin and end so use .begin() + 1  for 2nd position or use .end() - 1 for the last position or .begin()
+			- modifies the array elements but all elements before nth element will be smaller than it and all elements after it will be greater than it but they may not be sorted  
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
