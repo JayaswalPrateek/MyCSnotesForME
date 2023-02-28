@@ -658,8 +658,22 @@
 			}
 			```
 		- `copy`
-			- 
+			- copies the elements in range `[begin, end)` to another range starting from `d_first`
+			- you can also copy containers into new copy of same type of the containers using the copy constructor of the container but the entire container is copied and you cannot specify range
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main() {
+				vector<int> srcVec(10);
+				iota(srcVec.begin(), srcVec.end(), 0);
+				vector<int> destVec(srcVec.size());
+				copy(srcVec.begin(), srcVec.end(), destVec.begin());
+				// copy(srcVec.begin(), srcVec.end(), back_inserter(destVec)); if you use this then no need to specify the size of destVec
+				for (auto x : destVec) cout << x << " ";  // 0 1 2 3 4 5 6 7 8 9
+			}
+			```
 		- `copy_if`
+			- same as copy but copies only if predicate returns true
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
