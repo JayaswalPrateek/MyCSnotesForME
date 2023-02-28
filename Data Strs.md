@@ -634,13 +634,29 @@
 			- you have to provide 3 parameters: begin, location, end
 				- the value at location when the entire array is sorted will be returned
 				- begin is inclusive and end is non inclusive so `[begin, end)`
-				- location should be an iterator like begin and end so use .begin() + 1  for 2nd position or use .end() - 1 for the last position or .begin()
+				- location should be an iterator like begin and end so use .begin() + 1  for 2nd position or use .end() - 1 for the last position or .begin() + .size()/2 for middle
+					- don't use integer instead
 			- modifies the array elements but all elements before nth element will be smaller than it and all elements after it will be greater than it but they may not be sorted  
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
 			- checks if elements belonging to `[first, last)` are sorted
 			- returns the iterator to the last sorted element
+	- <mark style="background: #BBFABBA6;">copying</mark>
+		- `iota`
+			- lets say you have an empty container and you want to populate it with incremental values
+				- like an array of size 10 needs to be filled with numbers 0 to 9 we would use a for loop and assign the value of i to the index instead use iota
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main() {
+				list<int> firstLs(10);
+				iota(firstLs.begin(), firstLs.end(), 4);  // stores 4 5 6 7 8 9 10 11 12 13
+				for (auto x : firstLs) cout << x << " ";
+				cout << "\n";
+				return 0;
+			}
+			```
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
