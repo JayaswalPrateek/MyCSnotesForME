@@ -674,6 +674,26 @@
 			```
 		- `copy_if`
 			- same as copy but copies only if predicate returns true
+			- predicate is a lambda function passed as a parameter
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main() {
+				vector<int> srcVec(10);
+				iota(srcVec.begin(), srcVec.end(), 0);
+				vector<int> oddls, evenls;
+			
+				copy_if(srcVec.begin(), srcVec.end(), back_inserter(oddls), [](int x) { return (x % 2) != 0; });
+				cout << "Odd numbers: ";
+				for (auto x : oddls) cout << x << " ";
+			
+				copy_if(srcVec.begin(), srcVec.end(), back_inserter(evenls), [](int x) { return (x % 2) == 0; });
+				cout << "\nEven numbers: ";
+				for (auto x : evenls) cout << x << " ";
+			
+				return 0;
+			}
+			```
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
