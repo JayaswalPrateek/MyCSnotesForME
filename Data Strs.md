@@ -711,6 +711,23 @@
 			}
 			```
 		- `copy_backward`
+			- copies elements one by one from the backward so the last element of the source is copied to the destination then the 2nd last and so
+			- `copy_n` copies first element of source to the destination and then the 2nd and so on
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main() {
+				vector<int> src(10);
+				iota(src.begin(), src.end(), 1);
+			
+				vector<int> secondHalfOfSrc(10);
+				copy_backward(src.begin() + 5, src.end(), secondHalfOfSrc.end());
+				for (auto x : secondHalfOfSrc) cout << x << " ";  // 0 0 0 0 0 6 7 8 9 10
+			    // copy_n would have done 1 2 3 4 5 0 0 0 0 0 and not 6 7 8 9 10 0 0 0 0 0
+			
+				return 0;
+			}
+			```
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
