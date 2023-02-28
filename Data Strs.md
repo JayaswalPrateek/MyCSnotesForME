@@ -694,6 +694,23 @@
 				return 0;
 			}
 			```
+		- `copy_n`
+			- used to copy first n elements from source to destination container
+			```cpp
+			#include <bits/stdc++.h>
+			using namespace std;
+			int main() {
+				vector<int> src(10);
+				iota(src.begin(), src.end(), 1);
+			
+				vector<int> firstHalfOfSrc;
+				copy_n(src.begin(), 5, back_inserter(firstHalfOfSrc));
+				for (auto x : firstHalfOfSrc) cout << x << " ";
+			
+				return 0;
+			}
+			```
+		- `copy_backward`
 
 # <mark style="background: #FFB86CA6;">CDT: Concrete Data Types</mark> 
 <mark style="background: #D2B3FFA6;">Array</mark>
