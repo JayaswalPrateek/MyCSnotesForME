@@ -6,6 +6,11 @@
 		- start from the top of a tree and go as deep as possible along the same branch
 		- once you are at the bottom then go to nearest unvisited node usually a sibling of the deepest node
 			- this process is called **Backtracking**
+		- at each node push it to stack to mark it as visited
+			- while the stack is not empty
+				- at any node pop the top of the stack and then push the left and right of the current node into the stack
+				- the order of popping is the order of traversal of the nodes in the graph, you get the access to the node on popping so you can print it or do whatever you want with the popped value
+				- 
 		- used to solve a maze, detecting cyclic graphs
 		- `O(number of nodes + number of branches)`
 	- <mark style="background: #BBFABBA6;">Breadth First Search</mark> for trees and graphs
