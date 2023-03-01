@@ -19,6 +19,10 @@
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
 		- if the node in the queues has more children then add them to queue when marking it visited
 		- important to mark nodes using a boolean array as you may encounter a node more than once as you traverse the graph, even if the graph is acyclic
+		- at each node push it to the queue and mark it visited
+		- push the root node in the queue and mark it visited
+		- while queue is not empty
+			-  pop the front node from the queue push its left and right into the queue if not visited previously and mark them visited
 		- used in chess, social media
 		- `O(number of nodes + number of branches)`
 	- ![BFS and DFS](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/BFS-DFS.png)
