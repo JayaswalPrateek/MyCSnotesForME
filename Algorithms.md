@@ -7,8 +7,9 @@
 		- once you are at the bottom then go to nearest unvisited node usually a sibling of the deepest node
 			- this process is called **Backtracking**
 		- at each node push it to stack to mark it as visited
+		- push the root node in the queue and mark it visited
 			- while the stack is not empty
-				- at any node pop the top of the stack and then push the left and right of the current node into the stack
+				- at any node pop the top of the stack and then push the left and right of the current node into the stack if not visited previously and mark them visited
 				- the order of popping is the order of traversal of the nodes in the graph, you get the access to the node on popping so you can print it or do whatever you want with the popped value
 		- used to solve a maze, detecting cyclic graphs
 		- `O(number of nodes + number of branches)`
@@ -21,8 +22,9 @@
 		- important to mark nodes using a boolean array as you may encounter a node more than once as you traverse the graph, even if the graph is acyclic
 		- at each node push it to the queue and mark it visited
 		- push the root node in the queue and mark it visited
-		- while queue is not empty
-			-  pop the front node from the queue push its left and right into the queue if not visited previously and mark them visited
+			- while queue is not empty
+				-  pop the front node from the queue push its left and right into the queue if not visited previously and mark them visited
+				- the order of popping is the order of traversal of the nodes in the graph, you get the access to the node on popping so you can print it or do whatever you want with the popped value
 		- used in chess, social media
 		- `O(number of nodes + number of branches)`
 	- ![BFS and DFS](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/BFS-DFS.png)
