@@ -1,13 +1,15 @@
 # <mark style="background: #FFB86CA6;">Overview of important Algorithms</mark>
 - <mark style="background: #D2B3FFA6;">Searching</mark>
 	- <mark style="background: #BBFABBA6;">Binary Search</mark>
-	- <mark style="background: #BBFABBA6;">Depth First Search</mark> for trees and graphs
+	- <mark style="background: #BBFABBA6;">Depth First Search</mark> for trees and graphs 
+		- uses stack or recursion
 		- start from the top of a tree and go as deep as possible along the same branch
 		- once you are at the bottom then go to nearest unvisited node usually a sibling of the deepest node
 			- this process is called **Backtracking**
-		- used to solve a maze
+		- used to solve a maze, detecting cyclic graphs
 		- `O(number of nodes + number of branches)`
 	- <mark style="background: #BBFABBA6;">Breadth First Search</mark> for trees and graphs
+		- uses queue or recursion
 		- you don't go to deepest point like DFS
 		- instead you make sure that the sibling node has been visited
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue

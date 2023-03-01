@@ -1301,9 +1301,13 @@ restart:
 	- a binary tree can be represented in 2 ways: using linked list and using vector of vector
 		- array representation
 			- if you compress a binary tree from the top and the bottom and squash it into a 1-D shape then it looks similar to an array
+				- but the elements are filled in the array using BFS 
 			- so we can map nodes of the binary tree to indices of the array
 			- if parent of a node is at the index p of the array then its left child is at the index `2p+1` and right child is at the index `2p+2`
-			- this implementation is not so useful in real life application as it cannot scale and using vector introduces another set of c
+				- if you leave the 0th index empty and use the indices from 1 to n then the left child is at the index `2p` and right child is at the index `2p+1`
+					- this might be slightly faster as we are doing one less addition
+			- this implementation is not so useful in real life application as it cannot scale and using vector introduces another set of complexities but still popular for leetcode style questions
+	- it can also be implemented using vector of vector which is more popular for graphs but again technically trees are also graphs
 	- left and right of leaves point to `nullptr`
 	- types of binary trees
 		- strictly binary tree

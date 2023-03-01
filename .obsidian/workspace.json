@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Strs.md",
+                "file": "Algorithms.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Strs.md",
+                "file": "Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Strs.md",
+                "file": "Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Strs.md"
+                "file": "Algorithms.md"
               }
             }
           },
@@ -162,12 +162,12 @@
   },
   "active": "c280a5c7e989d928",
   "lastOpenFiles": [
+    "Data Strs.md",
+    "Algorithms.md",
     "Attachments/Screenshot from 2023-03-01 09-48-16.png",
     "git cheatsheet.md",
-    "Data Strs.md",
     "Cpp.md",
     "Untitled.md",
-    "Algorithms.md",
     "pdf/strictly-for-reference/Algorithms-JeffE.pdf",
     "pdf/strictly-for-reference/introduction-to-algorithms-4th-edition.pdf",
     "pdf/strictly-for-reference",
