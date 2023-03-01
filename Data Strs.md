@@ -1296,7 +1296,15 @@ restart:
 ```
 
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
-- is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
+- not all binary trees are binary search trees but all binary search trees are binary trees
+	- a trees whose nodes can have at most 2 child nodes is called a binary tree
+	- types of binary trees
+		- strictly binary tree
+			- any node can either have 2 child nodes or no child nodes(leaf node) but cannot have a single node
+		- almost complete binary tree
+			- same as strictly binary tree but the last and the second last level can have a single node but still these levels should be continuously filled from left to right without any gaps in between
+			- technically it means the nodes should have a 
+- it is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
 - used for effectively searching
 - <mark style="background: #BBFABBA6;">recursion is used for common operations as tree has unidirectional next nodes, </mark> we use stack of activation record of function in recursive calls to remember the address of parental nodes
 - to check validity, n nodes = n-1 connecting links
