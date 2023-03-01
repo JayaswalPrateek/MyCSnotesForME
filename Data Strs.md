@@ -1303,7 +1303,7 @@ restart:
 			- any node can either have 2 child nodes or no child nodes(leaf node) but cannot have a single node
 		- almost complete binary tree
 			- same as strictly binary tree but the last and the second last level can have a single node but still these levels should be continuously filled from left to right without any gaps in between
-			- technically it means the nodes should have a 
+			- it means the nodes should have an existing left child before creating the right child and these two children should be first created for for the left parent child of the grandparent
 - it is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
 - used for effectively searching
 - <mark style="background: #BBFABBA6;">recursion is used for common operations as tree has unidirectional next nodes, </mark> we use stack of activation record of function in recursive calls to remember the address of parental nodes
