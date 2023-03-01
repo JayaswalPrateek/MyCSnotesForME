@@ -10,7 +10,6 @@
 			- while the stack is not empty
 				- at any node pop the top of the stack and then push the left and right of the current node into the stack
 				- the order of popping is the order of traversal of the nodes in the graph, you get the access to the node on popping so you can print it or do whatever you want with the popped value
-				- 
 		- used to solve a maze, detecting cyclic graphs
 		- `O(number of nodes + number of branches)`
 	- <mark style="background: #BBFABBA6;">Breadth First Search</mark> for trees and graphs
@@ -19,7 +18,8 @@
 		- instead you make sure that the sibling node has been visited
 		- once you are on a node look at its children and add them to a queue and then you visit the node in the queue and add them to visited array and remove them from sibling queue
 		- if the node in the queues has more children then add them to queue when marking it visited
-		- used in chess
+		- important to mark nodes using a boolean array as you may encounter a node more than once as you traverse the graph, even if the graph is acyclic
+		- used in chess, social media
 		- `O(number of nodes + number of branches)`
 	- ![BFS and DFS](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/BFS-DFS.png)
 - <mark style="background: #D2B3FFA6;">Sorting</mark>
