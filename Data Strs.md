@@ -1308,6 +1308,13 @@ restart:
 		- perfect binary tree
 			- all perfect binary trees are strictly binary trees but all strictly binary trees are not perfect binary trees
 			- all levels of a perfect binary tree 2^(level number) nodes and the boundary of a perfect binary tree resembles a triangle
+		- skewed binary tree
+			- left skewed binary tree
+				- when all nodes only have a single left child
+				- formed when the data stored in a binary search tree is provided in ascending order 
+			- right skewed binary tree
+				- when all nodes only have a single right child
+				- formed when the data stored in a binary search tree is provided in descending order
 - it is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
 - used for effectively searching
 - <mark style="background: #BBFABBA6;">recursion is used for common operations as tree has unidirectional next nodes, </mark> we use stack of activation record of function in recursive calls to remember the address of parental nodes
