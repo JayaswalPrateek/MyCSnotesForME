@@ -1298,6 +1298,13 @@ restart:
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
 - not all binary trees are binary search trees but all binary search trees are binary trees
 	- a trees whose nodes can have at most 2 child nodes is called a binary tree
+	- a binary tree can be represented in 2 ways: using linked list and using vector of vector
+		- array representation
+			- if you compress a binary tree from the top and the bottom and squash it into a 1-D shape then it looks similar to an array
+			- so we can map nodes of the binary tree to indices of the array
+			- if parent of a node is at the index p of the array then its left child is at the index `2p+1` and right child is at the index `2p+2`
+			- this implementation is not so useful in real life application as it cannot scale and using vector introduces another set of c
+	- left and right of leaves point to `nullptr`
 	- types of binary trees
 		- strictly binary tree
 			- any node can either have 2 child nodes or no child nodes(leaf node) but cannot have a single node
