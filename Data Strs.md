@@ -1298,6 +1298,7 @@ restart:
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
 - not all binary trees are binary search trees but all binary search trees are binary trees
 	- a trees whose nodes can have at most 2 child nodes is called a binary tree
+		- an n-ary tree is tree where nodes can have n 
 	- a binary tree can be represented in 2 ways: using linked list and using vector of vector
 		- array representation
 			- if you compress a binary tree from the top and the bottom and squash it into a 1-D shape then it looks similar to an array
@@ -1562,8 +1563,17 @@ int main()
 				- from which we can also deduce if the graph is a tree or linked list and optimize for such cases
 				- otherwise if it is not a tree or a linked list then it is a graph
 				- this is the preferred way to go for leetcode style questions
-				- you resize the vector of vector to number of nodes + 1
-				- then you iterate number of edges times in a loop 
+				- you resize the vector of vector to number of nodes + 1 
+					- otherwise the vector of vector could dynamically grow and add overhead of copying values over and over
+				- then you iterate number of edges times in a loop and take 2 inputs per iteration
+					- let the first input variable be u and the second input be v
+					- you push v at u th index and then v at u th index
+						- this shows that there is an edge between u and v which is bidirectional
+							- so only one push operation will be done if the graph is unidirectional
+					- suppose the graph is weighted then you create a vector of vector of the data type of pair of int of int instead of creating a vector of vector of data type int
+						- and you push a pair of either u or v combined with w which are created using `make_pair(u or v, w` which will infer the data type of the elements of the pair
+							- this ability allows us to technically have different weights in each direction of a bidirectional graph
+							- also you can use a struct instead of a pair
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
 			- we <mark style="background: #BBFABBA6;">need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected</mark> `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
 			- <mark style="background: #BBFABBA6;">finding adjacent nodes(all the neighbors of a node) is O(v) same as Adjacency Matrix</mark>
