@@ -1502,7 +1502,11 @@ int main()
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
+- tree vs graph
+	- a tree has a single path between any 2 nodes which can never have loops and resembles an hierarchy
+	- there is no concept of a root node in a graph and there is no formula for finding number of nodes from number of vertices or vice versa and resembles a network
 - <mark style="background: #BBFABBA6;">graphs have no restrictions on connecting links between nodes</mark>
+- 
 - a graph is represented as G=(V,E) where G is an ordered pair of vertices and edges
 	- <mark style="background: #BBFABBA6;">vertices are nodes</mark>
 	- an <mark style="background: #BBFABBA6;">edge is the connecting link between two nodes</mark>
