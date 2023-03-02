@@ -40,7 +40,7 @@
 
 # <mark style="background: #FFB86CA6;">Type Definitions</mark>
 - makes variables more readable
-- so lets say a school has `int m1,m2,m3,h1,h2,h3;` where `mX` are your marks in subject X and  `hX` is the highest marks in that subject
+- so lets say a school has `int m1,m2,m3,h1,h2,h3;` where `mX` are your marks in subject X and `hX` is the highest marks in that subject
 - to make it more readable we use `typedef` to alias the data type of `mX` from int to marks and `hX` from int to highest to add more context
 	 ```cpp
 	typedef int marks, highest;
@@ -337,7 +337,7 @@ int main()
 		- empty string contains only `\0`
 			- so `str.length()` is 0
 	- <mark style="background: #BBFABBA6;">str.empty()</mark> checks if the string is empty or not
-	-  <mark style="background: #BBFABBA6;">str.erase()</mark> is same as `str.clear()` but you can also pass index and can be used for trimming
+	- <mark style="background: #BBFABBA6;">str.erase()</mark> is same as `str.clear()` but you can also pass index and can be used for trimming
 	- <mark style="background: #BBFABBA6;">str.append(anotherStr)</mark> appends `anotherStr` at the end of string `str` by removing `\0` at the end of `str` before appending
 	- <mark style="background: #BBFABBA6;">str.insert(strIndex, snippetStr)</mark> inserts `snippetStr` in `str` at `strIndex`
 		- 0th index of `snippetStr` becomes `strIndex`th index of `str`
@@ -348,7 +348,7 @@ int main()
 		- <mark style="background: #BBFABBA6;">str.push_back(ch)</mark> adds char ch at the end of `str`
 		- <mark style="background: #BBFABBA6;">str.pop_back()</mark> removes last char of `str`
 		- <mark style="background: #BBFABBA6;">str.front()</mark> returns the first char of `str`
-		- <mark style="background: #BBFABBA6;">str.back()</mark> returns the last char of  `str`
+		- <mark style="background: #BBFABBA6;">str.back()</mark> returns the last char of `str`
 	- <mark style="background: #BBFABBA6;">str.copy(chArray,str.length())</mark>
 		- copies string `str` into char array `chArray`
 		- 2nd arg is the length of `str` to be copied
@@ -373,7 +373,7 @@ int main()
 	- <mark style="background: #BBFABBA6;">str.find_first_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_first_of(ch, startingIndex)</mark>
 		- `startingIndex` is the index from where searching starts
 		- gives the first occurrence of char `ch` in string `str`
-		-  <mark style="background: #BBFABBA6;">str.find_last_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_last_of(ch, startingIndex)</mark>
+		- <mark style="background: #BBFABBA6;">str.find_last_of(ch)</mark> or <mark style="background: #BBFABBA6;">str.find_last_of(ch, startingIndex)</mark>
 		- if a string is given instead its not a syntax error
 			- it traverses `str` char by char and as soon as a char at `str` also exists in the string argument then it returns the index for that char in `str`(which will always be the first occurrence)
 	- <mark style="background: #BBFABBA6;">str.substr(lowerLim, upperLim)</mark>
@@ -1064,8 +1064,8 @@ int main()
 	    return 0;
 	}
 	```
-  - generalization of swift and innova so <mark style="background: #D2B3FFA6;">we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when you do this make virtual functions = 0 then they are called pure virtual functions</mark>
-	  - a <mark style="background: #BBFABBA6;">class with pure virtual function is called an abstract class</mark>
+- generalization of swift and innova so <mark style="background: #D2B3FFA6;">we can get away by just declaring empty virtual functions as we will never start a generic car, it has to have some model but when you do this make virtual functions = 0 then they are called pure virtual functions</mark>
+	- a <mark style="background: #BBFABBA6;">class with pure virtual function is called an abstract class</mark>
 		- <mark style="background: #BBFABBA6;">we cannot create objects of abstract classes but you can make pointer objects to them</mark>
 	- <mark style="background: #BBFABBA6;">3 possible use cases of inheritance:</mark>
 		- if <mark style="background: #BBFABBA6;">all functions of the class are non virtual</mark> then the its use is <mark style="background: #BBFABBA6;">re-usability</mark>

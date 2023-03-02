@@ -23,7 +23,7 @@
 		- at each node push it to the queue and mark it visited
 		- push the root node in the queue and mark it visited
 			- while queue is not empty
-				-  pop the front node from the queue push its left and right into the queue if not visited previously and mark them visited
+				- pop the front node from the queue push its left and right into the queue if not visited previously and mark them visited
 				- the order of popping is the order of traversal of the nodes in the graph, you get the access to the node on popping so you can print it or do whatever you want with the popped value
 		- used in chess, social media
 		- `O(number of nodes + number of branches)`
@@ -347,7 +347,7 @@
 		    return s;
 		}
 		```
--  <mark style="background: #FF5582A6;">nCr = n!/(r!*(n-r)!)</mark>
+- <mark style="background: #FF5582A6;">nCr = n!/(r!*(n-r)!)</mark>
 	- using iteration
 		```cpp
 		#include <iostream>
@@ -411,7 +411,7 @@
 			- discs are always sorted in the source pole
 	- Procedure to Solution: `O(2^n)`
 		- ![procedure to solution for tower of hanoi question](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Towers-Of-Hanoi.png)
-	-  cases
+	- cases
 		- <mark style="background: #BBFABBA6;">if the number of discs is one then just move it from pole 1 to 3</mark>
 		- <mark style="background: #BBFABBA6;">if the number of discs are 2 then</mark>
 			1. move the smaller disc to middle pole
@@ -465,7 +465,7 @@
 		- the number of children to this root node = length of the string and each child will be an element of the string(underlined in 2nd row)
 			- these children will each be a parent to length - 1 nodes(the ones that are not underlined in the 3rd row) 
 			- ![string permutation recursion tree](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/recursion-permutation-swap.jpg)
-				-  a tree whose leaf nodes are the solution to the program is called a state space tree
+				- a tree whose leaf nodes are the solution to the program is called a state space tree
 	- we need a static flag array so that we can find out what elements of the string can be children as child and parent cannot be the same element
 		- i is the counter variable for this array initially pointing to the 0th index
 	- we also need a static result array to store the permutations of the original string
@@ -899,7 +899,7 @@ p(2) = 56
 	```
 	- each line take `O(1)` to execute but we don't know how many times will the while loop run
 		- let the while loop run `x` times and let `f(x)` be a function of variables `num` and `den`
-		- the while loop executes 4  `O(1)` operations which is one comparison and 3 assignments `x` times so it is `O(x)` time complexity
+		- the while loop executes 4 `O(1)` operations which is one comparison and 3 assignments `x` times so it is `O(x)` time complexity
 			- in the 1800s it was proven that this `x` is proportional to the number of digits in the smaller number which is always the denominator
 				- in binary search we used to divide by 2 over and over so it became `O(log base2 n)`
 				- similarly to find the number of digits in a number we keep on dividing by 10 so it is `O(log base10 den)`

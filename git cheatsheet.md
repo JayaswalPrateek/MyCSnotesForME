@@ -37,7 +37,7 @@
 - this may override the changes you have made between stashing and popping the stash
 
 # `git stash clear`
--  suppose you successfully reimplemented something so you don't need the stashed incomplete work anymore 
+- suppose you successfully reimplemented something so you don't need the stashed incomplete work anymore 
 
 # `git remote add origin https://github.com/<username>/<reponame>.git`
 - binds a git repo on github to a local git folder

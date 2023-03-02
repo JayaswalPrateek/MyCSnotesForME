@@ -1298,7 +1298,7 @@ restart:
 <mark style="background: #D2B3FFA6;">Binary Search Trees</mark>
 - not all binary trees are binary search trees but all binary search trees are binary trees
 	- a trees whose nodes can have at most 2 child nodes is called a binary tree
-		- an n-ary tree is tree where nodes can have n 
+		- an n-ary tree is tree where nodes can have any number of children 
 	- a binary tree can be represented in 2 ways: using linked list and using vector of vector
 		- array representation
 			- if you compress a binary tree from the top and the bottom and squash it into a 1-D shape then it looks similar to an array
