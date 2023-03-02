@@ -428,7 +428,7 @@
 			}	
 		```
 	18. <mark style="background: #BBFABBA6;">tree</mark>
-		- a vector of vector can be interpreted as a STL tree
+		- a vector of vector can be interpreted as a STL tree(also for graphs)
 			- every element in the parent vector is a child vector
 			- the index of the parent array represents the parent node of the tree and the associated vector stores the child node of the parent
 		```cpp
@@ -1329,17 +1329,17 @@ restart:
 - it is a binary tree with value of <mark style="background: #BBFABBA6;">left child node</mark> of a parent node always <mark style="background: #BBFABBA6;">smaller than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark> and the value of <mark style="background: #BBFABBA6;">right child node</mark> of a parent node always <mark style="background: #BBFABBA6;">larger than or equal to</mark> the value of <mark style="background: #BBFABBA6;">parent node</mark>
 - used for effectively searching
 - <mark style="background: #BBFABBA6;">recursion is used for common operations as tree has unidirectional next nodes, </mark> we use stack of activation record of function in recursive calls to remember the address of parental nodes
-- to check validity, n nodes = n-1 connecting links
+- to check validity, n nodes = n-1 edges
 - <mark style="background: #BBFABBA6;">depth</mark>
 	- depth is measured <mark style="background: #BBFABBA6;">from the topmost node of the tree</mark>
 	- So <mark style="background: #BBFABBA6;">root of the tree has depth 0</mark>
 - <mark style="background: #BBFABBA6;">height</mark>
-	- height of a node in a tree is equal to <mark style="background: #BBFABBA6;">the number of connecting links needed to reach that node from the furthest leaf(a node without any child) under that node</mark>
+	- height of a node in a tree is equal to <mark style="background: #BBFABBA6;">the number of edges needed to reach that node from the furthest leaf(a node without any child) under that node</mark>
 	- <mark style="background: #BBFABBA6;">height of all leaves is 0</mark>
 	- <mark style="background: #BBFABBA6;">height of a tree is height of the topmost node of the tree</mark>
 	- <mark style="background: #BBFABBA6;">height if an empty tree is -1</mark>
 	- <mark style="background: #BBFABBA6;">height of a tree with one node is 0</mark> and so on
-	- <mark style="background: #BBFABBA6;">height if a tree with n nodes is n-1</mark> which is equal to the number of connecting links
+	- <mark style="background: #BBFABBA6;">height if a tree with n nodes is n-1</mark> which is equal to the number of edges
 - <mark style="background: #BBFABBA6;">max number of nodes for a node at height h</mark> `= (2^h)-1`
 - <mark style="background: #BBFABBA6;">a binary tree for which any node either has 2 or 0 nodes</mark> is called a <mark style="background: #BBFABBA6;">perfect binary tree and height of a perfect binary tree</mark> `= floor(log base2 of n)` where n is number of nodes
 - <mark style="background: #BBFABBA6;">cost is proportional to the height of the tree</mark>
@@ -1505,8 +1505,7 @@ int main()
 - tree vs graph
 	- a tree has a single path between any 2 nodes which can never have loops and resembles an hierarchy
 	- there is no concept of a root node in a graph and there is no formula for finding number of nodes from number of vertices or vice versa and resembles a network
-- <mark style="background: #BBFABBA6;">graphs have no restrictions on connecting links between nodes</mark>
-- 
+- <mark style="background: #BBFABBA6;">graphs have no restrictions on edges between nodes</mark>
 - a graph is represented as G=(V,E) where G is an ordered pair of vertices and edges
 	- <mark style="background: #BBFABBA6;">vertices are nodes</mark>
 	- an <mark style="background: #BBFABBA6;">edge is the connecting link between two nodes</mark>
@@ -1517,6 +1516,7 @@ int main()
 - <mark style="background: #BBFABBA6;">graph can have self loops</mark> <mark style="background: #BBFABBA6;">meaning vertex has an edge pointing to itself</mark>
 	- <mark style="background: #BBFABBA6;">like how many websites have links to the same page</mark> and that is an example of self loop
 	- <mark style="background: #BBFABBA6;">refresh page on the browser leads to the same page</mark>
+	- as a graph can have loops(cyclic graphs) so there is a chance to get stuck in an infinite loop during traversal so we might have to store the visited nodes
 - <mark style="background: #BBFABBA6;">two vertices can have multiple edges between them example multiple airlines fly between 2 same airports</mark>
 -<mark style="background: #BBFABBA6;"> a simple graph has no self loop or multiple edges</mark>
 - for a <mark style="background: #BBFABBA6;">simple directed graph the max number of edges for n vertices</mark> `= n(n-1)`
@@ -1556,8 +1556,14 @@ int main()
 				- this can be avoided by using hash map so it will always be `O(1)`
 			- <mark style="background: #BBFABBA6;">for weighted graph replace 1 with edge weight and 0 with INT_MAX</mark>
 			- <mark style="background: #BBFABBA6;">for facebook, using adjacent matrix optimally means for 1 billion users everyone is a friend of everyone else which is impossible so lot of memory is wasted in storing who is not a friend of whom which is redundant as we can figure that out if we just knew who is a friend of who which is infact more important</mark>
-		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers
+		- So we use <mark style="background: #BBFABBA6;">Adjacency List</mark> which is an array of pointers like vector of vector
 			- less memory as space complexity is `O(number of edges)` as `|E| << |V|^2`
+			- we create a vector of vector after taking user input for number of nodes in a graph and number of edges in a graph
+				- from which we can also deduce if the graph is a tree or linked list and optimize for such cases
+				- otherwise if it is not a tree or a linked list then it is a graph
+				- this is the preferred way to go for leetcode style questions
+				- you resize the vector of vector to number of nodes + 1
+				- then you iterate number of edges times in a loop 
 			- ![Adjacency List](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2021-00-55.png)
 			- we <mark style="background: #BBFABBA6;">need to perform linear search or binary search on the adjacency list so for finding if 2 nodes are connected</mark> `O(|V|)` or `O(log |V|)` which was `O(1)` in Adjacency Matrix
 			- <mark style="background: #BBFABBA6;">finding adjacent nodes(all the neighbors of a node) is O(v) same as Adjacency Matrix</mark>
