@@ -63,7 +63,7 @@
 
 # <mark style="background: #FFB86CA6;">STL ADT</mark>
 - c++ STL is a collection of useful algorithms, data structures and functions related to them in form of template classes
-- c++ STL  has 4 things: containers, functions, algorithms and iterators
+- c++ STL has 4 things: containers, functions, algorithms and iterators
 	- containers are the classes for the data structures
 		- container functions are primitive operations performed on the containers like push, pop
 	- algorithms are complex operations performed on the containers like search, sort and imported using `#include <algorithms>`
@@ -634,9 +634,9 @@
 			- you have to provide 3 parameters: begin, location, end
 				- the value at location when the entire array is sorted will be returned
 				- begin is inclusive and end is non inclusive so `[begin, end)`
-				- location should be an iterator like begin and end so use .begin() + 1  for 2nd position or use .end() - 1 for the last position or .begin() + .size()/2 for middle
+				- location should be an iterator like begin and end so use .begin() + 1 for 2nd position or use .end() - 1 for the last position or .begin() + .size()/2 for middle
 					- don't use integer instead
-			- modifies the array elements but all elements before nth element will be smaller than it and all elements after it will be greater than it but they may not be sorted  
+			- modifies the array elements but all elements before nth element will be smaller than it and all elements after it will be greater than it but they may not be sorted
 		- `is_sorted_until`
 			- function parameters: begin, end, optional: ascending, descending
 				- ascending is default, for descending pass `greater<int>()`
@@ -1538,7 +1538,7 @@ int main()
 			- we know every vertex stored in the vertex list vector has an index
 			- we can imagine that an edge connects these indices instead of pointing to them
 			- ![creating a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-25-06.png)
--  <mark style="background: #D2B3FFA6;">Common Operations</mark>
+- <mark style="background: #D2B3FFA6;">Common Operations</mark>
 	- <mark style="background: #BBFABBA6;">finding adjacent nodes,</mark> <mark style="background: #BBFABBA6;">checking if 2 nodes are connected is</mark> `O(number of Edges or |E|)` which is nearly `O(n^2)` as we know the formula for max number of edges from the number of nodes
 	- `O(n)` is acceptable which is `O(number of vertices or |V|)` for graphs <mark style="background: #BBFABBA6;">Using Adjacency Matrix and Adjacency List</mark>
 		- <mark style="background: #BBFABBA6;">Adjacency Matrix</mark> of order `|V| x |V|`
@@ -1549,7 +1549,7 @@ int main()
 			- <mark style="background: #BBFABBA6;">for any element at index i of the vertex list, row i of adjacency matrix has values 0 or 1 for every column</mark>
 				- for column number c and row number r of the adjacency matrix if the value is 1 it means that the element at index r of the vertex list is connected to the element at index c of the vertex list in the graph and 0 means it is not connected
 			- <mark style="background: #BBFABBA6;">for any undirected graph the adjacency matrix will be symmetric</mark> so `Aij == Aji` so we can omit upper or lower triangular matrix with diagonal of matrix as the hypotenuse
-			-  ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
+			- ![adjacency matrix of a graph](https://raw.githubusercontent.com/JayaswalPrateek/MyCSnotesForME/main/Attachments/Screenshot%20from%202023-01-25%2014-39-31.png)
 			- <mark style="background: #BBFABBA6;">to find adjacent nodes we do a linear search on the vertex list and then do a linear search on the row of adjacency matrix</mark> corresponding to the index found in vertex list
 				- which is `O(V+V) = O(2V) = O(V)`
 			- <mark style="background: #BBFABBA6;">to find if 2 nodes are connected or not</mark> we can pass their indices i and j and we just need to <mark style="background: #BBFABBA6;">find the value of A[i][j] in the Adjacency matrix and see if it is 0 or 1</mark> which is `O(1)`
