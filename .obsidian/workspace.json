@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0b6f88c64214aab4",
+        "id": "77cd2bb7da170cb2",
         "type": "tabs",
         "children": [
           {
-            "id": "3e86bb86a6299286",
+            "id": "021fd60d1f16172d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,8 +19,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "758ad5bb0248d041",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithms.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Strs.md",
+                "file": "Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Strs.md",
+                "file": "Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Strs.md"
+                "file": "Algorithms.md"
               }
             }
           },
@@ -160,12 +174,12 @@
       "command-palette:Open command palette": true
     }
   },
-  "active": "3e86bb86a6299286",
+  "active": "758ad5bb0248d041",
   "lastOpenFiles": [
+    "Data Strs.md",
     "Cpp.md",
     "Algorithms.md",
     "git cheatsheet.md",
-    "Data Strs.md",
     "Attachments/Screenshot from 2023-03-01 09-48-16.png",
     "Untitled.md",
     "pdf/strictly-for-reference/Algorithms-JeffE.pdf",
