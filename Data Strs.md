@@ -1310,6 +1310,10 @@ restart:
 			- this implementation is not so useful in real life application as it cannot scale and using vector introduces another set of complexities but still popular for leetcode style questions
 	- it can also be implemented using vector of vector which is more popular for graphs but again technically trees are also graphs
 	- left and right of leaves point to `nullptr`
+	- binary search can also be performed on array instead of tree but the advantages of using trees are
+		- time complexity of insertion and deletion becomes `O(log n)`
+		- because if an array is full insertion will need a new array of a greater size and all previous elements have to be copied into the new array for inserting a single element so `O(n)`
+		- use array when it is  guaranteed that the array elements will just change/mutate without any insertion or deletions 
 	- types of binary trees
 		- strictly binary tree
 			- any node can either have 2 child nodes or no child nodes(leaf node) but cannot have a single node
