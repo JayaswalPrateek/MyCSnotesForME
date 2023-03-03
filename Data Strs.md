@@ -1518,14 +1518,20 @@ int main()
 1. Left Rotation
 	- when the binary tree is skewed rightwards
 	- like if the 3 nodes are 1, 2 and 3 and the root node is 1
-	- its called a right and right situation as right of 1 is 2 and right of 2 is 3
-	- rotating the tree left is technically equivalent to shifting the root rightward to 2
+	- its called a right right situation as right of 1 is 2 and right of 2 is 3
+	- rotating the tree left is technically equivalent to shifting the root node rightward to 2
 	- now 4 and 5 are inserted as a right skewed subtree of 2 elements from 3
 	- then we will make 3 as left of 4 and 5 was already right of 4 and now 4 becomes right of two instead of 3
 		- we try to affect as few node as possible when rotating hence we did not rotate from root but a sub root
 		- the problem causing subtree was 3, 4 and 5 right skewed subtree so we left rotated just the subtree
 2. Right Rotation
-	- 
+	- when a binary tree is skewed leftwards
+	- like if the 3 nodes are 3, 2 and 1 and the root node is 3
+	- its called a left left situation as the left of 3 is 2 and left of 2 is 1
+	- rotating the tree right is technically equivalent to shifting the root node leftward to 2
+3. Left and Right Rotation
+	- for three values such that `1st > 2nd < 3rd` like 3, 1, 2 and 3 is the root node so 1 is at the left of 3 and 2 is at the right of 1
+4. Right and Left Rotation
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
