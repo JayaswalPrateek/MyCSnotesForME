@@ -1537,7 +1537,7 @@ int main()
 	- for three values such that `1st < 2nd > 3rd` like 1, 3, 2 and 1 is the root node so 3 is at the right of 1 and 2 is at the left of 3
 	- we will have to make it either right or left skewed
 	- lets make it right skewed by swapping 2 and 3 so the root node is 1 and its right is 2 and its right is 3 and then perform Left Rotation
-- notice that we an unbalanced tree has atleast 3 elements, so every tree with 2 or less nodes is always balanced
+- notice that we an unbalanced tree has at least 3 elements, so every tree with 2 or less nodes is always balanced
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
