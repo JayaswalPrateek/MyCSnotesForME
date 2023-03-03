@@ -1514,11 +1514,17 @@ int main()
 				- this can be done by checking if the tree is balanced after insertion or deletion
 					- for a tree to be balanced the difference of height of the left and right subtree from the root node should be -1, 0, 1 otherwise is not a balanced tree
 						- add the properties for a binary tree to a balanced tree and it is a balanced binary tree
-- an unbalanced tree can be balanced by using rotation techniques
-1. 
-2. 
-3. 
-4. 
+- an unbalanced binary tree can be balanced by using rotation techniques but we need to be careful that the properties of a binary tree are conserved
+1. Left Rotation
+	- when the binary tree is skewed rightwards
+	- like if the 3 nodes are 1, 2 and 3 and the root node is 1
+	- its called a right and right situation as right of 1 is 2 and right of 2 is 3
+	- rotating the tree left is technically equivalent to shifting the root rightward to 2
+	- now 4 and 5 are inserted as a right skewed subtree of 2 elements from 3
+	- then we will make 3 as left of 4 and 5 was already right of 4 and now 4 becomes right of two instead of 3
+		- we try to affect as few node as possible when rotating hence we did not rotate from root but a sub root
+		- the problem causing subtree was 3, 4 and 5 right skewed subtree so we left rotated just the subtree
+2. Right Rotation
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
