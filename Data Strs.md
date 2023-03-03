@@ -1513,7 +1513,12 @@ int main()
 			- by making the root node as 3 its left and right node can be 2 and 4 respectively having 1 and 5 as the left node respectively
 				- this can be done by checking if the tree is balanced after insertion or deletion
 					- for a tree to be balanced the difference of height of the left and right subtree from the root node should be -1, 0, 1 otherwise is not a balanced tree
-						- add the properties for a binary tree to a balanced tree and it is a balanced binary tree 
+						- add the properties for a binary tree to a balanced tree and it is a balanced binary tree
+- an unbalanced tree can be balanced by using rotation techniques
+1. 
+2. 
+3. 
+4. 
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
