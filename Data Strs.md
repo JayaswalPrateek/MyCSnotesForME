@@ -1511,7 +1511,7 @@ int main()
 	- imagine a binary tree with nodes having data 1, 2, 3, 4, 5, 6, 7 8 and 1 being the root node, it looks like a linked list, its a skewed binary tree we are wasting memory by storing `nullptr` in the right node pointers, we could have instead used a linked list and lost the logarithmic complexities of tree for linear, n logn or even quadratic complexities and you will never achieve logarithmic time complexity as tree traversal algorithms will never be able to discard any subtree of a skewed binary tree   
 		- this problem can be mitigated by rebalancing the tree per insertion so that the binary tree is never skewed
 			- by making the root node as 3 its left and right node can be 2 and 4 respectively having 1 and 5 as the left node respectively
-				- this can be done by checking if the tree is balanced after insertion or deletion
+				- this can be done by checking if the tree is balanced after insertion or deletion of each element
 					- for a tree to be balanced the difference of height of the left and right subtree from the root node should be -1, 0, 1 otherwise is not a balanced tree
 						- add the properties for a binary tree to a balanced tree and it is a balanced binary tree
 - an unbalanced binary tree can be balanced by using rotation techniques but we need to be careful that the properties of a binary tree are conserved
@@ -1531,7 +1531,13 @@ int main()
 	- rotating the tree right is technically equivalent to shifting the root node leftward to 2
 3. Left and Right Rotation
 	- for three values such that `1st > 2nd < 3rd` like 3, 1, 2 and 3 is the root node so 1 is at the left of 3 and 2 is at the right of 1
+	- we will have to make it either right or left skewed
+	- lets make it left skewed by swapping 1 and 2 so the root node is 3 and its left is 2 and its left is 1 and then perform Right Rotation
 4. Right and Left Rotation
+	- for three values such that `1st < 2nd > 3rd` like 1, 3, 2 and 1 is the root node so 3 is at the right of 1 and 2 is at the left of 3
+	- we will have to make it either right or left skewed
+	- lets make it right skewed by swapping 2 and 3 so the root node is 1 and its right is 2 and its right is 3 and then perform Left Rotation
+- notice that we an unbalanced tree has atleast 3 elements, so every tree with 2 or less nodes is always balanced
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
