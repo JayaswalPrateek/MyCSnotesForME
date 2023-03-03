@@ -1505,6 +1505,13 @@ int main()
  */
 ```
 
+<mark style="background: #D2B3FFA6;">AVL Trees</mark>
+- is a height balancing/self balancing binary search tree
+- because stock implementation of binary tree could lead to a skewed binary tree if the data turned out to be sorted and the extreme element was the root node of the binary search tree 
+	- imagine a binary tree with nodes having data 1, 2, 3, 4, 5, 6, 7 8 and 1 being the root node, it looks like a linked list, its a skewed binary tree we are wasting memory by storing `nullptr` in the right node pointers, we could have instead used a linked list and lost the logarithmic complexities of tree for linear, n logn or even quadratic complexities and you will never achieve logarithmic time complexity as tree traversal algorithms will never be able to discard any subtree of a skewed binary tree   
+		- this problem can be mitigated by rebalancing the tree per insertion so that the binary tree is never skewed
+			- by making the root node 
+
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
 - tree vs graph
