@@ -1525,6 +1525,7 @@ int main()
 		- we try to affect as few node as possible when rotating hence we did not rotate from root but a sub root
 		- the problem causing subtree was 3, 4 and 5 right skewed subtree so we left rotated just the subtree
 2. Right Rotation
+	- 
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
