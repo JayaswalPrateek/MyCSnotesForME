@@ -3,9 +3,9 @@
   "theme": "system",
   "cssTheme": "Adwaita",
   "monospaceFontFamily": "JetBrains Mono",
-  "textFontFamily": "Comic Sans MS",
+  "textFontFamily": "Cantarell",
   "interfaceFontFamily": "Cantarell",
-  "baseFontSize": 19,
+  "baseFontSize": 20,
   "showViewHeader": true,
   "nativeMenus": true
 }
