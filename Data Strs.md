@@ -1509,7 +1509,7 @@ int main()
 - is a height balancing/self balancing binary search tree
 - so insertion, searching and deletion will always be `log base2 n`
 - because stock implementation of binary tree could lead to a skewed binary tree if the data turned out to be sorted and the extreme element was the root node of the binary search tree 
-	- imagine a binary tree with nodes having data 1, 2, 3, 4, 5, 6, 7 8 and 1 being the root node, it looks like a linked list, its a skewed binary tree we are wasting memory by storing `nullptr` in the right node pointers, we could have instead used a linked list and lost the logarithmic complexities of tree for linear, n logn or even quadratic complexities and you will never achieve logarithmic time complexity as tree traversal algorithms will never be able to discard any subtree of a skewed binary tree   
+	- imagine a binary tree with nodes having data 1, 2, 3, 4, 5, 6, 7 8 and 1 being the root node, it looks like a linked list, its a skewed binary tree we are wasting memory by storing `nullptr` in the right node pointers, we could have instead used a linked list and lost the logarithmic complexities of tree for linear,` O(n logn)` or even quadratic complexities and you will never achieve logarithmic time complexity as tree traversal algorithms will never be able to discard any subtree of a skewed binary tree   
 		- this problem can be mitigated by rebalancing the tree per insertion so that the binary tree is never skewed
 			- by making the root node as 3 its left and right node can be 2 and 4 respectively having 1 and 5 as the left node respectively
 				- this can be done by checking if the tree is balanced after insertion or deletion of each element
@@ -1545,6 +1545,22 @@ int main()
 	- the largest element of the left subtree is the element you find by going right over and over till you hit a `nullptr` from the root node of the left subtree
 	- the smallest element of the right subtree is the element you find by going left over and over till you hit a `nullptr` from the root node of the right subtree
 	- this decision can be made by predicting which choice will give a more balanced tree
+
+<mark style="background: #D2B3FFA6;">Red Black Tree</mark>
+- also a self balancing binary search tree
+- how Red Black Tree is better than AVL Tree
+	- optimized for frequent insertions and deletions while AVL Trees are optimized for quicker lookup
+	-  so when the requirement is lookup intensive then use AVL Trees and when the requirement is read/write intensive then use Red Black Trees
+	- Red Black Trees are better for frequent insertions and deletions as lesser number of rotations are needed for balancing the tree
+	- Red Black Trees occupy less memory than AVL Trees
+	- hence many STL containers are implemented using Red Black Trees while Databases are implemented using AVL Trees
+- Rules of a Red Black Tree
+	- should be a binary search tree in the first place
+	- a node of a Red Black Tree can either be red or black like a boolean can be true or false
+	- the root is always black
+	- all paths from the root to any leaf should have equal number of black nodes
+	- no 2 red nodes can be adjacent meaning a red node cannot be a parent or child to another red node(but siblings of a red node can be red)
+	- all `nullptr` nodes are considered black nodes
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
