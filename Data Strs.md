@@ -1507,6 +1507,7 @@ int main()
 
 <mark style="background: #D2B3FFA6;">AVL Trees</mark>
 - is a height balancing/self balancing binary search tree
+- so insertion, searching and deletion will always be `log base2 n`
 - because stock implementation of binary tree could lead to a skewed binary tree if the data turned out to be sorted and the extreme element was the root node of the binary search tree 
 	- imagine a binary tree with nodes having data 1, 2, 3, 4, 5, 6, 7 8 and 1 being the root node, it looks like a linked list, its a skewed binary tree we are wasting memory by storing `nullptr` in the right node pointers, we could have instead used a linked list and lost the logarithmic complexities of tree for linear, n logn or even quadratic complexities and you will never achieve logarithmic time complexity as tree traversal algorithms will never be able to discard any subtree of a skewed binary tree   
 		- this problem can be mitigated by rebalancing the tree per insertion so that the binary tree is never skewed
@@ -1515,29 +1516,35 @@ int main()
 					- for a tree to be balanced the difference of height of the left and right subtree from the root node should be -1, 0, 1 otherwise is not a balanced tree
 						- add the properties for a binary tree to a balanced tree and it is a balanced binary tree
 - an unbalanced binary tree can be balanced by using rotation techniques but we need to be careful that the properties of a binary tree are conserved
-1. Left Rotation
-	- when the binary tree is skewed rightwards
-	- like if the 3 nodes are 1, 2 and 3 and the root node is 1
-	- its called a right right situation as right of 1 is 2 and right of 2 is 3
-	- rotating the tree left is technically equivalent to shifting the root node rightward to 2
-	- now 4 and 5 are inserted as a right skewed subtree of 2 elements from 3
-	- then we will make 3 as left of 4 and 5 was already right of 4 and now 4 becomes right of two instead of 3
-		- we try to affect as few node as possible when rotating hence we did not rotate from root but a sub root
-		- the problem causing subtree was 3, 4 and 5 right skewed subtree so we left rotated just the subtree
-2. Right Rotation
-	- when a binary tree is skewed leftwards
-	- like if the 3 nodes are 3, 2 and 1 and the root node is 3
-	- its called a left left situation as the left of 3 is 2 and left of 2 is 1
-	- rotating the tree right is technically equivalent to shifting the root node leftward to 2
-3. Left and Right Rotation
-	- for three values such that `1st > 2nd < 3rd` like 3, 1, 2 and 3 is the root node so 1 is at the left of 3 and 2 is at the right of 1
-	- we will have to make it either right or left skewed
-	- lets make it left skewed by swapping 1 and 2 so the root node is 3 and its left is 2 and its left is 1 and then perform Right Rotation
-4. Right and Left Rotation
-	- for three values such that `1st < 2nd > 3rd` like 1, 3, 2 and 1 is the root node so 3 is at the right of 1 and 2 is at the left of 3
-	- we will have to make it either right or left skewed
-	- lets make it right skewed by swapping 2 and 3 so the root node is 1 and its right is 2 and its right is 3 and then perform Left Rotation
+- rotation techniques:
+	1. Left Rotation
+		- when the binary tree is skewed rightwards
+		- like if the 3 nodes are 1, 2 and 3 and the root node is 1
+		- its called a right right situation as right of 1 is 2 and right of 2 is 3
+		- rotating the tree left is technically equivalent to shifting the root node rightward to 2
+		- now 4 and 5 are inserted as a right skewed subtree of 2 elements from 3
+		- then we will make 3 as left of 4 and 5 was already right of 4 and now 4 becomes right of two instead of 3
+			- we try to affect as few node as possible when rotating hence we did not rotate from root but a sub root
+			- the problem causing subtree was 3, 4 and 5 right skewed subtree so we left rotated just the subtree
+	2. Right Rotation
+		- when a binary tree is skewed leftwards
+		- like if the 3 nodes are 3, 2 and 1 and the root node is 3
+		- its called a left left situation as the left of 3 is 2 and left of 2 is 1
+		- rotating the tree right is technically equivalent to shifting the root node leftward to 2
+	3. Left and Right Rotation
+		- for three values such that `1st > 2nd < 3rd` like 3, 1, 2 and 3 is the root node so 1 is at the left of 3 and 2 is at the right of 1
+		- we will have to make it either right or left skewed
+		- lets make it left skewed by swapping 1 and 2 so the root node is 3 and its left is 2 and its left is 1 and then perform Right Rotation
+	4. Right and Left Rotation
+		- for three values such that `1st < 2nd > 3rd` like 1, 3, 2 and 1 is the root node so 3 is at the right of 1 and 2 is at the left of 3
+		- we will have to make it either right or left skewed
+		- lets make it right skewed by swapping 2 and 3 so the root node is 1 and its right is 2 and its right is 3 and then perform Left Rotation
 - notice that we an unbalanced tree has at least 3 elements, so every tree with 2 or less nodes is always balanced
+- any insertion to as well as deletion from a balanced tree can make it unbalanced, so whenever an element is inserted or deleted, it should be followed code that balances the tree if it is not balanced
+- deletion of root node means that the either the largest number from the left subtree becomes the new root node or the smallest element from the left subtree
+	- the largest element of the left subtree is the element you find by going right over and over till you hit a `nullptr` from the root node of the left subtree
+	- the smallest element of the right subtree is the element you find by going left over and over till you hit a `nullptr` from the root node of the right subtree
+	- this decision can be made by predicting which choice will give a more balanced tree
 
 <mark style="background: #D2B3FFA6;">Graphs</mark>
 - <mark style="background: #BBFABBA6;">linked list and trees are also graphs</mark>
